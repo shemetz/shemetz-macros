@@ -1,0 +1,18 @@
+{
+  "name": "shemetz-macros",
+  "title": "Shemetz's Macros",
+  "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
+  "author": "shem",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "0.8.9",
+  "esmodules": [
+    "scripts/shemetz-macros.js"
+  ],
+  "url": "https://github.com/itamarcu/shemetz-macros",
+  "manifest": "https://github.com/itamarcu/shemetz-macros/raw/master/module.json",
+  "download": "https://github.com/itamarcu/shemetz-macros/archive/master.zip",
+  "readme": "https://github.com/itamarcu/shemetz-macros/blob/master/Readme.md",
+  "bugs": "https://github.com/itamarcu/shemetz-macros/issues",
+  "license": "https://github.com/itamarcu/shemetz-macros/blob/master/License.txt"
+}
