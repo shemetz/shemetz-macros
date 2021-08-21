@@ -1,35 +1,30 @@
-/*
---- Eyedropper Color Pick ---
+/**
 When activated (best with hotkey), will capture the color under the cursor and set it to the drawing tools default
  for stroke color.  The color may include alpha, though you might want to set ignoreBackground to false to capture it,
  because otherwise the default behavior is to blend the color of all layers' pixels together (i.e. make it look like
  you'd see it on your screen).
 
  Doesn't currently support lighting/sight (but you can enable grid/effects/templates if you want).
+
  INCOMPATIBLE with the Perfect Vision module.
-
- You can also edit this to change fillColor/alpha instead of strokeColor/alpha, of course.
-
-source:
-https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/eyedropper-color-pick.js
-suggested icon:
-https://image.flaticon.com/icons/png/128/4469/4469781.png
 */
 
-const ignoreBackground = false
-
-function main () {
-  const colorWithAlpha = getMousePixelOnScreen()
+export const colorPickFromCursor = (fillOrStroke, ignoreBackground = false) => {
+  const colorWithAlpha = getMousePixelOnScreen(ignoreBackground)
   const color = colorWithAlpha.substr(0, 1 + 6)
   const alpha = parseInt(colorWithAlpha.substr(1 + 6, 2), 16) / 255
-  updateDrawingDefaults({
-    strokeColor: color,
-    strokeAlpha: alpha
-  })
+  updateDrawingDefaults(
+    fillOrStroke === 'fill' ? {
+      fillColor: color,
+      fillAlpha: alpha,
+    } : {
+      strokeColor: color,
+      strokeAlpha: alpha,
+    })
   setAsDrawingToolBackground(color)
 }
 
-function getMousePixelOnScreen () {
+function getMousePixelOnScreen (ignoreBackground) {
   const reversedLayers = [
     !ignoreBackground && canvas.background,   // 0
     canvas.drawings,     // 20
@@ -176,8 +171,6 @@ function setAsDrawingToolBackground (color) {
   $('[data-tool="freehand"]')[0].style.background = color
 }
 
-const macro = this
-
 /**
  * silly idea, don't actually use this:  will set this macro's image based on the color
  */
@@ -185,5 +178,3 @@ function setAsMacroImage (color) {
   const rrggbb = color.slice(1)
   macro.update({'img': `https://color-hex.org/colors/${rrggbb}.png`})
 }
-
-main()
