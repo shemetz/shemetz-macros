@@ -184,7 +184,7 @@ for (const roll of rolls) {
     })
     const randomId = Math.random().toString(36).substring(2)
     // add ID to the image
-    const spellCopyName = spellCopy.name.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('\'', '&#x27;').replace('"', '&quot;')
+    const spellCopyName = spellCopy.name.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('\'', '&#x27;').replaceAll('"', '&quot;')
     content = content.replace(`title="${spellCopyName}"`, `id="${randomId}" title="${spellCopyName}"`)
     await ChatMessage.create({
       content: content,
