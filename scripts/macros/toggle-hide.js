@@ -1,7 +1,16 @@
 /*
+--- Toggle Hide ---
+Will hide or un-hide a token or tile based on ID.
 state = true, false, or "flip"
 tokenNameOrTileId  = "robert" or "sDdak6s4KJd"
+
+
+source:
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/toggle-hide.js
+suggested icon:
+https://i.imgur.com/iw4sH39.png
 */
+
 const state = args[0], tokenNameOrTileId = args[1]
 
 main()
