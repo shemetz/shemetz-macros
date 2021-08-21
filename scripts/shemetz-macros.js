@@ -4,6 +4,11 @@ import { crit, critDialog } from './dnd5e/crit.js'
 import { colorPickFromCursor } from './drawing/eyedropper-color-pick.js'
 import { showNamesOrBarsDialog } from './tokens/show-names-or-bars.js'
 import { playSound, playSoundFromDialog, soundCheck } from './sound/play-sound.js'
+import { flipTokens } from './tokens/flip.js'
+import { toggleHide } from './placeables/toggle-hide.js'
+import { printIdOfControlled } from './placeables/print-id.js'
+import { postTokenArt } from './tokens/postTokenArt.js'
+import { swapTokenPositions } from './tokens/swap-token-positions.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -11,7 +16,12 @@ self.ShemetzMacros = {
   crit, critDialog,
   colorPickFromCursor,
   showNamesOrBarsDialog,
-  playSound, soundCheck, playSoundFromDialog
+  playSound, soundCheck, playSoundFromDialog,
+  flipTokens,
+  toggleHide,
+  printIdOfControlled,
+  postTokenArt,
+  swapTokenPositions,
 }
 
 Hooks.once('init', function () {
