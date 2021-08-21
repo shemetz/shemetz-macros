@@ -10,6 +10,7 @@ import { printIdOfControlled } from './placeables/print-id.js'
 import { postTokenArt } from './tokens/postTokenArt.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
 import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
+import { selectedTokens } from './utils/token-utils.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -24,6 +25,7 @@ self.ShemetzMacros = {
   postTokenArt,
   swapTokenPositions,
   setupLightAndVision,
+  selectedTokens,
 }
 
 Hooks.once('init', function () {

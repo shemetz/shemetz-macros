@@ -9,8 +9,8 @@ suggested icon:
 https://emojiguide.org/images/emoji/1/w8iuxo1l9in91.png
  */
 
-export const flipTokens = (horizontally = false, vertically = false) => {
-  const updates = canvas.tokens.controlled.map(tok => ({
+export const flipTokens = (tokens, horizontally = false, vertically = false) => {
+  const updates = tokens.map(tok => ({
     _id: tok.id,
     mirrorX: horizontally ? (!tok.data.mirrorX || false) : undefined,
     mirrorY: vertically ? (!tok.data.mirrorY || false) : undefined,

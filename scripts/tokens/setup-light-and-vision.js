@@ -19,12 +19,12 @@ const LIGHT_OPTIONS = {
   'Lantern - Hooded, bright': [30, 60],
 }
 
-const setVision = (selectedTokens, visionStr) => {
+const setVision = (tokens, visionStr) => {
   const vision = VISION_OPTIONS[visionStr]
   if (!vision)
     return
   const [bright, dim] = vision
-  for (const token of selectedTokens) {
+  for (const token of tokens) {
     token.document.update({
       vision: true,
       dimSight: dim,
@@ -33,12 +33,12 @@ const setVision = (selectedTokens, visionStr) => {
   }
 }
 
-const setLight = (selectedTokens, lightStr) => {
+const setLight = (tokens, lightStr) => {
   const light = LIGHT_OPTIONS[lightStr]
   if (!light)
     return
   const [bright, dim] = light
-  for (const token of selectedTokens) {
+  for (const token of tokens) {
     token.document.update({
       dimLight: dim,
       brightLight: bright,
@@ -50,22 +50,21 @@ const setLight = (selectedTokens, lightStr) => {
  * Will open two dialogs, for the user to set light and vision for the selected token.
  */
 
-export const setupLightAndVision = () => {
-  const selectedTokens = canvas.tokens.controlled
-  const selectedTokenNames = selectedTokens.map(
+export const setupLightAndVision = (tokens) => {
+  const selectedTokenNames = tokens.map(
     (it) => {return it.name}).join(', ')
 
   showDialogWithOptions(
     'Selected tokens: ' + selectedTokenNames,
     'Vision:',
-    choice => setVision(selectedTokens, choice),
+    choice => setVision(tokens, choice),
     Object.keys(VISION_OPTIONS),
   )
 
   showDialogWithOptions(
     'Selected tokens: ' + selectedTokenNames,
     'Light:',
-    choice => setLight(selectedTokens, choice),
+    choice => setLight(tokens, choice),
     Object.keys(LIGHT_OPTIONS),
   )
 }

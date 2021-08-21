@@ -1,5 +1,4 @@
-export const swapTokenPositions = async () => {
-  const tokens = canvas.tokens.controlled
+export const swapTokenPositions = async (tokens) => {
   if (tokens.length !== 2) {
     return ui.notifications.warn('Please select exactly 2 tokens.', {})
   }
