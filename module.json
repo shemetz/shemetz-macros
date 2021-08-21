@@ -9,6 +9,22 @@
   "esmodules": [
     "scripts/shemetz-macros.js"
   ],
+  "packs": [
+    {
+      "name": "shemetz-macros",
+      "label": "shemetz-macros",
+      "package": "shemetz-macros",
+      "path": "./packs/shemetz-macros.db",
+      "entity": "Macro"
+    },
+    {
+      "name": "critical-hits",
+      "label": "critical-hits",
+      "package": "shemetz-macros",
+      "path": "./packs/critical-hits.db",
+      "entity": "RollTable"
+    }
+  ],
   "url": "https://github.com/itamarcu/shemetz-macros",
   "manifest": "https://github.com/itamarcu/shemetz-macros/raw/master/module.json",
   "download": "https://github.com/itamarcu/shemetz-macros/archive/master.zip",
