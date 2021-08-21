@@ -1,15 +1,4 @@
-/*
---- Setup Light/Vision ---
-Will open two dialogs, for the user to set light and vision for the selected token.
-
-depends on:
-  query-from-list
-
-source:
-https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/setup-light-and-vision.js
-suggested icon:
-https://i.imgur.com/VfsnMXH.png
-*/
+import { showDialogWithOptions } from '../utils/dialog-utils.js'
 
 const VISION_OPTIONS = {
   // <text>: [<brightSight>, <dimSight>]
@@ -30,28 +19,12 @@ const LIGHT_OPTIONS = {
   'Lantern - Hooded, bright': [30, 60],
 }
 
-const getDependency = async (entityMap, packName, entityName) => {
-  const existingEntity = entityMap.entities.find(t => t.name === entityName)
-  if (existingEntity) return existingEntity
-  const pack = game.packs.find(p => p.title.includes(packName))
-  const index = await pack.getIndex()
-  const inIndex = index.find(it => it.name === entityName)
-  return inIndex ? pack.getEntity(inIndex._id) : null
-}
-
-const runMacro = async (macroName, ...args) => {
-  const macro = (await getDependency(game.macros, 'itamacros', macroName))
-  if (macro === null) return ui.notifications.error(
-    `can't find macro: "${macroName}"`)
-  return macro.renderContent(...args)
-}
-
-const setVision = (visionStr) => {
+const setVision = (selectedTokens, visionStr) => {
   const vision = VISION_OPTIONS[visionStr]
   if (!vision)
     return
   const [bright, dim] = vision
-  for (const token of canvas.tokens.controlled) {
+  for (const token of selectedTokens) {
     token.document.update({
       vision: true,
       dimSight: dim,
@@ -60,12 +33,12 @@ const setVision = (visionStr) => {
   }
 }
 
-const setLight = (lightStr) => {
+const setLight = (selectedTokens, lightStr) => {
   const light = LIGHT_OPTIONS[lightStr]
   if (!light)
     return
   const [bright, dim] = light
-  for (const token of canvas.tokens.controlled) {
+  for (const token of selectedTokens) {
     token.document.update({
       dimLight: dim,
       brightLight: bright,
@@ -73,19 +46,26 @@ const setLight = (lightStr) => {
   }
 }
 
-const selectedTokenNames = canvas.tokens.controlled.map(
-  (it) => {return it.name}).join(', ')
+/**
+ * Will open two dialogs, for the user to set light and vision for the selected token.
+ */
 
-runMacro('query-from-list',
-  'Selected tokens: ' + selectedTokenNames,
-  'Vision:',
-  setVision,
-  ...Object.keys(VISION_OPTIONS),
-)
+export const setupLightAndVision = () => {
+  const selectedTokens = canvas.tokens.controlled
+  const selectedTokenNames = selectedTokens.map(
+    (it) => {return it.name}).join(', ')
 
-runMacro('query-from-list',
-  'Selected tokens: ' + selectedTokenNames,
-  'Light:',
-  setLight,
-  ...Object.keys(LIGHT_OPTIONS),
-)
+  showDialogWithOptions(
+    'Selected tokens: ' + selectedTokenNames,
+    'Vision:',
+    choice => setVision(selectedTokens, choice),
+    Object.keys(VISION_OPTIONS),
+  )
+
+  showDialogWithOptions(
+    'Selected tokens: ' + selectedTokenNames,
+    'Light:',
+    choice => setLight(selectedTokens, choice),
+    Object.keys(LIGHT_OPTIONS),
+  )
+}
