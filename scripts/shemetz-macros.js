@@ -7,10 +7,10 @@ import { playSound, playSoundFromDialog, soundCheck } from './sound/play-sound.j
 import { flipTokens } from './tokens/flip.js'
 import { toggleHide } from './placeables/toggle-hide.js'
 import { printIdOfControlled } from './placeables/print-id.js'
-import { postTokenArt } from './tokens/postTokenArt.js'
+import { postTokenArt, viewTokenArt } from './tokens/token-art.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
 import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
-import { selectedTokens } from './utils/token-utils.js'
+import { selectedTokens, targetedTokens, hoveredTokens } from './utils/token-utils.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -22,10 +22,10 @@ self.ShemetzMacros = {
   flipTokens,
   toggleHide,
   printIdOfControlled,
-  postTokenArt,
+  postTokenArt, viewTokenArt,
   swapTokenPositions,
   setupLightAndVision,
-  selectedTokens,
+  selectedTokens, targetedTokens, hoveredTokens,
 }
 
 Hooks.once('init', function () {
