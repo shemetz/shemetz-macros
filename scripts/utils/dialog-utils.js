@@ -13,7 +13,7 @@ export const showDialogWithOptions = (queryTitle, queryText, callback, queryOpti
   if (!queryTitle || !queryText || !callback || !queryOptions) {
     return error(
       `query-from-list arguments should be (queryTitle, queryText, callback, ...queryOptions),` +
-      `but yours are: ${queryTitle}, ${queryText}, ${callback}, ${queryOptions}`,
+      ` but yours are: ${queryTitle}, ${queryText}, ${callback}, ${queryOptions}`,
     )
   }
 
