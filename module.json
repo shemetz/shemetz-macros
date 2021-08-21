@@ -3,8 +3,8 @@
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
   "author": "shem",
-  "version": "1.0.0",
-  "minimumCoreVersion": "0.8.9",
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "0.8.9",
   "esmodules": [
     "scripts/shemetz-macros.js"
