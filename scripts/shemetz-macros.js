@@ -9,7 +9,7 @@ import { toggleHide } from './placeables/toggle-hide.js'
 import { printIdOfControlled } from './placeables/print-id.js'
 import { postTokenArt } from './tokens/postTokenArt.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
-import { setupLightAndVision } from './macros/setup-light-and-vision.js'
+import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
 
 self.ShemetzMacros = {
   getDependency,
