@@ -6,7 +6,7 @@ depends on:
   query-from-list
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/setup-light-and-vision.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/setup-light-and-vision.js
 suggested icon:
 https://i.imgur.com/VfsnMXH.png
 */

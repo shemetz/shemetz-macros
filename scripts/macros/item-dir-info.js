@@ -8,7 +8,7 @@ args:
   0 - name or ID of an item in the Items Directory, e.g. "WHv51MteNMtsUpVp" or "Cool Whip"
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/item-dir-info.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/item-dir-info.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 */

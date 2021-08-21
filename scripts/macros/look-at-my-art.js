@@ -3,7 +3,7 @@
 Create a chat message with artwork of selected/targeted token.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/look-at-my-art.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/look-at-my-art.js
 suggested icon:
 https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/252/framed-picture_1f5bc.png
 */

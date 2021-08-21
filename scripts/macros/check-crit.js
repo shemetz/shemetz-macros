@@ -3,7 +3,7 @@
 Checks if a given BetterRolls5e chat message is a critical hit.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/check-crit.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/check-crit.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 */

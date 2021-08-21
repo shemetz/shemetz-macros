@@ -9,7 +9,7 @@ args:
   1 - true to play for all players in the game, false to play just for yourself.  leave blank for true.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/play-sound.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/play-sound.js
 suggested icon:
 https://i.imgur.com/tPNQzq6.png
 */

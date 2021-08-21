@@ -8,7 +8,7 @@ This macro will toggle a strong highlight for all such invisible tokens, making 
 spinning lights around the tokens, until the macro is used again to deactivate this.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/highlight-map-locations.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/highlight-map-locations.js
 suggested icon:
 https://i.imgur.com/DkNojdN.png
  */

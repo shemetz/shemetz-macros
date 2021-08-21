@@ -12,7 +12,7 @@ for example, this is my macro for unarmed strikes:
     BetterRolls.quickRollById("X5imh1VGNcYYAzPP", "IKxYgPrDJj737hQt")
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/anime-attack.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/anime-attack.js
 suggested icon:
 https://i.imgur.com/YptofqA.png
 */

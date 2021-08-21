@@ -4,7 +4,7 @@ Will "reset" all selected tokens that were "opened" by the treasure-chest macro 
 If you hold Ctrl while activating the macro, it will "activate" them instead (but not show any contents).
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/reset-activation-state.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/reset-activation-state.js
 suggested icon:
 https://i.imgur.com/pHWzz8u.png
  */

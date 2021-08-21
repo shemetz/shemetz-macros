@@ -10,7 +10,7 @@ if arg is 'c'/'cycle' we'll go forward and loop
 if arg is 'uc'/'uncycle' we'll go backwards and loop
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/tile-image-shift.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/tile-image-shift.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 */

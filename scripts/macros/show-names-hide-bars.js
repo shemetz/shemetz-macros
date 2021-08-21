@@ -3,7 +3,7 @@
 For all selected tokens, names will be shown and bars will be hidden.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/show-names-hide-bars.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/show-names-hide-bars.js
 suggested icon:
 https://i.imgur.com/Wrt5uIE.png
 */

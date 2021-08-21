@@ -6,7 +6,7 @@ depends on:
   make-table-result-bold
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/critfail.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/critfail.js
 suggested icon:
 https://i.imgur.com/huPpJQf.png
 */

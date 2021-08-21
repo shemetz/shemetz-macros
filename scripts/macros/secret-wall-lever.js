@@ -18,7 +18,7 @@ You should first set up your lever token and optionally tiles with token-image-s
 
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/secret-wall-lever.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/secret-wall-lever.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
  */

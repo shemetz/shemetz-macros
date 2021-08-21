@@ -5,7 +5,7 @@ Whenever the turner or the target move, the turner will rotate to face the targe
 (does not persist if you reload)
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/turn-to-face.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/turn-to-face.js
 suggested icon:
 https://i.imgur.com/HWWHd2W.png
 */

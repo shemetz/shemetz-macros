@@ -11,7 +11,7 @@ When setting images, the format is:
 scale is 1 by default, if omitted.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/token-image-swap.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/token-image-swap.js
 suggested icon:
 https://i.imgur.com/X2mAfEC.png
 */

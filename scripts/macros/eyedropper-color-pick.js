@@ -11,7 +11,7 @@ When activated (best with hotkey), will capture the color under the cursor and s
  You can also edit this to change fillColor/alpha instead of strokeColor/alpha, of course.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/eyedropper-color-pick.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/eyedropper-color-pick.js
 suggested icon:
 https://image.flaticon.com/icons/png/128/4469/4469781.png
 */

@@ -18,7 +18,7 @@ e.g.
     https://i.imgur.com/UMFeNYs.png 1   # open
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/treasure-chest.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/treasure-chest.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
  */

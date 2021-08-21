@@ -3,7 +3,7 @@
 Show artwork of selected/targeted token to yourself (GM can show to all players).
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/show-artwork.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/show-artwork.js
 suggested icon:
 https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/252/framed-picture_1f5bc.png
 */

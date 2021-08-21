@@ -3,7 +3,7 @@
 This will spend your highest remaining hit die, rolling it and showing the result in the chat (not adding Constitution).
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/spend-hit-die.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/spend-hit-die.js
 suggested icon:
 https://reprog.files.wordpress.com/2011/01/1d8.png
  */

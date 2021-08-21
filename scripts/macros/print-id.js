@@ -4,7 +4,7 @@ Creates a private chat message with the ID of the currently selected token/tile/
 
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/print-id.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/print-id.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 */

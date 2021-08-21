@@ -7,7 +7,7 @@ should be called by a macro per spell level, e.g.:
 
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/reckless-cast.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/reckless-cast.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 and for the reckless casts themselves, use the ones I created here:

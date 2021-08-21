@@ -3,7 +3,7 @@
 Swap two selected tokens (use Shift for the multiselection)
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/swap-positions.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/swap-positions.js
 suggested icon:
 https://static.thenounproject.com/png/232484-200.png
 */

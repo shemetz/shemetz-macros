@@ -4,7 +4,7 @@ Changes a selected token's image to the next one in a circular sequence.
 You should edit the OPTIONS constant to use your own URLs.
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/alter-ego.js
+https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/alter-ego.js
 suggested icon: create your own! but I use:
 https://cdn.discordapp.com/attachments/695387569650663535/720012953172181022/Untitled.png
  */
