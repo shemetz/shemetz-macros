@@ -1,8 +1,4 @@
 /*
---- Turn to Face ---
-Select one or more tokens to be the turners. Target one token to be the target.
-Whenever the turner or the target move, the turner will rotate to face the target.
-(does not persist if you reload)
 
 source:
 https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/turn-to-face.js
@@ -15,26 +11,30 @@ const halfCircle = Math.PI
 const toDegrees = 360 / circle
 const hook_data_key = 'hook_id_for_turn_to_face'
 
-main()
-
-function main() {
-  if (canvas.tokens.controlled.length === 0) {
+/**
+ * Select one or more tokens to be the turners. Target one token to be the target.
+ * Whenever the turner or the target move, the turner will rotate to face the target.
+ * Remove facing from tokens by activating the macro again with them (will return early if so).
+ *
+ * Does not persist if you reload.
+ */
+export const turnTokensToFaceTarget = (turners, target) => {
+  if (turners.length === 0) {
     return ui.notifications.error('You need to select at least one token to be the turner.')
   }
-  // remove existing facing from
+  // remove existing facing from tokens
   const detachedTokenNames = []
-  for (const turner of canvas.tokens.controlled) {
-    const existing_hook = turner.data[hook_data_key]
+  for (const turner of turners) {
+    const existing_hook = turner[hook_data_key]
     if (existing_hook !== undefined && existing_hook !== null) {
       detachedTokenNames.push(turner.name)
       Hooks.off('updateToken', existing_hook)
-      turner.document.update({[hook_data_key]: null})
+      turner[hook_data_key] = null
     }
   }
   if (detachedTokenNames.length > 0)
     return ui.notifications.info(`Detached facing for: ${detachedTokenNames.join(', ')}`)
 
-  const target = Array.from(game.user.targets)[0]
   if (target === undefined) {
     return ui.notifications.error('You need to target one token.')
   }
@@ -62,11 +62,11 @@ function main() {
     // (locking to prevent refresh on hover)
     turner.data.locked = true
     CanvasAnimation.animateLinear(
-      [{parent: turner.icon, attribute: 'rotation', to: rotationTowards},],
-      {name: `Token.${turner.id}.turnToFace`, context: turner, duration: duration})
+      [{ parent: turner.icon, attribute: 'rotation', to: rotationTowards }],
+      { name: `Token.${turner.id}.turnToFace`, context: turner, duration: duration })
       .then(() => {
         // when animation is done we'll update the data
-        return turner.document.update({'rotation': rotationTowards * toDegrees})
+        return turner.document.update({ 'rotation': rotationTowards * toDegrees })
       })
       .then(() => {
         // (unlocking))
@@ -75,22 +75,22 @@ function main() {
   }
 
   // setting up hooks for all turners, and also making them immediately turn to their target
-  for (const turner of canvas.tokens.controlled) {
+  for (const turner of turners) {
     if (target.id === turner.id) {
       ui.notifications.error('A token cannot face itself!')
       continue
     }
-    const hook_id = Hooks.on('updateToken', async (scene, tok, updateData) => {
+    const hook_id = Hooks.on('updateToken', async (tok, updateData, options) => {
       // hook should call turn() when the target or the turner move (change their X or Y)
       if (!(
         !!target.transform && !!turner.transform
-        && (tok._id === target.id || tok._id === turner.id)
+        && (tok.id === target.id || tok.id === turner.id)
         && (updateData.x || updateData.y)
       )) return
       turn(turner, target)
     })
 
-    turner.document.update({[hook_data_key]: hook_id})
+    turner[hook_data_key] = hook_id
     turn(turner, target)
   }
 }
