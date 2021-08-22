@@ -11,6 +11,7 @@ import { postTokenArt, viewTokenArt } from './tokens/token-art.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
 import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
 import { selectedTokens, targetedTokens, hoveredTokens } from './utils/token-utils.js'
+import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -26,6 +27,7 @@ self.ShemetzMacros = {
   swapTokenPositions,
   setupLightAndVision,
   selectedTokens, targetedTokens, hoveredTokens,
+  turnSelectedTokensTowardsCursor,
 }
 
 Hooks.once('init', function () {
