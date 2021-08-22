@@ -2,7 +2,7 @@ import { chat, error } from '../utils/message-utils.js'
 
 /**
  * Prints the name, image, and description of an item in the Items Directory to the chat.
- * Useful for Trigger-Happy, to show players a description of something.
+ * Useful for TriggerHappy, to show players a description of something.
  *
  * @param itemNameOrId name or ID of an item in the Items Directory, e.g. "WHv51MteNMtsUpVp" or "Cool Whip"
  * @param characterName optional name of character who found the item (will be printed to chat too)

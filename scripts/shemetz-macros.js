@@ -14,6 +14,7 @@ import { selectedTokens, targetedTokens, hoveredTokens } from './utils/token-uti
 import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
+import { clearAllConditions } from './tokens/clear-conditions.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -32,6 +33,7 @@ self.ShemetzMacros = {
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
   postItemDescription,
+  clearAllConditions,
 }
 
 Hooks.once('init', function () {
