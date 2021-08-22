@@ -22,6 +22,10 @@ import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-to
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
 import { clearAllConditions } from './tokens/clear-conditions.js'
+import { filterMacrosByAuthor } from './gui/filter-macros.js'
+import { checkIfBetterRolls5eMessageIsCrit } from './dnd5e/better-rolls-5e-utils.js'
+import { recklessCast } from './custom-stuff/reckless-cast.js'
+import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -42,6 +46,10 @@ self.ShemetzMacros = {
   turnTokensToFaceTarget,
   postItemDescription,
   clearAllConditions,
+  filterMacrosByAuthor,
+  checkIfBetterRolls5eMessageIsCrit,
+  recklessCast,
+  animefyNextAttack,
 }
 
 Hooks.once('init', function () {
