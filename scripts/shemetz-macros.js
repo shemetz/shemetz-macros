@@ -1,6 +1,7 @@
 import { getDependency } from './utils/data-utils.js'
 import { bold, chat, error, italicize } from './utils/message-utils.js'
 import { crit, critDialog } from './dnd5e/crit.js'
+import { spendHitDie } from './dnd5e/spend-hit-die.js'
 import { colorPickFromCursor } from './drawing/eyedropper-color-pick.js'
 import { showNamesOrBarsDialog } from './tokens/show-names-or-bars.js'
 import { playSound, playSoundFromDialog, soundCheck } from './sound/play-sound.js'
@@ -10,7 +11,13 @@ import { printIdOfControlled } from './placeables/print-id.js'
 import { postTokenArt, viewTokenArt } from './tokens/token-art.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
 import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
-import { selectedTokens, targetedTokens, hoveredTokens } from './utils/token-utils.js'
+import {
+  selectedToken,
+  selectedTokens,
+  targetedTokens,
+  hoveredTokens,
+  selectedOrDefaultActor,
+} from './utils/token-utils.js'
 import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
@@ -20,6 +27,7 @@ self.ShemetzMacros = {
   getDependency,
   error, chat, italicize, bold,
   crit, critDialog,
+  spendHitDie,
   colorPickFromCursor,
   showNamesOrBarsDialog,
   playSound, soundCheck, playSoundFromDialog,
@@ -29,7 +37,7 @@ self.ShemetzMacros = {
   postTokenArt, viewTokenArt,
   swapTokenPositions,
   setupLightAndVision,
-  selectedTokens, targetedTokens, hoveredTokens,
+  selectedToken, selectedTokens, targetedTokens, hoveredTokens, selectedOrDefaultActor,
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
   postItemDescription,
