@@ -13,6 +13,7 @@ import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
 import { selectedTokens, targetedTokens, hoveredTokens } from './utils/token-utils.js'
 import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
+import { postItemDescription } from './items/post-item-description.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -30,6 +31,7 @@ self.ShemetzMacros = {
   selectedTokens, targetedTokens, hoveredTokens,
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
+  postItemDescription,
 }
 
 Hooks.once('init', function () {
