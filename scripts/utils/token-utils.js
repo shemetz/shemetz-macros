@@ -31,3 +31,9 @@ export const selectedOrDefaultActor = () => {
     return game.user.character
   return selectedToken().actor
 }
+
+export const selectedTokenOrTile = () => {
+  return canvas.tokens.controlled[0]
+    || canvas.background.controlled[0]
+    || canvas.foreground.controlled[0]
+}

@@ -26,6 +26,11 @@ import { filterMacrosByAuthor } from './gui/filter-macros.js'
 import { checkIfBetterRolls5eMessageIsCrit } from './dnd5e/better-rolls-5e-utils.js'
 import { recklessCast } from './custom-stuff/reckless-cast.js'
 import { animefyNextAttack } from './custom-stuff/anime-attack.js'
+import {
+  shiftImageToIndex,
+  shiftImageWithArgs,
+  shiftSelectedPlaceableImageByKeyboard,
+} from './placeables/image-shift.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -50,6 +55,7 @@ self.ShemetzMacros = {
   checkIfBetterRolls5eMessageIsCrit,
   recklessCast,
   animefyNextAttack,
+  shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex,
 }
 
 Hooks.once('init', function () {
