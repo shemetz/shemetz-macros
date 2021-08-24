@@ -33,6 +33,7 @@ import {
 } from './placeables/image-shift.js'
 import { highlightTransparentTokensOnMap } from './tokens/highlight-map-locations.js'
 import { openTreasureChest, closeSelectedTreasureChests } from './custom-stuff/treasure-chest.js'
+import { openCloseDoors } from './walls/open-close-doors.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -60,6 +61,7 @@ self.ShemetzMacros = {
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex,
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
+  openCloseDoors,
 }
 
 Hooks.once('init', function () {
