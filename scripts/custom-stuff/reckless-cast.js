@@ -21,7 +21,7 @@ https://i.imgur.com/KLacqJ5.png
 https://i.imgur.com/sOQZ4Ix.png
 */
 
-export async function recklessCast() {
+export const recklessCast = async () => {
   const level = args[0]
   const isDoublecast = args[1] ? true : false
   const dnd5e = CONFIG.DND5E
