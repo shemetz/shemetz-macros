@@ -70,7 +70,7 @@ export const SOUND_COLLECTION = {
     [1, 'https://freesound.org/data/previews/377/377600_5828440-lq.mp3'],
   ],
   'stone_slide': [
-    [1, 'worlds/retrovirus/scenes/music/stone_slide.mp3'],
+    [1, 'https://pipe.miroware.io/607238d9a333fb12a3aca33c/sfx/stone_slide.mp3'],
   ],
   'stab_flesh': [
     [1, 'https://freesound.org/data/previews/179/179222_3337554-lq.mp3'],

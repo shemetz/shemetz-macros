@@ -23,7 +23,7 @@ export const soundCheck = async () => {
  * Each possible soundType (e.g. "shield_bash", "punch") has a list of possible sounds to choose from, one of which will be picked.
  */
 export const playSound = (soundType, playForEveryone) => {
-  console.log(`SOUND CHECK`)
+  console.log(`Playing ${soundType} ${playForEveryone ? 'globally' : 'locally'}`)
   const soundsArray = SOUND_COLLECTION[soundType]
   if (soundsArray === undefined || !soundsArray.length) return error(
     `${soundType} (1st arg) is not listed in the SOUND_COLLECTION array of play-sound as an array!`)
