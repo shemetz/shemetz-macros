@@ -31,6 +31,7 @@ import {
   shiftImageWithArgs,
   shiftSelectedPlaceableImageByKeyboard,
 } from './placeables/image-shift.js'
+import { highlightTransparentTokensOnMap } from './tokens/highlight-map-locations.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -56,6 +57,7 @@ self.ShemetzMacros = {
   recklessCast,
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex,
+  highlightTransparentTokensOnMap,
 }
 
 Hooks.once('init', function () {
