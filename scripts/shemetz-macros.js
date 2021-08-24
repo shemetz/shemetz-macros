@@ -34,6 +34,7 @@ import {
 import { highlightTransparentTokensOnMap } from './tokens/highlight-map-locations.js'
 import { openTreasureChest, closeSelectedTreasureChests } from './custom-stuff/treasure-chest.js'
 import { openCloseDoors } from './walls/open-close-doors.js'
+import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanism-change-walls-and-tiles.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -62,6 +63,7 @@ self.ShemetzMacros = {
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
   openCloseDoors,
+  leverMechanismChangeWallsAndTiles,
 }
 
 Hooks.once('init', function () {

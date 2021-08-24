@@ -38,15 +38,15 @@ export const shiftImageWithArgs = (placeable, delta, canCycle) => {
  * @param placeable a token or a tile
  * @param targetImageIndex index of line in image shift setup window (first line is index 0)
  */
-export const shiftImageToIndex = (placeable, targetImageIndex) => {
-  shiftImage(placeable, targetImageIndex)
+export const shiftImageToIndex = async (placeable, targetImageIndex) => {
+  return shiftImage(placeable, targetImageIndex)
 }
 
 const shiftImage = (placeable, newIndex) => {
   const { images, scales } = getImageList(placeable)
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
-  placeable.document.update({ 'img': newImg, 'scale': newScale })
+  return placeable.document.update({ 'img': newImg, 'scale': newScale })
 }
 
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
@@ -67,6 +67,10 @@ const getImageList = (placeable) => {
 
 const setImageList = (placeable, imageList) => {
   return placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+}
+
+export const hasImageList = (placeable) => {
+  return placeable.document.getFlag(...OPTIONS_FLAG) !== undefined
 }
 
 /**
