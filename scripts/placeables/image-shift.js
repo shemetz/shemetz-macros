@@ -52,9 +52,23 @@ const shiftImage = async (placeable, newIndex) => {
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
 
 const getImageListBackwardsCompatible = (placeable) => {
-  return placeable.document.getFlag('world', 'token-image-shift')
-    || placeable.document.getFlag('world', 'tile-image-shift')
-    || placeable.document.getFlag(...OPTIONS_FLAG)
+  // TODO: remove all of this a few months from now when not needed anymore
+  let old = placeable.document.getFlag('world', 'token-image-shift')
+  if (old) {
+    placeable.document.unsetFlag('world', 'token-image-shift').then(() => {
+      placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+    })
+    return old
+  }
+  old = placeable.document.getFlag('world', 'tile-image-shift')
+  if (old) {
+    placeable.document.unsetFlag('world', 'tile-image-shift').then(() => {
+      placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+    })
+    return old
+  }
+  // new version
+  return placeable.document.getFlag(...OPTIONS_FLAG)
 }
 
 const getImageList = (placeable) => {
