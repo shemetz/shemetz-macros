@@ -1,25 +1,25 @@
 export const changeImageOfNextItemChatMessage = (newImg) => {
-  editMyNextChatMessage((chatMessage, data) => {
+  editMyNextChatMessage(async (chatMessage, data) => {
     const content = data.content.replace(
       /<img src="[^"]*" title=/,
       `<img src="${newImg}" title=`,
     )
     if (data.content !== content) {
       data.content = content
-      chatMessage.data.update({ content })
+      await chatMessage.data.update({ content })
     }
   })
 }
 
 export const renameNextChatMessageItemName = (newName) => {
-  editMyNextChatMessage((chatMessage, data) => {
+  editMyNextChatMessage(async (chatMessage, data) => {
     const content = data.content.replace(
       /<h3 class="item-name">[^<]*<\/h3>/,
       `<h3 class="item-name">${newName}</h3>`,
     )
     if (data.content !== content) {
       data.content = content
-      chatMessage.data.update({ content })
+      await chatMessage.data.update({ content })
     }
   })
 }

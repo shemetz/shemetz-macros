@@ -174,7 +174,7 @@ function setAsDrawingToolBackground (color) {
 /**
  * silly idea, don't actually use this:  will set this macro's image based on the color
  */
-function setAsMacroImage (color) {
+async function setAsMacroImage (color) {
   const rrggbb = color.slice(1)
-  macro.update({'img': `https://color-hex.org/colors/${rrggbb}.png`})
+  await macro.update({'img': `https://color-hex.org/colors/${rrggbb}.png`})
 }

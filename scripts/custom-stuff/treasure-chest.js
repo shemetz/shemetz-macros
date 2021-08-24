@@ -26,7 +26,7 @@ import { playSound } from '../sound/play-sound.js'
 import { postItemDescription } from '../items/post-item-description.js'
 import { selectedTokens } from '../utils/token-utils.js'
 
-export const openTreasureChest = (triggeringToken, chestToken, lootItemNameOrId, soundEffectName = 'treasure') => {
+export const openTreasureChest = async (triggeringToken, chestToken, lootItemNameOrId, soundEffectName = 'treasure') => {
   const triggererName = triggeringToken ? triggeringToken.name : null
   const chestIsOpen = getImageListIndex(chestToken) === 1
   if (chestIsOpen) {
@@ -35,18 +35,18 @@ export const openTreasureChest = (triggeringToken, chestToken, lootItemNameOrId,
   }
   console.log(`Treasure chest opened: ${chestToken.name}, by token: ${triggererName}`)
 
-  shiftImageWithArgs(chestToken, +1, false)
+  await shiftImageWithArgs(chestToken, +1, false)
   playSound(soundEffectName, true)
   postItemDescription(lootItemNameOrId, triggererName)
 }
 
-const closeTreasureChest = (chestToken) => {
+const closeTreasureChest = async (chestToken) => {
   const chestIsOpen = getImageListIndex(chestToken) === 1
   if (!chestIsOpen) {
     console.log(`chest ${chestToken.name} is already closed.`)
     return
   }
-  shiftImageWithArgs(chestToken, -1, false)
+  return shiftImageWithArgs(chestToken, -1, false)
 }
 
 export const closeSelectedTreasureChests = () => {

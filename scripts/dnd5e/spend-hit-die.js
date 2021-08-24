@@ -24,7 +24,7 @@ export const spendHitDie = async (actor) => {
     return
   }
 
-  actor.items.get(best.classItem.id).update({ 'data.hitDiceUsed': best.diceUsed + 1 })
+  await actor.items.get(best.classItem.id).update({ 'data.hitDiceUsed': best.diceUsed + 1 })
   const roll = new Roll('1d' + best.diceSize)
   await roll.roll()
   await ChatMessage.create({

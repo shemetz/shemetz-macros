@@ -19,13 +19,13 @@ const LIGHT_OPTIONS = {
   'Lantern - Hooded, bright': [30, 60],
 }
 
-const setVision = (tokens, visionStr) => {
+const setVision = async (tokens, visionStr) => {
   const vision = VISION_OPTIONS[visionStr]
   if (!vision)
     return
   const [bright, dim] = vision
   for (const token of tokens) {
-    token.document.update({
+    await token.document.update({
       vision: true,
       dimSight: dim,
       brightSight: bright,
@@ -33,13 +33,13 @@ const setVision = (tokens, visionStr) => {
   }
 }
 
-const setLight = (tokens, lightStr) => {
+const setLight = async (tokens, lightStr) => {
   const light = LIGHT_OPTIONS[lightStr]
   if (!light)
     return
   const [bright, dim] = light
   for (const token of tokens) {
-    token.document.update({
+    await token.document.update({
       dimLight: dim,
       brightLight: bright,
     })

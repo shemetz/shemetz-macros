@@ -60,9 +60,10 @@ const flipWallsOpenOrClose = async (walls) => {
 }
 
 const shiftTilesOrFlipHidden = async (tiles) => {
+  const asyncUpdates = []
   const tileUpdates = tiles.map(tile => {
     if (hasImageList(tile)) {
-      shiftImageWithArgs(tile, +1, true)
+      asyncUpdates.push(shiftImageWithArgs(tile, +1, true))
       return null
     } else {
       return {
@@ -71,5 +72,6 @@ const shiftTilesOrFlipHidden = async (tiles) => {
       }
     }
   }).filter(it => it !== null)
+  await Promise.all(asyncUpdates)
   return canvas.scene.updateEmbeddedDocuments('Tile', tileUpdates)
 }

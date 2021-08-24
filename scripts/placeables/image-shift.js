@@ -5,7 +5,7 @@ import { selectedTokenOrTile } from '../utils/token-utils.js'
  * Hold the Alt key to shift backwards instead of forwards.
  * Shifting will cycle through the images (going from last back to first).
  */
-export const shiftSelectedPlaceableImageByKeyboard = () => {
+export const shiftSelectedPlaceableImageByKeyboard = async () => {
   const placeable = selectedTokenOrTile()
   if (!placeable)
     return ui.notifications.error('Select a token/tile before activating the image shift macro! (hold Ctrl to setup)')
@@ -17,7 +17,7 @@ export const shiftSelectedPlaceableImageByKeyboard = () => {
   const currentIndex = getImageListIndex(placeable)
   const delta = game.keyboard._downKeys.has('Alt') ? -1 : +1
   const newIndex = (currentIndex + images.length + delta) % images.length
-  shiftImage(placeable, newIndex)
+  return shiftImage(placeable, newIndex)
 }
 
 /**
@@ -25,13 +25,13 @@ export const shiftSelectedPlaceableImageByKeyboard = () => {
  * @param delta 1 to move one forward, -1 to move one back, etc
  * @param canCycle true if should cycle (0→1→2→3→0→1), false if shouldn't (0→1→2→3→3→3)
  */
-export const shiftImageWithArgs = (placeable, delta, canCycle) => {
+export const shiftImageWithArgs = async (placeable, delta, canCycle) => {
   const { images } = getImageList(placeable)
   const currentIndex = getImageListIndex(placeable)
   const newIndex = canCycle
     ? (currentIndex + images.length + delta) % images.length
     : Math.min(Math.max(currentIndex + delta, 0), images.length - 1)
-  shiftImage(placeable, newIndex)
+  return shiftImage(placeable, newIndex)
 }
 
 /**
@@ -42,7 +42,7 @@ export const shiftImageToIndex = async (placeable, targetImageIndex) => {
   return shiftImage(placeable, targetImageIndex)
 }
 
-const shiftImage = (placeable, newIndex) => {
+const shiftImage = async (placeable, newIndex) => {
   const { images, scales } = getImageList(placeable)
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
