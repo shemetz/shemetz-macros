@@ -37,3 +37,9 @@ export const selectedTokenOrTile = () => {
     || canvas.background.controlled[0]
     || canvas.foreground.controlled[0]
 }
+
+export const getTokenNamed = (tokenName) => {
+  const token = canvas.tokens.placeables.find(t => t.name === tokenName)
+  if (!token) ui.notifications.error(`${tokenName} cannot be found on the scene!`)
+  return token
+}

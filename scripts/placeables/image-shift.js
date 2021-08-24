@@ -72,7 +72,7 @@ const setImageList = (placeable, imageList) => {
 /**
  * defaults to index 0 if current image is unfamiliar
  */
-const getImageListIndex = (placeable) => {
+export const getImageListIndex = (placeable) => {
   const { images } = getImageList(placeable)
   const currentImage = placeable.data.img
   let imgIndex = images.indexOf(currentImage)

@@ -16,7 +16,7 @@ import {
   selectedTokens,
   targetedTokens,
   hoveredTokens,
-  selectedOrDefaultActor,
+  selectedOrDefaultActor, getTokenNamed,
 } from './utils/token-utils.js'
 import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
@@ -32,6 +32,7 @@ import {
   shiftSelectedPlaceableImageByKeyboard,
 } from './placeables/image-shift.js'
 import { highlightTransparentTokensOnMap } from './tokens/highlight-map-locations.js'
+import { openTreasureChest, closeSelectedTreasureChests } from './custom-stuff/treasure-chest.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -47,7 +48,7 @@ self.ShemetzMacros = {
   postTokenArt, viewTokenArt,
   swapTokenPositions,
   setupLightAndVision,
-  selectedToken, selectedTokens, targetedTokens, hoveredTokens, selectedOrDefaultActor,
+  selectedToken, selectedTokens, targetedTokens, hoveredTokens, selectedOrDefaultActor, getTokenNamed,
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
   postItemDescription,
@@ -58,6 +59,7 @@ self.ShemetzMacros = {
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex,
   highlightTransparentTokensOnMap,
+  openTreasureChest, closeSelectedTreasureChests,
 }
 
 Hooks.once('init', function () {
