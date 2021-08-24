@@ -1,5 +1,4 @@
 /*
---- secret-wall-lever ---
 A complex macro that combines several other macros, and is meant to be triggered when a player character presses a lever/button on the map, toggling between two states.
 - Takes a toggle type argument: "toggle", "on" or "off".
   toggle will always flip the existing states, while on and off will do nothing if lever is already on/off

@@ -51,8 +51,14 @@ const shiftImage = async (placeable, newIndex) => {
 
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
 
+const getImageListBackwardsCompatible = (placeable) => {
+  return placeable.document.getFlag('world', 'token-image-shift')
+    || placeable.document.getFlag('world', 'tile-image-shift')
+    || placeable.document.getFlag(...OPTIONS_FLAG)
+}
+
 const getImageList = (placeable) => {
-  const imagesText = placeable.document.getFlag(...OPTIONS_FLAG)
+  const imagesText = getImageListBackwardsCompatible(placeable)
   if (imagesText === undefined)
     return { images: undefined, scales: undefined }
   const options = imagesText.split('\n')
@@ -70,7 +76,7 @@ const setImageList = (placeable, imageList) => {
 }
 
 export const hasImageList = (placeable) => {
-  return placeable.document.getFlag(...OPTIONS_FLAG) !== undefined
+  return getImageListBackwardsCompatible(placeable) !== undefined
 }
 
 /**
@@ -85,7 +91,7 @@ export const getImageListIndex = (placeable) => {
 }
 
 function openImageSetupDialog (placeable) {
-  let existingImageList = placeable.document.getFlag(...OPTIONS_FLAG) || ''
+  let existingImageList = getImageListBackwardsCompatible(placeable) || ''
   if (existingImageList && !existingImageList.endsWith('\n'))
     existingImageList += '\n'
   if (!existingImageList.includes(placeable.data.img)) {
