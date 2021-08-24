@@ -16,5 +16,5 @@ export const swapTokenPositions = async (tokens) => {
     },
   ]
 
-  canvas.scene.updateEmbeddedDocuments('Token', updates)
+  return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }

@@ -1,12 +1,12 @@
 import { showDialogWithOptions } from '../utils/dialog-utils.js'
 
-export const showNamesOrBars = (tokens, displayName, displayBars) => {
+export const showNamesOrBars = async (tokens, displayName, displayBars) => {
   const updates = tokens.map(tok => ({
     _id: tok.id,
     displayName,
     displayBars,
   }))
-  canvas.scene.updateEmbeddedDocuments('Token', updates)
+  return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }
 const { OWNER, OWNER_HOVER, ALWAYS } = CONST.TOKEN_DISPLAY_MODES
 
@@ -17,7 +17,7 @@ export const showNamesOrBarsDialog = (tokens) => {
   showDialogWithOptions(
     'Show names or bars?',
     'Pick an option.',
-    (option) => {
+    async (option) => {
       switch (option) {
         case 'Hide Names': return showNamesOrBars(tokens, OWNER_HOVER, undefined)
         case 'Show Names (everyone)': return showNamesOrBars(tokens, ALWAYS, undefined)

@@ -7,7 +7,7 @@ This macro will toggle a strong highlight for all such invisible tokens, making 
 spinning lights around the tokens, until the macro is used again to deactivate this.
 https://i.imgur.com/DkNojdN.png
  */
-export const highlightTransparentTokensOnMap = () => {
+export const highlightTransparentTokensOnMap = async () => {
   const updates = canvas.tokens.placeables
     .filter(tok => tok.data.img.includes('Transparent') || tok.data.img.includes('FWKBcnS'))
     .map(tok => {
@@ -27,5 +27,5 @@ export const highlightTransparentTokensOnMap = () => {
     })
 
   console.log(`highlighting ${updates.length} tokens...`)
-  canvas.scene.updateEmbeddedDocuments('Token', updates)
+  return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }

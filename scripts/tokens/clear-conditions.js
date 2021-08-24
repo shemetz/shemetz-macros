@@ -1,7 +1,7 @@
 /**
 Clear all conditions from tokens.
 */
-export const clearAllConditions = (tokens) => {
+export const clearAllConditions = async (tokens) => {
   const updates = []
   for (const tok of tokens) {
     updates.push({ _id: tok.id, effects: [], overlayEffect: '' })
@@ -9,5 +9,5 @@ export const clearAllConditions = (tokens) => {
     // TODO - check up on https://gitlab.com/woodentavern/status-icon-counters/-/issues/27
     if (EffectCounter) EffectCounter.getAllCounters(tok).forEach(c => c.remove())
   }
-  canvas.scene.updateEmbeddedDocuments('Token', updates)
+  return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }

@@ -1,4 +1,5 @@
-export const openCloseDoors = (command, doorIds) => {
+
+export const openCloseDoors = async (command, doorIds) => {
   const updates = doorIds.map(doorId => {
     const wall = canvas.walls.get(doorId)
     if (wall === undefined) {
@@ -19,5 +20,5 @@ export const openCloseDoors = (command, doorIds) => {
       ds: newDoorState,
     }
   }).filter(u => !!u)
-  canvas.scene.updateEmbeddedDocuments('Wall', updates)
+  return canvas.scene.updateEmbeddedDocuments('Wall', updates)
 }
