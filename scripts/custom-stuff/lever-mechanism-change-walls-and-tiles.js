@@ -18,6 +18,8 @@ export const leverMechanismChangeWallsAndTiles = async (leverToken, toggleType, 
   // basic argument checks and handling
   if (!['toggle', 'on', 'off'].includes(toggleType))
     return ui.notifications.error(`invalid toggle type: ${toggleType}`)
+  if (!hasImageList(leverToken))
+    return ui.notifications.error(`You must set up the lever token to have 2 images, with the Image Shift macro`)
   const currentLeverState = getImageListIndex(leverToken) === 1
   const newLeverState = toggleType === 'toggle' ? !currentLeverState : toggleType === 'on'
   console.log(`Lever used: ${leverToken.name}.  state change from ${currentLeverState} to ${newLeverState}`)
@@ -39,8 +41,6 @@ export const leverMechanismChangeWallsAndTiles = async (leverToken, toggleType, 
   })
   if (doorIds.length !== walls.length || tileIds.length !== tiles.length)
     return ui.notifications.error(`Failed to find some walls/tiles, see console log`)
-  if (!hasImageList(leverToken))
-    return ui.notifications.error(`You must set up the lever token to have 2 images, with the Image Shift macro`)
 
   // after validating input and stuff, we're finally ready to make changes
   playSound(sfxName, true)
