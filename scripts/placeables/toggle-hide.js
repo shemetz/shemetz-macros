@@ -13,5 +13,5 @@ export const toggleHide = async (state, tokenNameOrTileId) => {
   if (!t) return error(`could not find token/tile ${tokenNameOrTileId}`)
   const newState = state === true ? true : state === false ? false : state === 'flip' ? !t.data.hidden : null
   if (newState === null) return error(`invalid state: ${state}`)
-  return t.update({ 'hidden': newState })
+  return t.document.update({ 'hidden': newState })
 }
