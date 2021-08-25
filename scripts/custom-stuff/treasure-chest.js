@@ -13,7 +13,7 @@ with a macro named treasure-chest-trigger:
     const chestToken = ShemetzMacros.getTokenNamed(args[0])
     ShemetzMacros.openTreasureChest(token, chestToken, args[1])
 
-You should first set up your chest token with token-image-swap, where image 0 is closed and 1 is open.
+You should first set up your chest token with Image Shift, where image 0 is closed and 1 is open.
 e.g.
     https://i.imgur.com/CYKqSqG.png 1   # closed
     https://i.imgur.com/UMFeNYs.png 1   # open
@@ -21,13 +21,15 @@ e.g.
 IMPORTANT:  closed should be first, open should be second!
  */
 
-import { getImageListIndex, shiftImageWithArgs } from '../placeables/image-shift.js'
+import { getImageListIndex, hasImageList, shiftImageWithArgs } from '../placeables/image-shift.js'
 import { playSound } from '../sound/play-sound.js'
 import { postItemDescription } from '../items/post-item-description.js'
 import { selectedTokens } from '../utils/token-utils.js'
 
 export const openTreasureChest = async (triggeringToken, chestToken, lootItemNameOrId, soundEffectName = 'treasure') => {
   const triggererName = triggeringToken ? triggeringToken.name : null
+  if (!hasImageList(chestToken))
+    return ui.notifications.error(`You must set up the chest token to have 2 images, with the Image Shift macro`)
   const chestIsOpen = getImageListIndex(chestToken) === 1
   if (chestIsOpen) {
     console.log(`Treasure chest is already open: ${chestToken.name}, touched by token: ${triggererName}`)
