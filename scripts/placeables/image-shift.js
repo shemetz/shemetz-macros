@@ -52,23 +52,25 @@ const shiftImage = async (placeable, newIndex) => {
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
 
 const getImageListBackwardsCompatible = (placeable) => {
+  // for tokens, the data is stored in the actor
+  const doc = placeable.document.actor ? placeable.document.actor : placeable.document
   // TODO: remove all of this a few months from now when not needed anymore
-  let old = placeable.document.getFlag('world', 'token-image-swap')
+  let old = doc.getFlag('world', 'token-image-swap')
   if (old) {
-    placeable.document.unsetFlag('world', 'token-image-swap').then(() => {
-      placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+    doc.setFlag(...OPTIONS_FLAG, old).then(() => {
+      doc.unsetFlag('world', 'token-image-swap')
     })
     return old
   }
-  old = placeable.document.getFlag('world', 'tile-image-shift')
+  old = doc.getFlag('world', 'tile-image-shift')
   if (old) {
-    placeable.document.unsetFlag('world', 'tile-image-shift').then(() => {
-      placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+    doc.setFlag(...OPTIONS_FLAG, old).then(() => {
+      doc.unsetFlag('world', 'tile-image-shift')
     })
     return old
   }
   // new version
-  return placeable.document.getFlag(...OPTIONS_FLAG)
+  return doc.getFlag(...OPTIONS_FLAG)
 }
 
 const getImageList = (placeable) => {
