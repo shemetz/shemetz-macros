@@ -53,9 +53,9 @@ const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
 
 const getImageListBackwardsCompatible = (placeable) => {
   // TODO: remove all of this a few months from now when not needed anymore
-  let old = placeable.document.getFlag('world', 'token-image-shift')
+  let old = placeable.document.getFlag('world', 'token-image-swap')
   if (old) {
-    placeable.document.unsetFlag('world', 'token-image-shift').then(() => {
+    placeable.document.unsetFlag('world', 'token-image-swap').then(() => {
       placeable.document.setFlag(...OPTIONS_FLAG, imageList)
     })
     return old
