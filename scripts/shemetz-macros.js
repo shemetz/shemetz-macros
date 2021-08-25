@@ -27,6 +27,7 @@ import { checkIfBetterRolls5eMessageIsCrit } from './dnd5e/better-rolls-5e-utils
 import { recklessCast } from './custom-stuff/reckless-cast.js'
 import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 import {
+  getImageListIndex, hasImageList,
   shiftImageToIndex,
   shiftImageWithArgs,
   shiftSelectedPlaceableImageByKeyboard,
@@ -59,7 +60,7 @@ self.ShemetzMacros = {
   checkIfBetterRolls5eMessageIsCrit,
   recklessCast,
   animefyNextAttack,
-  shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex,
+  shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList, getImageListIndex,
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
   openCloseDoors,
