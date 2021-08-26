@@ -1,10 +1,10 @@
-import { getImageListIndex, shiftImageWithArgs } from '../placeables/image-shift'
+import { getImageListIndex, prepareShiftImageWithArgs } from '../placeables/image-shift'
 
 export const shiftManyTokens = async (tokenNames) => {
   const updates = canvas.tokens.placeables
     .filter(tok => tokenNames.includes(tok.name))
     .map(tok => {
-      return shiftImageWithArgs(tok, 1, true, true)
+      return prepareShiftImageWithArgs(tok, 1, true, true)
     })
   return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }

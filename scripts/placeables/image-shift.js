@@ -17,43 +17,57 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
   const currentIndex = getImageListIndex(placeable)
   const delta = game.keyboard._downKeys.has('Alt') ? -1 : +1
   const newIndex = (currentIndex + images.length + delta) % images.length
-  return shiftImage(placeable, newIndex)
+  const update = prepareShiftImage(placeable, newIndex)
+  return placeable.document.update(update)
 }
 
 /**
  * @param placeable a token or a tile
  * @param delta 1 to move one forward, -1 to move one back, etc
  * @param canCycle true if should cycle (0→1→2→3→0→1), false if shouldn't (0→1→2→3→3→3)
- * @param batch if true, will return update data instead of doing the update
  */
-export const shiftImageWithArgs = async (placeable, delta, canCycle, batch=false) => {
+export const shiftImageWithArgs = async (placeable, delta, canCycle) => {
+  const update = prepareShiftImageWithArgs(placeable, delta, canCycle)
+  return placeable.document.update(update)
+}
+
+/**
+ * just like shiftImageWithArgs but returns update object instead of updating immediately
+ */
+export const prepareShiftImageWithArgs = (placeable, delta, canCycle) => {
   const { images } = getImageList(placeable)
   const currentIndex = getImageListIndex(placeable)
   const newIndex = canCycle
     ? (currentIndex + images.length + delta) % images.length
     : Math.min(Math.max(currentIndex + delta, 0), images.length - 1)
-  return shiftImage(placeable, newIndex, batch)
+  return prepareShiftImage(placeable, newIndex)
 }
 
 /**
  * @param placeable a token or a tile
  * @param targetImageIndex index of line in image shift setup window (first line is index 0)
- * @param batch if true, will return update data instead of doing the update
  */
-export const shiftImageToIndex = async (placeable, targetImageIndex, batch=false) => {
-  return shiftImage(placeable, targetImageIndex, batch)
+export const shiftImageToIndex = async (placeable, targetImageIndex) => {
+  const update = prepareShiftImageToIndex(placeable, targetImageIndex)
+  return placeable.document.update(update)
 }
 
-const shiftImage = async (placeable, newIndex, batch=false) => {
+/**
+ * just like shiftImageToIndex but returns update object instead of updating immediately
+ */
+export const prepareShiftImageToIndex = async (placeable, targetImageIndex) => {
+  return prepareShiftImage(placeable, targetImageIndex)
+}
+
+const prepareShiftImage = (placeable, newIndex) => {
   const { images, scales } = getImageList(placeable)
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
-  const update = { 'img': newImg, 'scale': newScale }
-  if (batch) {
-    update._id = placeable.id
-    return update
+  return {
+    _id: placeable.id,
+    img: newImg,
+    scale: newScale,
   }
-  return placeable.document.update(update)
 }
 
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
