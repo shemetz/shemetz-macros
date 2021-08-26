@@ -15,7 +15,6 @@
       "label": "shemetz-macros",
       "package": "shemetz-macros",
       "path": "./packs/shemetz-macros.db",
-      "system": [],
       "entity": "Macro"
     },
     {
@@ -23,7 +22,6 @@
       "label": "critical-hits",
       "package": "shemetz-macros",
       "path": "./packs/critical-hits.db",
-      "system": [],
       "entity": "RollTable"
     }
   ],
