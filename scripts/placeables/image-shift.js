@@ -24,29 +24,36 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
  * @param placeable a token or a tile
  * @param delta 1 to move one forward, -1 to move one back, etc
  * @param canCycle true if should cycle (0→1→2→3→0→1), false if shouldn't (0→1→2→3→3→3)
+ * @param batch if true, will return update data instead of doing the update
  */
-export const shiftImageWithArgs = async (placeable, delta, canCycle) => {
+export const shiftImageWithArgs = async (placeable, delta, canCycle, batch=false) => {
   const { images } = getImageList(placeable)
   const currentIndex = getImageListIndex(placeable)
   const newIndex = canCycle
     ? (currentIndex + images.length + delta) % images.length
     : Math.min(Math.max(currentIndex + delta, 0), images.length - 1)
-  return shiftImage(placeable, newIndex)
+  return shiftImage(placeable, newIndex, batch)
 }
 
 /**
  * @param placeable a token or a tile
  * @param targetImageIndex index of line in image shift setup window (first line is index 0)
+ * @param batch if true, will return update data instead of doing the update
  */
-export const shiftImageToIndex = async (placeable, targetImageIndex) => {
-  return shiftImage(placeable, targetImageIndex)
+export const shiftImageToIndex = async (placeable, targetImageIndex, batch=false) => {
+  return shiftImage(placeable, targetImageIndex, batch)
 }
 
-const shiftImage = async (placeable, newIndex) => {
+const shiftImage = async (placeable, newIndex, batch=false) => {
   const { images, scales } = getImageList(placeable)
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
-  return placeable.document.update({ 'img': newImg, 'scale': newScale })
+  const update = { 'img': newImg, 'scale': newScale }
+  if (batch) {
+    update._id = placeable.id
+    return update
+  }
+  return placeable.document.update(update)
 }
 
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
