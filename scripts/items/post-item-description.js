@@ -17,7 +17,7 @@ export const postItemDescription = (itemNameOrId, characterName) => {
   ` : ``
   const image = item.data.img === 'icons/svg/mystery-man.svg' ? '' : `
   <div style="text-align: center;">
-    <img src=${item.data.img} style="width: 128px;"/>
+    <img src=${item.data.img} style="width: 128px;" alt=${item.name}/>
   </div>`
   const content = `
     ${someoneFoundText}

@@ -23,13 +23,14 @@ https://i.imgur.com/sOQZ4Ix.png
 
 export const recklessCast = async () => {
   const level = args[0]
-  const isDoublecast = args[1] ? true : false
+  const isDoublecast = !!args[1]
   const dnd5e = CONFIG.DND5E
 
   function i18n (key) {
     return game.i18n.localize(key)
   }
 
+  // noinspection JSCheckFunctionSignatures
   const shent = game.actors.getName('Shent')
   const spells = shent.data.items.filter((it) => {
     return it.type === 'spell' && it.data.level === level &&
@@ -66,7 +67,7 @@ export const recklessCast = async () => {
   function getRandomColor () {
     const letters = '3456789ABCD'.split('')
     let color = '#'
-    for (var i = 0; i < 6; i++) {
+    for (let i = 0; i < 6; i++) {
       color += letters[Math.round(Math.random() * (letters.length - 1))]
     }
     return color
@@ -135,7 +136,7 @@ export const recklessCast = async () => {
       const doublecastHtml = `<div id="${randomId}" data-critical="true">
 	 <div><div class="dnd5e chat-card item-card">
 	<header class="card-header flexrow red-header">
-		<img src="https://cdn.discordapp.com/attachments/695387569650663535/721305098726408272/doublecast.png" title="Doublecast" width="36" height="36"/>
+		<img src="https://cdn.discordapp.com/attachments/695387569650663535/721305098726408272/doublecast.png" title="Doublecast" width="36" height="36" alt='Doublecast'/>
 		<h3 class="item-name"><b>Doublecast!</b></h3>
 	</header>
 </div>`
@@ -145,6 +146,7 @@ export const recklessCast = async () => {
         type: messageType
       })
       $(`#chat-log`).on('click', `#${randomId}`, ev => {
+        // noinspection JSCheckFunctionSignatures
         game.macros.getName('reckless-cast').renderContent(level, true)
       })
     } else if (rollNum === 10 && isDoublecast && rolls.length === 2) {
@@ -163,7 +165,7 @@ export const recklessCast = async () => {
       const spell = spells[rollNum - 1]
       const data = spell.data, ad = shent.data.data
       let range = ((data.range) && (data.range.value || data.range.units)) ? (data.range.value || '') +
-        (((data.range.long) && (data.range.long !== 0) && (data.rangelong != data.range.value))
+        (((data.range.long) && (data.range.long !== 0) && (data.range.long !== data.range.value))
           ? '/' + data.range.long
           : '') + ' ' + (data.range.units ? i18n(dnd5e.distanceUnits[data.range.units]) : '') : null
       let target = (data.target && data.target.type) ? i18n('Target: ')

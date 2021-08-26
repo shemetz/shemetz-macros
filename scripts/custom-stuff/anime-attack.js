@@ -106,7 +106,7 @@ const nm1 = [
   'Delirious',
   'Demonic',
   'Devouring',
-  'Dieing',
+  'Dying',
   'Diligent',
   'Direct',
   'Dirty',

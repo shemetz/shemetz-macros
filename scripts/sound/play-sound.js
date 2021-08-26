@@ -40,9 +40,9 @@ export const playSoundFromDialog = () => {
     'Choose sound type (will be played for everyone)',
     (soundType) => {
       if (soundType === 'SOUND CHECK')
-        soundCheck()
+        return soundCheck()
       else
-        playSound(soundType, true)
+        return playSound(soundType, true)
     },
     soundTypes,
   )

@@ -9,11 +9,11 @@ When activated (best with hotkey), will capture the color under the cursor and s
  INCOMPATIBLE with the Perfect Vision module.
 */
 
-export const colorPickFromCursor = (fillOrStroke, ignoreBackground = false) => {
+export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false) => {
   const colorWithAlpha = getMousePixelOnScreen(ignoreBackground)
   const color = colorWithAlpha.substr(0, 1 + 6)
   const alpha = parseInt(colorWithAlpha.substr(1 + 6, 2), 16) / 255
-  updateDrawingDefaults(
+  await updateDrawingDefaults(
     fillOrStroke === 'fill' ? {
       fillColor: color,
       fillAlpha: alpha,

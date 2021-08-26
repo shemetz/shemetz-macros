@@ -1,7 +1,7 @@
 export const postTokenArt = (tok) => {
   let target = tok.actor || tok
   const content = `
-  <img src=${target.data.img} style="width: 280px;"/>
+  <img src=${target.data.img} style="width: 280px;" alt=${target.name}/>
   `
   ChatMessage.create({ content })
 }

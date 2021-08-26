@@ -80,7 +80,7 @@ export const turnTokensToFaceTarget = (turners, target) => {
       ui.notifications.error('A token cannot face itself!')
       continue
     }
-    const hook_id = Hooks.on('updateToken', async (tok, updateData, options) => {
+    turner[hook_data_key] = Hooks.on('updateToken', async (tok, updateData) => {
       // hook should call turn() when the target or the turner move (change their X or Y)
       if (!(
         !!target.transform && !!turner.transform
@@ -90,7 +90,6 @@ export const turnTokensToFaceTarget = (turners, target) => {
       turn(turner, target)
     })
 
-    turner[hook_data_key] = hook_id
     turn(turner, target)
   }
 }

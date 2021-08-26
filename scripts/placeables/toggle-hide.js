@@ -11,7 +11,13 @@ export const toggleHide = async (state, tokenNameOrTileId) => {
   let t = canvas.tokens.placeables.find(t => t.name.toLowerCase().includes(tokenNameOrTileId))
   if (!t) t = canvas.background.get(tokenNameOrTileId) || canvas.foreground.get(tokenNameOrTileId)
   if (!t) return error(`could not find token/tile ${tokenNameOrTileId}`)
-  const newState = state === true ? true : state === false ? false : state === 'flip' ? !t.data.hidden : null
+  let newState
+  switch (true) {
+    case state === true: newState = true; break;
+    case state === false: newState = false; break;
+    case state === 'flip': newState = !t.data.hidden; break;
+    default: newState = null; break;
+  }
   if (newState === null) return error(`invalid state: ${state}`)
   return t.document.update({ 'hidden': newState })
 }
