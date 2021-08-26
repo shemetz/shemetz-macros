@@ -1,4 +1,4 @@
-import { getImageListIndex, prepareShiftImageWithArgs } from '../placeables/image-shift'
+import { getImageListIndex, prepareShiftImageWithArgs } from '../placeables/image-shift.js'
 
 export const shiftManyTokens = async (tokenNames) => {
   const updates = canvas.tokens.placeables

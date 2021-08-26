@@ -36,7 +36,7 @@ import { highlightTransparentTokensOnMap } from './tokens/highlight-map-location
 import { openTreasureChest, closeSelectedTreasureChests } from './custom-stuff/treasure-chest.js'
 import { openCloseDoors } from './walls/open-close-doors.js'
 import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanism-change-walls-and-tiles.js'
-import { checkIfAllTokensAtIndex0, shiftManyTokens } from './custom-stuff/image-shift-many'
+import { checkIfAllTokensAtIndex0, shiftManyTokens } from './custom-stuff/image-shift-many.js'
 
 self.ShemetzMacros = {
   getDependency,
