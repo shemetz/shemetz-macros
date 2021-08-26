@@ -6,8 +6,11 @@ export const error = (errorMessage) => {
   console.warn(`Macro error: ${errorMessage}`)
   const chatData = {
     user: game.user.id,
-    speaker: ChatMessage.getSpeaker(),
+    speaker: {
+      alias: 'ShemetzMacros.error'
+    },
     content: `Error: ${errorMessage}`,
+    whisper: [game.user.id]
   }
   ChatMessage.create(chatData, {})
 }
