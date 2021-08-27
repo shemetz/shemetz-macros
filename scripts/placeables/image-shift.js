@@ -55,7 +55,7 @@ export const shiftImageToIndex = async (placeable, targetImageIndex) => {
 /**
  * just like shiftImageToIndex but returns update object instead of updating immediately
  */
-export const prepareShiftImageToIndex = async (placeable, targetImageIndex) => {
+export const prepareShiftImageToIndex = (placeable, targetImageIndex) => {
   return prepareShiftImage(placeable, targetImageIndex)
 }
 
