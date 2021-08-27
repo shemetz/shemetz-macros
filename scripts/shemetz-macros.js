@@ -12,12 +12,14 @@ import { postTokenArt, viewTokenArt } from './tokens/token-art.js'
 import { swapTokenPositions } from './tokens/swap-token-positions.js'
 import { setupLightAndVision } from './tokens/setup-light-and-vision.js'
 import {
+  getTokenNamed,
+  hoveredTokens,
+  selectedOrDefaultActor,
   selectedToken,
   selectedTokens,
   targetedTokens,
-  hoveredTokens,
-  selectedOrDefaultActor, getTokenNamed,
 } from './utils/token-utils.js'
+import { getPlaceableWithId, getTileWithId, selectedTokenOrTile } from './utils/placeable-utils.js'
 import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-towards-cursor.js'
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
@@ -27,13 +29,16 @@ import { checkIfBetterRolls5eMessageIsCrit } from './dnd5e/better-rolls-5e-utils
 import { recklessCast } from './custom-stuff/reckless-cast.js'
 import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 import {
-  getImageListIndex, hasImageList, prepareShiftImageToIndex, prepareShiftImageWithArgs,
+  getImageListIndex,
+  hasImageList,
+  prepareShiftImageToIndex,
+  prepareShiftImageWithArgs,
   shiftImageToIndex,
   shiftImageWithArgs,
   shiftSelectedPlaceableImageByKeyboard,
 } from './placeables/image-shift.js'
 import { highlightTransparentTokensOnMap } from './tokens/highlight-map-locations.js'
-import { openTreasureChest, closeSelectedTreasureChests } from './custom-stuff/treasure-chest.js'
+import { closeSelectedTreasureChests, openTreasureChest } from './custom-stuff/treasure-chest.js'
 import { openCloseDoors } from './walls/open-close-doors.js'
 import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanism-change-walls-and-tiles.js'
 import { checkIfAllTokensAtIndex0, shiftManyTokens } from './custom-stuff/image-shift-many.js'
@@ -53,6 +58,7 @@ self.ShemetzMacros = {
   swapTokenPositions,
   setupLightAndVision,
   selectedToken, selectedTokens, targetedTokens, hoveredTokens, selectedOrDefaultActor, getTokenNamed,
+  getTileWithId, getPlaceableWithId, selectedTokenOrTile,
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
   postItemDescription,

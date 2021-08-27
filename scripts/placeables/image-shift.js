@@ -1,4 +1,4 @@
-import { selectedTokenOrTile } from '../utils/token-utils.js'
+import { selectedTokenOrTile } from '../utils/placeable-utils.js'
 
 /**
  * Hold the Control key to set up images.
