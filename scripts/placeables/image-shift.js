@@ -72,9 +72,17 @@ const prepareShiftImage = (placeable, newIndex) => {
 
 const OPTIONS_FLAG = ['world', 'shemetz_image-shift']
 
+const getPlaceableDocument = (placeable) => {
+  if (!placeable) {
+    console.error(`Error: you tried shifting the image of ${placeable}`)
+    return { getFlag: () => undefined }
+  }
+  return placeable.document.actor ? placeable.document.actor : placeable.document
+}
+
 const getImageListBackwardsCompatible = (placeable) => {
   // for tokens, the data is stored in the actor
-  const doc = placeable.document.actor ? placeable.document.actor : placeable.document
+  const doc = getPlaceableDocument(placeable)
   // TODO: remove all of this a few months from now when not needed anymore
   let old = doc.getFlag('world', 'token-image-swap')
   if (old) {
@@ -109,7 +117,7 @@ const getImageList = (placeable) => {
 }
 
 const setImageList = (placeable, imageList) => {
-  return placeable.document.setFlag(...OPTIONS_FLAG, imageList)
+  return getPlaceableDocument(placeable).setFlag(...OPTIONS_FLAG, imageList)
 }
 
 export const hasImageList = (placeable) => {
