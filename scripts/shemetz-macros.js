@@ -41,7 +41,11 @@ import { highlightTransparentTokensOnMap } from './tokens/highlight-map-location
 import { closeSelectedTreasureChests, openTreasureChest } from './custom-stuff/treasure-chest.js'
 import { openCloseDoors } from './walls/open-close-doors.js'
 import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanism-change-walls-and-tiles.js'
-import { checkIfAllTokensAtIndex0, shiftManyTokens } from './custom-stuff/image-shift-many.js'
+import {
+  checkIfAllTokensAtIndex0,
+  shiftManyTokens,
+  shiftSelectedTilesOrTokens,
+} from './custom-stuff/image-shift-many.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -73,7 +77,7 @@ self.ShemetzMacros = {
   openTreasureChest, closeSelectedTreasureChests,
   openCloseDoors,
   leverMechanismChangeWallsAndTiles,
-  shiftManyTokens, checkIfAllTokensAtIndex0,
+  shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
 }
 
 Hooks.once('init', function () {

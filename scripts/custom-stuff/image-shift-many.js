@@ -1,4 +1,4 @@
-import { getImageListIndex, prepareShiftImageWithArgs } from '../placeables/image-shift.js'
+import { getImageListIndex, hasImageList, prepareShiftImageWithArgs } from '../placeables/image-shift.js'
 
 export const shiftManyTokens = async (tokenNames) => {
   const updates = canvas.tokens.placeables
@@ -15,4 +15,17 @@ export const checkIfAllTokensAtIndex0 = async (tokenNames) => {
     .every(tok => {
       return getImageListIndex(tok) === 0
     })
+}
+
+export const shiftSelectedTilesOrTokens = async () => {
+  const tiles = [...canvas.background.controlled, ...canvas.foreground.controlled]
+  const tokens = [...canvas.tokens.controlled]
+  const embeddedName = tiles.length === 0 ? 'Token' : 'Tile'
+  const updates = (embeddedName === 'Tile' ? tiles : tokens)
+    .map(placeable => {
+      if (!hasImageList(placeable)) return null
+      return prepareShiftImageWithArgs(placeable, 1, true, true)
+    })
+    .filter(it => it !== null)
+  return canvas.scene.updateEmbeddedDocuments(embeddedName, updates)
 }
