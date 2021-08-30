@@ -46,6 +46,7 @@ import {
   shiftManyTokens,
   shiftSelectedTilesOrTokens,
 } from './custom-stuff/image-shift-many.js'
+import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -78,6 +79,7 @@ self.ShemetzMacros = {
   openCloseDoors,
   leverMechanismChangeWallsAndTiles,
   shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
+  setDarknessLevelDialog,
 }
 
 Hooks.once('init', function () {
