@@ -1,19 +1,15 @@
-# Shemetz Macros - my personal macro collection, in module form
+# Shemetz Macros - module with a lot of functions used by my macros
 
-A collection of my Foundry VTT macros.
+This module includes:
+- A lot of code, used by my macros and other macros in my group's campaigns
+- A lot of macros in the compendium which already use much of this code
+- A critical hits tables compendium, used by the Critical Hit Tables macro
 
-Some of these macros have arguments; these macros are meant to be used with the Furnace module, that allows macros to be
- called from other macros. They are marked here with names that start with a slash (/), and their image doesn't matter, 
- since they are not meant to be in the macro bar. Many macros here can also be used by typing `/macroname` in the
-  chat - for example, `/critfail` and `/crit bludgeoning`.
+Previously many of these macros were meant to be called from other macros, via the Furnace or Advanced Macros modules.
+However, this is now mostly unnecessary, as the important code is moved into the module itself.  Many of the functions
+can be directly called by typing `ShemetzMacros.nameOfFunction()`.
 
-Some others have dependencies, which means that they require these other macros to be
- created and added to your macro directory, named the same way as they are here.
-
-Generally, all macros with a cogwheel icon or with a `kebab-case` name are "tool" macros that are expected to be called
-from other macros, from TriggerHappy, or from the chat.
- 
-## List + Summaries
+## List + Summaries (NEEDS UPDATE)
 
 ### <img src=https://image.flaticon.com/icons/png/128/4469/4469781.png height="24"> [Eyedropper Color Pick](eyedropper-color-pick.js) 
 Picks the canvas color your mouse is hovering over, and sets it as the drawing tool color.
