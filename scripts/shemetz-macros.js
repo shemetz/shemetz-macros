@@ -47,6 +47,7 @@ import {
   shiftSelectedTilesOrTokens,
 } from './custom-stuff/image-shift-many.js'
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
+import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -80,6 +81,7 @@ self.ShemetzMacros = {
   leverMechanismChangeWallsAndTiles,
   shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
   setDarknessLevelDialog,
+  postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
 }
 
 Hooks.once('init', function () {
