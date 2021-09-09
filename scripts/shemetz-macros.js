@@ -3,7 +3,7 @@ import { bold, chat, error, htmlDecode, italicize } from './utils/message-utils.
 import { crit, critDialog } from './dnd5e/crit.js'
 import { spendHitDie } from './dnd5e/spend-hit-die.js'
 import { colorPickFromCursor } from './drawing/eyedropper-color-pick.js'
-import { showNamesOrBarsDialog } from './tokens/show-names-or-bars.js'
+import { showNamesOrBars, showNamesOrBarsDialog } from './tokens/show-names-or-bars.js'
 import { playSound, playSoundFromDialog, soundCheck } from './sound/play-sound.js'
 import { flipTokens } from './tokens/flip.js'
 import { toggleHide } from './placeables/toggle-hide.js'
@@ -56,7 +56,7 @@ self.ShemetzMacros = {
   crit, critDialog,
   spendHitDie,
   colorPickFromCursor,
-  showNamesOrBarsDialog,
+  showNamesOrBarsDialog, showNamesOrBars,
   playSound, soundCheck, playSoundFromDialog,
   flipTokens,
   toggleHide,
