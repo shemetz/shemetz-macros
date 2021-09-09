@@ -1,5 +1,5 @@
 import { getDependency } from './utils/data-utils.js'
-import { bold, chat, error, italicize } from './utils/message-utils.js'
+import { bold, chat, error, htmlDecode, italicize } from './utils/message-utils.js'
 import { crit, critDialog } from './dnd5e/crit.js'
 import { spendHitDie } from './dnd5e/spend-hit-die.js'
 import { colorPickFromCursor } from './drawing/eyedropper-color-pick.js'
@@ -52,6 +52,7 @@ import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDia
 self.ShemetzMacros = {
   getDependency,
   error, chat, italicize, bold,
+  htmlDecode,
   crit, critDialog,
   spendHitDie,
   colorPickFromCursor,

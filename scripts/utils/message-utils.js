@@ -34,6 +34,14 @@ const convertArgsTextToOneString = (argsText) => {
     .replaceAll('* ', '*')
 }
 
+/**
+ * useful to decode TriggerHappy arguments
+ */
+export const htmlDecode = (str) => {
+  const doc = new DOMParser().parseFromString(str, "text/html");
+  return doc.documentElement.textContent;
+}
+
 export const italicize = (argsText) => {
   return `<i>${convertArgsTextToOneString(argsText)}</i>`
 }
