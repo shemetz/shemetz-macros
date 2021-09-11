@@ -25,7 +25,10 @@ import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
 import { clearAllConditions } from './tokens/clear-conditions.js'
 import { filterMacrosByAuthor } from './gui/filter-macros.js'
-import { checkIfBetterRolls5eMessageIsCrit } from './dnd5e/better-rolls-5e-utils.js'
+import {
+  checkIfBetterRolls5eMessageIncludesNumber,
+  checkIfBetterRolls5eMessageIsCrit,
+} from './dnd5e/better-rolls-5e-utils.js'
 import { recklessCast } from './custom-stuff/reckless-cast.js'
 import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 import {
@@ -71,7 +74,7 @@ self.ShemetzMacros = {
   postItemDescription,
   clearAllConditions,
   filterMacrosByAuthor,
-  checkIfBetterRolls5eMessageIsCrit,
+  checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
   recklessCast,
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList
