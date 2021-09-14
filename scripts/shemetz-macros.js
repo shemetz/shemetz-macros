@@ -51,6 +51,7 @@ import {
 } from './custom-stuff/image-shift-many.js'
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
+import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -75,7 +76,7 @@ self.ShemetzMacros = {
   clearAllConditions,
   filterMacrosByAuthor,
   checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
-  recklessCast,
+  recklessCast, castRandomWildSurge,
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList
   , getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,
