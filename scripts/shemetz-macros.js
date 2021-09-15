@@ -52,6 +52,7 @@ import {
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
+import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -75,6 +76,7 @@ self.ShemetzMacros = {
   postItemDescription,
   clearAllConditions,
   filterMacrosByAuthor,
+  remoteAssignHotbarMacro,
   checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
   recklessCast, castRandomWildSurge,
   animefyNextAttack,
