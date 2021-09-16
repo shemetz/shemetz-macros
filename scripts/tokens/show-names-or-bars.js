@@ -8,23 +8,34 @@ export const showNamesOrBars = async (tokens, displayName, displayBars) => {
   }))
   return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }
-const { OWNER, OWNER_HOVER, ALWAYS } = CONST.TOKEN_DISPLAY_MODES
+const { OWNER, OWNER_HOVER, HOVER, ALWAYS, NEVER } = CONST.TOKEN_DISPLAY_MODES
 
 // technically I'm using OWNER_HOVER and not NONE, so names and bars are still shown to owner when hovering.
 // but I think this is preferable in most situations.
 export const showNamesOrBarsDialog = (tokens) => {
-  const options = ['Hide Names', 'Show Names (everyone)', 'Show Names (owner)', 'Hide Bars', 'Show Bars (owner)', 'Show Bars (everyone)']
+  const options = [
+    'Hide Names (owner hover)',
+    'Show Names (owner)',
+    'Show Names (everyone hover)',
+    'Show Names (everyone)',
+    'Hide Bars (never)',
+    'Hide Bars (owner hover)',
+    'Show Bars (owner always)',
+    'Show Bars (everyone)',
+  ]
   showDialogWithOptions(
-    'Show names or bars?',
+    `Show names or bars? (${tokens.length} tokens)`,
     'Pick an option.',
     async (option) => {
       switch (option) {
-        case 'Hide Names': return showNamesOrBars(tokens, OWNER_HOVER, undefined)
-        case 'Show Names (everyone)': return showNamesOrBars(tokens, ALWAYS, undefined)
+        case 'Hide Names (owner hover)': return showNamesOrBars(tokens, OWNER_HOVER, undefined)
         case 'Show Names (owner)': return showNamesOrBars(tokens, OWNER, undefined)
-        case 'Hide Bars': return showNamesOrBars(tokens, undefined, OWNER_HOVER)
-        case 'Show Bars (everyone)': return showNamesOrBars(tokens, undefined, ALWAYS)
+        case 'Show Names (everyone hover)': return showNamesOrBars(tokens, HOVER, undefined)
+        case 'Show Names (everyone)': return showNamesOrBars(tokens, ALWAYS, undefined)
+        case 'Hide Bars (never)': return showNamesOrBars(tokens, undefined, NEVER)
+        case 'Hide Bars (owner hover)': return showNamesOrBars(tokens, undefined, OWNER_HOVER)
         case 'Show Bars (owner)': return showNamesOrBars(tokens, undefined, OWNER)
+        case 'Show Bars (everyone)': return showNamesOrBars(tokens, undefined, ALWAYS)
       }
     },
     options
