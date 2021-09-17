@@ -53,6 +53,7 @@ import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
+import { closeWallGaps } from './walls/close-wall-gaps.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -84,6 +85,7 @@ self.ShemetzMacros = {
   , getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
+  closeWallGaps,
   openCloseDoors,
   leverMechanismChangeWallsAndTiles,
   shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
