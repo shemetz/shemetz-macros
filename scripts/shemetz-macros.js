@@ -93,7 +93,9 @@ self.ShemetzMacros = {
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
 }
 
-Hooks.once('init', function () {
-  const macroNames = Object.keys(self.ShemetzMacros)
-  console.log(`Shemetz Macros | Initialized with ${macroNames.length} macros: ${macroNames.join(', ')}`)
-})
+export const hookShemetzMacros = () => {
+  Hooks.once('init', function () {
+    const macroNames = Object.keys(self.ShemetzMacros)
+    console.log(`Shemetz Macros | Initialized with ${macroNames.length} macros: ${macroNames.join(', ')}`)
+  })
+}

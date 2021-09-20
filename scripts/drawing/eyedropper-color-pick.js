@@ -1,5 +1,5 @@
 /**
-When activated (best with hotkey), will capture the color under the cursor and set it to the drawing tools default
+ When activated (best with hotkey), will capture the color under the cursor and set it to the drawing tools default
  for stroke color.  The color may include alpha, though you might want to set ignoreBackground to false to capture it,
  because otherwise the default behavior is to blend the color of all layers' pixels together (i.e. make it look like
  you'd see it on your screen).
@@ -7,12 +7,11 @@ When activated (best with hotkey), will capture the color under the cursor and s
  Doesn't currently support lighting/sight (but you can enable grid/effects/templates if you want).
 
  INCOMPATIBLE with the Perfect Vision module.
-*/
+ */
 
 export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false) => {
-  const colorWithAlpha = getMousePixelOnScreen(ignoreBackground)
-  const color = colorWithAlpha.substr(0, 1 + 6)
-  const alpha = parseInt(colorWithAlpha.substr(1 + 6, 2), 16) / 255
+  const { color, alpha } = getMousePixelColorAndAlpha(ignoreBackground)
+  console.log(`%c${color}`, `background: ${color}`)
   await updateDrawingDefaults(
     fillOrStroke === 'fill' ? {
       fillColor: color,
@@ -21,7 +20,14 @@ export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false
       strokeColor: color,
       strokeAlpha: alpha,
     })
-  setAsDrawingToolBackground(color)
+  setAsEyedropperToolBackground(color)
+}
+
+function getMousePixelColorAndAlpha (ignoreBackground) {
+  const colorWithAlpha = getMousePixelOnScreen(ignoreBackground)
+  const color = colorWithAlpha.substr(0, 1 + 6)
+  const alpha = parseInt(colorWithAlpha.substr(1 + 6, 2), 16) / 255
+  return { color, alpha }
 }
 
 function getMousePixelOnScreen (ignoreBackground) {
@@ -61,7 +67,8 @@ function getMousePixelOnScreen (ignoreBackground) {
     layersFound.reverse()
     const pixelRGBA = blendColors(pixelsFound)
     const color = rgbaToHex(...pixelRGBA)
-    console.log(`%c${color}    %c (${layersFound.toString()})`, `background: ${color}`, '')
+    if (CONFIG.debug.eyedropper)
+      console.log(`%c${color}    %c (${layersFound.toString()})`, `background: ${color}`, '')
     return color
   }
   const color = '#' + ((1 << 24) + canvas.backgroundColor).toString(16).slice(1) + 'ff'
@@ -167,8 +174,8 @@ async function updateDrawingDefaults (changedData) {
   return game.settings.set('core', DrawingsLayer.DEFAULT_CONFIG_SETTING, newDefault)
 }
 
-function setAsDrawingToolBackground (color) {
-  $('[data-tool="freehand"]')[0].style.background = color
+function setAsEyedropperToolBackground (color) {
+  $('[data-tool="eyedropper"]')[0].style.background = color
 }
 
 /**
@@ -176,5 +183,68 @@ function setAsDrawingToolBackground (color) {
  */
 async function setAsMacroImage (color) {
   const rrggbb = color.slice(1)
-  await macro.update({'img': `https://color-hex.org/colors/${rrggbb}.png`})
+  await macro.update({ 'img': `https://color-hex.org/colors/${rrggbb}.png` })
+}
+
+let fillOrStroke = 'stroke'
+let ignoreBackground = false
+let previousTool = null
+let isInEyedropperMode = false
+let flipFlopRender = false
+
+function onMouseMoveColorEyedropperTool () {
+  // silly hack, but without it the color doesn't change until the mouse stops moving.
+  // looks like reading a pixel prevents us from rendering on the same frame or something.
+  // so the solution is to only read pixels once every two frames.
+  flipFlopRender = !flipFlopRender
+  if (!flipFlopRender) return
+  const { color } = getMousePixelColorAndAlpha(ignoreBackground)
+  setAsEyedropperToolBackground(color)
+}
+
+function deactivateEyedropperTool () {
+  isInEyedropperMode = false
+  $(`[data-control='drawings'] [data-tool='${previousTool}']`).attr('class', 'control-tool active')
+  $(`[data-control='drawings'] [data-tool='eyedropper']`).attr('class', 'control-tool')
+  setAsEyedropperToolBackground('#000000')
+  ui.controls.control.activeTool = previousTool
+  previousTool = null
+  canvas.stage.off('mousemove', onMouseMoveColorEyedropperTool)
+  canvas.stage.off('contextmenu', deactivateEyedropperTool)
+  canvas.stage.once('rightdown', deactivateEyedropperTool)
+}
+
+function activateEyedropperTool () {
+  // 1.0 if click eyedropper twice, deactivate
+  if (isInEyedropperMode) return deactivateEyedropperTool()
+  // 1.1 keep in memory the current tool
+  previousTool = $(`[data-control='drawings'] > ol > li.active`).attr('data-tool')
+  // 1.2 switch to eyedropper mode
+  isInEyedropperMode = true
+  // 2 wherever cursor is, that color is set as eyedropper tool background
+  canvas.stage.on('mousemove', onMouseMoveColorEyedropperTool)
+  // 3 when user clicks on pixel...
+  canvas.stage.once('click', () => {
+    // 3.1 switch back to last tool
+    deactivateEyedropperTool()
+    // 3.2 set that color in default drawing config
+    colorPickFromCursor(fillOrStroke, ignoreBackground)
+  })
+  // 3.b if right click, deactivate eyedropper
+  canvas.stage.once('contextmenu', deactivateEyedropperTool)
+  canvas.stage.once('rightdown', deactivateEyedropperTool)
+}
+
+export const hookEyedropperColorPicker = () => {
+  Hooks.on('getSceneControlButtons', controls => {
+    const drawingsToolbar = controls.find(c => c.name === 'drawings').tools
+    drawingsToolbar.splice(drawingsToolbar.length - 1, 0, {
+      name: 'eyedropper',
+      title: 'Eyedropper (Color Pick)',
+      icon: 'fas fa-eye-dropper',
+      button: false,
+      onClick: activateEyedropperTool,
+    })
+    console.log(`Shemetz Macros | Added 'Eyedropper' button`)
+  })
 }

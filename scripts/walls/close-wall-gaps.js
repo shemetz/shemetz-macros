@@ -124,3 +124,19 @@ const promptConfirmation = (walls, maxDistSq, updates) => {
   }).render(true)
 }
 
+export const hookCloneWallGaps = () => {
+  Hooks.on('getSceneControlButtons', controls => {
+    if (!game.user.isGM) return
+    const wallToolbar = controls.find(c => c.name === 'walls').tools
+    wallToolbar.splice(wallToolbar.length - 1, 0, {
+      name: 'CloseWallGaps',
+      title: 'Close Wall Gaps',
+      icon: 'fas fa-tape',
+      button: true,
+      onClick: () => {
+        return closeWallGaps(canvas.walls.controlled.length > 0, DEFAULT_MAXIMUM_GAP_DISTANCE)
+      },
+    })
+    console.log(`Shemetz Macros | Added 'Close Wall Gaps' button`)
+  })
+}
