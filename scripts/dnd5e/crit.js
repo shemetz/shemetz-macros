@@ -35,14 +35,13 @@ export const crit = async (critTypeStr) => {
     cleanInput = 'cold'
   if (cleanInput.includes('pierce'))
     cleanInput = 'piercing'
-  const critTypeIdx = CRIT_TYPES.map(it => it.toLowerCase()).indexOf(cleanInput)
-  if (critTypeIdx === -1)
-    return error(`You should pick a crit type from: ${CRIT_TYPES.join(', ')} (can be partial, e.g. 'bludg')`)
-  const critType = CRIT_TYPES[critTypeIdx]
+  const critType = CRIT_TYPES.find(it => it.toLowerCase().includes(cleanInput))
+  if (critType === undefined)
+    return error(`You should pick a crit type from: ${CRIT_TYPES.join(', ')} \n(can be partial, e.g. 'bludg')`)
 
   const table = await getDependency(game.tables, 'critical-hits', critType)
   if (!table) {
-    return error(`Failed using ${input} crit - make sure you have the critical-hits compendium`)
+    return error(`Failed using ${cleanInput} crit - make sure you have the critical-hits compendium`)
   }
 
   const roll = await table.roll()
