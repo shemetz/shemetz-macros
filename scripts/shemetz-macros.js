@@ -94,8 +94,6 @@ self.ShemetzMacros = {
 }
 
 export const hookShemetzMacros = () => {
-  Hooks.once('init', function () {
-    const macroNames = Object.keys(self.ShemetzMacros)
-    console.log(`Shemetz Macros | Initialized with ${macroNames.length} macros: ${macroNames.join(', ')}`)
-  })
+  const macroNames = Object.keys(self.ShemetzMacros)
+  console.log(`Shemetz Macros | Initialized with ${macroNames.length} macros: ${macroNames.join(', ')}`)
 }

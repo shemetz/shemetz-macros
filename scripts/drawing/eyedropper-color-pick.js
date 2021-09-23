@@ -7,6 +7,7 @@
  Doesn't currently support lighting/sight (but you can enable grid/effects/templates if you want).
 
  INCOMPATIBLE with the Perfect Vision module.
+ // TODO fix incompatibility with Perfect Vision if possible
  */
 
 export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false) => {
