@@ -54,6 +54,7 @@ import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDia
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
 import { closeWallGaps } from './walls/close-wall-gaps.js'
+import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/custom-condition.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -91,6 +92,7 @@ self.ShemetzMacros = {
   shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
   setDarknessLevelDialog,
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
+  toggleConditionWithTokenImage, toggleCustomCondition,
 }
 
 export const hookShemetzMacros = () => {
