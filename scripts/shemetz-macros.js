@@ -50,6 +50,7 @@ import {
   shiftSelectedTilesOrTokens,
 } from './custom-stuff/image-shift-many.js'
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
+import { gmDarknessVisionBoost } from './canvas/gm-darkness-vision-boost.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
@@ -91,6 +92,7 @@ self.ShemetzMacros = {
   leverMechanismChangeWallsAndTiles,
   shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
   setDarknessLevelDialog,
+  gmDarknessVisionBoost,
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
   toggleConditionWithTokenImage, toggleCustomCondition,
 }
