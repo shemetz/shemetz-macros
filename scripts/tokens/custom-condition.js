@@ -1,13 +1,22 @@
 import { showDialogWithOptions } from '../utils/dialog-utils.js'
-import { selectedTokens } from '../utils/token-utils.js'
+import { selectedTokens, targetedTokens } from '../utils/token-utils.js'
 
 export const toggleCustomCondition = async (token, conditionImg, { active, overlay = false } = {}) => {
   return token.toggleEffect(conditionImg, { active, overlay })
 }
 
-export const toggleConditionWithTokenImage = () => {
+export const toggleConditionWithTokenImage = async () => {
   const tokens = selectedTokens()
   if (tokens.length === 0) return ui.notifications.warn('Select at least one token for toggleConditionPcTokenImage')
+  const targetedTokens = targetedTokens()
+  if (targetedTokens.length === 1) {
+    // set image to match targeted token
+    const conditionImg = targetedTokens[0].data.img
+    for await (const token of tokens) {
+      await toggleCustomCondition(token, conditionImg, { overlay: false })
+    }
+    return
+  }
   const choices = [...new Set(canvas.scene.tokens
     .filter(t => t.permission >= 1 && (game.user.isGM || !t.data.hidden) && t.actor.type !== 'loot')
     .map(t => t.name))]
@@ -21,15 +30,18 @@ export const toggleConditionWithTokenImage = () => {
         return +(tokB.actor.type === 'character') - +(tokA.actor.type === 'character')
       return a.toLowerCase().localeCompare(b.toLowerCase())
     })
-  showDialogWithOptions(
-    'Toggle condition/effect with token image',
-    'Select token',
-    async (selected) => {
-      const conditionImg = canvas.scene.tokens.find(it => it.name === selected).data.img
-      for await (const token of tokens) {
-        await toggleCustomCondition(token, conditionImg, { overlay: false })
-      }
-    },
-    choices
-  )
+  return new Promise((resolve) => {
+    showDialogWithOptions(
+      'Toggle condition/effect with token image',
+      'Select token',
+      async (selected) => {
+        const conditionImg = canvas.scene.tokens.find(it => it.name === selected).data.img
+        for await (const token of tokens) {
+          await toggleCustomCondition(token, conditionImg, { overlay: false })
+        }
+        resolve()
+      },
+      choices
+    )
+  })
 }
