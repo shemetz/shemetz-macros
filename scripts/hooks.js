@@ -1,7 +1,7 @@
 import { hookShemetzMacros } from './shemetz-macros.js'
 import { hookCloneWallGaps } from './walls/close-wall-gaps.js'
 import { hookEyedropperColorPicker } from './drawing/eyedropper-color-pick.js'
-import { hookPf2eFlatfootedShortcut } from './pf2e/hookPf2eFlatfootedShortcut.js'
+import { hookPf2eFlatfootedShortcut } from './pf2e/hook-pf2e-flatfooted-shortcut.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
