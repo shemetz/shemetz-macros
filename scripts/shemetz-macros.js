@@ -56,6 +56,7 @@ import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
 import { closeWallGaps } from './walls/close-wall-gaps.js'
 import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/custom-condition.js'
+import { markDeadWithHealthEstimate } from './custom-stuff/mark-defeated-x.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -95,6 +96,7 @@ self.ShemetzMacros = {
   gmDarknessVisionBoost,
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
   toggleConditionWithTokenImage, toggleCustomCondition,
+  markDeadWithHealthEstimate,
 }
 
 export const hookShemetzMacros = () => {
