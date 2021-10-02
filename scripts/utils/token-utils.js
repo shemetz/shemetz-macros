@@ -2,6 +2,8 @@ export const selectedTokens = () => {
   return canvas.tokens.controlled
 }
 
+export const controlledTokens = selectedTokens
+
 export const selectedToken = () => {
   if (canvas.tokens.controlled.length === 0) {
     ui.notifications.error('Please select a token!')
