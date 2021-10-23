@@ -26,6 +26,11 @@
       "entity": "RollTable"
     }
   ],
+  "dependencies": [
+    {
+      "name": "keybind-lib"
+    }
+  ],
   "url": "https://github.com/itamarcu/shemetz-macros",
   "manifest": "https://github.com/itamarcu/shemetz-macros/raw/master/module.json",
   "download": "https://github.com/itamarcu/shemetz-macros/archive/master.zip",

@@ -248,4 +248,14 @@ export const hookEyedropperColorPicker = () => {
     })
     console.log(`Shemetz Macros | Added 'Eyedropper' button`)
   })
+  KeybindLib.register("shemetz-macros", "eyedropper", {
+    name: "Eyedropper (Color Pick)",
+    hint: "Pick the color of the current pixel under the cursor.",
+    default: "KeyK",
+    onKeyDown: async () => {
+      if ($(`.scene-control.active`).attr('data-control') === 'drawings') {
+        return colorPickFromCursor(fillOrStroke, ignoreBackground)
+      }
+    },
+  });
 }
