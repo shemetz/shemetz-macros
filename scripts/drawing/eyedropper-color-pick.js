@@ -187,10 +187,8 @@ async function setAsMacroImage (color) {
   await macro.update({ 'img': `https://color-hex.org/colors/${rrggbb}.png` })
 }
 
-let fillOrStroke = 'stroke'
+let defaultFillOrStroke = 'stroke'
 let ignoreBackground = false
-let previousTool = null
-let isInEyedropperMode = false
 let flipFlopRender = false
 
 function onMouseMoveColorEyedropperTool () {
@@ -204,33 +202,27 @@ function onMouseMoveColorEyedropperTool () {
 }
 
 function deactivateEyedropperTool () {
-  isInEyedropperMode = false
-  $(`[data-control='drawings'] [data-tool='${previousTool}']`).attr('class', 'control-tool active')
-  $(`[data-control='drawings'] [data-tool='eyedropper']`).attr('class', 'control-tool')
   setAsEyedropperToolBackground('#000000')
-  ui.controls.control.activeTool = previousTool
-  previousTool = null
   canvas.stage.off('mousemove', onMouseMoveColorEyedropperTool)
+  canvas.stage.off('click', activateColorPickFromCursor)
   canvas.stage.off('contextmenu', deactivateEyedropperTool)
-  canvas.stage.once('rightdown', deactivateEyedropperTool)
+  canvas.stage.off('rightdown', deactivateEyedropperTool)
+}
+
+function activateColorPickFromCursor () {
+  // set color in default drawing config.  alt to switch fill/stroke
+  const fillOrStroke = (
+    (defaultFillOrStroke === 'stroke')
+    === game.keyboard._downKeys.has('Alt')
+  ) ? 'fill' : 'stroke'
+  return colorPickFromCursor(fillOrStroke, ignoreBackground)
 }
 
 function activateEyedropperTool () {
-  // 1.0 if click eyedropper twice, deactivate
-  if (isInEyedropperMode) return deactivateEyedropperTool()
-  // 1.1 keep in memory the current tool
-  previousTool = $(`[data-control='drawings'] > ol > li.active`).attr('data-tool')
-  // 1.2 switch to eyedropper mode
-  isInEyedropperMode = true
-  // 2 wherever cursor is, that color is set as eyedropper tool background
+  // wherever cursor is, that color is set as eyedropper tool background
   canvas.stage.on('mousemove', onMouseMoveColorEyedropperTool)
-  // 3 when user clicks on pixel...
-  canvas.stage.once('click', () => {
-    // 3.1 switch back to last tool
-    deactivateEyedropperTool()
-    // 3.2 set that color in default drawing config
-    colorPickFromCursor(fillOrStroke, ignoreBackground)
-  })
+  // when user clicks on pixel...
+  canvas.stage.once('click', activateColorPickFromCursor)
   // 3.b if right click, deactivate eyedropper
   canvas.stage.once('contextmenu', deactivateEyedropperTool)
   canvas.stage.once('rightdown', deactivateEyedropperTool)
@@ -248,14 +240,14 @@ export const hookEyedropperColorPicker = () => {
     })
     console.log(`Shemetz Macros | Added 'Eyedropper' button`)
   })
-  KeybindLib.register("shemetz-macros", "eyedropper", {
-    name: "Eyedropper (Color Pick)",
-    hint: "Pick the color of the current pixel under the cursor.",
-    default: "KeyK",
+  KeybindLib.register('shemetz-macros', 'eyedropper', {
+    name: 'Eyedropper (Color Pick)',
+    hint: 'Pick the color of the current pixel under the cursor.',
+    default: 'KeyK',
     onKeyDown: async () => {
       if ($(`.scene-control.active`).attr('data-control') === 'drawings') {
-        return colorPickFromCursor(fillOrStroke, ignoreBackground)
+        return activateColorPickFromCursor()
       }
     },
-  });
+  })
 }
