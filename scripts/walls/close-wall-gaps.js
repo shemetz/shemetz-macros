@@ -124,7 +124,7 @@ const promptConfirmation = (walls, maxDistSq, updates) => {
   }).render(true)
 }
 
-export const hookCloneWallGaps = () => {
+export const hookCloseWallGaps = () => {
   Hooks.on('getSceneControlButtons', controls => {
     if (!game.user.isGM) return
     const wallToolbar = controls.find(c => c.name === 'walls').tools
