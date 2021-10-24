@@ -8,10 +8,10 @@ export const toggleCustomCondition = async (token, conditionImg, { active, overl
 export const toggleConditionWithTokenImage = async () => {
   const tokens = selectedTokens()
   if (tokens.length === 0) return ui.notifications.warn('Select at least one token for toggleConditionPcTokenImage')
-  const targetedTokens = targetedTokens()
-  if (targetedTokens.length === 1) {
+  const tokensTargeted = targetedTokens()
+  if (tokensTargeted.length === 1) {
     // set image to match targeted token
-    const conditionImg = targetedTokens[0].data.img
+    const conditionImg = tokensTargeted[0].data.img
     for await (const token of tokens) {
       await toggleCustomCondition(token, conditionImg, { overlay: false })
     }
