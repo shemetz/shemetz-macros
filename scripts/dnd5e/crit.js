@@ -3,19 +3,22 @@ import { getDependency } from '../utils/data-utils.js'
 import { showDialogWithOptions } from '../utils/dialog-utils.js'
 
 const CRIT_TYPES = [
+  // physicals
   'Bludgeoning',
   'Piercing', // pierce
   'Slashing',
-  'Fire',
+  // elements
   'Acid',
   'Cold', // ice
+  'Fire',
   'Force',
-  'Poison',
   'Lightning',
   'Necrotic',
+  'Poison',
   'Psychic',
-  'Thunder',
   'Radiant',
+  'Thunder',
+  // special
   'Insanity',
   'Minor Injury',
   'Major Injury',
