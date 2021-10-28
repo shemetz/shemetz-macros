@@ -210,6 +210,7 @@ function deactivateEyedropperTool () {
 }
 
 function activateColorPickFromCursor () {
+  deactivateEyedropperTool()
   // set color in default drawing config.  alt to switch fill/stroke
   const fillOrStroke = (
     (defaultFillOrStroke === 'stroke')
