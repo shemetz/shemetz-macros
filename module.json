@@ -29,6 +29,9 @@
   "dependencies": [
     {
       "name": "keybind-lib"
+    },
+    {
+      "name": "lib-wrapper"
     }
   ],
   "url": "https://github.com/itamarcu/shemetz-macros",

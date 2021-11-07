@@ -2,11 +2,13 @@ import { hookShemetzMacros } from './shemetz-macros.js'
 import { hookCloseWallGaps } from './walls/close-wall-gaps.js'
 import { hookEyedropperColorPicker } from './drawing/eyedropper-color-pick.js'
 import { hookPf2eFlatfootedShortcut } from './pf2e/flatfooted-shortcut.js'
+import { hookBlockPushing } from './custom-stuff/block-pushing.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
   hookCloseWallGaps()
   hookEyedropperColorPicker()
+  hookBlockPushing()
 
   if (game.system.id === 'pf2e') {
     hookPf2eFlatfootedShortcut()
