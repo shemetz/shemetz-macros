@@ -13,6 +13,18 @@ Hooks.on('init', () => {
   if (game.system.id === 'pf2e') {
     hookPf2eFlatfootedShortcut()
   }
+  
+  // TODO move this to better spot and reformat it, when I get my IDE back
+  // while ctrl key is held, dragged tokens will not animate and thus won't see between walls they "move" through
+  Hooks.on('preUpdateToken', (doc, diff, options, userId) => {
+		const e = window.event;
+		if(!e)
+			return;
+		const keyVar = 'ctrlKey'
+		if(e[keyVar] && ('x' in diff || 'y' in diff)) {
+			options.animate = false;
+		}
+	});
 })
 
 // TODO create big file for key shortcuts, based on:
