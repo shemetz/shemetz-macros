@@ -24,7 +24,9 @@ import { turnSelectedTokensTowardsCursor } from './tokens/turn-selected-token-to
 import { turnTokensToFaceTarget } from './tokens/turn-to-face.js'
 import { postItemDescription } from './items/post-item-description.js'
 import { clearAllConditions } from './tokens/clear-conditions.js'
-import { filterMacrosByAuthor } from './gui/filter-macros.js'
+import { filterMacrosByAuthor } from './macros/filter-macros.js'
+import { organizeUnsortedMacros } from './macros/organize-macros.js'
+import { remoteAssignHotbarMacro } from './macros/remote-assign-hotbar-macro.js'
 import {
   checkIfBetterRolls5eMessageIncludesNumber,
   checkIfBetterRolls5eMessageIsCrit,
@@ -53,7 +55,6 @@ import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { gmDarknessVisionBoost } from './canvas/gm-darkness-vision-boost.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
-import { remoteAssignHotbarMacro } from './gui/remote-assign-hotbar-macro.js'
 import { closeWallGaps } from './walls/close-wall-gaps.js'
 import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/custom-condition.js'
 import { markDeadWithHealthEstimate } from './custom-stuff/mark-defeated-x.js'
@@ -80,6 +81,7 @@ self.ShemetzMacros = {
   postItemDescription,
   clearAllConditions,
   filterMacrosByAuthor,
+  organizeUnsortedMacros,
   remoteAssignHotbarMacro,
   checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
   recklessCast, castRandomWildSurge,
