@@ -2,12 +2,14 @@ import { hookShemetzMacros } from './shemetz-macros.js'
 import { hookCloseWallGaps } from './walls/close-wall-gaps.js'
 import { hookEyedropperColorPicker } from './drawing/eyedropper-color-pick.js'
 import { hookBlockPushing } from './custom-stuff/block-pushing.js'
+import { hookAutomaticWoundEffects, registerAutomaticWoundEffects } from './tokens/automatic-wound-effects.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
   hookCloseWallGaps()
   hookEyedropperColorPicker()
   hookBlockPushing()
+  registerAutomaticWoundEffects()
 
   // TODO move this to better spot and reformat it, when I get my IDE back
   // while ctrl key is held, dragged tokens will not animate and thus won't see between walls they "move" through
@@ -20,4 +22,7 @@ Hooks.on('init', () => {
 			options.animate = false;
 		}
 	});
+})
+Hooks.on('ready', () => {
+  hookAutomaticWoundEffects()
 })
