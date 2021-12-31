@@ -3,17 +3,17 @@
  */
 export const clearAllConditions = async (tokens) => {
   const updates = []
+  const promises = []
   for (const tok of tokens) {
     updates.push({ _id: tok.id, effects: [], overlayEffect: '' })
     // Status Icon Counters:
-    // sadly updates in the Status Icon Counters module can't be stacked, not even within one token
-    // TODO - check up on https://gitlab.com/woodentavern/status-icon-counters/-/issues/27
-    if (self.EffectCounter) self.EffectCounter.getAllCounters(tok).forEach(c => c.remove())
+    if (self.EffectCounter) promises.push(self.EffectCounter.clearEffects(tok))
     // Pathfinder 2e conditions:
     if (game.system.id === 'pf2e') {
-      await game.pf2e.ConditionManager.deleteConditions(tok.actor.itemTypes.condition.map(c => c.id), tok.actor)
-      await game.pf2e.effectTracker.removeExpired(tok.actor)
+      promises.push(await game.pf2e.ConditionManager.deleteConditions(tok.actor.itemTypes.condition.map(c => c.id), tok.actor))
+      promises.push(await game.pf2e.effectTracker.removeExpired(tok.actor))
     }
   }
+  await Promise.all(promises)
   return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }
