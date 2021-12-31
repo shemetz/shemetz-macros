@@ -58,6 +58,8 @@ import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { closeWallGaps } from './walls/close-wall-gaps.js'
 import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/custom-condition.js'
 import { markDeadWithHealthEstimate } from './custom-stuff/mark-defeated-x.js'
+import { printRenderTextureToConsole, printScreenToConsole } from './canvas/print-render-texture-to-console.js'
+import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-utils.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -65,7 +67,7 @@ self.ShemetzMacros = {
   htmlDecode,
   crit, critDialog,
   spendHitDie,
-  colorPickFromCursor,
+  colorPickFromCursor, printRenderTextureToConsole, printScreenToConsole,
   showNamesOrBarsDialog, showNamesOrBars,
   playSound, soundCheck, playSoundFromDialog,
   flipTokens,
@@ -74,6 +76,7 @@ self.ShemetzMacros = {
   postTokenArt, viewTokenArt,
   swapTokenPositions,
   setupLightAndVision,
+  getLocalMousePosition, getScreenMousePosition,
   selectedToken, selectedTokens, targetedTokens, hoveredTokens, selectedOrDefaultActor, getTokenNamed,
   getTileWithId, getPlaceableWithId, selectedTokenOrTile,
   turnSelectedTokensTowardsCursor,

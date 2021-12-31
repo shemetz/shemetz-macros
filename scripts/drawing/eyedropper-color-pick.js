@@ -1,17 +1,8 @@
-/**
- When activated (best with hotkey), will capture the color under the cursor and set it to the drawing tools default
- for stroke color.  The color may include alpha, though you might want to set ignoreBackground to false to capture it,
- because otherwise the default behavior is to blend the color of all layers' pixels together (i.e. make it look like
- you'd see it on your screen).
+import { getLocalMousePosition, getScreenMousePosition } from '../utils/mouse-utils.js'
+import { readPixel, rgbaToHex } from '../utils/canvas-pixi-utils.js'
 
- Doesn't currently support lighting/sight (but you can enable grid/effects/templates if you want).
-
- INCOMPATIBLE with the Perfect Vision module.
- // TODO fix incompatibility with Perfect Vision if possible
- */
-
-export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false) => {
-  const { color, alpha } = getMousePixelColorAndAlpha(ignoreBackground)
+export const colorPickFromCursor = async (fillOrStroke, backgroundOnly = false) => {
+  const { color, alpha } = getMousePixelColorAndAlpha(backgroundOnly)
   console.log(`%c${color}`, `background: ${color}`)
   await updateDrawingDefaults(
     fillOrStroke === 'fill' ? {
@@ -21,60 +12,69 @@ export const colorPickFromCursor = async (fillOrStroke, ignoreBackground = false
       strokeColor: color,
       strokeAlpha: alpha,
     })
-  setAsEyedropperToolBackground(color)
+  setDrawingToolGuiColor(color)
 }
 
-function getMousePixelColorAndAlpha (ignoreBackground) {
-  const colorWithAlpha = getMousePixelOnScreen(ignoreBackground)
+function getMousePixelColorAndAlpha (backgroundOnly) {
+  const colorWithAlpha = getMousePixel(backgroundOnly)
   const color = colorWithAlpha.substr(0, 1 + 6)
   const alpha = parseInt(colorWithAlpha.substr(1 + 6, 2), 16) / 255
   return { color, alpha }
 }
 
-function getMousePixelOnScreen (ignoreBackground) {
-  const reversedLayers = [
-    !ignoreBackground && canvas.background,   // 0
-    canvas.drawings,     // 20
-    // canvas.grid,         // 30
-    // canvas.walls,        // 40
-    // canvas.templates,    // 50
-    // canvas.notes,        // 60
-    canvas.tokens,       // 100
-    canvas.foreground,   // 200
-    // canvas.sounds,       // 300
-    // canvas.lighting,     // 300
-    // canvas.sight,        // 400
-    // canvas.effects,      // 500
-    // canvas.controls,      // 1000
-  ].filter(it => !!it)
-    .reverse()
+function getMousePixel (backgroundOnly) {
+  const pixelRGBA = backgroundOnly ? getMousePixelOnLayer(canvas.background) : getMousePixelOnScreen()
+  // converting alpha from 0—255 to 0—1
+  const pixelRGBa = [...pixelRGBA.subarray(0, 3), pixelRGBA[3] / 255]
+  let colorWithAlpha = rgbaToHex(...pixelRGBa)
+  if (CONFIG.debug.eyedropper) {
+    console.log(`%c${colorWithAlpha}    `, `background: ${colorWithAlpha}`)
+  }
+  if (!colorWithAlpha.startsWith('#000000') || !backgroundOnly) {
+    return colorWithAlpha
+  }
+  colorWithAlpha = '#' + ((1 << 24) + canvas.backgroundColor).toString(16).slice(1) + 'ff'
+  if (CONFIG.debug.eyedropper) {
+    console.log(`found nothing, so default %c  ${colorWithAlpha}`, `background: ${colorWithAlpha}`)
+  }
+  return colorWithAlpha
+}
 
-  const pixelsFound = []
-  const layersFound = []
-  for (const layer of reversedLayers) {
-    const pixelRGBA = getMousePixelOnLayer(layer)
-    if (pixelRGBA[3] !== 0) {
-      // converting alpha from 0—255 to 0—1
-      pixelsFound.push([...pixelRGBA.subarray(0, 3), pixelRGBA[3] / 255])
-      layersFound.push(layer.name.replace('Layer', ''))
-    }
-    if (pixelRGBA[3] === 255) {
-      // stop checking lower layers
-      break
-    }
+let screenRenderCache = null // caches the 2d context of the canvas app render
+const getMousePixelOnScreen = () => {
+  let context
+  if (screenRenderCache === null) {
+    canvas.app.render()
+    const canv = canvas.app.renderer.extract.canvas()
+    context = canv.getContext('2d')
+    screenRenderCache = context
+  } else {
+    context = screenRenderCache
   }
-  if (pixelsFound.length > 0) {
-    pixelsFound.reverse()
-    layersFound.reverse()
-    const pixelRGBA = blendColors(pixelsFound)
-    const color = rgbaToHex(...pixelRGBA)
-    if (CONFIG.debug.eyedropper)
-      console.log(`%c${color}    %c (${layersFound.toString()})`, `background: ${color}`, '')
-    return color
+  const { x, y } = getScreenMousePosition()
+  return context.getImageData(x, y, 1, 1).data
+}
+
+const resetScreenRenderCache = () => {
+  if (screenRenderCache !== null) {
+    if (CONFIG.debug.eyedropper) {
+      console.debug(`ShemetzMacros | Resetting screen render cache for eyedropper`)
+    }
+    screenRenderCache = null
   }
-  const color = '#' + ((1 << 24) + canvas.backgroundColor).toString(16).slice(1) + 'ff'
-  console.log(`found nothing, so default %c  ${color}`, `background: ${color}`)
-  return color
+}
+
+let resetCooldownTimer = null
+const resetScreenRenderCacheSoon = () => {
+  if (screenRenderCache !== null) {
+    // prevent constantly rerendering when the user is panning
+    if (resetCooldownTimer !== null) {
+      clearTimeout(resetCooldownTimer)
+    }
+    resetCooldownTimer = setTimeout(() => {
+      resetScreenRenderCache()
+    }, 500)
+  }
 }
 
 /**
@@ -88,84 +88,6 @@ function getMousePixelOnLayer (layer) {
   return readPixel(layer, x, y)
 }
 
-/**
- * https://github.com/League-of-Foundry-Developers/simplefog/blob/master/js/helpers.js
- */
-function readPixel (target, x = 0, y = 0) {
-  const { renderer } = canvas.app
-  let resolution
-  let renderTexture
-  let generated = false
-  if (target instanceof PIXI.RenderTexture) {
-    renderTexture = target
-  } else {
-    renderTexture = renderer.generateTexture(target)
-    generated = true
-  }
-  if (renderTexture) {
-    resolution = renderTexture.baseTexture.resolution
-    renderer.renderTexture.bind(renderTexture)
-  }
-  const pixel = new Uint8Array(4)
-  // read pixels to the array
-  const { gl } = renderer
-  gl.readPixels(x * resolution, y * resolution, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixel)
-  if (generated) {
-    renderTexture.destroy(true)
-  }
-  return pixel
-}
-
-function getLocalMousePosition () {
-  const { x, y } = canvas.app.renderer.plugins.interaction.mouse.getLocalPosition(canvas.app.stage)
-  return { x, y }
-}
-
-/**
- * https://stackoverflow.com/a/49974627/1703463
- * expects RGB in 0—255 and a in 0—1
- */
-function rgbaToHex (r, g, b, a) {
-  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
-    + '' + (a ? ((1 << 8) + Math.round(a * 255)).toString(16).slice(1)
-      : '')
-}
-
-/**
- * https://gist.github.com/JordanDelcros/518396da1c13f75ee057#gistcomment-2075095
- * args is a list like [[12, 255, 0, 0.5], [36, 19, 183, 0.2]]
- */
-function blendColors (args) {
-  let base = [0, 0, 0, 0]
-  let mix
-  let added
-  while (added = args.shift()) {
-    if (typeof added[3] === 'undefined') {
-      added[3] = 1
-    }
-    // check if both alpha channels exist.
-    if (base[3] && added[3]) {
-      mix = [0, 0, 0, 0]
-      // alpha
-      mix[3] = 1 - (1 - added[3]) * (1 - base[3])
-      // red
-      mix[0] = Math.round((added[0] * added[3] / mix[3]) + (base[0] * base[3] * (1 - added[3]) / mix[3]))
-      // green
-      mix[1] = Math.round((added[1] * added[3] / mix[3]) + (base[1] * base[3] * (1 - added[3]) / mix[3]))
-      // blue
-      mix[2] = Math.round((added[2] * added[3] / mix[3]) + (base[2] * base[3] * (1 - added[3]) / mix[3]))
-
-    } else if (added) {
-      mix = added
-    } else {
-      mix = base
-    }
-    base = mix
-  }
-
-  return mix
-}
-
 async function updateDrawingDefaults (changedData) {
   const currentDefault = game.settings.get('core', DrawingsLayer.DEFAULT_CONFIG_SETTING)
   const newDefault = {
@@ -175,20 +97,23 @@ async function updateDrawingDefaults (changedData) {
   return game.settings.set('core', DrawingsLayer.DEFAULT_CONFIG_SETTING, newDefault)
 }
 
-function setAsEyedropperToolBackground (color) {
-  $('[data-tool="eyedropper"]')[0].style.background = color
+function setDrawingToolGuiColor (color) {
+  const j = $('ol.control-tools > li.scene-control.active')
+  if (isFillOrStroke()) {
+    j.css('background', color)
+  } else {
+    j.css('color', color)
+  }
 }
 
-/**
- * silly idea, don't actually use this:  will set this macro's image based on the color
- */
-async function setAsMacroImage (color) {
-  const rrggbb = color.slice(1)
-  await macro.update({ 'img': `https://color-hex.org/colors/${rrggbb}.png` })
+const isFillOrStroke = () => {
+  return game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)
 }
 
-let defaultFillOrStroke = 'stroke'
-let ignoreBackground = false
+const shouldPickFromBackgroundOnly = () => {
+  return game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT)
+}
+
 let flipFlopRender = false
 
 function onMouseMoveColorEyedropperTool () {
@@ -197,57 +122,59 @@ function onMouseMoveColorEyedropperTool () {
   // so the solution is to only read pixels once every two frames.
   flipFlopRender = !flipFlopRender
   if (!flipFlopRender) return
-  const { color } = getMousePixelColorAndAlpha(ignoreBackground)
-  setAsEyedropperToolBackground(color)
+  const { color } = getMousePixelColorAndAlpha(shouldPickFromBackgroundOnly())
+  setDrawingToolGuiColor(color)
 }
 
 function deactivateEyedropperTool () {
-  setAsEyedropperToolBackground('#000000')
   canvas.stage.off('mousemove', onMouseMoveColorEyedropperTool)
-  canvas.stage.off('click', activateColorPickFromCursor)
-  canvas.stage.off('contextmenu', deactivateEyedropperTool)
-  canvas.stage.off('rightdown', deactivateEyedropperTool)
+  canvas.stage.off('mousedown', onMouseMoveColorEyedropperTool)
+  Hooks.off('canvasPan', resetScreenRenderCacheSoon)
 }
 
 function activateColorPickFromCursor () {
   deactivateEyedropperTool()
   // set color in default drawing config.  alt to switch fill/stroke
-  const fillOrStroke = (
-    (defaultFillOrStroke === 'stroke')
-    === game.keyboard._downKeys.has('Alt')
-  ) ? 'fill' : 'stroke'
-  return colorPickFromCursor(fillOrStroke, ignoreBackground)
+  const fillOrStroke = isFillOrStroke() ? 'fill' : 'stroke'
+  const backgroundOnly = shouldPickFromBackgroundOnly()
+  return colorPickFromCursor(fillOrStroke, backgroundOnly)
 }
 
-function activateEyedropperTool () {
+function startShowingEyedropperColor () {
   // wherever cursor is, that color is set as eyedropper tool background
   canvas.stage.on('mousemove', onMouseMoveColorEyedropperTool)
-  // when user clicks on pixel...
-  canvas.stage.once('click', activateColorPickFromCursor)
-  // 3.b if right click, deactivate eyedropper
-  canvas.stage.once('contextmenu', deactivateEyedropperTool)
-  canvas.stage.once('rightdown', deactivateEyedropperTool)
+  canvas.stage.on('mousedown', onMouseMoveColorEyedropperTool)
+  Hooks.on('canvasPan', resetScreenRenderCacheSoon)
 }
 
 export const hookEyedropperColorPicker = () => {
-  Hooks.on('getSceneControlButtons', controls => {
-    const drawingsToolbar = controls.find(c => c.name === 'drawings').tools
-    drawingsToolbar.splice(drawingsToolbar.length - 1, 0, {
-      name: 'eyedropper',
-      title: 'Eyedropper (Color Pick)',
-      icon: 'fas fa-eye-dropper',
-      button: false,
-      onClick: activateEyedropperTool,
-    })
-    console.log(`Shemetz Macros | Added 'Eyedropper' button`)
-  })
-  KeybindLib.register('shemetz-macros', 'eyedropper', {
+  const { SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
+  game.keybindings.register('shemetz-macros', 'eyedropper', {
     name: 'Eyedropper (Color Pick)',
     hint: 'Pick the color of the current pixel under the cursor.',
-    default: 'KeyK',
-    onKeyDown: async () => {
+    editable: [
+      {
+        key: 'KeyK'
+      }
+    ],
+    reservedModifiers: [SHIFT, ALT],
+    onDown: () => {
       if ($(`.scene-control.active`).attr('data-control') === 'drawings') {
-        return activateColorPickFromCursor()
+        resetScreenRenderCache()
+        startShowingEyedropperColor()
+        onMouseMoveColorEyedropperTool()
+        return true // consumed
+      } else {
+        return false
+      }
+    },
+    onUp: () => {
+      if ($(`.scene-control.active`).attr('data-control') === 'drawings') {
+        activateColorPickFromCursor()
+        resetScreenRenderCache()
+        return true // consumed
+      } else {
+        return false
       }
     },
   })

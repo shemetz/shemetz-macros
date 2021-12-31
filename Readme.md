@@ -11,9 +11,6 @@ can be directly called by typing `ShemetzMacros.nameOfFunction()`.
 
 ## List + Summaries (NEEDS UPDATE)
 
-### <img src=https://image.flaticon.com/icons/png/128/4469/4469781.png height="24"> [Eyedropper Color Pick](eyedropper-color-pick.js) 
-Picks the canvas color your mouse is hovering over, and sets it as the drawing tool color.
-
 ### <img src=https://i.imgur.com/X2mAfEC.png height="24"> [Token Image Swap](token-image-swap.js) 
 Changes a selected token's image to the next one in a custom sequence.
 
