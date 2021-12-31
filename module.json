@@ -3,9 +3,9 @@
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
   "author": "shem",
-  "version": "0.7.7",
-  "minimumCoreVersion": "0.8.8",
-  "compatibleCoreVersion": "0.8.9",
+  "version": "0.7.999",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9",
   "esmodules": [
     "scripts/shemetz-macros.js",
     "scripts/hooks.js"
@@ -27,9 +27,6 @@
     }
   ],
   "dependencies": [
-    {
-      "name": "keybind-lib"
-    },
     {
       "name": "lib-wrapper"
     }
