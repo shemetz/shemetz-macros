@@ -5,7 +5,7 @@ export const registerAutomaticWoundEffects = () => {
     scope: 'world',
     config: true,
     type: Boolean,
-    default: true,
+    default: false,
     onChange: registerOrUnregisterHooks
   })
 }
@@ -72,7 +72,7 @@ const createWoundOnToken = (token, damageFraction) => {
 const healWoundsOnToken = (token, healingFraction) => {
   const existingFlags = token.document.getFlag('tokenmagic', 'filters')
   const numOfWounds = existingFlags?.filter(f => f.tmFilters.tmFilterId === AUTOMATIC_FILTER_ID)?.length
-  if (numOfWounds === 0) {
+  if (!numOfWounds) {
     return
   }
   // healing is "stronger" than wounds when there's 3+ wounds, but also tiny wounds are bigger so it kinda evens out
