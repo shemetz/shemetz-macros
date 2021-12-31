@@ -10,9 +10,10 @@ export const clearAllConditions = async (tokens) => {
     // TODO - check up on https://gitlab.com/woodentavern/status-icon-counters/-/issues/27
     if (self.EffectCounter) self.EffectCounter.getAllCounters(tok).forEach(c => c.remove())
     // Pathfinder 2e conditions:
-    if (game.system.id === 'pf2e') await game.pf2e.ConditionManager.deleteConditions(
-      tok.actor.itemTypes.condition.map(c => c.id), tok.actor
-    )
+    if (game.system.id === 'pf2e') {
+      await game.pf2e.ConditionManager.deleteConditions(tok.actor.itemTypes.condition.map(c => c.id), tok.actor)
+      await game.pf2e.effectTracker.removeExpired(tok.actor)
+    }
   }
   return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }
