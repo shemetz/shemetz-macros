@@ -1,7 +1,9 @@
 let gmVisionFilter = null
 
 /**
- * boost of 0.5 is usually enough
+ * boost of 0.5 is usually enough.
+ *
+ * note:  this is slightly broken, sometimes you need to click it twice
  */
 export const gmDarknessVisionBoost = (boost) => {
   const visionBoostEnabled = gmVisionFilter !== null

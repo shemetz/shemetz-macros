@@ -1,9 +1,9 @@
 /*
 --- treasure-chest ---
 A complex macro that combines several other macros, and is meant to be triggered when a player character walks into a chest to open it.
-- Treats the "toggle activation state" flag as the open/closed state of a chest token.
+- Treats the image shift state as the open/closed state of a chest token.
 - If the chest is already open, nothing will happen (making sure the macro isn't called multiple times in a session).  Otherwise...
-- Chest token will change to look open.
+- Chest token image will change to look open.
 - "treasure" sound effect will be played (optional 3rd parameter for a sound effect name)
 - Item description will be shown in chat
 
