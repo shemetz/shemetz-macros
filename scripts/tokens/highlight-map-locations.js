@@ -11,18 +11,21 @@ export const highlightTransparentTokensOnMap = async () => {
   const updates = canvas.tokens.placeables
     .filter(tok => tok.data.img.includes('Transparent') || tok.data.img.includes('FWKBcnS'))
     .map(tok => {
-      const highlight = tok.data.brightLight !== 0.1
+      const highlight = tok.data.light.bright !== 0.1
       return {
         _id: tok.id,
         'displayName': highlight ? CONST.TOKEN_DISPLAY_MODES.ALWAYS : CONST.TOKEN_DISPLAY_MODES.HOVER,
-        'lightAlpha': highlight ? 0.25 : 1,
-        'brightLight': highlight ? 0.1 : 0,
-        'lightColor': highlight ? '#ffee00' : '',
-        'lightAnimation': {
-          type: highlight ? 'sunburst' : '',
-          speed: highlight ? 3 : 5,
-          intensity: highlight ? 10 : 5,
-        },
+        'light': {
+          'bright': highlight ? 1 : 0,
+          'coloration': highlight ? 6 : 0,
+          'luminosity': highlight ? 0 : 0.5,
+          'color': highlight ? '#ffee00' : '',
+          'animation': {
+            type: highlight ? 'radialrainbow' : 'none',
+            speed: highlight ? 0 : 5,
+            intensity: highlight ? 10 : 5,
+          },
+        }
       }
     })
 
