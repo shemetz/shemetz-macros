@@ -4,6 +4,7 @@ import { hookEyedropperColorPicker } from './drawing/eyedropper-color-pick.js'
 import { hookBlockPushing } from './custom-stuff/block-pushing.js'
 import { hookAutomaticWoundEffects, registerAutomaticWoundEffects } from './tokens/automatic-wound-effects.js'
 import { hookControlTokenTeleportation } from './tokens/control-token-teleportation.js'
+import { hookHiddenHotkey } from './placeables/toggle-hide.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
@@ -12,6 +13,7 @@ Hooks.on('init', () => {
   hookBlockPushing()
   registerAutomaticWoundEffects()
   hookControlTokenTeleportation()
+  hookHiddenHotkey()
 })
 Hooks.on('ready', () => {
   hookAutomaticWoundEffects()

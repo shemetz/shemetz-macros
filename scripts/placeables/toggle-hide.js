@@ -21,3 +21,30 @@ export const toggleHide = async (state, tokenNameOrTileId) => {
   if (newState === null) return error(`invalid state: ${state}`)
   return t.document.update({ 'hidden': newState })
 }
+
+const toggleVisibility = async (canvasObjectList, documentName) => {
+  if (canvasObjectList.controlled[0]) {
+    return canvas.scene.updateEmbeddedDocuments(
+      documentName,
+      canvasObjectList.controlled.map(it => ({ _id: it.id, hidden: !it.data.hidden }))
+    )
+  } else return false
+}
+
+export const hookHiddenHotkey = () => {
+  game.keybindings.register('shemetz-macros', 'toggle-hidden', {
+    name: 'Toggle Hidden',
+    hint: 'Toggle the visibility state of each selected token, tile, or drawing (hiding or revealing it).',
+    editable: [
+      { key: 'KeyH' }
+    ],
+    onDown: async () => {
+      // only one of the following will happen, because the user can only be on a single layer
+      return await toggleVisibility(canvas.tokens, 'Token') ||
+      await toggleVisibility(canvas.drawings, 'Drawing') ||
+      await toggleVisibility(canvas.background, 'Tile') ||
+      await toggleVisibility(canvas.foreground, 'Tile') ||
+      false
+    },
+  })
+}
