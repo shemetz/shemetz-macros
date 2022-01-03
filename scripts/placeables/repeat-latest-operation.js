@@ -78,7 +78,6 @@ function applyUpdateDiff (placeables, isRelative) {
 }
 
 function recordUpdateDiff (document, update, options) {
-  if (!options.diff) return
   let flattenedUpdate = flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document.data, flattenedUpdate)
