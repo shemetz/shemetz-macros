@@ -18,7 +18,7 @@ export const toggleConditionWithTokenImage = async () => {
     return
   }
   const choices = [...new Set(canvas.scene.tokens
-    .filter(t => t.permission >= 1 && (game.user.isGM || !t.data.hidden) && t.actor.type !== 'loot')
+    .filter(t => t.permission >= 1 && (game.user.isGM || !t.data.hidden) && t.actor && t.actor.type !== 'loot')
     .map(t => t.name))]
     .sort((a, b) => {
       const combatants = game.combat ? game.combat.data.combatants.map(it => it.name) : []
