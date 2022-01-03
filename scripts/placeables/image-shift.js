@@ -2,7 +2,7 @@ import { selectedTokenOrTile } from '../utils/placeable-utils.js'
 
 /**
  * Hold the Control key to set up images.
- * Hold the Alt key to shift backwards instead of forwards.
+ * Hold the Shift key to shift backwards instead of forwards.
  * Shifting will cycle through the images (going from last back to first).
  */
 export const shiftSelectedPlaceableImageByKeyboard = async () => {
@@ -15,7 +15,7 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
   if (!images || images.length <= 1)
     return ui.notifications.error('Please hold the Ctrl key while activating the image shift macro, to set up images.')
   const currentIndex = getImageListIndex(placeable)
-  const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT) ? -1 : +1
+  const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
   const newIndex = (currentIndex + images.length + delta) % images.length
   const update = prepareShiftImage(placeable, newIndex)
   return placeable.document.update(update)
@@ -182,14 +182,14 @@ function openImageSetupDialog (placeable) {
 }
 
 export const hookImageShiftHotkey = () => {
-  const { CONTROL, ALT } = KeyboardManager.MODIFIER_KEYS
+  const { CONTROL, SHIFT } = KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'image-shift', {
     name: 'Image Shift',
     hint: 'Shift to next token/tile image (requires setup).' +
       ' Hold the Control key to set up images.' +
-      ' Hold the Alt key to shift backwards instead of forwards.',
+      ' Hold the Shift key to shift backwards instead of forwards.',
     editable: [],
-    reservedModifiers: [CONTROL, ALT],
+    reservedModifiers: [CONTROL, SHIFT],
     onDown: async () => {
       const tokens = canvas.tokens.controlled
       const tiles = [...canvas.background.controlled, ...canvas.foreground.controlled]
@@ -200,7 +200,7 @@ export const hookImageShiftHotkey = () => {
       } else {
         for (const t of [...tokens, ...tiles]) {
           if (!hasImageList(t)) continue
-          const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT) ? -1 : +1
+          const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
           await shiftImageWithArgs(t, delta, true)
         }
       }
