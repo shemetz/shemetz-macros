@@ -60,6 +60,7 @@ import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/c
 import { markDeadWithHealthEstimate } from './custom-stuff/mark-defeated-x.js'
 import { printRenderTextureToConsole, printScreenToConsole } from './canvas/print-render-texture-to-console.js'
 import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-utils.js'
+import { repeatLatestOperation } from './placeables/repeat-latest-operation.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -102,6 +103,7 @@ self.ShemetzMacros = {
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
   toggleConditionWithTokenImage, toggleCustomCondition,
   markDeadWithHealthEstimate,
+  repeatLatestOperation,
 }
 
 export const hookShemetzMacros = () => {

@@ -180,3 +180,30 @@ function openImageSetupDialog (placeable) {
   dialog.position.width = 500
   dialog.render(true)
 }
+
+export const hookImageShiftHotkey = () => {
+  const { CONTROL, ALT } = KeyboardManager.MODIFIER_KEYS
+  game.keybindings.register('shemetz-macros', 'image-shift', {
+    name: 'Image Shift',
+    hint: 'Shift to next token/tile image (requires setup).' +
+      ' Hold the Control key to set up images.' +
+      ' Hold the Alt key to shift backwards instead of forwards.',
+    editable: [],
+    reservedModifiers: [CONTROL, ALT],
+    onDown: async () => {
+      const tokens = canvas.tokens.controlled
+      const tiles = [...canvas.background.controlled, ...canvas.foreground.controlled]
+      if (tokens.length + tiles.length === 1) {
+        return shiftSelectedPlaceableImageByKeyboard()
+      } else if (tokens.length + tiles.length === 0) {
+        ui.notifications.warn(`Cannot image-shift;  no tokens/tiles are selected`)
+      } else {
+        for (const t of [...tokens, ...tiles]) {
+          if (!hasImageList(t)) continue
+          const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT) ? -1 : +1
+          await shiftImageWithArgs(t, delta, true)
+        }
+      }
+    },
+  })
+}
