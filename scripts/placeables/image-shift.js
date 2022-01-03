@@ -9,13 +9,13 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
   const placeable = selectedTokenOrTile()
   if (!placeable)
     return ui.notifications.error('Select a token/tile before activating the image shift macro! (hold Ctrl to setup)')
-  if (game.keyboard._downKeys.has('Control'))
+  if (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL))
     return openImageSetupDialog(placeable)
   const { images } = getImageList(placeable)
   if (!images || images.length <= 1)
     return ui.notifications.error('Please hold the Ctrl key while activating the image shift macro, to set up images.')
   const currentIndex = getImageListIndex(placeable)
-  const delta = game.keyboard._downKeys.has('Alt') ? -1 : +1
+  const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT) ? -1 : +1
   const newIndex = (currentIndex + images.length + delta) % images.length
   const update = prepareShiftImage(placeable, newIndex)
   return placeable.document.update(update)
