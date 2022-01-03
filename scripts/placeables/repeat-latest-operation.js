@@ -11,16 +11,18 @@ function openDialogWindow (placeables, isRelative) {
   let template = `
 <div>
     <div class="form-group">
-        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name)}</label>
+        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
         <div id="selectedOption">`
   for (const [flatKey, value] of Object.entries(update)) {
     let oldValues = [], newValues = []
     for (const p of placeables) {
       const oldValue = getProperty(p.data, flatKey)
-      const newValue = isRelative ? oldValue + value : value
+      const newValue = (isRelative && typeof (value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue && !oldValues.includes(oldValue)) {
         oldValues.push(oldValue)
-        newValues.push(newValue)
+        if (!newValues.includes(newValue)) {
+          newValues.push(newValue)
+        }
       }
     }
     if (oldValues.length > 0) {
@@ -59,7 +61,7 @@ function applyUpdateDiff (placeables, isRelative) {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
       const oldValue = getProperty(p.data, flatKey)
-      const newValue = isRelative ? oldValue + value : value
+      const newValue = (isRelative && typeof (value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
       }
@@ -80,8 +82,8 @@ function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document.data, flattenedUpdate)
-  const baseUpdate = flattenedUpdate
-  const relativeUpdate = flattenedUpdate
+  const baseUpdate = deepClone(flattenedUpdate)
+  const relativeUpdate = deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
       const oldValue = getProperty(document.data, key)
@@ -123,35 +125,38 @@ export async function repeatLatestOperation (openDialog) {
     return hookRepeatLatestOperation()
   }
   if (!RLO.latestDocClassName) {
-    return ui.notifications.warn(`Macro ${macroName} - You need to make an operation before you can repeat it..!`)
+    return ui.notifications.warn(`${macroName} - You need to make an operation before you can repeat it..!`)
   }
   const activeLayerThings = Array.from(canvas.activeLayer.documentCollection.values())
   if (activeLayerThings.length > 0 && activeLayerThings[0].constructor.name === RLO.latestDocClassName) {
     const controlled = canvas.activeLayer.controlled
     if (controlled.length !== 0) {
-      if (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
+      if (!game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
         openDialog ? openDialogWindow(controlled, false) : applyUpdateDiff(controlled, false)
       } else {
         openDialog ? openDialogWindow(controlled, true) : applyUpdateDiff(controlled, true)
       }
     } else {
-      ui.notifications.warn(`Macro ${macroName} - You need to select a thing!`)
+      ui.notifications.warn(`${macroName} - You need to select a thing!`)
     }
   } else {
-    ui.notifications.warn(`Macro ${macroName} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${latestDocClassName}`)
+    ui.notifications.warn(`${macroName} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${RLO.latestDocClassName}`)
   }
 }
 
 export function hookRepeatLatestOperationHotkey () {
-  const { SHIFT } = KeyboardManager.MODIFIER_KEYS
+  const { SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'repeat-latest-operation', {
     name: 'Repeat Latest Operation',
     hint: 'Will repeat the latest token/tile/wall/drawing update operation, but with selected things instead.' +
-      ' Hold shift to apply a relative change instead (e.g. increase x by 100 instead of setting x to 1400).',
+      ' Hold Shift to apply a relative change instead (e.g. increase x by +100 instead of setting x to 1400).' +
+      ' Careful - relative changes on some attributes (e.g. wall type) will cause issues!' +
+      ' Hold Alt to skip confirmation (but be careful!).',
     editable: [],
-    reservedModifiers: [SHIFT],
+    reservedModifiers: [SHIFT, ALT],
     onDown: async () => {
-      return repeatLatestOperation(true)
+      const openDialog = !game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT)
+      return repeatLatestOperation(openDialog)
     },
   })
 }

@@ -18,7 +18,7 @@ const activeLayerThings = Array.from(canvas.activeLayer.documentCollection.value
 if (activeLayerThings.length > 0 && activeLayerThings[0].constructor.name === RLO.latestDocClassName) {
   const controlled = canvas.activeLayer.controlled
   if (controlled.length !== 0) {
-    if (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
+    if (!game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
       openDialogWindow(controlled, false)
     } else {
       openDialogWindow(controlled, true)
@@ -27,7 +27,7 @@ if (activeLayerThings.length > 0 && activeLayerThings[0].constructor.name === RL
     ui.notifications.warn(`Macro ${macro.name} - You need to select a thing!`)
   }
 } else {
-  ui.notifications.warn(`Macro ${macro.name} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${latestDocClassName}`)
+  ui.notifications.warn(`Macro ${macro.name} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${RLO.latestDocClassName}`)
 }
 
 function openDialogWindow (placeables, isRelative) {
@@ -35,16 +35,18 @@ function openDialogWindow (placeables, isRelative) {
   let template = `
 <div>
     <div class="form-group">
-        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name)}</label>
+        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
         <div id="selectedOption">`
   for (const [flatKey, value] of Object.entries(update)) {
     let oldValues = [], newValues = []
     for (const p of placeables) {
       const oldValue = getProperty(p.data, flatKey)
-      const newValue = isRelative ? oldValue + value : value
+      const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue && !oldValues.includes(oldValue)) {
         oldValues.push(oldValue)
-        newValues.push(newValue)
+        if (!newValues.includes(newValue)) {
+          newValues.push(newValue)
+        }
       }
     }
     if (oldValues.length > 0) {
@@ -83,7 +85,7 @@ function applyUpdateDiff (placeables, isRelative) {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
       const oldValue = getProperty(p.data, flatKey)
-      const newValue = isRelative ? oldValue + value : value
+      const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
       }
@@ -104,8 +106,8 @@ function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document.data, flattenedUpdate)
-  const baseUpdate = flattenedUpdate
-  const relativeUpdate = flattenedUpdate
+  const baseUpdate = deepClone(flattenedUpdate)
+  const relativeUpdate = deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
       const oldValue = getProperty(document.data, key)
