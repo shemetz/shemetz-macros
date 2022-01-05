@@ -16,14 +16,14 @@
       "label": "shemetz-macros",
       "package": "shemetz-macros",
       "path": "./packs/shemetz-macros.db",
-      "entity": "Macro"
+      "type": "Macro"
     },
     {
       "name": "critical-hits",
       "label": "critical-hits",
       "package": "shemetz-macros",
       "path": "./packs/critical-hits.db",
-      "entity": "RollTable"
+      "type": "RollTable"
     }
   ],
   "dependencies": [
