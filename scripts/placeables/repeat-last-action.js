@@ -7,33 +7,24 @@ if (!self.RepeatLatestOperation) {
 const RLO = self.RepeatLatestOperation
 
 function openDialogWindow (placeables) {
-  // TODO add checkbox in dialog
-  let isRelative = false
-  const update = isRelative ? RLO.latestUpdateRelative : RLO.latestUpdate
+  Hooks.once('renderDialog', function () {
+    // Listen to checkbox change
+    onDialogRelativeUpdateCheckboxClicked(false, placeables)
+    $(`input#isRelative`).change(e => onDialogRelativeUpdateCheckboxClicked(e.target.checked, placeables))
+  })
   let template = `
-<div>
+<div style="height: 200px">
     <div class="form-group">
-        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
-        <div id="selectedOption">`
-  for (const [flatKey, value] of Object.entries(update)) {
-    let oldValues = [], newValues = []
-    for (const p of placeables) {
-      const oldValue = getProperty(p.data, flatKey)
-      const newValue = (isRelative && typeof (value) === 'number') ? oldValue + value : value
-      if (oldValue !== newValue && !oldValues.includes(oldValue)) {
-        oldValues.push(oldValue)
-        if (!newValues.includes(newValue)) {
-          newValues.push(newValue)
-        }
-      }
-    }
-    if (oldValues.length > 0) {
-      const oldValueStr = oldValues.length === 1 ? oldValues[0] : oldValues.join(',')
-      const newValueStr = newValues.length === 1 ? newValues[0] : newValues.join(',')
-      template += `<div><b>${flatKey}</b>: ${oldValueStr} -> ${newValueStr}</div>`
-    }
-  }
-  template += `</div>
+        <div>
+            <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
+        </div>
+        <div>
+            <input style="vertical-align: middle;" id="isRelative" type="checkbox"/>
+            <label> Relative change?</label>
+        </div>
+        <div id="shownUpdate">
+            <!-- this is where the deltas will be updated after the renderDialog hook -->
+        </div>
     </div>
 </div>`
   new Dialog({
@@ -43,7 +34,8 @@ function openDialogWindow (placeables) {
       ok: {
         icon: '<i class="fas fa-check"></i>',
         label: 'OK',
-        callback: async () => {
+        callback: async (html) => {
+          const isRelative = html.find('#isRelative')[0].checked
           applyUpdateDiff(placeables, isRelative)
         },
       },
@@ -55,6 +47,43 @@ function openDialogWindow (placeables) {
     },
     default: 'cancel',
   }).render(true)
+}
+
+const onDialogRelativeUpdateCheckboxClicked = (newIsRelativeValue, placeables) => {
+  const update = newIsRelativeValue ? RLO.latestUpdateRelative : RLO.latestUpdate
+  let shownUpdate = ''
+  for (const [flatKey, value] of Object.entries(update)) {
+    const isRelativeNumberChange = newIsRelativeValue && typeof (value) === 'number'
+    let oldValues = [], newValues = []
+    for (const p of placeables) {
+      let oldValue = getProperty(p.data, flatKey)
+      let newValue = isRelativeNumberChange ? oldValue + value : value
+      const [oldValueStr, newValueStr] = formatNicelyIfNumbers(oldValue, newValue)
+      if (oldValueStr !== newValue && !oldValues.includes(oldValueStr)) {
+        oldValues.push(oldValueStr)
+        if (!newValues.includes(newValueStr)) {
+          newValues.push(newValueStr)
+        }
+      }
+    }
+    if (oldValues.length > 0) {
+      const oldValuesStr = oldValues.length === 1 ? oldValues[0] : oldValues.join(', ')
+      const newValuesStr = newValues.length === 1 ? newValues[0] : newValues.join(', ')
+      const relativeChangeStr = isRelativeNumberChange
+        ? ` (${value >= 0 ? '+' : ''}${value % 1 === 0 ? value : value.toFixed(2)})`
+        : ''
+      shownUpdate += `<div><b>${flatKey}${relativeChangeStr}</b>: ${oldValuesStr} -> ${newValuesStr}</div>`
+    }
+  }
+  $(`#shownUpdate`).html(shownUpdate)
+}
+
+const formatNicelyIfNumbers = (oldValue, newValue) => {
+  if (typeof (oldValue) !== 'number') return [oldValue, newValue]
+  let oldValueStr = '' + oldValue, newValueStr = '' + newValue
+  if (oldValue % 1 !== 0) oldValueStr = oldValue.toFixed(2)
+  if (newValue % 1 !== 0) newValueStr = newValue.toFixed(2)
+  return [oldValueStr, newValueStr]
 }
 
 function applyUpdateDiff (placeables, isRelative) {
@@ -88,7 +117,11 @@ function recordUpdateDiff (document, update, options) {
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
       const oldValue = getProperty(document.data, key)
-      relativeUpdate[key] = value - oldValue
+      if (value !== oldValue) {
+        relativeUpdate[key] = value - oldValue
+      } else {
+        delete relativeUpdate[key]
+      }
     }
   }
   RLO.latestUpdate = baseUpdate
