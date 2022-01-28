@@ -1,4 +1,4 @@
-const macroName = 'Repeat Latest Operation'
+const macroName = 'Repeat Last Action'
 if (!self.RepeatLatestOperation) {
   self.RepeatLatestOperation = {
     alreadyHooked: false
@@ -6,7 +6,9 @@ if (!self.RepeatLatestOperation) {
 }
 const RLO = self.RepeatLatestOperation
 
-function openDialogWindow (placeables, isRelative) {
+function openDialogWindow (placeables) {
+  // TODO add checkbox in dialog
+  let isRelative = false
   const update = isRelative ? RLO.latestUpdateRelative : RLO.latestUpdate
   let template = `
 <div>
@@ -35,7 +37,7 @@ function openDialogWindow (placeables, isRelative) {
     </div>
 </div>`
   new Dialog({
-    title: `Repeat Latest Operation?`,
+    title: `Repeat Last Action?`,
     content: template,
     buttons: {
       ok: {
@@ -119,7 +121,7 @@ export function hookRepeatLatestOperation () {
   }
 }
 
-export async function repeatLatestOperation (openDialog) {
+export async function repeatLastAction (openDialog) {
   if (!RLO.alreadyHooked) {
     return hookRepeatLatestOperation()
   }
@@ -130,11 +132,7 @@ export async function repeatLatestOperation (openDialog) {
   if (activeLayerThings.length > 0 && activeLayerThings[0].constructor.name === RLO.latestDocClassName) {
     const controlled = canvas.activeLayer.controlled
     if (controlled.length !== 0) {
-      if (!game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
-        openDialog ? openDialogWindow(controlled, false) : applyUpdateDiff(controlled, false)
-      } else {
-        openDialog ? openDialogWindow(controlled, true) : applyUpdateDiff(controlled, true)
-      }
+      openDialog ? openDialogWindow(controlled) : applyUpdateDiff(controlled, false)
     } else {
       ui.notifications.warn(`${macroName} - You need to select a thing!`)
     }
@@ -144,18 +142,23 @@ export async function repeatLatestOperation (openDialog) {
 }
 
 export function hookRepeatLatestOperationHotkey () {
-  const { SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
-  game.keybindings.register('shemetz-macros', 'repeat-latest-operation', {
-    name: 'Repeat Latest Operation',
+  const { CONTROL, SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
+  game.keybindings.register('shemetz-macros', 'repeat-last-action', {
+    name: 'Repeat Last Action',
     hint: 'Will repeat the latest token/tile/wall/drawing update operation, but with selected things instead.' +
       ' Hold Shift to apply a relative change instead (e.g. increase x by +100 instead of setting x to 1400).' +
       ' Careful - relative changes on some attributes (e.g. wall type) will cause issues!' +
       ' Hold Alt to skip confirmation (but be careful!).',
-    editable: [],
-    reservedModifiers: [SHIFT, ALT],
+    editable: [
+      {
+        key: 'KeyZ',
+        modifiers: [CONTROL, SHIFT]
+      }
+    ],
+    reservedModifiers: [ALT],
     onDown: async () => {
       const openDialog = !game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT)
-      return repeatLatestOperation(openDialog)
+      return repeatLastAction(openDialog)
     },
   })
 }

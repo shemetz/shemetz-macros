@@ -59,7 +59,7 @@ function openDialogWindow (placeables, isRelative) {
     </div>
 </div>`
   new Dialog({
-    title: `Repeat Latest Operation?`,
+    title: `Repeat Last Action?`,
     content: template,
     buttons: {
       ok: {
