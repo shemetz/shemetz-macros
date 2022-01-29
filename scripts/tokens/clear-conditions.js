@@ -7,7 +7,7 @@ export const clearAllConditions = async (tokens) => {
   for (const tok of tokens) {
     updates.push({ _id: tok.id, effects: [], overlayEffect: '' })
     // Status Icon Counters:
-    if (self.EffectCounter) promises.push(self.EffectCounter.clearEffects(tok))
+    if (self.EffectCounter) promises.push(self.EffectCounter.clearEffects(tok.document))
     // Pathfinder 2e conditions:
     if (game.system.id === 'pf2e') {
       promises.push(await game.pf2e.ConditionManager.deleteConditions(tok.actor.itemTypes.condition.map(c => c.id), tok.actor))
