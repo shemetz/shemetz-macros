@@ -20,7 +20,7 @@ export const showNamesOrBarsDialog = (tokens) => {
     'Show Names (everyone)',
     'Hide Bars (none)',
     'Hide Bars (owner hover)',
-    'Show Bars (owner always)',
+    'Show Bars (owner)',
     'Show Bars (everyone)',
   ]
   showDialogWithOptions(

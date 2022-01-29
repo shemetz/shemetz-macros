@@ -131,6 +131,16 @@ function recordUpdateDiff (document, update, options) {
 }
 
 function improveUpdate (data, update) {
+  for (const key in update) {
+    const updateValue = update[key]
+    const oldValue = getProperty(data, key)
+    // -= in a key means it's removed from data
+    if (key.includes('-=')) delete update[key]
+    // if value is undefined/null/''/0 both before and after, we probably don't need to repeat it
+    if (!updateValue && !oldValue) delete update[key]
+    // if value didn't actually change we probably don't want to repeat it
+    if (updateValue === oldValue) delete update[key]
+  }
   if (update.hasOwnProperty('x') && !update.hasOwnProperty('y')) update['y'] = data.y
   if (!update.hasOwnProperty('x') && update.hasOwnProperty('y')) update['x'] = data.x
 }
