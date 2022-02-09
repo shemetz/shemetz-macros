@@ -23,19 +23,6 @@ A button in the Walls controls allows you to automatically find and fix all "wal
 their endpoints almost at the same place, off by a small number of pixels.  This will show you a preview and a count of
 how many gaps are about to be closed.
 
-## New automation
-
-#### [Automatic wound effects](scripts/tokens/automatic-wound-effects.js)
-![automatic wounds demo](https://pipe.miroware.io/60781d17a333fb12a3acb21e/maybe%20permanent/automatic_wounds.webp)
-
-(requires Token Magic FX and pf2e)
-
-(can be enabled in settings)
-
-Whenever a token takes damage, it will get visibly hurt with random injury SFX.  When it gets healed those wounds will 
-gradually disappear.
-
-
 
 
 #### Everything Else
