@@ -14,14 +14,14 @@
     {
       "name": "shemetz-macros",
       "label": "shemetz-macros",
-      "package": "shemetz-macros",
+      "module": "shemetz-macros",
       "path": "./packs/shemetz-macros.db",
       "type": "Macro"
     },
     {
       "name": "critical-hits",
       "label": "critical-hits",
-      "package": "shemetz-macros",
+      "module": "shemetz-macros",
       "path": "./packs/critical-hits.db",
       "type": "RollTable"
     }
