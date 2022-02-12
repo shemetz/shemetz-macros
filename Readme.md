@@ -23,6 +23,10 @@ A button in the Walls controls allows you to automatically find and fix all "wal
 their endpoints almost at the same place, off by a small number of pixels.  This will show you a preview and a count of
 how many gaps are about to be closed.
 
+#### [Enable "End Turn" button in chat bar](scripts/gui/enable-end-turn-button-in-chat-bar.js)
+![close wall gaps screenshot](https://cdn.discordapp.com/attachments/729279512470093914/942007679965069382/end_turn_button.png)
+An extra button to end your turn, shown on the bottom of the chat tab during combat.
+
 
 
 #### Everything Else

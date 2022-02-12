@@ -8,6 +8,7 @@
   "compatibleCoreVersion": "9",
   "esmodules": [
     "scripts/shemetz-macros.js",
+    "scripts/sockets.js",
     "scripts/hooks.js"
   ],
   "packs": [
