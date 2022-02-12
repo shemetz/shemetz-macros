@@ -137,6 +137,5 @@ export const hookCloseWallGaps = () => {
         return closeWallGaps(canvas.walls.controlled.length > 0, DEFAULT_MAXIMUM_GAP_DISTANCE)
       },
     })
-    console.log(`Shemetz Macros | Added 'Close Wall Gaps' button`)
   })
 }

@@ -49,7 +49,7 @@ const onPressButton = async (event) => {
 }
 
 const shouldShowEndTurnButton = () => {
-  if (!canvas.tokens) return false // not fully loaded yet
+  if (!game.ready) return false // not fully loaded yet
   const currentCombatantId = game.combat?.current?.tokenId
   if (!currentCombatantId) return false // no combat
   const currentActor = canvas.tokens.get(currentCombatantId)?.actor

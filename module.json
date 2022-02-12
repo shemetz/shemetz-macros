@@ -11,6 +11,10 @@
     "scripts/sockets.js",
     "scripts/hooks.js"
   ],
+  "socket": true,
+  "styles": [
+    "styles/shemetz-macros.css"
+  ],
   "packs": [
     {
       "name": "shemetz-macros",
