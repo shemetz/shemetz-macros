@@ -62,7 +62,6 @@ import { printRenderTextureToConsole, printScreenToConsole } from './canvas/prin
 import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-utils.js'
 import { repeatLastAction } from './placeables/repeat-last-action.js'
 import { emitMessageToHighlightForCurrentPlayer } from './gui/end-turn-button-in-chat-bar.js'
-import { emitHighlight, refreshRemoteHighlightListeners } from './gui/remote-highlight.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -107,7 +106,6 @@ self.ShemetzMacros = {
   markDeadWithHealthEstimate,
   repeatLastAction, repeatLatestOperation: repeatLastAction,
   emitMessageToHighlightForCurrentPlayer,
-  emitHighlight, refreshRemoteHighlightListeners,
 }
 
 export const hookShemetzMacros = () => {

@@ -8,7 +8,6 @@ import { hookImageShiftHotkey } from './placeables/image-shift.js'
 import { hookLayerSwitchHotkey } from './custom-stuff/layer-switch-hotkey.js'
 import { hookRepeatLatestOperation, hookRepeatLatestOperationHotkey } from './placeables/repeat-last-action.js'
 import { hookEndTurnButtonInChatBar } from './gui/end-turn-button-in-chat-bar.js'
-import { hookRemoteHighlight } from './gui/remote-highlight.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
@@ -22,8 +21,4 @@ Hooks.on('init', () => {
   hookRepeatLatestOperation()
   hookRepeatLatestOperationHotkey()
   hookEndTurnButtonInChatBar()
-})
-
-Hooks.on('ready', () => {
-  hookRemoteHighlight()
 })

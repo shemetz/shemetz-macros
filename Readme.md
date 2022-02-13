@@ -27,17 +27,6 @@ how many gaps are about to be closed.
 ![end turn button screenshot](https://cdn.discordapp.com/attachments/729279512470093914/942007679965069382/end_turn_button.png)
 An extra button to end your turn, shown on the bottom of the chat tab during combat.
 
-#### [Remote Highlight UI Elements](scripts/gui/remote-highlight.js)
-![remote highlights screenshot](https://cdn.discordapp.com/attachments/734095524822777976/942155007116083290/highlight_this_ui_element_demo.gif)
-Allows users to highlight UI elements on others' screens.
-Useful for teaching people the UI remotely, or bringing attention to things (e.g. the end turn button).
-Serves a similar purpose to pings on the canvas, but for the UI.
-
-To activate, Ctrl+Aux-Click on a UI element.  The element will be highlighted on all other players' screens.
-"Aux-Click" is right-click, middle-click, or even stuff like a mouse's side button mapped to "Forward".
-
-
-
 
 #### Everything Else
 - A lot of code, used by my macros and other macros in my group's campaigns
