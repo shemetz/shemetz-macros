@@ -6,7 +6,7 @@ export const postTokenArt = (tok) => {
     <img src=${imgSrc} style="width: 280px;" alt=${target.name}/>
   </a>
   `
-  ChatMessage.create({ content })
+  ChatMessage.create({ content, flags: { core: { canPopout: true } },})
 }
 
 // yes this is hacky but I don't know better

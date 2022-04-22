@@ -16,9 +16,11 @@ export const error = (errorMessage) => {
 }
 
 export const chat = (message) => {
+  const canPopout = message.includes('<') || (typeof message !== 'string')
   const chatData = {
     user: game.user.id,
     speaker: ChatMessage.getSpeaker(),
+    flags: { core: { canPopout } },
     content: message,
   }
   ChatMessage.create(chatData, {})
@@ -38,8 +40,8 @@ const convertArgsTextToOneString = (argsText) => {
  * useful to decode TriggerHappy arguments
  */
 export const htmlDecode = (str) => {
-  const doc = new DOMParser().parseFromString(str, "text/html");
-  return doc.documentElement.textContent;
+  const doc = new DOMParser().parseFromString(str, 'text/html')
+  return doc.documentElement.textContent
 }
 
 export const italicize = (argsText) => {
