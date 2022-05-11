@@ -51,15 +51,3 @@ export const italicize = (argsText) => {
 export const bold = (argsText) => {
   return `<b>${convertArgsTextToOneString(argsText)}</b>`
 }
-
-/**
- * Converts text from crit tables to make the first sentence bold (should include a period after the first sentence!)
- */
-export const makeTableResultBold = (text) => {
-  const periodIndex = text.search(/[.!?]/g)
-  if (periodIndex === -1)
-    return '<b>(!)</b>' + text
-  const titleText = text.substring(0, periodIndex + 1)
-  const restOfText = text.substring(periodIndex + 1)
-  return `<b>${titleText}</b>${restOfText}`
-}

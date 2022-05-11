@@ -1,6 +1,6 @@
 import { getDependency } from './utils/data-utils.js'
 import { bold, chat, error, htmlDecode, italicize } from './utils/message-utils.js'
-import { crit, critDialog } from './dnd5e/crit.js'
+import { crit, critDialog, critRollInjury, critRollMentalAffliction, critRollLimitedInjury } from './dnd5e/crit.js'
 import { spendHitDie } from './dnd5e/spend-hit-die.js'
 import { colorPickFromCursor } from './drawing/eyedropper-color-pick.js'
 import { showNamesOrBars, showNamesOrBarsDialog } from './tokens/show-names-or-bars.js'
@@ -67,7 +67,7 @@ self.ShemetzMacros = {
   getDependency,
   error, chat, italicize, bold,
   htmlDecode,
-  crit, critDialog,
+  crit, critDialog, critRollInjury, critRollMentalAffliction, critRollLimitedInjury,
   spendHitDie,
   colorPickFromCursor, printRenderTextureToConsole, printScreenToConsole,
   showNamesOrBarsDialog, showNamesOrBars,
