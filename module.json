@@ -3,7 +3,7 @@
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
   "author": "shem",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "esmodules": [
