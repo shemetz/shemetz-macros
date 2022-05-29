@@ -6,10 +6,6 @@ some things here, though!  And if you ask me I could export some of the things h
 
 ## New keybindings
 
-#### [Control Token Teleportation](scripts/tokens/control-token-teleportation.js)
-Hold Ctrl while dragging a token from point A to point B to have it instantly appear at point B without animating.
-Useful for teleportation and for moving players across the map without them seeing through walls in the way.
-
 #### [Eyedropper / Color Pick](scripts/drawing/eyedropper-color-pick.js)
 Press and release K while using the drawing tools to pick a color directly from the screen.
 A preview will be shown while you hold K.  You can also hold Shift to affect fill color instead of stroke color, and
