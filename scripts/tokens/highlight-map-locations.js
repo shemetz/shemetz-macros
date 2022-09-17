@@ -9,9 +9,9 @@ https://i.imgur.com/DkNojdN.png
  */
 export const highlightTransparentTokensOnMap = async () => {
   const updates = canvas.tokens.placeables
-    .filter(tok => tok.data.img.includes('Transparent') || tok.data.img.includes('FWKBcnS'))
+    .filter(tok => tok.document.texture.src.includes('Transparent') || tok.document.texture.src.includes('FWKBcnS'))
     .map(tok => {
-      const highlight = tok.data.light.bright !== 0.1
+      const highlight = tok.document.light.bright !== 0.1
       return {
         _id: tok.id,
         'displayName': highlight ? CONST.TOKEN_DISPLAY_MODES.ALWAYS : CONST.TOKEN_DISPLAY_MODES.HOVER,

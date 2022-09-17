@@ -10,7 +10,7 @@ export const setDarknessLevel = (darknessLevel, animateDarknessDurationMs) => {
 }
 
 export const setDarknessLevelDialog = () => {
-  const currentDarkness = canvas.scene.data.darkness
+  const currentDarkness = canvas.scene.darkness
 
   new Dialog({
     title: 'Set darkness level',

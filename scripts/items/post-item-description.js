@@ -15,15 +15,15 @@ export const postItemDescription = (itemNameOrId, characterName) => {
   const someoneFoundText = characterName ? `
     <div style="line-height: 32px"><i>${characterName} found...</i></div>
   ` : ``
-  const image = item.data.img === 'icons/svg/mystery-man.svg' ? '' : `
+  const image = item.document.img === 'icons/svg/mystery-man.svg' ? '' : `
   <div style="text-align: center;">
-    <img src=${item.data.img} style="width: 128px;" alt=${item.name}/>
+    <img src=${item.document.img} style="width: 128px;" alt=${item.name}/>
   </div>`
   const content = `
     ${someoneFoundText}
     <h3 style="font-family: 'Press Start',monospace">${item.name}</h3>
     ${image}
-    ${item.data.data.description.value}
+    ${item.system.description.value}
   `
   chat(content)
 }

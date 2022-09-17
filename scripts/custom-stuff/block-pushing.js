@@ -5,14 +5,14 @@ function _getShiftedPosition_Override (dx, dy, recursed=false) {
   let [x, y] = canvas.grid.grid.shiftPosition(this.x, this.y, dx, dy);
   let targetCenter = this.getCenter(x, y);
   let collide = this.checkCollision(targetCenter);
-  if (collide) return  {x: this.data.x, y: this.data.y}
+  if (collide) return  {x: this.document.x, y: this.document.y}
   // block pushing!
   function _placeableContains(placeable, position) {
     // Tokens have getter (since width/height is in grid increments) but drawings use data.width/height directly
-    const w = placeable.w || placeable.data.width;
-    const h = placeable.h || placeable.data.height;
-    return  Number.between(position.x, placeable.data.x, placeable.data.x + w)
-      && Number.between(position.y, placeable.data.y, placeable.data.y + h)
+    const w = placeable.w || placeable.document.width;
+    const h = placeable.h || placeable.document.height;
+    return  Number.between(position.x, placeable.document.x, placeable.document.x + w)
+      && Number.between(position.y, placeable.document.y, placeable.document.y + h)
   }
   function _getPushablesAt(placeables, position) {
     return placeables
@@ -25,10 +25,10 @@ function _getShiftedPosition_Override (dx, dy, recursed=false) {
   const blockShiftedPosition = block._getShiftedPosition(dx, dy, true)
   if (block.name.endsWith('non-chain-pushable') && recursed) {
     // not allowed to chain-push
-    return {x: this.data.x, y: this.data.y}
+    return {x: this.document.x, y: this.document.y}
   } else if (blockShiftedPosition.x === block.x && blockShiftedPosition.y === block.y) {
     // failed to push
-    return {x: this.data.x, y: this.data.y}
+    return {x: this.document.x, y: this.document.y}
   } else {
     // successful push;  push in chain
     self.blockPushingExtraPushes.push({...blockShiftedPosition, _id: block.id})
@@ -43,7 +43,7 @@ async function moveMany_Override ({dx=0, dy=0, rotate=false, ids}={}) {
   }
 
   // Determine the set of movable object IDs unless some were explicitly provided
-  ids = ids instanceof Array ? ids : this.controlled.filter(o => !o.data.locked).map(o => o.id);
+  ids = ids instanceof Array ? ids : this.controlled.filter(o => !o.document.locked).map(o => o.id);
   if ( !ids.length ) return [];
 
   // Define rotation angles

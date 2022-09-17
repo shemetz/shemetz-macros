@@ -11,17 +11,17 @@ export const toggleConditionWithTokenImage = async () => {
   const tokensTargeted = targetedTokens()
   if (tokensTargeted.length === 1) {
     // set image to match targeted token
-    const conditionImg = tokensTargeted[0].data.img
+    const conditionImg = tokensTargeted[0].document.texture.src
     for await (const token of tokens) {
       await toggleCustomCondition(token, conditionImg, { overlay: false })
     }
     return
   }
   const choices = [...new Set(canvas.scene.tokens
-    .filter(t => t.permission >= 1 && (game.user.isGM || !t.data.hidden) && t.actor && t.actor.type !== 'loot')
+    .filter(t => t.permission >= 1 && (game.user.isGM || !t.hidden) && t.actor && t.actor.type !== 'loot')
     .map(t => t.name))]
     .sort((a, b) => {
-      const combatants = game.combat ? game.combat.data.combatants.map(it => it.name) : []
+      const combatants = game.combat ? game.combat.combatants.map(it => it.name) : []
       if (combatants.includes(a) !== combatants.includes(b))
         return +combatants.includes(b) - +combatants.includes(a)
       const tokA = canvas.scene.tokens.find(it => it.name === a)
@@ -35,7 +35,7 @@ export const toggleConditionWithTokenImage = async () => {
       'Toggle condition/effect with token image',
       'Select token',
       async (selected) => {
-        const conditionImg = canvas.scene.tokens.find(it => it.name === selected).data.img
+        const conditionImg = canvas.scene.tokens.find(it => it.name === selected).texture.src
         for await (const token of tokens) {
           await toggleCustomCondition(token, conditionImg, { overlay: false })
         }

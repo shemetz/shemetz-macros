@@ -150,13 +150,9 @@ function startShowingEyedropperColor () {
 export const hookEyedropperColorPicker = () => {
   const { SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'eyedropper', {
-    name: 'Eyedropper (Color Pick)',
+    name: 'Eyedropper (use "Precise Drawing Tools" module instead!)',
     hint: 'Pick the color of the current pixel under the cursor.',
-    editable: [
-      {
-        key: 'KeyK'
-      }
-    ],
+    editable: [],
     reservedModifiers: [SHIFT, ALT],
     onDown: () => {
       if ($(`.scene-control.active`).attr('data-control') === 'drawings') {

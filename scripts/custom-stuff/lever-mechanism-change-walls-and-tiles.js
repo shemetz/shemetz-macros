@@ -34,7 +34,7 @@ export const leverMechanismChangeWallsAndTiles = async (leverToken, toggleType, 
     console.warn(`Failed to find wall with ID ${id}`)
   })
   tileIds.forEach(id => {
-    const tile = canvas.background.get(id) || canvas.foreground.get(id)
+    const tile = canvas.tiles.get(id)
     if (tile) return tiles.push(tile)
     console.warn(`Failed to find tile with ID ${id}`)
   })
@@ -52,7 +52,7 @@ const flipWallsOpenOrClose = async (walls) => {
   const wallUpdates = walls.map(wall => {
     return {
       _id: wall.id,
-      ds: 1 - wall.data.ds,
+      ds: 1 - wall.document.ds,
     }
   })
   return canvas.scene.updateEmbeddedDocuments('Wall', wallUpdates)
@@ -67,7 +67,7 @@ const shiftTilesOrFlipHidden = async (tiles) => {
     } else {
       return {
         _id: tile.id,
-        'hidden': !tile.data.hidden,
+        hidden: !tile.document.hidden,
       }
     }
   }).filter(it => it !== null)

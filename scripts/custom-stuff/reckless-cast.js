@@ -32,9 +32,9 @@ export const recklessCast = async () => {
 
   // noinspection JSCheckFunctionSignatures
   const shent = game.actors.getName('Shent')
-  const spells = shent.data.items.filter((it) => {
-    return it.type === 'spell' && it.data.level === level &&
-      (level === 0 ? it.data.preparation.mode === 'innate' : it.data.preparation.mode === 'atwill')
+  const spells = shent.document.items.filter((it) => {
+    return it.type === 'spell' && it.document.level === level &&
+      (level === 0 ? it.document.preparation.mode === 'innate' : it.document.preparation.mode === 'atwill')
     // reckless spells have "at will" to mark them as non-spellbook and hide them when I filter prepared spells.
   })
   if (spells.length !== 9) {
@@ -45,7 +45,7 @@ export const recklessCast = async () => {
   }
 // Pay a spell slot
   if (!isDoublecast && level > 0) {
-    const slotsRemaining = shent.data.data.spells[`spell${level}`].value
+    const slotsRemaining = shent.system.spells[`spell${level}`].value
     if (slotsRemaining === 0) {
       ui.notifications.error(`Shent is out of level ${level} spell slots!`)
       return
@@ -163,7 +163,7 @@ export const recklessCast = async () => {
       })
     } else {
       const spell = spells[rollNum - 1]
-      const data = spell.data, ad = shent.data.data
+      const data = spell.document
       let range = ((data.range) && (data.range.value || data.range.units)) ? (data.range.value || '') +
         (((data.range.long) && (data.range.long !== 0) && (data.range.long !== data.range.value))
           ? '/' + data.range.long

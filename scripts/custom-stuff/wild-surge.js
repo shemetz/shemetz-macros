@@ -2,7 +2,7 @@
 // https://vignette.wikia.nocookie.net/leagueoflegends/images/f/f2/PROJECT_Reckoning_profileicon.png
 
 export const castRandomWildSurge = async (actor) => {
-    const surges = actor.data.items.filter((it) => {
+    const surges = actor.items.filter((it) => {
         return it.type === "spell" && it.name.includes("Wild Surge")
     })
     if (surges.length !== 8) {

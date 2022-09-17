@@ -5,9 +5,9 @@ export const hookLayerSwitchHotkey = () => {
     editable: [],
     onDown: async () => {
       if (canvas.activeLayer.name === 'TokenLayer') {
-        canvas.activateLayer('background')
+        canvas.tiles.activate()
       } else {
-        canvas.activateLayer('tokens')
+        canvas.tokens.activate()
       }
     },
   })

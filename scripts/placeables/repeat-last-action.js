@@ -16,7 +16,7 @@ function openDialogWindow (placeables) {
 <div style="height: 200px">
     <div class="form-group">
         <div>
-            <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
+            <label>About to apply changes to: ${placeables.map(p => p.name || p.document.name || p.id)}</label>
         </div>
         <div>
             <input style="vertical-align: middle;" id="isRelative" type="checkbox"/>
@@ -56,7 +56,7 @@ const onDialogRelativeUpdateCheckboxClicked = (newIsRelativeValue, placeables) =
     const isRelativeNumberChange = newIsRelativeValue && typeof (value) === 'number'
     let oldValues = [], newValues = []
     for (const p of placeables) {
-      let oldValue = getProperty(p.data, flatKey)
+      let oldValue = getProperty(p.document, flatKey)
       let newValue = isRelativeNumberChange ? oldValue + value : value
       const [oldValueStr, newValueStr] = formatNicelyIfNumbers(oldValue, newValue)
       if (oldValueStr !== newValue && !oldValues.includes(oldValueStr)) {
@@ -91,7 +91,7 @@ function applyUpdateDiff (placeables, isRelative) {
   const updates = placeables.map(p => {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
-      const oldValue = getProperty(p.data, flatKey)
+      const oldValue = getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof (value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
@@ -111,12 +111,12 @@ function applyUpdateDiff (placeables, isRelative) {
 function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = flattenObject(update)
   delete flattenedUpdate['_id']
-  improveUpdate(document.data, flattenedUpdate)
+  improveUpdate(document, flattenedUpdate)
   const baseUpdate = deepClone(flattenedUpdate)
   const relativeUpdate = deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
-      const oldValue = getProperty(document.data, key)
+      const oldValue = getProperty(document, key)
       if (value !== oldValue) {
         relativeUpdate[key] = value - oldValue
       } else {

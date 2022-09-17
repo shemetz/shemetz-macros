@@ -7,7 +7,7 @@ export const organizeUnsortedMacros = async () => {
     if (m.folder) {
       return
     }
-    const playerId = m.data.author
+    const playerId = m.document.author
     if (!macrosByPlayer[playerId]) {
       macrosByPlayer[playerId] = []
     }
@@ -18,7 +18,7 @@ export const organizeUnsortedMacros = async () => {
     // create a folder if one doesn't exist
     if (!game.folders.filter(f => f.type === 'Macro').find(f => f.name === user.name)) {
       const folderName = user.name
-      const folderColor = user.data.color
+      const folderColor = user.document.color
       await Folder.create({
         name: folderName,
         type: 'Macro',

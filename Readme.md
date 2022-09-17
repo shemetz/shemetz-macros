@@ -15,12 +15,14 @@ grid, etc).
 ## New UI controls
 #### [Close wall gaps](scripts/walls/close-wall-gaps.js)
 ![close wall gaps screenshot](https://cdn.discordapp.com/attachments/699750150674972743/888549704403664906/unknown.png)
+
 A button in the Walls controls allows you to automatically find and fix all "wall gaps" - places where two walls have
 their endpoints almost at the same place, off by a small number of pixels.  This will show you a preview and a count of
 how many gaps are about to be closed.
 
 #### [Enable "End Turn" button in chat bar](scripts/gui/end-turn-button-in-chat-bar.js)
 ![end turn button screenshot](https://cdn.discordapp.com/attachments/729279512470093914/942007679965069382/end_turn_button.png)
+
 An extra button to end your turn, shown on the bottom of the chat tab during combat.
 
 

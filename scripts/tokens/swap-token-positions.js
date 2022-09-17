@@ -5,14 +5,14 @@ export const swapTokenPositions = async (tokens) => {
 
   const updates = [
     {
-      _id: tokens[0].data._id,
-      x: tokens[1].data.x,
-      y: tokens[1].data.y,
+      _id: tokens[0].id,
+      x: tokens[1].document.x,
+      y: tokens[1].document.y,
     },
     {
-      _id: tokens[1].data._id,
-      x: tokens[0].data.x,
-      y: tokens[0].data.y,
+      _id: tokens[1].id,
+      x: tokens[0].document.x,
+      y: tokens[0].document.y,
     },
   ]
 

@@ -20,7 +20,7 @@ const getSoundCollection = () => {
   const macro = game.macros.getName(extraSoundsMacroName)
   if (macro) {
     // evaluating the code of the macro, turning it into an object
-    const soundsInMacro = (new Function(`"use strict"; return ${macro.data.command}`)).call(this)
+    const soundsInMacro = (new Function(`"use strict"; return ${macro.command}`)).call(this)
     Object.assign(soundCollection, soundsInMacro)
   }
   return soundCollection
@@ -66,7 +66,7 @@ export const playSoundFromDialog = () => {
     (soundType) => {
       if (soundType === 'SOUND CHECK')
         return soundCheck()
-      else
+      else if (!!soundType)
         return playSound(soundType, true)
     },
     soundTypes,

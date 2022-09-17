@@ -1,11 +1,12 @@
 {
-  "name": "shemetz-macros",
+  "id": "shemetz-macros",
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
-  "author": "shem",
-  "version": "0.9.11",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
+  "version": "0.10.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
   "esmodules": [
     "scripts/shemetz-macros.js",
     "scripts/sockets.js",
@@ -31,15 +32,31 @@
       "type": "RollTable"
     }
   ],
-  "dependencies": [
+  "relationships": {
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "1.12.7.0",
+          "verified": "1.12.7.0"
+        }
+      }
+    ]
+  },
+  "authors": [
     {
-      "name": "lib-wrapper"
+      "name": "shemetz",
+      "discord": "shemetz#0226",
+      "email": "itamarcu+foundry@gmail.com",
+      "reddit": "u/Shemetz"
     }
   ],
-  "url": "https://github.com/itamarcu/shemetz-macros",
-  "manifest": "https://github.com/itamarcu/shemetz-macros/raw/master/module.json",
-  "download": "https://github.com/itamarcu/shemetz-macros/archive/master.zip",
-  "readme": "https://github.com/itamarcu/shemetz-macros/blob/master/Readme.md",
-  "bugs": "https://github.com/itamarcu/shemetz-macros/issues",
-  "license": "https://github.com/itamarcu/shemetz-macros/blob/master/License.txt"
+  "url": "https://github.com/shemetz/shemetz-macros",
+  "manifest": "https://github.com/shemetz/shemetz-macros/raw/master/module.json",
+  "download": "https://github.com/shemetz/shemetz-macros/archive/master.zip",
+  "readme": "https://github.com/shemetz/shemetz-macros/blob/master/Readme.md",
+  "bugs": "https://github.com/shemetz/shemetz-macros/issues",
+  "license": "https://github.com/shemetz/shemetz-macros/blob/master/License.txt"
 }

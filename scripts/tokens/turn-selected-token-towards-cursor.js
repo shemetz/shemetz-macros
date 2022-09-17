@@ -13,19 +13,23 @@ export const turnSelectedTokensTowardsCursor = () => {
   changes.forEach(x => {
     const { t, rotation } = x
     let newRotation = rotation * Math.PI / 180
-    const currentRotation = t.icon.rotation
+    const currentRotation = t.mesh.rotation
     while (newRotation > currentRotation + Math.PI) newRotation -= 2 * Math.PI
     while (newRotation < currentRotation - Math.PI) newRotation += 2 * Math.PI
     const duration = Math.abs(newRotation - currentRotation) / Math.PI * 300
-    t.data.locked = true
-    CanvasAnimation.animateLinear([
-      { parent: t.icon, attribute: 'rotation', to: newRotation },
-//        {parent: t.data, attribute: 'rotation', to: newRotation},
-    ], { name: `Token.${t.id}.animateRotationTowardsPoint`, context: t.icon, duration: duration }).then(() => {
+    t.document.locked = true
+    CanvasAnimation.animate([
+      { parent: t.mesh, attribute: 'rotation', to: newRotation },
+    ], {
+      context: t.mesh,
+      name: `Token.${t.id}.animateRotationTowardsPoint`,
+      duration: duration,
+      easing: CanvasAnimation.easeInOutCosine,
+    }).then(() => {
       return t.document.update({ 'rotation': rotation })
     }).then(() => {
       // we locked this to prevent refresh on hover
-      t.data.locked = false
+      t.document.locked = false
     })
   })
 }

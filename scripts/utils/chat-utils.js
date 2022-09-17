@@ -6,7 +6,7 @@ export const changeImageOfNextItemChatMessage = (newImg) => {
     )
     if (data.content !== content) {
       data.content = content
-      await chatMessage.data.update({ content })
+      await chatMessage.update({ content })
     }
   })
 }
@@ -19,7 +19,11 @@ export const renameNextChatMessageItemName = (newName) => {
     )
     if (data.content !== content) {
       data.content = content
-      await chatMessage.data.update({ content })
+      await chatMessage.update({ content })
+    } else {
+      // v10+
+      data.flavor = newName
+      await chatMessage.update({ flavor: newName })
     }
   })
 }

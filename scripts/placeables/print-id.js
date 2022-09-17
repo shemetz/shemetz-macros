@@ -4,8 +4,7 @@
 export const printIdOfControlled = (onlyToConsole) => {
   const messages = []
     .concat(...canvas.tokens.controlled.map(tok => `token ${tok.id} (${tok.name})`))
-    .concat(...canvas.background.controlled.map(tile => `tile ${tile.id} (${tile.data.img})`))
-    .concat(...canvas.foreground.controlled.map(tile => `tile ${tile.id} (${tile.data.img})`))
+    .concat(...canvas.tiles.controlled.map(tile => `tile ${tile.id} (${tile.document.texture.src})`))
     .concat(...canvas.walls.controlled.map(wall => `wall ${wall.id}`))
   let message = 'Printing all controlled things:\n' + messages.join('\n')
   if (messages.length === 0)

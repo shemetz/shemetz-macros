@@ -10,7 +10,7 @@ export const openCloseDoors = async (command, doorIds) => {
     let newDoorState
     if (command === 'open') newDoorState = 1
     if (command === 'close') newDoorState = 0
-    if (command === 'toggle') newDoorState = 1 - wall.data.ds
+    if (command === 'toggle') newDoorState = 1 - wall.document.ds
     if (newDoorState === undefined) {
       ui.notifications.error(`bad door command: ${command} (should be 'open'/'close'/'toggle')`)
       return null

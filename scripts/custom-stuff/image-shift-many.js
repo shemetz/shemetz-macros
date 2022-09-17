@@ -18,7 +18,7 @@ export const checkIfAllTokensAtIndex0 = async (tokenNames) => {
 }
 
 export const shiftSelectedTilesOrTokens = async () => {
-  const tiles = [...canvas.background.controlled, ...canvas.foreground.controlled]
+  const tiles = [...canvas.tiles.controlled]
   const tokens = [...canvas.tokens.controlled]
   const embeddedName = tiles.length === 0 ? 'Token' : 'Tile'
   const updates = (embeddedName === 'Tile' ? tiles : tokens)

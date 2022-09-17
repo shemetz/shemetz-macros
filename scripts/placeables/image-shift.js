@@ -129,7 +129,7 @@ export const hasImageList = (placeable) => {
  */
 export const getImageListIndex = (placeable) => {
   const { images } = getImageList(placeable)
-  const currentImage = placeable.data.img
+  const currentImage = placeable.document.texture.src
   let imgIndex = images.indexOf(currentImage)
   if (!(0 <= imgIndex && imgIndex < images.length)) imgIndex = 0
   return imgIndex
@@ -139,10 +139,10 @@ function openImageSetupDialog (placeable) {
   let existingImageList = getImageListBackwardsCompatible(placeable) || ''
   if (existingImageList && !existingImageList.endsWith('\n'))
     existingImageList += '\n'
-  if (!existingImageList.includes(placeable.data.img)) {
+  if (!existingImageList.includes(placeable.document.texture.src)) {
     // add current to list
-    existingImageList += placeable.data.img
-      + (placeable.data.scale !== undefined ? ' ' + placeable.data.scale : '')
+    existingImageList += placeable.document.texture.src
+      + (placeable.document.scale !== undefined ? ' ' + placeable.document.scale : '')
       + '   # default/first\n'
   }
   const dialog = new Dialog({
@@ -192,7 +192,7 @@ export const hookImageShiftHotkey = () => {
     reservedModifiers: [CONTROL, SHIFT],
     onDown: async () => {
       const tokens = canvas.tokens.controlled
-      const tiles = [...canvas.background.controlled, ...canvas.foreground.controlled]
+      const tiles = canvas.tiles.controlled
       if (tokens.length + tiles.length === 1) {
         return shiftSelectedPlaceableImageByKeyboard()
       } else if (tokens.length + tiles.length === 0) {

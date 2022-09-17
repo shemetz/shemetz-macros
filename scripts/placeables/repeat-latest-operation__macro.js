@@ -35,12 +35,12 @@ function openDialogWindow (placeables, isRelative) {
   let template = `
 <div>
     <div class="form-group">
-        <label>About to apply changes to: ${placeables.map(p => p.name || p.data.name || p.id)}</label>
+        <label>About to apply changes to: ${placeables.map(p => p.name || p.document.name || p.id)}</label>
         <div id="selectedOption">`
   for (const [flatKey, value] of Object.entries(update)) {
     let oldValues = [], newValues = []
     for (const p of placeables) {
-      const oldValue = getProperty(p.data, flatKey)
+      const oldValue = getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue && !oldValues.includes(oldValue)) {
         oldValues.push(oldValue)
@@ -84,7 +84,7 @@ function applyUpdateDiff (placeables, isRelative) {
   const updates = placeables.map(p => {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
-      const oldValue = getProperty(p.data, flatKey)
+      const oldValue = getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
@@ -104,12 +104,12 @@ function applyUpdateDiff (placeables, isRelative) {
 function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = flattenObject(update)
   delete flattenedUpdate['_id']
-  improveUpdate(document.data, flattenedUpdate)
+  improveUpdate(document, flattenedUpdate)
   const baseUpdate = deepClone(flattenedUpdate)
   const relativeUpdate = deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
-      const oldValue = getProperty(document.data, key)
+      const oldValue = getProperty(document, key)
       relativeUpdate[key] = value - oldValue
     }
   }

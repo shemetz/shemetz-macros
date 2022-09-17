@@ -20,3 +20,25 @@ Hooks.on('init', () => {
   hookRepeatLatestOperationHotkey()
   hookEndTurnButtonInChatBar()
 })
+
+// temporary - while developing for v10:
+Hooks.on('init', () => {
+  CONFIG.compatibility.excludePatterns.push(
+    // new RegExp('/systems/dnd5e/'),
+    // new RegExp('at Token5e.get'),
+    // new RegExp('Messages.sayBubble'),
+    // new RegExp('The content option for the editor handlebars helper has been deprecated'),
+    // new RegExp('libWrapper-package_info'),
+    // new RegExp('Scene._logDataFieldMigration'),
+    // new RegExp('_onMouseDraw'),
+
+    // // pf2e system, 3.13.5
+    // new RegExp('foundry.utils.isObjectEmpty is deprecated in favor'),
+    new RegExp('You are accessing BasePackage#data which is now deprecated in favor'),
+    // new RegExp('Canvas#activateLayer is deprecated in favor of CanvasLayer#activate'),
+    // new RegExp('at get isRerollable \\[as isRerollable] \\(main.bundle.js:1'),
+
+    // pf2e system, 4.0.0-alpha
+    new RegExp('Refused to apply style'),
+  )
+})

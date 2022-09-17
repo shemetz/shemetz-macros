@@ -37,14 +37,14 @@ const updateClosestPoint = (x1, y1, x2, y2, maxDistSq, closestPoint) => {
 const generateWallGapUpdates = (walls, maxDistSq) => {
   const updates = walls.map(w1 => {
     w1._loopedThrough = true
-    const origC1 = w1.data.c
-    const c1 = duplicate(w1.data.c)
+    const origC1 = w1.document.c
+    const c1 = duplicate(w1.document.c)
     let closestStartPoint = [Infinity, Infinity, Infinity, 0] // x, y, closestSquaredDistance, goodNeighbors
     let closestEndPoint = [Infinity, Infinity, Infinity, 0] // x, y, closestSquaredDistance, goodNeighbors
     // *** O(n^2) loop! ***
     for (const w2 of walls) {
       if (w2._loopedThrough) continue
-      const c2 = w2.data.c
+      const c2 = w2.document.c
       updateClosestPoint(c1[0], c1[1], c2[0], c2[1], maxDistSq, closestStartPoint)
       updateClosestPoint(c1[0], c1[1], c2[2], c2[3], maxDistSq, closestStartPoint)
       updateClosestPoint(c1[2], c1[3], c2[0], c2[1], maxDistSq, closestEndPoint)

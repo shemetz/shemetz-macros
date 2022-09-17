@@ -55,7 +55,7 @@ const shouldShowEndTurnButton = () => {
   const currentActor = canvas.tokens.get(currentCombatantId)?.actor
   if (!currentActor && !game.user.isGM) return false
   const hasPlayerOwner = currentActor.hasPlayerOwner
-  if (hasPlayerOwner && game.user.isGM) return false  // gm during player turn // TODO consider removing/configing
+  if (hasPlayerOwner && game.user.isGM) return true  // gm during player turn - will be shown but in parentheses!
   if (!hasPlayerOwner && !game.user.isGM) return false  // player during gm turn
   if (hasPlayerOwner && !currentActor.isOwner) return false  // player during another player turn
   return true
@@ -66,6 +66,11 @@ const onUpdateCombat = () => {
     $('.shm-end-turn').show()
   else
     $('.shm-end-turn').hide()
+  if (canvas.tokens?.get(game.combat?.current?.tokenId)?.actor?.hasPlayerOwner && game.user.isGM) {
+    $('.shm-end-turn').text(`(End turn for player?)`)
+  } else {
+    $('.shm-end-turn').text(`End Turn?`)
+  }
   ui.chat.scrollBottom()
 }
 
@@ -94,5 +99,5 @@ const END_TURN_STYLE = '' +
   ' margin-bottom: 5px;'
 
 const END_TURN_TEMPLATE = `
-<a class="shm-end-turn" title="End Turn" style="${END_TURN_STYLE}">End Turn?</a>
+<a class="shm-end-turn" title="Ctrl+click to remind user" style="${END_TURN_STYLE}">End Turn?</a>
 `

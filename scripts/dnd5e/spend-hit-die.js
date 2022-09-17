@@ -3,10 +3,10 @@
  */
 
 export const spendHitDie = async (actor) => {
-  const classes = actor.data.items.filter(it => { return it.type === 'class' })
+  const classes = actor.items.filter(it => { return it.type === 'class' })
   let best = null
   classes.forEach(it => {
-    const itemData = it.data.data
+    const itemData = it.system
     const diceData = {
       classItem: it,
       diceUsed: itemData.hitDiceUsed,

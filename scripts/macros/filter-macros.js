@@ -7,7 +7,7 @@ export const filterMacrosByAuthor = (authorPlayerName) => {
   .children()
   .filter((i, listItem) => {
     const macro = game.macros.get(listItem.getAttribute('data-entity-id'))
-    const author = game.users.get(macro.data.author)
+    const author = game.users.get(macro.document.author)
     return author.name !== authorPlayerName
   })
   .remove()

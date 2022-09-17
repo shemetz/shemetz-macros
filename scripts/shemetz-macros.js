@@ -62,6 +62,7 @@ import { printRenderTextureToConsole, printScreenToConsole } from './canvas/prin
 import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-utils.js'
 import { repeatLastAction } from './placeables/repeat-last-action.js'
 import { emitMessageToHighlightForCurrentPlayer } from './gui/end-turn-button-in-chat-bar.js'
+import { toggleCombatMode } from './custom-stuff/combat-mode.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -89,7 +90,7 @@ self.ShemetzMacros = {
   organizeUnsortedMacros,
   remoteAssignHotbarMacro,
   checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
-  recklessCast, castRandomWildSurge,
+  recklessCast, castRandomWildSurge, toggleCombatMode,
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList
   , getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,

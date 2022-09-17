@@ -1,6 +1,6 @@
 export const postTokenArt = (tok) => {
   let target = tok.actor || tok
-  const imgSrc = target.data.img
+  const imgSrc = target.document.texture.src
   const content = `
   <a href=${imgSrc} target="_blank">
     <img src=${imgSrc} style="width: 280px;" alt=${target.name}/>
@@ -21,7 +21,7 @@ export const viewTokenArt = (tok) => {
   if (tok === undefined)
     return ui.notifications.warn('Please select/target/hover token first.')
   let target = tok.actor || tok
-  const imagePopout = new ImagePopout(target.data.img, {
+  const imagePopout = new ImagePopout(target.document.texture.src, {
     title: target.name,
     shareable: true,
     uuid: target.uuid,
