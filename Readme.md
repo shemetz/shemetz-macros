@@ -97,6 +97,22 @@ For all [transparent tokens](https://i.imgur.com/FWKBcnS.png) on the map, lights
 #### <img src=https://i.imgur.com/9gxq5wH.png height="24"> [Set Darkness Level](scripts/canvas/darkness-level.js)
 Sets darkness level to a specific number, with a checkbox to choose whether or not it's animated.
 
+#### <img src=https://game-icons.net/icons/ffffff/000000/1x1/lorc/swords-emblem.svg height="24"> [Toggle combat Mode](scripts/custom-stuff/combat-mode.js)
+Toggles a combat encounter.  When there is no combat, it will do the following things, most of which configurable through parameters:
+- Create a new combat
+- Add all selected NPCs to the combat, except those with 0 HP and those controlled by a player
+- Add all PCs to the combat (even those not selected)
+- Change the HP visibility settings of all PC tokens in combat to "Always Visible"
+- Roll initiative for all NPCs
+- Hide enemies from combat display, so that players can't see them or their rolls
+
+You can change some of these individual settings by importing the macro and editing the function to e.g.:
+```js
+ShemetzMacros.toggleCombatMode({
+  ROLL_PC_INITIATIVE_IMMEDIATELY: true
+})
+```
+
 
 
 
