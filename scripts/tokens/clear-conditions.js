@@ -9,7 +9,7 @@ export const clearAllConditions = async (tokens) => {
     // Status Icon Counters module:
     if (self.EffectCounter) promises.push(self.EffectCounter.clearEffects(tok.document))
     // Pathfinder 2e conditions:
-    if (game.system.id === 'pf2e') {
+    if (game.system.id === 'pf2e' && !!tok.actor) {
       promises.push(pf2eDeleteConditions(tok.actor.itemTypes.condition.map(c => c.id), tok.actor))
       // promises.push(await game.pf2e.effectTracker.removeExpired(tok.actor))
       promises.push(tok.actor.deleteEmbeddedDocuments('Item',
