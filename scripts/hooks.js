@@ -6,6 +6,7 @@ import { hookHiddenHotkey } from './placeables/toggle-hide.js'
 import { hookImageShiftHotkey } from './placeables/image-shift.js'
 import { hookLayerSwitchHotkey } from './custom-stuff/layer-switch-hotkey.js'
 import { hookRepeatLatestOperation, hookRepeatLatestOperationHotkey } from './placeables/repeat-last-action.js'
+import { hookReduceTokenAnimations } from './tokens/reduce-animations.js'
 import { hookEndTurnButtonInChatBar } from './gui/end-turn-button-in-chat-bar.js'
 
 Hooks.on('init', () => {
@@ -19,6 +20,7 @@ Hooks.on('init', () => {
   hookRepeatLatestOperation()
   hookRepeatLatestOperationHotkey()
   hookEndTurnButtonInChatBar()
+  hookReduceTokenAnimations()
 })
 
 // temporary - while developing for v10:
