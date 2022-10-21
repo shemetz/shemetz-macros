@@ -25,6 +25,23 @@ how many gaps are about to be closed.
 
 An extra button to end your turn, shown on the bottom of the chat tab during combat.
 
+## Startup macro
+
+You can set a "startup macro" in the module settings with an ID of any non-compendium macro.  That macro will be run
+each time you load the game (on the 'ready' hook).
+
+This is useful in case you want to make some minor config macro.  for example, here's a Foundry V10 macro that changes
+ping animations to be slower, which you can use as a startup macro to permanently change the look of pings:
+
+```js
+// increases duration of local ping animations to be less flashing
+// (default durations for three of these are 900 ms)
+CONFIG.Canvas.pings.styles.pulse.duration = 2000
+CONFIG.Canvas.pings.styles.alert.duration = 2000
+CONFIG.Canvas.pings.styles.arrow.duration = 2000
+console.log('Startup macro | increased ping animation durations')
+```
+
 
 #### Everything Else
 - A lot of code, used by my macros and other macros in my group's campaigns
