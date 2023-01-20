@@ -1,7 +1,7 @@
 import { chat } from '../utils/message-utils.js'
 
-// LEVEL_BASED_DC: Level 0 = 10, L1 = 15, etc
-const LEVEL_BASED_DC = [10, 15, 16, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 34, 35, 36, 38, 39, 40, 42, 44, 46, 48, 50]
+// LEVEL_BASED_DC: Level -1 = 13, L0 = 14, L1 = 15, etc
+const LEVEL_BASED_DC = [13, 14, 15, 16, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 34, 35, 36, 38, 39, 40, 42, 44, 46, 48, 50]
 
 export const postPf2eRollButton = (rollName, rollType, dc, traits, revealDC) => {
   const saveOrCheck = SAVES_LIST.includes(rollType) ? 'Save' : 'Check'
@@ -67,7 +67,7 @@ export const showPostPf2eRollButtonDialog = () => {
           const adjustment = parseInt(html.find('#adjustment')[0].value)
           let dcInput = html.find('#dc')[0].value
           const dc = (dcInput.toLowerCase().startsWith('l'))
-            ? LEVEL_BASED_DC[parseInt(dcInput.substring(1))]
+            ? LEVEL_BASED_DC[parseInt(dcInput.substring(1)) + 1]
             : parseInt(dcInput)
           const revealDC = html.find('#revealDC')[0].checked
           const isBlind = html.find('#isBlind')[0].checked
