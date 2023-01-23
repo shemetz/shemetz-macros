@@ -21,7 +21,7 @@ export const viewTokenArt = (tok) => {
   if (tok === undefined)
     return ui.notifications.warn('Please select/target/hover token first.')
   let target = tok.actor || tok
-  const imagePopout = new ImagePopout(target.document.texture.src, {
+  const imagePopout = new ImagePopout(target.img || target.document.texture.src, {
     title: target.name,
     shareable: true,
     uuid: target.uuid,
