@@ -11,7 +11,7 @@ export const castRandomWildSurge = async (actor) => {
     }
     const surgeRoll = await new Roll("1d8").roll()
     const surge = surges[parseInt(surgeRoll.result) - 1]
-    return BetterRolls.quickRollByName(actor.name, surge.name)
+    return surge.use()
 }
 
 
