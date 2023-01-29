@@ -24,7 +24,7 @@ const postPf2eRollButton = (rollName, rollType, dc, traits, revealDC) => {
 
 const showPostPf2eRollButtonDialog = () => {
   const allLoresThatPcsHave = game.actors.filter(a => a.hasPlayerOwner).flatMap(a =>
-    Object.values(a.system.skills).filter(s => s.lore)
+    Object.values(a.system?.skills || {}).filter(s => s.lore)
   )
   const allCheckAndSaveTypes = [FLAT, PERCEPTION, ...SAVES_LIST, ...SKILLS_LIST]
   let template = `
