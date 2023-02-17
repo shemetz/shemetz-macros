@@ -1,48 +1,7 @@
-const postPf2eRollButton = (rollName, rollType, rollSkillAction, rollSkillActionVariant, dc, traits, revealDC) => {
-  const saveOrCheck = SAVES_LIST.some(s => s.shortform === rollType)
-  const rollHeader = `<h2>${rollName}</h2>`
-  const rollTypeText = rollType ? `type:${rollType}` : ''
-  const dcText = dc ? `|dc:${dc}` : ''
-  const revealDcValue = revealDC ? 'all' : game.user.isGM ? 'gm' : 'owner'
-  const showDcText = `|showDC:${revealDcValue}`
-  const isBasicText = saveOrCheck ? '|basic:true' : ''
-  const traitsText = traits ? `|traits:${traits}` : ''
-  const rollNameText = rollName ? `|name:${rollName}` : ''
-
-  let message
-  if (!rollSkillAction) {
-    message = `
-  ${rollHeader}
-  @Check[${(
-      rollTypeText + dcText + rollNameText + showDcText + isBasicText + traitsText
-    )}]
-`
-  } else {
-    // for skill actions I had to use the older version, with <span>
-    const skillAction = SKILL_ACTIONS.find(
-      sa => sa.shortform === rollSkillAction && sa.variant === rollSkillActionVariant)
-    message = `
-    ${rollHeader}
-  <span 
-  data-pf2-action='${skillAction.shortform}'
-  ${rollSkillActionVariant ? `data-pf2-variant='${skillAction.variant}'` : ``}
-  data-pf2-glyph="${skillAction.actionCountGlyph}"
-  data-pf2-show-dc='${revealDcValue}'
-  data-pf2-traits='${traits}'
-  ${dc ? `data-pf2-dc='${dc}'` : ``}
-  >
-  ${rollName} (${rollType.capitalize()})
-  </span>
-  `
-  }
-  const chatData = {
-    user: game.user.id,
-    speaker: { user: game.user },
-    flags: { core: { canPopout: true } },
-    content: message,
-  }
-  ChatMessage.create(chatData, {})
-}
+// To run this as a standalone macro, make some changes at the bottom of the file (scroll down to see them).
+// (this file was originally made for a personal module, so the function is exported)
+//
+// source: https://github.com/shemetz/shemetz-macros/tree/master/scripts/pf2e/post-roll-button.js
 
 const showPostPf2eRollButtonDialog = () => {
   const allLoresThatPcsHave = game.actors.filter(a => a.hasPlayerOwner).flatMap(a =>
@@ -235,33 +194,51 @@ const showPostPf2eRollButtonDialog = () => {
   })
 }
 
-const SKILLS_LIST = [
-  { label: '🤸 Acrobatics', shortform: 'acrobatics' },
-  { label: '🔮 Arcana', shortform: 'arcana' },
-  { label: '🤼‍️ Athletics', shortform: 'athletics' },
-  { label: '‍️🔨 Crafting', shortform: 'crafting' },
-  { label: '🎭 Deception', shortform: 'deception' },
-  { label: '🙏 Diplomacy', shortform: 'diplomacy' },
-  { label: '😡 Intimidation', shortform: 'intimidation' },
-  { label: '🩺 Medicine', shortform: 'medicine' },
-  { label: '🌼 Nature', shortform: 'nature' },
-  { label: '🧿 Occultism', shortform: 'occultism' },
-  { label: '🎶 Performance', shortform: 'performance' },
-  { label: '🛐 Religion', shortform: 'religion' },
-  { label: '🏫 Society', shortform: 'society' },
-  { label: '🤫 Stealth', shortform: 'stealth' },
-  { label: '⛺ Survival', shortform: 'survival' },
-  { label: '🔓 Thievery', shortform: 'thievery' },
-]
-const SAVES_LIST = [
-  { label: '💪 Fortitude', shortform: 'fortitude' },
-  { label: '🦵 Reflex', shortform: 'reflex' },
-  { label: '🧠 Will', shortform: 'will' },
-]
-const PERCEPTION = { label: '👀 Perception', shortform: 'perception' }
-const FLAT = { label: '🎲 Flat check', shortform: 'flat' }
-// LEVEL_BASED_DC: Level -1 = 13, L0 = 14, L1 = 15, etc
-const LEVEL_BASED_DC = [13, 14, 15, 16, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 34, 35, 36, 38, 39, 40, 42, 44, 46, 48, 50]
+const postPf2eRollButton = (rollName, rollType, rollSkillAction, rollSkillActionVariant, dc, traits, revealDC) => {
+  const saveOrCheck = SAVES_LIST.some(s => s.shortform === rollType)
+  const rollHeader = `<h2>${rollName}</h2>`
+  const rollTypeText = rollType ? `type:${rollType}` : ''
+  const dcText = dc ? `|dc:${dc}` : ''
+  const revealDcValue = revealDC ? 'all' : game.user.isGM ? 'gm' : 'owner'
+  const showDcText = `|showDC:${revealDcValue}`
+  const isBasicText = saveOrCheck ? '|basic:true' : ''
+  const traitsText = traits ? `|traits:${traits}` : ''
+  const rollNameText = rollName ? `|name:${rollName}` : ''
+
+  let message
+  if (!rollSkillAction) {
+    message = `
+  ${rollHeader}
+  @Check[${(
+      rollTypeText + dcText + rollNameText + showDcText + isBasicText + traitsText
+    )}]
+`
+  } else {
+    // for skill actions I had to use the older version, with <span>
+    const skillAction = SKILL_ACTIONS.find(
+      sa => sa.shortform === rollSkillAction && sa.variant === rollSkillActionVariant)
+    message = `
+    ${rollHeader}
+  <span 
+  data-pf2-action='${skillAction.shortform}'
+  ${rollSkillActionVariant ? `data-pf2-variant='${skillAction.variant}'` : ``}
+  data-pf2-glyph="${skillAction.actionCountGlyph}"
+  data-pf2-show-dc='${revealDcValue}'
+  data-pf2-traits='${traits}'
+  ${dc ? `data-pf2-dc='${dc}'` : ``}
+  >
+  ${rollName} (${rollType.capitalize()})
+  </span>
+  `
+  }
+  const chatData = {
+    user: game.user.id,
+    speaker: { user: game.user },
+    flags: { core: { canPopout: true } },
+    content: message,
+  }
+  ChatMessage.create(chatData, {})
+}
 
 const showAllPf2eActionButtons = () => {
   const message = `` +
@@ -289,6 +266,31 @@ ${shownName} (${skill.capitalize()})
   ChatMessage.create(chatData, {})
 }
 
+const SKILLS_LIST = [
+  { label: '🤸 Acrobatics', shortform: 'acrobatics' },
+  { label: '🔮 Arcana', shortform: 'arcana' },
+  { label: '🤼‍️ Athletics', shortform: 'athletics' },
+  { label: '‍️🔨 Crafting', shortform: 'crafting' },
+  { label: '🎭 Deception', shortform: 'deception' },
+  { label: '🙏 Diplomacy', shortform: 'diplomacy' },
+  { label: '😡 Intimidation', shortform: 'intimidation' },
+  { label: '🩺 Medicine', shortform: 'medicine' },
+  { label: '🌼 Nature', shortform: 'nature' },
+  { label: '🧿 Occultism', shortform: 'occultism' },
+  { label: '🎶 Performance', shortform: 'performance' },
+  { label: '🛐 Religion', shortform: 'religion' },
+  { label: '🏫 Society', shortform: 'society' },
+  { label: '🤫 Stealth', shortform: 'stealth' },
+  { label: '⛺ Survival', shortform: 'survival' },
+  { label: '🔓 Thievery', shortform: 'thievery' },
+]
+const SAVES_LIST = [
+  { label: '💪 Fortitude', shortform: 'fortitude' },
+  { label: '🦵 Reflex', shortform: 'reflex' },
+  { label: '🧠 Will', shortform: 'will' },
+]
+const PERCEPTION = { label: '👀 Perception', shortform: 'perception' }
+const FLAT = { label: '🎲 Flat check', shortform: 'flat' }
 // glyphs are: A D T F R, or 1 2 3 4 5, for: one action, two/double, three/triple, free action, reaction
 const SKILL_ACTIONS = [
   { label: '👀 Seek', shortform: 'seek', skill: 'perception', actionCountGlyph: '1' },
@@ -333,5 +335,38 @@ const SKILL_ACTIONS = [
   { label: '🤫 Sneak', shortform: 'sneak', skill: 'stealth', actionCountGlyph: '1' },
   { label: '🔓 Pick a Lock', shortform: 'pickALock', skill: 'thievery', actionCountGlyph: '2' },
 ]
+// LEVEL_BASED_DC: Level -1 = 13, L0 = 14, L1 = 15, etc
+const LEVEL_BASED_DC = [
+  13,
+  14,
+  15,
+  16,
+  18,
+  19,
+  20,
+  22,
+  23,
+  24,
+  26,
+  27,
+  28,
+  30,
+  31,
+  32,
+  34,
+  35,
+  36,
+  38,
+  39,
+  40,
+  42,
+  44,
+  46,
+  48,
+  50,
+]
 
+// to run this as a standalone macro, delete the following line of code:
 export { postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons }
+// and then uncomment the following line of code (remove the "//" at the start):
+showPostPf2eRollButtonDialog()
