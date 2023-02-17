@@ -10,6 +10,7 @@ export const hookEndTurnButtonInChatBar = () => {
   Hooks.on('renderSidebarTab', onRenderSidebarTab)
   Hooks.once('ready', () => {onUpdateCombat()})
   Hooks.on('updateCombat', onUpdateCombat)
+  Hooks.on('deleteCombat', onUpdateCombat)
 }
 
 /**
