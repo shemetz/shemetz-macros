@@ -1,18 +1,40 @@
-const postPf2eRollButton = (rollName, rollType, dc, traits, revealDC) => {
+const postPf2eRollButton = (rollName, rollType, rollSkillAction, rollSkillActionVariant, dc, traits, revealDC) => {
   const saveOrCheck = SAVES_LIST.some(s => s.shortform === rollType)
   const rollHeader = `<h2>${rollName}</h2>`
   const rollTypeText = rollType ? `type:${rollType}` : ''
   const dcText = dc ? `|dc:${dc}` : ''
-  const showDcText = revealDC ? '|showDC:all' : game.user.isGM ? '|showDC:gm' : '|showDC:owner'
+  const revealDcValue = revealDC ? 'all' : game.user.isGM ? 'gm' : 'owner'
+  const showDcText = `|showDC:${revealDcValue}`
   const isBasicText = saveOrCheck ? '|basic:true' : ''
   const traitsText = traits ? `|traits:${traits}` : ''
   const rollNameText = rollName ? `|name:${rollName}` : ''
-  const message = `
+
+  let message
+  if (!rollSkillAction) {
+    message = `
   ${rollHeader}
   @Check[${(
-    rollTypeText + dcText + rollNameText + showDcText + isBasicText + traitsText
-  )}]
+      rollTypeText + dcText + rollNameText + showDcText + isBasicText + traitsText
+    )}]
 `
+  } else {
+    // for skill actions I had to use the older version, with <span>
+    const skillAction = SKILL_ACTIONS.find(
+      sa => sa.shortform === rollSkillAction && sa.variant === rollSkillActionVariant)
+    message = `
+    ${rollHeader}
+  <span 
+  data-pf2-action='${skillAction.shortform}'
+  ${rollSkillActionVariant ? `data-pf2-variant='${skillAction.variant}'` : ``}
+  data-pf2-glyph="${skillAction.actionCountGlyph}"
+  data-pf2-show-dc='${revealDcValue}'
+  data-pf2-traits='${traits}'
+  ${dc ? `data-pf2-dc='${dc}'` : ``}
+  >
+  ${rollName} (${rollType.capitalize()})
+  </span>
+  `
+  }
   const chatData = {
     user: game.user.id,
     speaker: { user: game.user },
@@ -24,7 +46,7 @@ const postPf2eRollButton = (rollName, rollType, dc, traits, revealDC) => {
 
 const showPostPf2eRollButtonDialog = () => {
   const allLoresThatPcsHave = game.actors.filter(a => a.hasPlayerOwner).flatMap(a =>
-    Object.values(a.system?.skills || {}).filter(s => s.lore)
+    Object.values(a.system?.skills || {}).filter(s => s.lore),
   )
   const allCheckAndSaveTypes = [FLAT, PERCEPTION, ...SAVES_LIST, ...SKILLS_LIST]
   let template = `
@@ -35,18 +57,29 @@ const showPostPf2eRollButtonDialog = () => {
   template += `<option value="${FLAT.shortform}">${FLAT.label}</option>`
   template += `<option value="${PERCEPTION.shortform}">${PERCEPTION.label}</option>`
   template += `<option disabled>Saves:</option>`
-  for (let option of SAVES_LIST) {
+  for (const option of SAVES_LIST) {
     template += `<option value="${option.shortform}">${option.label}</option>`
   }
   template += `<option disabled>Skills:</option>`
-  for (let option of SKILLS_LIST) {
+  for (const option of SKILLS_LIST) {
     template += `<option value="${option.shortform}">${option.label}</option>`
   }
   template += `<option disabled>Lore:</option>`
-  for (let lore of allLoresThatPcsHave) {
+  for (const lore of allLoresThatPcsHave) {
     template += `<option value="${lore.shortform}">📜 ${lore.label}</option>`
   }
   template += `</select>
+        <label>Action?:</label>
+        <select id="roll-action" disabled>`
+  template += `<option value="no-action">(No skill action selected)</option>`
+  for (const sa of SKILL_ACTIONS) {
+    template += `<option 
+      value="${sa.shortform}" 
+      ${sa.variant ? `data-variant="${sa.variant}"` : ``}
+      >${sa.label}</option>`
+  }
+  template += `</select>
+        <br/>
         Name: 
         <input id="roll-name" style="width: auto" type="text" value='Flat check!' />
         <br/>
@@ -90,6 +123,9 @@ const showPostPf2eRollButtonDialog = () => {
         label: 'OK',
         callback: async (html) => {
           const rollType = html.find('#roll-type')[0].value
+          const rollSkillActionStr = html.find('#roll-action')[0].value
+          const rollSkillAction = rollSkillActionStr === 'no-action' ? undefined : rollSkillActionStr
+          const rollSkillActionVariant = html.find('#roll-action')[0].selectedOptions[0].dataset['variant']
           const rollName = html.find('#roll-name')[0].value
           const adjustment = parseInt(html.find('#adjustment')[0].value)
           let dcInput = html.find('#dc')[0].value
@@ -99,7 +135,8 @@ const showPostPf2eRollButtonDialog = () => {
           const revealDC = html.find('#reveal-dc')[0].checked
           const isSecret = html.find('#is-secret')[0].checked
           const traits = html.find('#traits')[0].value + (isSecret ? ',secret' : '')
-          postPf2eRollButton(rollName, rollType, dc + adjustment, traits, revealDC)
+          postPf2eRollButton(rollName, rollType, rollSkillAction, rollSkillActionVariant, dc + adjustment, traits,
+            revealDC)
         },
       },
       cancel: {
@@ -110,8 +147,43 @@ const showPostPf2eRollButtonDialog = () => {
       },
     },
     default: 'ok',
-  }).render(true)
+  }, { width: 450 }).render(true)
+
   Hooks.once('renderDialog', (dialog, $html) => {
+    // roll type, will update roll actions
+    $html.find('#roll-type').on('change', (e) => {
+      const rollTypeShortform = e.target.value
+      $html.find('#roll-action').prop('hidden', true)
+      $html.find('#roll-action').prop('disabled', true)
+      for (const checkOrSave of allCheckAndSaveTypes) {
+        if (checkOrSave.shortform === rollTypeShortform) {
+          // hide unrelated roll actions
+          $html.find('#roll-action').prop('hidden', false)
+          $html.find('#roll-action option').each((i, e) => {
+            const skillActionShortform = e.value
+            if (skillActionShortform === 'no-action') {
+              return  // always enabled
+            }
+            const skillAction = SKILL_ACTIONS.find(sa => sa.shortform === skillActionShortform)
+            if (skillAction.skill === checkOrSave.shortform) {
+              $html.find('#roll-action').prop('disabled', false)
+              $(e).prop('hidden', false)
+            } else {
+              $(e).prop('hidden', true)
+            }
+          })
+          // deselect current skill action if needed
+          const selectedSkillActionElement = $html.find('#roll-action')[0].selectedOptions[0]
+          if (selectedSkillActionElement.value !== 'no-action') {
+            const selectedSkillAction = SKILL_ACTIONS.find(sa => sa.shortform === selectedSkillActionElement.value)
+            if (selectedSkillAction.skill !== checkOrSave.shortform) {
+              $html.find('#roll-action').val('no-action')
+            }
+          }
+          break
+        }
+      }
+    })
     // roll type, will update roll name to match (if it's automatic)
     $html.find('#roll-type').on('change', (e) => {
       const prevRollName = $html.find('#roll-name').val()
@@ -123,15 +195,30 @@ const showPostPf2eRollButtonDialog = () => {
         if (option.shortform === rollTypeShortform) {
           // drop emoji part
           rollTypeCapitalized = option.label.substring(option.label.indexOf(' '))
+          break
         }
       }
       for (const lore of allLoresThatPcsHave) {
         if (lore.shortform === rollTypeShortform) {
           rollTypeCapitalized = lore.label
+          break
         }
       }
       const newName = rollTypeCapitalized + checkOrSaveText + '!'
       $html.find('#roll-name').val(newName)
+    })
+    // roll action, will update roll name to match (if it's automatic)
+    $html.find('#roll-action').on('change', (e) => {
+      const prevRollName = $html.find('#roll-name').val()
+      if (!prevRollName.endsWith('!')) return
+      const selectedSkillActionElement = $html.find('#roll-action')[0].selectedOptions[0]
+      if (selectedSkillActionElement.value !== 'no-action') {
+        const selectedSkillAction = SKILL_ACTIONS.find(sa => sa.shortform === selectedSkillActionElement.value)
+        // drop emoji part
+        const actionCapitalized = selectedSkillAction.label.substring(selectedSkillAction.label.indexOf(' '))
+        const newName = actionCapitalized + '!'
+        $html.find('#roll-name').val(newName)
+      }
     })
     // level-based DC, will update DC
     $html.find('#level-based-dc').on('input', (e) => {
@@ -176,16 +263,18 @@ const FLAT = { label: '🎲 Flat check', shortform: 'flat' }
 // LEVEL_BASED_DC: Level -1 = 13, L0 = 14, L1 = 15, etc
 const LEVEL_BASED_DC = [13, 14, 15, 16, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 34, 35, 36, 38, 39, 40, 42, 44, 46, 48, 50]
 
-
 const showAllPf2eActionButtons = () => {
   const message = `` +
     SKILL_ACTIONS.map((sa) => {
-        const actionName = sa[0].substring(2).trim()
-        const shownName = sa[0].replace(/([A-Z])/g, ' $1').split(' ').map((s) => s.capitalize()).join(' ')
-        const glyph = sa[2]
-        const variant = sa[3]
-        return `<span data-pf2-action='${actionName}' data-pf2-glyph="${glyph}" data-pf2-show-dc='' data-pf2-variant='${variant}' >
-${shownName} (${sa[1].capitalize()})
+        const { label, skill, actionCountGlyph, variant } = sa
+        const actionName = label.substring(2).trim()
+        // convert camelCase to Capitalized Words
+        const shownName = label.replace(/([A-Z])/g, ' $1').
+          split(' ').
+          map((s) => ['a', 'in'].includes(s) ? s : s.capitalize()).
+          join(' ')
+        return `<span data-pf2-action='${actionName}' data-pf2-glyph="${actionCountGlyph}" data-pf2-show-dc='' data-pf2-variant='${variant}' >
+${shownName} (${skill.capitalize()})
 </span>
 <br>`
       },
@@ -202,35 +291,47 @@ ${shownName} (${sa[1].capitalize()})
 
 // glyphs are: A D T F R, or 1 2 3 4 5, for: one action, two/double, three/triple, free action, reaction
 const SKILL_ACTIONS = [
-  ['👀 seek', 'perception', '1'],
-  ['👮 senseMotive', 'perception', '1'],
-  ['🤸 tumbleThrough', 'acrobatics', '1'],
-  ['🏂 balance', 'acrobatics', '1'],
-  ['🦅 maneuverInFlight', 'acrobatics', '1'],
-  ['🐀 squeeze', 'acrobatics', '3'],
-  ['🧗 climb', 'athletics', '1'],
-  ['🤺 disarm', 'athletics', '1'],
-  ['🚪 forceOpen', 'athletics', '1'],
-  ['✊ grapple', 'athletics', '1'],
-  ['✋ shove', 'athletics', '1'],
-  ['🦶 trip', 'athletics', '1'],
-  ['🤾 highJump', 'athletics', '2'],
-  ['🦘 longJump', 'athletics', '2'],
-  ['🏊 swim', 'athletics', '1'],
-  ['👉 createADiversion', 'deception', '1', 'gesture'],
-  ['🤭 createADiversion', 'deception', '1', 'distracting-words'],
-  ['😜 feint', 'deception', '1'],
-  ['🤥 lie', 'deception', '3'],
-  ['🎭 impersonate', 'deception', '3'],
-  ['😎 bonMot', 'diplomacy', '1'],
-  ['🥺 request', 'diplomacy', '1'],
-  ['🙋 makeAnImpression', 'diplomacy', '3'],
-  ['🕵️ gatherInformation', 'diplomacy', '3'],
-  ['😡 demoralize', 'intimidation', '1'],
-  ['📢 coerce', 'intimidation', '3'],
-  ['🙈 hide', 'stealth', '1'],
-  ['🤫 sneak', 'stealth', '1'],
-  ['🔓 pickALock', 'thievery', '2'],
+  { label: '👀 Seek', shortform: 'seek', skill: 'perception', actionCountGlyph: '1' },
+  { label: '👮 Sense Motive', shortform: 'senseMotive', skill: 'perception', actionCountGlyph: '1' },
+  { label: '🤸 Tumble Through', shortform: 'tumbleThrough', skill: 'acrobatics', actionCountGlyph: '1' },
+  { label: '🏂 Balance', shortform: 'balance', skill: 'acrobatics', actionCountGlyph: '1' },
+  { label: '🦅 Maneuver in Flight', shortform: 'maneuverInFlight', skill: 'acrobatics', actionCountGlyph: '1' },
+  { label: '🐀 Squeeze', shortform: 'squeeze', skill: 'acrobatics', actionCountGlyph: '3' },
+  { label: '🧗 Climb', shortform: 'climb', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🤺 Disarm', shortform: 'disarm', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🚪 Force Open', shortform: 'forceOpen', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '✊ Grapple', shortform: 'grapple', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🫱 Shove', shortform: 'shove', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🦶 Trip', shortform: 'trip', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🤾 High Jump', shortform: 'highJump', skill: 'athletics', actionCountGlyph: '2' },
+  { label: '🦘 Long Jump', shortform: 'longJump', skill: 'athletics', actionCountGlyph: '2' },
+  { label: '🏊 Swim', shortform: 'swim', skill: 'athletics', actionCountGlyph: '1' },
+  {
+    label: '👉 Create a Diversion (S)',
+    shortform: 'createADiversion',
+    skill: 'deception',
+    actionCountGlyph: '1',
+    variant: 'gesture',
+  },
+  {
+    label: '🤭 Create a Diversion (V)',
+    shortform: 'createADiversion',
+    skill: 'deception',
+    actionCountGlyph: '1',
+    variant: 'distracting-words',
+  },
+  { label: '😜 Feint', shortform: 'feint', skill: 'deception', actionCountGlyph: '1' },
+  { label: '🤥 Lie', shortform: 'lie', skill: 'deception', actionCountGlyph: '3' },
+  { label: '🎭 Impersonate', shortform: 'impersonate', skill: 'deception', actionCountGlyph: '3' },
+  { label: '😎 Bon Mot', shortform: 'bonMot', skill: 'diplomacy', actionCountGlyph: '1' },
+  { label: '🥺 Request', shortform: 'request', skill: 'diplomacy', actionCountGlyph: '1' },
+  { label: '🙋 Make an Impression', shortform: 'makeAnImpression', skill: 'diplomacy', actionCountGlyph: '3' },
+  { label: '🕵️ Gather Information', shortform: 'gatherInformation', skill: 'diplomacy', actionCountGlyph: '3' },
+  { label: '😡 Demoralize', shortform: 'demoralize', skill: 'intimidation', actionCountGlyph: '1' },
+  { label: '📢 Coerce', shortform: 'coerce', skill: 'intimidation', actionCountGlyph: '3' },
+  { label: '🙈 Hide', shortform: 'hide', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '🤫 Sneak', shortform: 'sneak', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '🔓 Pick a Lock', shortform: 'pickALock', skill: 'thievery', actionCountGlyph: '2' },
 ]
 
 export { postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons }
