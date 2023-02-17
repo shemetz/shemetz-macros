@@ -25,16 +25,16 @@ const showPostPf2eRollButtonDialog = () => {
   }
   template += `<option disabled>Lore:</option>`
   for (const lore of allLoresThatPcsHave) {
-    template += `<option value="${lore.shortform}">📜 ${lore.label}</option>`
+    template += `<option value="${lore.shortform}">📖 ${lore.label}</option>`
   }
   template += `</select>
         <label>Action?:</label>
         <select id="roll-action" disabled>`
-  template += `<option value="no-action">(No skill action selected)</option>`
+  template += `<option value="no-action" data-idx="-1">(No skill action selected)</option>`
   for (const sa of SKILL_ACTIONS) {
     template += `<option 
       value="${sa.shortform}" 
-      ${sa.variant ? `data-variant="${sa.variant}"` : ``}
+      data-idx="${sa.idx}"
       >${sa.label}</option>`
   }
   template += `</select>
@@ -83,8 +83,8 @@ const showPostPf2eRollButtonDialog = () => {
         callback: async (html) => {
           const rollType = html.find('#roll-type')[0].value
           const rollSkillActionStr = html.find('#roll-action')[0].value
-          const rollSkillAction = rollSkillActionStr === 'no-action' ? undefined : rollSkillActionStr
-          const rollSkillActionVariant = html.find('#roll-action')[0].selectedOptions[0].dataset['variant']
+          const rollSkillActionIdx = parseInt(html.find('#roll-action')[0].selectedOptions[0].dataset['idx'])
+          const rollSkillAction = rollSkillActionStr === 'no-action' ? undefined : SKILL_ACTIONS[rollSkillActionIdx]
           const rollName = html.find('#roll-name')[0].value
           const adjustment = parseInt(html.find('#adjustment')[0].value)
           let dcInput = html.find('#dc')[0].value
@@ -94,7 +94,7 @@ const showPostPf2eRollButtonDialog = () => {
           const revealDC = html.find('#reveal-dc')[0].checked
           const isSecret = html.find('#is-secret')[0].checked
           const traits = html.find('#traits')[0].value + (isSecret ? ',secret' : '')
-          postPf2eRollButton(rollName, rollType, rollSkillAction, rollSkillActionVariant, dc + adjustment, traits,
+          postPf2eRollButton(rollName, rollType, rollSkillAction, dc + adjustment, traits,
             revealDC)
         },
       },
@@ -114,31 +114,32 @@ const showPostPf2eRollButtonDialog = () => {
       const rollTypeShortform = e.target.value
       $html.find('#roll-action').prop('hidden', true)
       $html.find('#roll-action').prop('disabled', true)
-      for (const checkOrSave of allCheckAndSaveTypes) {
-        if (checkOrSave.shortform === rollTypeShortform) {
+      for (const checkOrSaveOrLore of [...allCheckAndSaveTypes, ...allLoresThatPcsHave]) {
+        if (checkOrSaveOrLore.shortform === rollTypeShortform) {
           // hide unrelated roll actions
           $html.find('#roll-action').prop('hidden', false)
           $html.find('#roll-action option').each((i, e) => {
-            const skillActionShortform = e.value
-            if (skillActionShortform === 'no-action') {
+            if (e.value === 'no-action') {
               return  // always enabled
             }
-            const skillAction = SKILL_ACTIONS.find(sa => sa.shortform === skillActionShortform)
-            if (skillAction.skill === checkOrSave.shortform) {
+            const skillAction = SKILL_ACTIONS.find(sa => sa.idx === e.dataset['idx'])
+            if (skillAction.skill === checkOrSaveOrLore.shortform) {
               $html.find('#roll-action').prop('disabled', false)
               $(e).prop('hidden', false)
             } else {
               $(e).prop('hidden', true)
             }
-          })
-          // deselect current skill action if needed
-          const selectedSkillActionElement = $html.find('#roll-action')[0].selectedOptions[0]
-          if (selectedSkillActionElement.value !== 'no-action') {
-            const selectedSkillAction = SKILL_ACTIONS.find(sa => sa.shortform === selectedSkillActionElement.value)
-            if (selectedSkillAction.skill !== checkOrSave.shortform) {
-              $html.find('#roll-action').val('no-action')
+            // if lore, do enable "recall knowledge" skill action
+            if (skillAction.skill === 'SPECIAL_LORE') {
+              const isLoreSelected = allLoresThatPcsHave.some(l => l.shortform === rollTypeShortform)
+              if (isLoreSelected) {
+                $html.find('#roll-action').prop('disabled', false)
+                $(e).prop('hidden', false)
+              }
             }
-          }
+          })
+          // deselect current skill action
+          $html.find('#roll-action').val('no-action')
           break
         }
       }
@@ -172,7 +173,7 @@ const showPostPf2eRollButtonDialog = () => {
       if (!prevRollName.endsWith('!')) return
       const selectedSkillActionElement = $html.find('#roll-action')[0].selectedOptions[0]
       if (selectedSkillActionElement.value !== 'no-action') {
-        const selectedSkillAction = SKILL_ACTIONS.find(sa => sa.shortform === selectedSkillActionElement.value)
+        const selectedSkillAction = SKILL_ACTIONS.find(sa => sa.idx === selectedSkillActionElement.dataset['idx'])
         // drop emoji part
         const actionCapitalized = selectedSkillAction.label.substring(selectedSkillAction.label.indexOf(' '))
         const newName = actionCapitalized + '!'
@@ -194,7 +195,11 @@ const showPostPf2eRollButtonDialog = () => {
   })
 }
 
-const postPf2eRollButton = (rollName, rollType, rollSkillAction, rollSkillActionVariant, dc, traits, revealDC) => {
+const postPf2eRollButton = (rollName, rollType, rollSkillAction, dc, traits, revealDC) => {
+  if (rollSkillAction?.shortform === 'SPECIAL_RECALL_KNOWLEDGE') {
+    rollSkillAction = undefined
+    traits = traits + (traits ? ',' : '') + 'action:recall-knowledge'
+  }
   const saveOrCheck = SAVES_LIST.some(s => s.shortform === rollType)
   const rollHeader = `<h2>${rollName}</h2>`
   const rollTypeText = rollType ? `type:${rollType}` : ''
@@ -215,14 +220,13 @@ const postPf2eRollButton = (rollName, rollType, rollSkillAction, rollSkillAction
 `
   } else {
     // for skill actions I had to use the older version, with <span>
-    const skillAction = SKILL_ACTIONS.find(
-      sa => sa.shortform === rollSkillAction && sa.variant === rollSkillActionVariant)
     message = `
     ${rollHeader}
   <span 
-  data-pf2-action='${skillAction.shortform}'
-  ${rollSkillActionVariant ? `data-pf2-variant='${skillAction.variant}'` : ``}
-  data-pf2-glyph="${skillAction.actionCountGlyph}"
+  data-pf2-skill='${rollType}'
+  data-pf2-action='${rollSkillAction.shortform}'
+  ${rollSkillAction.variant ? `data-pf2-variant='${rollSkillAction.variant}'` : ``}
+  ${rollSkillAction.actionCountGlyph ? `data-pf2-glyph='${rollSkillAction.actionCountGlyph}'` : ``}
   data-pf2-show-dc='${revealDcValue}'
   data-pf2-traits='${traits}'
   ${dc ? `data-pf2-dc='${dc}'` : ``}
@@ -277,7 +281,7 @@ const SKILLS_LIST = [
   { label: '🩺 Medicine', shortform: 'medicine' },
   { label: '🌼 Nature', shortform: 'nature' },
   { label: '🧿 Occultism', shortform: 'occultism' },
-  { label: '🎶 Performance', shortform: 'performance' },
+  { label: '🎩 Performance', shortform: 'performance' },
   { label: '🛐 Religion', shortform: 'religion' },
   { label: '🏫 Society', shortform: 'society' },
   { label: '🤫 Stealth', shortform: 'stealth' },
@@ -291,14 +295,16 @@ const SAVES_LIST = [
 ]
 const PERCEPTION = { label: '👀 Perception', shortform: 'perception' }
 const FLAT = { label: '🎲 Flat check', shortform: 'flat' }
-// glyphs are: A D T F R, or 1 2 3 4 5, for: one action, two/double, three/triple, free action, reaction
+// glyphs are: A D T F R, or 1 2 3 4 5, for: one action, two/double, three/triple, free action, reaction.  '' is Exploration
 const SKILL_ACTIONS = [
   { label: '👀 Seek', shortform: 'seek', skill: 'perception', actionCountGlyph: '1' },
   { label: '👮 Sense Motive', shortform: 'senseMotive', skill: 'perception', actionCountGlyph: '1' },
   { label: '🤸 Tumble Through', shortform: 'tumbleThrough', skill: 'acrobatics', actionCountGlyph: '1' },
   { label: '🏂 Balance', shortform: 'balance', skill: 'acrobatics', actionCountGlyph: '1' },
   { label: '🦅 Maneuver in Flight', shortform: 'maneuverInFlight', skill: 'acrobatics', actionCountGlyph: '1' },
-  { label: '🐀 Squeeze', shortform: 'squeeze', skill: 'acrobatics', actionCountGlyph: '3' },
+  { label: '🐀 Squeeze', shortform: 'squeeze', skill: 'acrobatics', actionCountGlyph: '' },
+  { label: '📜 Decipher Writing', shortform: 'decipherWriting', skill: 'arcana', actionCountGlyph: '' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'arcana', actionCountGlyph: '1' },
   { label: '🧗 Climb', shortform: 'climb', skill: 'athletics', actionCountGlyph: '1' },
   { label: '🤺 Disarm', shortform: 'disarm', skill: 'athletics', actionCountGlyph: '1' },
   { label: '🚪 Force Open', shortform: 'forceOpen', skill: 'athletics', actionCountGlyph: '1' },
@@ -308,6 +314,7 @@ const SKILL_ACTIONS = [
   { label: '🤾 High Jump', shortform: 'highJump', skill: 'athletics', actionCountGlyph: '2' },
   { label: '🦘 Long Jump', shortform: 'longJump', skill: 'athletics', actionCountGlyph: '2' },
   { label: '🏊 Swim', shortform: 'swim', skill: 'athletics', actionCountGlyph: '1' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'crafting', actionCountGlyph: '1' },
   {
     label: '👉 Create a Diversion (S)',
     shortform: 'createADiversion',
@@ -324,17 +331,75 @@ const SKILL_ACTIONS = [
   },
   { label: '😜 Feint', shortform: 'feint', skill: 'deception', actionCountGlyph: '1' },
   { label: '🤥 Lie', shortform: 'lie', skill: 'deception', actionCountGlyph: '3' },
-  { label: '🎭 Impersonate', shortform: 'impersonate', skill: 'deception', actionCountGlyph: '3' },
+  { label: '💄 Impersonate', shortform: 'impersonate', skill: 'deception', actionCountGlyph: '' },
   { label: '😎 Bon Mot', shortform: 'bonMot', skill: 'diplomacy', actionCountGlyph: '1' },
   { label: '🥺 Request', shortform: 'request', skill: 'diplomacy', actionCountGlyph: '1' },
-  { label: '🙋 Make an Impression', shortform: 'makeAnImpression', skill: 'diplomacy', actionCountGlyph: '3' },
-  { label: '🕵️ Gather Information', shortform: 'gatherInformation', skill: 'diplomacy', actionCountGlyph: '3' },
+  { label: '🙋 Make an Impression', shortform: 'makeAnImpression', skill: 'diplomacy', actionCountGlyph: '' },
+  { label: '🕵️ Gather Information', shortform: 'gatherInformation', skill: 'diplomacy', actionCountGlyph: '' },
   { label: '😡 Demoralize', shortform: 'demoralize', skill: 'intimidation', actionCountGlyph: '1' },
-  { label: '📢 Coerce', shortform: 'coerce', skill: 'intimidation', actionCountGlyph: '3' },
-  { label: '🙈 Hide', shortform: 'hide', skill: 'stealth', actionCountGlyph: '1' },
-  { label: '🤫 Sneak', shortform: 'sneak', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '📢 Coerce', shortform: 'coerce', skill: 'intimidation', actionCountGlyph: '' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'medicine', actionCountGlyph: '1' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'nature', actionCountGlyph: '1' },
+  { label: '📜 Decipher Writing', shortform: 'decipherWriting', skill: 'occultism', actionCountGlyph: '' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'occultism', actionCountGlyph: '1' },
+  { label: '📜 Decipher Writing', shortform: 'decipherWriting', skill: 'religion', actionCountGlyph: '' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'religion', actionCountGlyph: '1' },
+  { label: '📜 Decipher Writing', shortform: 'decipherWriting', skill: 'society', actionCountGlyph: '' },
+  { label: '🧠 Recall Knowledge', shortform: 'SPECIAL_RECALL_KNOWLEDGE', skill: 'society', actionCountGlyph: '1' },
+  { label: '😋 Subsist', shortform: 'subsist', skill: 'society', actionCountGlyph: '' },
+  { label: '🎁 Conceal an Object', shortform: 'concealAnObject', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '🥷 Hide', shortform: 'hide', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '👟 Sneak', shortform: 'sneak', skill: 'stealth', actionCountGlyph: '1' },
+  { label: '😋 Subsist', shortform: 'subsist', skill: 'survival', actionCountGlyph: '' },
+  { label: '🐾 Track', shortform: 'track', skill: 'survival', actionCountGlyph: '' },
+  { label: '🛠️ Disable Device', shortform: 'disableDevice', skill: 'thievery', actionCountGlyph: '2' },
+  { label: '🫳 Palm an Object', shortform: 'palmAnObject', skill: 'thievery', actionCountGlyph: '1' },
+  { label: '💸 Steal', shortform: 'steal', skill: 'thievery', actionCountGlyph: '1' },
   { label: '🔓 Pick a Lock', shortform: 'pickALock', skill: 'thievery', actionCountGlyph: '2' },
+  { label: '🐶 Command an Animal', shortform: 'commandAnAnimal', skill: 'nature', actionCountGlyph: '1' },
+  { label: '🎭 Perform - acting', shortform: 'perform', skill: 'performance', actionCountGlyph: '1', variant: 'acting' },
+  { label: '🤣 Perform - comedy', shortform: 'perform', skill: 'performance', actionCountGlyph: '1', variant: 'comedy' },
+  { label: '💃 Perform - dance', shortform: 'perform', skill: 'performance', actionCountGlyph: '1', variant: 'dance' },
+  {
+    label: '🗣️ Perform - oratory',
+    shortform: 'perform',
+    skill: 'performance',
+    actionCountGlyph: '1',
+    variant: 'oratory',
+  },
+  {
+    label: '🎶 Perform - singing',
+    shortform: 'perform',
+    skill: 'performance',
+    actionCountGlyph: '1',
+    variant: 'singing',
+  },
+  {
+    label: '🎹 Perform - keyboards',
+    shortform: 'perform',
+    skill: 'performance',
+    actionCountGlyph: '1',
+    variant: 'keyboards',
+  },
+  {
+    label: '🥁 Perform - percussion',
+    shortform: 'perform',
+    skill: 'performance',
+    actionCountGlyph: '1',
+    variant: 'percussion',
+  },
+  {
+    label: '🪕 Perform - strings',
+    shortform: 'perform',
+    skill: 'performance',
+    actionCountGlyph: '1',
+    variant: 'strings',
+  },
+  { label: '🎺 Perform - winds', shortform: 'perform', skill: 'performance', actionCountGlyph: '1', variant: 'winds' },
 ]
+for (const i in SKILL_ACTIONS) {
+  SKILL_ACTIONS[i].idx = i
+}
 // LEVEL_BASED_DC: Level -1 = 13, L0 = 14, L1 = 15, etc
 const LEVEL_BASED_DC = [
   13,
@@ -369,4 +434,4 @@ const LEVEL_BASED_DC = [
 // to run this as a standalone macro, delete the following line of code:
 export { postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons }
 // and then uncomment the following line of code (remove the "//" at the start):
-showPostPf2eRollButtonDialog()
+// showPostPf2eRollButtonDialog()
