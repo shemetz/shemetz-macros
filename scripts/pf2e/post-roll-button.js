@@ -247,8 +247,8 @@ const postPf2eRollButton = (rollName, rollType, rollSkillAction, dc, traits, rev
 const showAllPf2eActionButtons = () => {
   const message = `` +
     SKILL_ACTIONS.map((sa) => {
-        const { label, skill, actionCountGlyph, variant } = sa
-        const actionName = label.substring(2).trim()
+        const { label, shortform, skill, actionCountGlyph, variant } = sa
+        const actionName = shortform
         // convert camelCase to Capitalized Words
         const shownName = label.replace(/([A-Z])/g, ' $1').
           split(' ').
