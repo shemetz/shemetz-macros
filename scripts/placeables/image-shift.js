@@ -1,24 +1,51 @@
-import { selectedTokenOrTile } from '../utils/placeable-utils.js'
-
 /**
  * Hold the Control key to set up images.
  * Hold the Shift key to shift backwards instead of forwards.
  * Shifting will cycle through the images (going from last back to first).
  */
 export const shiftSelectedPlaceableImageByKeyboard = async () => {
-  const placeable = selectedTokenOrTile()
-  if (!placeable)
+  const ctrlHeld = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL)
+  const directionDelta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
+  const tokens = [...canvas.tokens.controlled]
+  const tiles = [...canvas.tiles.controlled]
+  const controlledTokensOrTiles = tokens.length > 0 ? tokens : tiles
+  if (controlledTokensOrTiles.length > 1) {
+    if (ctrlHeld)
+      return ui.notifications.error('Select only one token/tile if you\'re trying to setup the image shift macro!')
+    else {
+      // shift many at once!
+      const embeddedName = tiles.length === 0 ? 'Token' : 'Tile'
+      const updates = controlledTokensOrTiles.map(placeable => {
+        if (!hasImageList(placeable)) return null
+        return prepareShiftImageWithArgs(placeable, directionDelta, true, true)
+      }).filter(it => it !== null)
+      return canvas.scene.updateEmbeddedDocuments(embeddedName, updates).then(() => {
+        // core Foundry bug fix - need to refresh token borders after image update, otherwise they disappear!
+        setTimeout(() => {
+          tokens.forEach(
+            tok => tok.refreshHUD({ bars: false, border: true, effects: false, elevation: false, nameplate: false }),
+          )
+        }, 100)
+      })
+    }
+  }
+  if (controlledTokensOrTiles.length < 1)
     return ui.notifications.error('Select a token/tile before activating the image shift macro! (hold Ctrl to setup)')
-  if (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL))
+  const placeable = controlledTokensOrTiles[0]
+  if (ctrlHeld)
     return openImageSetupDialog(placeable)
   const { images } = getImageList(placeable)
   if (!images || images.length <= 1)
     return ui.notifications.error('Please hold the Ctrl key while activating the image shift macro, to set up images.')
   const currentIndex = getImageListIndex(placeable)
-  const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
-  const newIndex = (currentIndex + images.length + delta) % images.length
+  const newIndex = (currentIndex + images.length + directionDelta) % images.length
   const update = prepareShiftImage(placeable, newIndex)
-  return placeable.document.update(update)
+  return placeable.document.update(update).then(() => {
+    // core Foundry bug fix - need to refresh token borders after image update, otherwise they disappear!
+    setTimeout(() => {
+      placeable?.refreshHUD({ bars: false, border: true, effects: false, elevation: false, nameplate: false })
+    }, 100)
+  })
 }
 
 /**
@@ -106,13 +133,10 @@ const getImageList = (placeable) => {
   const imagesText = getImageListBackwardsCompatible(placeable)
   if (imagesText === undefined)
     return { images: undefined, scales: undefined }
-  const options = imagesText.split('\n')
-    .map(it => it.split('#')[0].trim())  // remove comments
+  const options = imagesText.split('\n').map(it => it.split('#')[0].trim())  // remove comments
     .filter(it => it)  // remove empty lines
   const images = options.map(it => it.split(' ')[0])
-  const scales = options
-    .map(it => it.split(' ')[1] || '1.0')
-    .map(it => parseFloat(it))
+  const scales = options.map(it => it.split(' ')[1] || '1.0').map(it => parseFloat(it))
   return { images, scales }
 }
 
@@ -191,19 +215,7 @@ export const hookImageShiftHotkey = () => {
     editable: [],
     reservedModifiers: [CONTROL, SHIFT],
     onDown: async () => {
-      const tokens = canvas.tokens.controlled
-      const tiles = canvas.tiles.controlled
-      if (tokens.length + tiles.length === 1) {
-        return shiftSelectedPlaceableImageByKeyboard()
-      } else if (tokens.length + tiles.length === 0) {
-        ui.notifications.warn(`Cannot image-shift;  no tokens/tiles are selected`)
-      } else {
-        for (const t of [...tokens, ...tiles]) {
-          if (!hasImageList(t)) continue
-          const delta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
-          await shiftImageWithArgs(t, delta, true)
-        }
-      }
+      return shiftSelectedPlaceableImageByKeyboard()
     },
   })
 }

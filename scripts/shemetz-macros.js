@@ -46,11 +46,6 @@ import { highlightTransparentTokensOnMap } from './tokens/highlight-map-location
 import { closeSelectedTreasureChests, openTreasureChest } from './custom-stuff/treasure-chest.js'
 import { openCloseDoors } from './walls/open-close-doors.js'
 import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanism-change-walls-and-tiles.js'
-import {
-  checkIfAllTokensAtIndex0,
-  shiftManyTokens,
-  shiftSelectedTilesOrTokens,
-} from './custom-stuff/image-shift-many.js'
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { gmDarknessVisionBoost } from './canvas/gm-darkness-vision-boost.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
@@ -99,7 +94,6 @@ self.ShemetzMacros = {
   closeWallGaps,
   openCloseDoors,
   leverMechanismChangeWallsAndTiles,
-  shiftManyTokens, shiftSelectedTilesOrTokens, checkIfAllTokensAtIndex0,
   setDarknessLevelDialog,
   gmDarknessVisionBoost,
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
