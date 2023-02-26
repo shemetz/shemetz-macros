@@ -3,7 +3,7 @@
  * Hold the Shift key to shift backwards instead of forwards.
  * Shifting will cycle through the images (going from last back to first).
  */
-export const shiftSelectedPlaceableImageByKeyboard = async () => {
+export const shiftSelectedPlaceableImageByKeyboard = async (shouldAnimate=false) => {
   const ctrlHeld = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL)
   const directionDelta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
   const tokens = [...canvas.tokens.controlled]
@@ -17,9 +17,9 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
       const embeddedName = tiles.length === 0 ? 'Token' : 'Tile'
       const updates = controlledTokensOrTiles.map(placeable => {
         if (!hasImageList(placeable)) return null
-        return prepareShiftImageWithArgs(placeable, directionDelta, true, true)
+        return prepareShiftImageWithArgs(placeable, directionDelta, true)
       }).filter(it => it !== null)
-      return canvas.scene.updateEmbeddedDocuments(embeddedName, updates).then(() => {
+      return canvas.scene.updateEmbeddedDocuments(embeddedName, updates, { animate: shouldAnimate }).then(() => {
         // core Foundry bug fix - need to refresh token borders after image update, otherwise they disappear!
         setTimeout(() => {
           tokens.forEach(
@@ -40,7 +40,7 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
   const currentIndex = getImageListIndex(placeable)
   const newIndex = (currentIndex + images.length + directionDelta) % images.length
   const update = prepareShiftImage(placeable, newIndex)
-  return placeable.document.update(update).then(() => {
+  return placeable.document.update(update, { animate: shouldAnimate }).then(() => {
     // core Foundry bug fix - need to refresh token borders after image update, otherwise they disappear!
     setTimeout(() => {
       placeable?.refreshHUD({ bars: false, border: true, effects: false, elevation: false, nameplate: false })
@@ -52,10 +52,11 @@ export const shiftSelectedPlaceableImageByKeyboard = async () => {
  * @param placeable a token or a tile
  * @param delta 1 to move one forward, -1 to move one back, etc
  * @param canCycle true if should cycle (0→1→2→3→0→1), false if shouldn't (0→1→2→3→3→3)
+ * @param shouldAnimate true if scale animation should be shown (otherwise rescaling will be instant)
  */
-export const shiftImageWithArgs = async (placeable, delta, canCycle) => {
+export const shiftImageWithArgs = async (placeable, delta, canCycle, shouldAnimate) => {
   const update = prepareShiftImageWithArgs(placeable, delta, canCycle)
-  return placeable.document.update(update)
+  return placeable.document.update(update, { animate: !!shouldAnimate })
 }
 
 /**
@@ -73,10 +74,11 @@ export const prepareShiftImageWithArgs = (placeable, delta, canCycle) => {
 /**
  * @param placeable a token or a tile
  * @param targetImageIndex index of line in image shift setup window (first line is index 0)
+ * @param shouldAnimate true if scale animation should be shown (otherwise rescaling will be instant)
  */
-export const shiftImageToIndex = async (placeable, targetImageIndex) => {
+export const shiftImageToIndex = async (placeable, targetImageIndex, shouldAnimate) => {
   const update = prepareShiftImageToIndex(placeable, targetImageIndex)
-  return placeable.document.update(update)
+  return placeable.document.update(update, { animate: !!shouldAnimate })
 }
 
 /**
