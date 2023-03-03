@@ -22,10 +22,10 @@ export const SOUND_COLLECTION = {
     [1.0, 'https://freesound.org/data/previews/538/538013_3025423-lq.mp3'],
   ],
   'enlarge': [
-    [1.0, 'https://freesound.org/data/previews/523/523204_6142149-lq.mp3'],
+    [0.3, 'https://freesound.org/data/previews/523/523204_6142149-lq.mp3'],
   ],
   'future-beam': [
-    [1.0, 'https://freesound.org/data/previews/455/455207_6142149-lq.mp3'],
+    [0.3, 'https://freesound.org/data/previews/455/455207_6142149-lq.mp3'],
   ],
   'haste': [
     [1.0, 'https://freesound.org/data/previews/219/219571_71257-lq.mp3'],
@@ -85,7 +85,23 @@ export const SOUND_COLLECTION = {
   'explosion': [
     [0.4, 'https://freesound.org/data/previews/156/156031_2703579-lq.mp3'],
   ],
+  'smash_wood': [
+    [0.4, 'https://freesound.org/data/previews/352/352513_5121236-lq.mp3'],
+    [0.4, 'https://freesound.org/data/previews/624/624910_13821366-lq.mp3'],
+    [0.6, 'https://freesound.org/data/previews/31/31625_183263-lq.mp3'],
+  ],
+  'smash_glass': [
+    [0.4, 'https://freesound.org/data/previews/171/171993_112577-lq.mp3'],
+    [0.4, 'https://freesound.org/data/previews/244/244238_3156517-lq.mp3'],
+    [0.4, 'https://freesound.org/data/previews/444/444448_2194110-lq.mp3'],
+  ],
   'squish': [
-    [1.0, '500/500912_6714882-lq.mp3'],
+    [1.0, 'https://freesound.org/data/previews/500/500912_6714882-lq.mp3'],
+  ],
+  'magic_shimmer': [
+    [1.0, 'https://freesound.org/data/previews/216/216089_3450800-lq.mp3'],
+  ],
+  'dark_teleport': [
+    [1.0, 'https://freesound.org/data/previews/533/533025_11667862-lq.mp3'],
   ],
 }
