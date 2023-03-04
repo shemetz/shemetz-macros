@@ -3,7 +3,7 @@
  * Hold the Shift key to shift backwards instead of forwards.
  * Shifting will cycle through the images (going from last back to first).
  */
-export const shiftSelectedPlaceableImageByKeyboard = async (shouldAnimate=false) => {
+export const shiftSelectedPlaceableImageByKeyboard = async (shouldAnimate = false) => {
   const ctrlHeld = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL)
   const directionDelta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
   const tokens = [...canvas.tokens.controlled]
@@ -92,10 +92,13 @@ const prepareShiftImage = (placeable, newIndex) => {
   const { images, scales } = getImageList(placeable)
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
+  const signOfOldScaleX = placeable.document.texture.scaleX > 0 ? +1 : -1
+  const signOfOldScaleY = placeable.document.texture.scaleY > 0 ? +1 : -1
   return {
     _id: placeable.id,
     img: newImg,
-    scale: newScale,
+    'texture.scaleX': newScale ? newScale * signOfOldScaleX : undefined,
+    'texture.scaleY': newScale ? newScale * signOfOldScaleY : undefined,
   }
 }
 
@@ -138,7 +141,8 @@ const getImageList = (placeable) => {
   const options = imagesText.split('\n').map(it => it.split('#')[0].trim())  // remove comments
     .filter(it => it)  // remove empty lines
   const images = options.map(it => it.split(' ')[0])
-  const scales = options.map(it => it.split(' ')[1] || '1.0').map(it => parseFloat(it))
+  const scales = options.map(it => it.split(' ')[1] || undefined).
+    map(it => it === undefined ? undefined : parseFloat(it))
   return { images, scales }
 }
 
@@ -168,7 +172,7 @@ function openImageSetupDialog (placeable) {
   if (!existingImageList.includes(placeable.document.texture.src)) {
     // add current to list
     existingImageList += placeable.document.texture.src
-      + (placeable.document.scale !== undefined ? ' ' + placeable.document.scale : '')
+      + '    ' + placeable.document.texture.scaleX.toString()
       + '   # default/first\n'
   }
   const dialog = new Dialog({
