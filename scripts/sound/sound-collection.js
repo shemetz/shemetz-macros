@@ -104,4 +104,25 @@ export const SOUND_COLLECTION = {
   'dark_teleport': [
     [1.0, 'https://freesound.org/data/previews/533/533025_11667862-lq.mp3'],
   ],
+  'reload': [
+    [1.0, 'https://cdn.pixabay.com/audio/2021/08/04/audio_8660aa27a6.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2021/08/04/audio_1a42ea4903.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/10/23/audio_4d629a93e0.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/24/audio_585be81306.mp3'],
+  ],
+  'gunshot': [
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/10/audio_dad91ab3de.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/24/audio_d47484152e.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/10/audio_9df6700a8b.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/15/audio_1ae533c6de.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/19/audio_fcad7e2aa0.mp3'],
+  ],
+  'goosebumps': [
+    [1.0, 'https://cdn.pixabay.com/audio/2022/04/01/audio_2ffb32b71c.mp3'],
+  ],
+  'positive_chime': [
+    [1.0, 'https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a73467.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2022/01/18/audio_8db1f1b5a5.mp3'],
+    [1.0, 'https://cdn.pixabay.com/audio/2021/08/04/audio_bb630cc098.mp3'],  // https://pixabay.com/sound-effects/short-success-sound-glockenspiel-treasure-video-game-6346/
+  ],
 }
