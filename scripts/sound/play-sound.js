@@ -37,6 +37,7 @@ export const soundCheck = async () => {
       // play, print, and wait 2 seconds
       console.log(`playing from ${soundType}: ${volume}, ${src}`)
       AudioHelper.play({ src: src, volume: volume, autoplay: true, loop: false }, false)
+      // TODO - instead of 2 second timeout, try relying on AudioContainer.prototype._unloadMediaNode
       await new Promise(resolve => setTimeout(resolve, 2 * 1000))
     }
   }

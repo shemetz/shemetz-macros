@@ -16,7 +16,7 @@ export const SOUND_COLLECTION = {
     [1.0, 'https://freesound.org/data/previews/444/444160_9024515-lq.mp3'],
   ],
   'door-close': [
-    [0.1, 'https://freesound.org/data/previews/104/104525_1525198-lq.mp3'],
+    [0.5, 'https://freesound.org/data/previews/104/104525_1525198-lq.mp3'],
   ],
   'vanish': [
     [1.0, 'https://freesound.org/data/previews/538/538013_3025423-lq.mp3'],
@@ -40,14 +40,14 @@ export const SOUND_COLLECTION = {
     [0.7, 'https://freesound.org/data/previews/319/319590_5436764-lq.mp3'],
   ],
   'punch': [
-    [1.0, 'https://www.myinstants.com/media/sounds/punch.mp3'],
-    [1.0, 'https://www.myinstants.com/media/sounds/punch-sound-effect.mp3'],
-    [0.8, 'https://www.myinstants.com/media/sounds/punch_vtoclN1.mp3'],
+    // [1.0, 'https://www.myinstants.com/media/sounds/punch.mp3'],
+    // [1.0, 'https://www.myinstants.com/media/sounds/punch-sound-effect.mp3'],
+    // [0.8, 'https://www.myinstants.com/media/sounds/punch_vtoclN1.mp3'],
     [1.0, 'https://freesound.org/data/previews/118/118513_2136023-lq.mp3'],
   ],
-  'anime_super_punch': [
-    [0.3, 'https://www.myinstants.com/media/sounds/strongpunch.mp3'],
-  ],
+  // 'anime_super_punch': [
+  //   [0.3, 'https://www.myinstants.com/media/sounds/strongpunch.mp3'],
+  // ],
   'whoosh': [
     [0.8, 'https://freesound.org/data/previews/60/60009_71257-lq.mp3'],
     [0.8, 'https://freesound.org/data/previews/60/60013_71257-lq.mp3'],
@@ -86,7 +86,7 @@ export const SOUND_COLLECTION = {
     [0.4, 'https://freesound.org/data/previews/156/156031_2703579-lq.mp3'],
   ],
   'smash_wood': [
-    [0.4, 'https://freesound.org/data/previews/352/352513_5121236-lq.mp3'],
+    [0.2, 'https://freesound.org/data/previews/352/352513_5121236-lq.mp3'],
     [0.4, 'https://freesound.org/data/previews/624/624910_13821366-lq.mp3'],
     [0.6, 'https://freesound.org/data/previews/31/31625_183263-lq.mp3'],
   ],
@@ -117,12 +117,13 @@ export const SOUND_COLLECTION = {
     [1.0, 'https://cdn.pixabay.com/audio/2022/03/15/audio_1ae533c6de.mp3'],
     [1.0, 'https://cdn.pixabay.com/audio/2022/03/19/audio_fcad7e2aa0.mp3'],
   ],
-  'goosebumps': [
-    [1.0, 'https://cdn.pixabay.com/audio/2022/04/01/audio_2ffb32b71c.mp3'],
-  ],
   'positive_chime': [
     [1.0, 'https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a73467.mp3'],
     [1.0, 'https://cdn.pixabay.com/audio/2022/01/18/audio_8db1f1b5a5.mp3'],
     [1.0, 'https://cdn.pixabay.com/audio/2021/08/04/audio_bb630cc098.mp3'],  // https://pixabay.com/sound-effects/short-success-sound-glockenspiel-treasure-video-game-6346/
+  ],
+  // this one is long!
+  'goosebumps': [
+    [1.0, 'https://cdn.pixabay.com/audio/2022/04/01/audio_2ffb32b71c.mp3'],
   ],
 }
