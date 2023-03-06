@@ -5,6 +5,7 @@ import { hookBlockPushing } from './custom-stuff/block-pushing.js'
 import { hookHiddenHotkey } from './placeables/toggle-hide.js'
 import { hookImageShiftHotkey } from './placeables/image-shift.js'
 import { hookLayerSwitchHotkey } from './custom-stuff/layer-switch-hotkey.js'
+import { hookFlipHotkey } from './tokens/flip.js'
 import { hookRepeatLatestOperation, hookRepeatLatestOperationHotkey } from './placeables/repeat-last-action.js'
 import { hookReduceTokenAnimations } from './tokens/reduce-animations.js'
 import { hookStartupMacro } from './macros/startup-macro.js'
@@ -18,6 +19,7 @@ Hooks.on('init', () => {
   hookHiddenHotkey()
   hookImageShiftHotkey()
   hookLayerSwitchHotkey()
+  hookFlipHotkey()
   hookRepeatLatestOperation()
   hookRepeatLatestOperationHotkey()
   hookEndTurnButtonInChatBar()
