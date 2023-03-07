@@ -99,6 +99,7 @@ const prepareShiftImage = (placeable, newIndex) => {
     img: newImg,
     'texture.scaleX': newScale ? newScale * signOfOldScaleX : undefined,
     'texture.scaleY': newScale ? newScale * signOfOldScaleY : undefined,
+    'flags.pf2e.autoscale': newScale ? false : undefined,
   }
 }
 
@@ -140,8 +141,9 @@ const getImageList = (placeable) => {
     return { images: undefined, scales: undefined }
   const options = imagesText.split('\n').map(it => it.split('#')[0].trim())  // remove comments
     .filter(it => it)  // remove empty lines
-  const images = options.map(it => it.split(' ')[0])
-  const scales = options.map(it => it.split(' ')[1] || undefined).
+  // split by spaces
+  const images = options.map(it => it.split(/\s+/)[0])
+  const scales = options.map(it => it.split(/\s+/)[1] || undefined).
     map(it => it === undefined ? undefined : parseFloat(it))
   return { images, scales }
 }
