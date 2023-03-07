@@ -11,13 +11,14 @@ https://emojiguide.org/images/emoji/1/w8iuxo1l9in91.png
 
 export const flipTokens = async (tokens, horizontally = false, vertically = false) => {
   const updates = tokens.map(tok => {
-    if (tok.document.texture.scaleX / 0.1)
+    if (Math.roundDecimals(tok.document.texture.scaleX, 1) === tok.document.texture.scaleX)
       return {
         _id: tok.id,
         'texture.scaleX': tok.document.texture.scaleX * (horizontally ? -1 : 1),
         'texture.scaleY': tok.document.texture.scaleY * (vertically ? -1 : 1),
       }
-  })
+    else return undefined
+  }).filter(x => !!x)
   return canvas.scene.updateEmbeddedDocuments('Token', updates, {
     animation: {
       duration: 200,
