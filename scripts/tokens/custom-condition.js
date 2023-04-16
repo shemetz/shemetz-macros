@@ -45,3 +45,24 @@ export const toggleConditionWithTokenImage = async () => {
     )
   })
 }
+
+// added for macro-creation purposes
+const simpleToggleConditionWithTargetTokenImage = async () => {
+  const controlledTokens = canvas.tokens.controlled
+  if (controlledTokens.length === 0) return ui.notifications.warn('Select at least one token for toggleConditionPcTokenImage')
+  const targetedTokens = Array.from(game.user.targets)
+  if (targetedTokens.length === 1) {
+    // set image to match targeted token
+    const conditionImg = targetedTokens[0].document.texture.src || targetedTokens[0].document.texture.src
+    for await (const token of controlledTokens) {
+      await token.toggleEffect(conditionImg, { active: undefined, overlay: false })
+    }
+    return
+  }
+  for await (const targetedToken of targetedTokens) {
+    const conditionImg = targetedToken.texture.src || targetedToken.document.texture.src
+    for await (const token of controlledTokens) {
+      await token.toggleEffect(conditionImg, { active: undefined, overlay: false })
+    }
+  }
+}

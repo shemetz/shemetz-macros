@@ -49,6 +49,7 @@ import { leverMechanismChangeWallsAndTiles } from './custom-stuff/lever-mechanis
 import { setDarknessLevelDialog } from './canvas/darkness-level.js'
 import { gmDarknessVisionBoost } from './canvas/gm-darkness-vision-boost.js'
 import { postPf2eRollButton, showAllPf2eActionButtons, showPostPf2eRollButtonDialog } from './pf2e/post-roll-button.js'
+import { combineRecentDamagesPf2e } from './pf2e/combine-damages.js'
 import { castRandomWildSurge } from './custom-stuff/wild-surge.js'
 import { closeWallGaps } from './walls/close-wall-gaps.js'
 import { toggleConditionWithTokenImage, toggleCustomCondition } from './tokens/custom-condition.js'
@@ -87,8 +88,7 @@ self.ShemetzMacros = {
   checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
   recklessCast, castRandomWildSurge, toggleCombatMode,
   animefyNextAttack,
-  shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList
-  , getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,
+  shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList, getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
   closeWallGaps,
@@ -97,6 +97,7 @@ self.ShemetzMacros = {
   setDarknessLevelDialog,
   gmDarknessVisionBoost,
   postPf2eRollButton, showPostPf2eRollButtonDialog, showAllPf2eActionButtons,
+  combineRecentDamagesPf2e,
   toggleConditionWithTokenImage, toggleCustomCondition,
   markDeadWithHealthEstimate,
   repeatLastAction, repeatLatestOperation: repeatLastAction,

@@ -64,7 +64,9 @@ export const critDialog = async () => {
     'Critical Hit!',
     'Choose critical type:',
     (tableName) => {
-      crit(tableName)
+      if (tableName !== null) {
+        crit(tableName)
+      }
     },
     CRIT_TYPES.map(c => c.replace(' Critical Hits', ''))
   )
