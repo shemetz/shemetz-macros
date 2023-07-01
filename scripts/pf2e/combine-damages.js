@@ -1,4 +1,6 @@
 // Macro to combine last 2 damage rolls for purposes of easy IWR and to support feats like Double Slice, Flurry of Blows, etc...
+
+// NOTE: this isn't currently used so it may have stopped working
 const combineRecentDamages = (numOfRollsToCombine = 2) => {
   const damageRolls = game.messages
     .filter(it => it.flags.pf2e.context?.type === 'damage-roll')
