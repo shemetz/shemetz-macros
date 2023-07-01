@@ -1,0 +1,18 @@
+{
+  "_id": "597b90964ff30ad2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Necrophobia</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Until end of its next turn, afraid of all hostile creatures and all corpses. Can't move towards any of them.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.597b90964ff30ad2"
+}

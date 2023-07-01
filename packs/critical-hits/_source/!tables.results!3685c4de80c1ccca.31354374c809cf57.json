@@ -1,0 +1,18 @@
+{
+  "_id": "31354374c809cf57",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Crushed Will</h2><b>Double damage.</b><br><br>Disadvantage on Wisdom-based rolls until end of next turn. Drops concentration.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.31354374c809cf57"
+}

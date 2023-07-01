@@ -1,0 +1,18 @@
+{
+  "_id": "9ad7fba506bfc510",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Wrong target</h2>You mistakenly hit the creature closest to your target that is within the range of your attack.  If none exist, you hit an object.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.9ad7fba506bfc510"
+}

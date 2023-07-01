@@ -1,0 +1,18 @@
+{
+  "_id": "a168a857fba59711",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Feeble Strike</h2><b>Normal damage.</b><br><br>Disadvantage on its first attack next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.a168a857fba59711"
+}

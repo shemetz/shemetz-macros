@@ -1,0 +1,18 @@
+{
+  "_id": "0d5f30c524a52ece",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Disarming Slit</h2><b>Normal damage.</b><br><br>Disarmed, or unable to use its limbs for attacks until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.0d5f30c524a52ece"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "e885424e2e3761ab",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Clash</h2>You weren't prepared for the force behind your attack, and hurt yourself slightly, taking damage equal to your level/CR.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.e885424e2e3761ab"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "d69c57652d6d983e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    19,
+    19
+  ],
+  "rangeH": 19,
+  "rangeL": 19,
+  "resultId": null,
+  "text": "<h2>Slice 'n' Dice</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>It starts bleeding, and it cannot move while bleeding.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.d69c57652d6d983e"
+}

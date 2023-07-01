@@ -1,0 +1,18 @@
+{
+  "_id": "d528842f84ea0fc7",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Mangled Leg</h2><i>(Leg injury)</i><br><br>-10 ft speed, -5 on checks that require legs",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.d528842f84ea0fc7"
+}

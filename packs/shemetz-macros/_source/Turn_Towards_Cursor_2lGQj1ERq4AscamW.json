@@ -1,0 +1,24 @@
+{
+  "name": "Turn Towards Cursor",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://game-icons.net/icons/ffffff/000000/1x1/delapouite/look-at.svg",
+  "scope": "global",
+  "command": "ShemetzMacros.turnSelectedTokensTowardsCursor()",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.iARqKnDKM9IfXeXi"
+    }
+  },
+  "_id": "2lGQj1ERq4AscamW",
+  "_key": "!macros!2lGQj1ERq4AscamW"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "965140f4e4847f64",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Offense Piercer</h2><b>Normal damage.</b><br><br>It has disadvantage on its first attack roll before the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.965140f4e4847f64"
+}

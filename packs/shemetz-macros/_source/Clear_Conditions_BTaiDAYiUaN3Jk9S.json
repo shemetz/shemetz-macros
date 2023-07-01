@@ -1,0 +1,24 @@
+{
+  "name": "Clear Conditions",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://game-icons.net/icons/ffffff/000000/1x1/delapouite/broom.svg",
+  "scope": "global",
+  "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.clearAllConditions(tokens)",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.EsH5cZZ3BAAwit9f"
+    }
+  },
+  "_id": "BTaiDAYiUaN3Jk9S",
+  "_key": "!macros!BTaiDAYiUaN3Jk9S"
+}

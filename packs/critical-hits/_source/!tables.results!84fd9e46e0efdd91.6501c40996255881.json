@@ -1,0 +1,18 @@
+{
+  "_id": "6501c40996255881",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Scorched Skin</h2><b>Normal damage.</b><br><br>Until end of its next turn, takes +1 damage from physical attacks.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.6501c40996255881"
+}

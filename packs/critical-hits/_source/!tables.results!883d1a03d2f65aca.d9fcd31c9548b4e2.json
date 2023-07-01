@@ -1,0 +1,18 @@
+{
+  "_id": "d9fcd31c9548b4e2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Susceptible</h2><b>Double damage.</b><br><br>Disadvantage on Constitution and Death saving throws until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.d9fcd31c9548b4e2"
+}

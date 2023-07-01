@@ -1,0 +1,18 @@
+{
+  "_id": "8cce05b99c608094",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Neurotoxicity</h2><b>Double damage.</b><br><br>Intelligence, Wisdom, and Charisma scores each get -3 for a minute (minimum 1)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.8cce05b99c608094"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "08ec543c9f90c95a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Thrown weapon</h2>If held weapon or item: you lose your grip and throw it. It flies roughly in the intended attack direction for 30 feet or until it hits a different target, dealing damage equal to your level/CR.  If nothing was held: you lose your balance and fall prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.08ec543c9f90c95a"
+}

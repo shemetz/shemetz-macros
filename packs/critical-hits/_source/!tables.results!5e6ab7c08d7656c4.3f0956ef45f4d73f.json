@@ -1,0 +1,18 @@
+{
+  "_id": "3f0956ef45f4d73f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Luminous Halo</h2><b>Normal damage.</b><br><br>Emits light and others have advantage on attack rolls against it until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.3f0956ef45f4d73f"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "558fc36099d795a8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Distracted</h2>You cannot use a reaction until the end of your next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.558fc36099d795a8"
+}

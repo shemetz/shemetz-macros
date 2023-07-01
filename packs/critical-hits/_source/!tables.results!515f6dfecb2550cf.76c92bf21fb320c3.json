@@ -1,0 +1,18 @@
+{
+  "_id": "76c92bf21fb320c3",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    19,
+    19
+  ],
+  "rangeH": 19,
+  "rangeL": 19,
+  "resultId": null,
+  "text": "<h2>Chill 'n' Still</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Restrained by ice and incapacitated until it escapes (which is the only action it can take). DC 10.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.76c92bf21fb320c3"
+}

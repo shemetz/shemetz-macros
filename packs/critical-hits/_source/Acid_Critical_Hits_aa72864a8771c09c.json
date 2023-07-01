@@ -1,0 +1,38 @@
+{
+  "_id": "aa72864a8771c09c",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "name": "Acid Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "d9291357876014dc",
+    "665296b9ce610d35",
+    "03f4de77ff71ba07",
+    "079b59bbcc0b836e",
+    "d0820d9a78a8c298",
+    "2d3a80f36195052a",
+    "7874dffd3af3c1e2",
+    "7404fb09ef137794",
+    "045dd3432ecaa218",
+    "cca7aa9b3358b9a3",
+    "4926e7a5cbca4830",
+    "341526568d67d918",
+    "6758d80819cdb3dc",
+    "66ad1bc0c9bc94ea",
+    "1d9bbe566f6279ec",
+    "72def2a988f5d471",
+    "38e8f57cd076cd49",
+    "fb0b4044b9583f83",
+    "a63adc77c8bcc5f2",
+    "5ef686250d03bc1a"
+  ],
+  "sort": 0,
+  "_key": "!tables!aa72864a8771c09c"
+}

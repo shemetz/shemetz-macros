@@ -1,0 +1,18 @@
+{
+  "_id": "251a3cf2483f63db",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Overstimulating Noise</h2><b>Normal damage.</b><br><br>Loses its reaction until end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.251a3cf2483f63db"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "301c29121b66e5a2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Punt 'n' Shunt</h2><b>Double damage.</b><br><br>Creature is warped into the Ethereal Plane.  While there, it cannot take actions but can move once, before it reappears nearby at the end of its turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.301c29121b66e5a2"
+}

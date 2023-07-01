@@ -1,0 +1,18 @@
+{
+  "_id": "ebf274f1eeddee4e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Butthurt</h2><i>(Tailbone injury)</i><br><br>Whenever falling prone, instantly take damage equal to 2 * CR / Level.  Cannot sit down.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.ebf274f1eeddee4e"
+}

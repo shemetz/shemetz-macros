@@ -1,0 +1,18 @@
+{
+  "_id": "045dd3432ecaa218",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Dissolved Weapon</h2><b>Double damage.</b><br><br>Equipment Damage:  -1 damage per weapon die.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.045dd3432ecaa218"
+}

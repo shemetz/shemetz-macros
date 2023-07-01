@@ -1,0 +1,18 @@
+{
+  "_id": "b0aed9075d5c4b80",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Motor Jolt</h2><b>Normal damage.</b><br><br>Moves 5 feet (in a direction of the attacker's choice) and loses reaction until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.b0aed9075d5c4b80"
+}

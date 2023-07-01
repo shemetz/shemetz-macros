@@ -1,0 +1,18 @@
+{
+  "_id": "66ad1bc0c9bc94ea",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Lingering Acid</h2><b>Double damage.</b><br><br>At the end of each of its turns for a minute, creature takes damage equal to the attacker's level/CR, until it spends an action to clean itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.66ad1bc0c9bc94ea"
+}

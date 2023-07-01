@@ -1,0 +1,18 @@
+{
+  "_id": "9bc2555de55d5a07",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    19,
+    19
+  ],
+  "rangeH": 19,
+  "rangeL": 19,
+  "resultId": null,
+  "text": "<h2>Light 'n' Fright</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>The target and all hostile creatures that were able to see the attack are frightened by the attacker until the end of their turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.9bc2555de55d5a07"
+}

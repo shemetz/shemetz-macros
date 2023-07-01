@@ -1,0 +1,18 @@
+{
+  "_id": "837c93aff48317f8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Force Imbalance</h2><b>Normal damage.</b><br><br>Until the end of its next turn, when it casts a spell or uses a magical ability or activates a magical item, it takes damage equal to the attacker's CR/level.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.837c93aff48317f8"
+}

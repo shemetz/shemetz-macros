@@ -1,0 +1,38 @@
+{
+  "_id": "84fd9e46e0efdd91",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "name": "Fire Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "55dabb4b980a403f",
+    "1dfb087498c960bd",
+    "6501c40996255881",
+    "f3a8413083bf0a4e",
+    "c692bdf946da37ad",
+    "c4d658e88020fb8f",
+    "1cc79f84dcdbf9a6",
+    "30886250b80e4ff7",
+    "baad245d76cefb9f",
+    "904958acc00b9e68",
+    "1fdad02eddad25dd",
+    "795e0821f3fb2ce7",
+    "be79f7ecde16ad4d",
+    "cf0ec02d2133f240",
+    "8dad4ac27440e842",
+    "187f5dd8601b20b0",
+    "d288d421f52f1a61",
+    "2472d7944a7b4a9e",
+    "1acb8978389323c6",
+    "c82ce3f5b74f707a"
+  ],
+  "sort": 0,
+  "_key": "!tables!84fd9e46e0efdd91"
+}

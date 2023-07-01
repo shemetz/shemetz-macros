@@ -1,0 +1,18 @@
+{
+  "_id": "dfea901f7d828dc2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Icy Terrain</h2><b>Double damage.</b><br><br>Falls prone, and ground within 5 feet of it is covered by ice that functions like the Grease spell for 1 minute.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.dfea901f7d828dc2"
+}

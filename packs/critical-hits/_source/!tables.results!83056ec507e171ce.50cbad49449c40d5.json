@@ -1,0 +1,18 @@
+{
+  "_id": "50cbad49449c40d5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Punctured Lung</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>It cannot breathe or speak, and has disadvantage on attack rolls, for a minute or until it receives healing.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.50cbad49449c40d5"
+}

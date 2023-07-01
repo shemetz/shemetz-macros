@@ -1,0 +1,18 @@
+{
+  "_id": "bb86adc536dcd665",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Terror</h2><b>Double damage.</b><br><br>Frightened by the attacker until end of its next turn, must move at least 15ft away from it if able",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.bb86adc536dcd665"
+}

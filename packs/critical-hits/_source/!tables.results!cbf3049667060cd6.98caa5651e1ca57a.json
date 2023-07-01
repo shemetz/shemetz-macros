@@ -1,0 +1,18 @@
+{
+  "_id": "98caa5651e1ca57a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Revulsion</h2><u>In combat:</u> Choose an ally of the creature. Each turn, the creature is frightened of that ally if it's within 30 feet of it, and must move out of the area if possible.<br><br><u>Out of combat:</u> The creature avoids staying near its target of revulsion, avoids interacting with it, and may pretend it doesn't exist.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.98caa5651e1ca57a"
+}

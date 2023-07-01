@@ -1,0 +1,18 @@
+{
+  "_id": "0aadd19bc99c5351",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Frozen Movement</h2><b>Double damage.</b><br><br>Falls prone at the start of each of its turns, until it spends an action to remove the ice from its feet/wings.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.0aadd19bc99c5351"
+}

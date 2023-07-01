@@ -1,0 +1,18 @@
+{
+  "_id": "ed2893fd55e76acf",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Gushing Jab</h2><b>Normal damage.</b><br><br>It starts bleeding.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.ed2893fd55e76acf"
+}

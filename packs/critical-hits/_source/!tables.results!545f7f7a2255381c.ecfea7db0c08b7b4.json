@@ -1,0 +1,18 @@
+{
+  "_id": "ecfea7db0c08b7b4",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Motor Spasms</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Falls prone. Can't get up on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.ecfea7db0c08b7b4"
+}

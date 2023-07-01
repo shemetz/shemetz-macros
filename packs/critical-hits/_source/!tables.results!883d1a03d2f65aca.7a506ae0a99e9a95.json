@@ -1,0 +1,18 @@
+{
+  "_id": "7a506ae0a99e9a95",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    19,
+    19
+  ],
+  "rangeH": 19,
+  "rangeL": 19,
+  "resultId": null,
+  "text": "<h2>Mortal Peril</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Until end of its next turn, can't regain hit points or gain temporary hit points.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.7a506ae0a99e9a95"
+}

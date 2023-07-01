@@ -1,0 +1,18 @@
+{
+  "_id": "ae3c70ede60c686d",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Powerful Thrust</h2><b>Double damage.</b><br><br>Shoved 10 feet.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.ae3c70ede60c686d"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "f727e1a6b02651e2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Migraine</h2><b>Double damage.</b><br><br>Drops concentration.  DC 10 to cast any concentration spell on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.f727e1a6b02651e2"
+}

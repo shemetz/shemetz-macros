@@ -1,0 +1,18 @@
+{
+  "_id": "326448ef89c9793e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Overwhelming Noise</h2><b>Double damage.</b><br><br>Loses its reaction until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.326448ef89c9793e"
+}

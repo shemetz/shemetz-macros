@@ -1,0 +1,18 @@
+{
+  "_id": "3d3e618c59c9d795",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Flashbacks</h2><u>In combat:</u> The creature believes it is still in the moment at which it first suffered this affliction.<br><br><u>Out of combat:</u> The creature has occasional flashbacks and nightmares of the event which incited the affliction.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.3d3e618c59c9d795"
+}

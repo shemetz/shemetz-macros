@@ -1,0 +1,18 @@
+{
+  "_id": "ccd470d1ff33a394",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Shockwave</h2><b>Normal damage.</b><br><br>Pushed 5 feet away and loses reaction until end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.ccd470d1ff33a394"
+}

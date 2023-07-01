@@ -1,0 +1,18 @@
+{
+  "_id": "84f232644b85386f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Lasting Damage</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_limited_injury]{Injury (d12)}.</b><br><br>(+injury, but roll d12)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.84f232644b85386f"
+}

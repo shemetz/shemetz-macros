@@ -1,0 +1,18 @@
+{
+  "_id": "8dad4ac27440e842",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Burnt to the Flesh</h2><b>Double damage.</b><br><br>Burning, and vulnerable to acid and necrotic while burning.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.8dad4ac27440e842"
+}

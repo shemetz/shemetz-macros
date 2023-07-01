@@ -1,0 +1,18 @@
+{
+  "_id": "baad245d76cefb9f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>On Fire!</h2><b>Double damage.</b><br><br>Burning.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.baad245d76cefb9f"
+}

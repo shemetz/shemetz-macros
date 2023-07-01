@@ -1,0 +1,18 @@
+{
+  "_id": "0140e94ed3a8d161",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Obsession</h2><u>In combat:</u> Choose an ally of the creature. Each turn, the creature obsesses over the object of its fascination, doing what it can to help or protect the ally.<br><br><u>Out of combat:</u> The creature often ignores others (or itself) in favor of its target of obsession, regardless of the target's wishes.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.0140e94ed3a8d161"
+}

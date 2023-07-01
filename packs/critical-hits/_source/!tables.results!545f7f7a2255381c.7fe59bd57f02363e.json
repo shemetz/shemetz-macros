@@ -1,0 +1,18 @@
+{
+  "_id": "7fe59bd57f02363e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Sickened</h2><b>Double damage.</b><br><br>Poisoned until they spend an action vomiting.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.7fe59bd57f02363e"
+}

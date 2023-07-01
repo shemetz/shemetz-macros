@@ -1,0 +1,38 @@
+{
+  "_id": "5b214f69a15dbbf5",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "name": "Lightning Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "250bc99c0d43e42c",
+    "bca785b88fde3cc9",
+    "8956032083c6c608",
+    "b0aed9075d5c4b80",
+    "8ca17accf2d3a50f",
+    "f663a0f267833569",
+    "93a1d0c111696bb5",
+    "1fa238937b16957d",
+    "e42ab03e4f1fde4b",
+    "528d0c436ac9f02c",
+    "9f9998bdd62ef9a4",
+    "a6f2e6a78ccb0fd5",
+    "69029198419b42a0",
+    "10a499b354bd652f",
+    "093dc5eba5a9127f",
+    "28f1cce37f8c17f4",
+    "d685c9bbec00df93",
+    "13764c9a015082b5",
+    "cfcbad2ec4097486",
+    "2df7b5657a126219"
+  ],
+  "sort": 0,
+  "_key": "!tables!5b214f69a15dbbf5"
+}

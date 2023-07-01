@@ -1,0 +1,18 @@
+{
+  "_id": "b1122a20aede5906",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Clouded Senses</h2><b>Normal damage.</b><br><br>Disadvantage on perception and on ranged attacks until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.b1122a20aede5906"
+}

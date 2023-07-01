@@ -1,0 +1,18 @@
+{
+  "_id": "cf9b295adfc75d85",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Defense Piercer</h2><b>Normal damage.</b><br><br>It is vulnerable to the next attack that hits it before the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.cf9b295adfc75d85"
+}

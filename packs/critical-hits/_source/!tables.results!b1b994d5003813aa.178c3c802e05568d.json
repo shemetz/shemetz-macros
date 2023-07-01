@@ -1,0 +1,18 @@
+{
+  "_id": "178c3c802e05568d",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Biological Vulnerability</h2><b>Double damage.</b><br><br>Until the end of its next turn, it's vulnerable to poison, necrotic and psychic damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.178c3c802e05568d"
+}

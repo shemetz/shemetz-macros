@@ -1,0 +1,24 @@
+{
+  "name": "Image Shift",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/X2mAfEC.png",
+  "scope": "global",
+  "command": "ShemetzMacros.shiftSelectedPlaceableImageByKeyboard()",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.wAXvWmyh0vZoxK8H"
+    }
+  },
+  "_id": "wABHWLz8f18gCxMu",
+  "_key": "!macros!wABHWLz8f18gCxMu"
+}

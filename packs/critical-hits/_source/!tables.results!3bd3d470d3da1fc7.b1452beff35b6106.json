@@ -1,0 +1,18 @@
+{
+  "_id": "b1452beff35b6106",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Overexerted</h2>You cut yourself, break a bone, or open an old wound. For a minute or until you are healed, you take damage equal to half your level/CR (min 1) at the end of each of your turns.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.b1452beff35b6106"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Close Treasure Chests",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/CYKqSqG.png",
+  "scope": "global",
+  "command": "ShemetzMacros.closeSelectedTreasureChests()",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.54DAhyxco9uoohvy"
+    }
+  },
+  "_id": "PNvbZMxwB548mOxJ",
+  "_key": "!macros!PNvbZMxwB548mOxJ"
+}

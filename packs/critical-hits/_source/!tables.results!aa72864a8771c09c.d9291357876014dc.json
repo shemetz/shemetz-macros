@@ -1,0 +1,18 @@
+{
+  "_id": "d9291357876014dc",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Acid Residue</h2><b>Normal damage.</b><br><br>At the end of its next turn, takes damage equal to the attacker's level/CR unless it spends an action to clean itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.d9291357876014dc"
+}

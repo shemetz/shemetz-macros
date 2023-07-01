@@ -1,0 +1,18 @@
+{
+  "_id": "8687fb8e020a7b4e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Physical Vulnerability</h2><b>Double damage.</b><br><br>Until the end of its next turn, it's vulnerable to a random physical damage type (slashing/piercing/bludgeoning).",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.8687fb8e020a7b4e"
+}

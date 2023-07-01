@@ -1,0 +1,18 @@
+{
+  "_id": "883104fc4160f295",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Kneecapped</h2><b>Double damage.</b><br><br>Loses its movement on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.883104fc4160f295"
+}

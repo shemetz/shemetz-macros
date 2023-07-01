@@ -1,0 +1,18 @@
+{
+  "_id": "392bf335913f263a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Frightening Radiance</h2><b>Double damage.</b><br><br>Frightened by the attacking creature until end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.392bf335913f263a"
+}

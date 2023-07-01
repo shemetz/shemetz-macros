@@ -1,0 +1,38 @@
+{
+  "_id": "8cd22c4bb19d0270",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "name": "Injuries",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "d528842f84ea0fc7",
+    "6200e6a41b657a41",
+    "28301d121e3cc4b8",
+    "70541809ba039acd",
+    "ebf274f1eeddee4e",
+    "63a2e2658aa25d19",
+    "eb4cd8e32996b4e2",
+    "69004adbd2db62ee",
+    "d7a412b3d18022e3",
+    "6811ac95a290e3f3",
+    "b47904d01707780f",
+    "f1e3218c8d4630f3",
+    "189cf52184d0ea23",
+    "4a3412ece37d772a",
+    "2cdc97a36653630f",
+    "c86af96eca2ba00a",
+    "8f6267f5c42d3eea",
+    "9bebe9ebcb1200a1",
+    "8e58ae42a40dc8c3",
+    "984ad536c138a446"
+  ],
+  "sort": 0,
+  "_key": "!tables!8cd22c4bb19d0270"
+}

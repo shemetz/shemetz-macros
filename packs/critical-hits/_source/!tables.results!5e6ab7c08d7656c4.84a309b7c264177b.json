@@ -1,0 +1,18 @@
+{
+  "_id": "84a309b7c264177b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Blinding Flash</h2><b>Double damage.</b><br><br>Blinded until it takes an action to rub its eyes.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.84a309b7c264177b"
+}

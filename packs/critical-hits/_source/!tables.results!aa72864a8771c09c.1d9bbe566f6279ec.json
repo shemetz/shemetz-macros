@@ -1,0 +1,18 @@
+{
+  "_id": "1d9bbe566f6279ec",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Painful Burn</h2><b>Double damage.</b><br><br>It makes attacks with disadvantage until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.1d9bbe566f6279ec"
+}

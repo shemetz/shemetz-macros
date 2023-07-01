@@ -1,0 +1,24 @@
+{
+  "name": "Critical Hit Tables",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/Pr6tXUH.png",
+  "scope": "global",
+  "command": "ShemetzMacros.critDialog()",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.T4iFKlZJQ800QjMF"
+    }
+  },
+  "_id": "Sgl5egJT39JtWRBr",
+  "_key": "!macros!Sgl5egJT39JtWRBr"
+}

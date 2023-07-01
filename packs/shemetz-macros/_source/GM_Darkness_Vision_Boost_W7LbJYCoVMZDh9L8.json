@@ -1,0 +1,24 @@
+{
+  "name": "GM Darkness Vision Boost",
+  "type": "script",
+  "author": "1juviUvXUOch1cLb",
+  "img": "icons/magic/perception/eye-ringed-green.webp",
+  "scope": "global",
+  "command": "ShemetzMacros.gmDarknessVisionBoost(0.5)",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "1juviUvXUOch1cLb": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.SFB20lvldOhlFOrB"
+    }
+  },
+  "_id": "W7LbJYCoVMZDh9L8",
+  "_key": "!macros!W7LbJYCoVMZDh9L8"
+}

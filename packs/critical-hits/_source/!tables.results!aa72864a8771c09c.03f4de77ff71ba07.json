@@ -1,0 +1,18 @@
+{
+  "_id": "03f4de77ff71ba07",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Corroded Armor</h2><b>Normal damage.</b><br><br>Equipment Damage:  -1 AC.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.03f4de77ff71ba07"
+}

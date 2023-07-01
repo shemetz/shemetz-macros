@@ -1,0 +1,18 @@
+{
+  "_id": "036e2660688d390a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Winter's Toll</h2><b>Double damage.</b><br><br>Gains two levels of exhaustion. Loses one of them at the end of each of its turns.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.036e2660688d390a"
+}

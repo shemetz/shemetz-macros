@@ -1,0 +1,18 @@
+{
+  "_id": "fa320a1cfb9d4496",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Overwhelming Pain</h2><b>Double damage.</b><br><br>Drops concentration. Falls prone. Drops what it's holding.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.fa320a1cfb9d4496"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "f735b73c3a6b269e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Elemental Vulnerability</h2><b>Double damage.</b><br><br>Until the end of its next turn, it's vulnerable to fire, cold, and acid damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.f735b73c3a6b269e"
+}

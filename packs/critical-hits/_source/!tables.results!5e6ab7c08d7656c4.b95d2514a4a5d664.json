@@ -1,0 +1,18 @@
+{
+  "_id": "b95d2514a4a5d664",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Blinding Radiance</h2><b>Double damage.</b><br><br>Blinded until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.b95d2514a4a5d664"
+}

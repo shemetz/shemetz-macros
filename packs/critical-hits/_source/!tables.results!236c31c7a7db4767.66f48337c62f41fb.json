@@ -1,0 +1,18 @@
+{
+  "_id": "66f48337c62f41fb",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Upper Bleeding</h2><b>Double damage.</b><br><br>Until it staunches the wound, it takes bleeding damage whenever it makes an action that uses its arms/hands (attacking, spellcasting, etc.)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.66f48337c62f41fb"
+}

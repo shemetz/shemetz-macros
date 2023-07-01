@@ -1,0 +1,18 @@
+{
+  "_id": "30886250b80e4ff7",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Fear the Flames</h2><b>Double damage.</b><br><br>Frightened of the attacker until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.30886250b80e4ff7"
+}

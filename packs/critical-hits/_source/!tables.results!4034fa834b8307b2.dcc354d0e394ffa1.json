@@ -1,0 +1,18 @@
+{
+  "_id": "dcc354d0e394ffa1",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Sonic Boom</h2><b>Double damage.</b><br><br>Falls prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.dcc354d0e394ffa1"
+}

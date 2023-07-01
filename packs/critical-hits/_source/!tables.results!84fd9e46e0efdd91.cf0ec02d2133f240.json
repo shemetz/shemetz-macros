@@ -1,0 +1,18 @@
+{
+  "_id": "cf0ec02d2133f240",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Embers in the Eyes</h2><b>Double damage.</b><br><br>Blinded until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.cf0ec02d2133f240"
+}

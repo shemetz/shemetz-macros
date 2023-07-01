@@ -1,0 +1,18 @@
+{
+  "_id": "acd530d80ec68d5a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Terrifying Hallucinations</h2><b>Double damage.</b><br><br>Frightened of every creature until the end of its next turn.  Cannot move towards any of them.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.acd530d80ec68d5a"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "93aa145f2dc7fcba",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Powerful Punt</h2><b>Double damage.</b><br><br>Shoved 15 feet.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.93aa145f2dc7fcba"
+}

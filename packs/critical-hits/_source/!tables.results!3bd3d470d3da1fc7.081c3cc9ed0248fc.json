@@ -1,0 +1,18 @@
+{
+  "_id": "081c3cc9ed0248fc",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Devastating error</h2>Your target may immediately use a reaction to make an attack against you with advantage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.081c3cc9ed0248fc"
+}

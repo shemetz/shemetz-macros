@@ -1,0 +1,18 @@
+{
+  "_id": "fcd7ca86949bc3aa",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Frozen Hands</h2><b>Double damage.</b><br><br>Disadvantage on attacks next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.fcd7ca86949bc3aa"
+}

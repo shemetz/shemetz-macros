@@ -1,0 +1,18 @@
+{
+  "_id": "469f94f6092b4719",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Life Siphon</h2><b>Normal damage.</b><br><br>Attacker gains temporary hit points equal to the damage dealt.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.469f94f6092b4719"
+}

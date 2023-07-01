@@ -1,0 +1,18 @@
+{
+  "_id": "44616599e0de8655",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Slowing Slash</h2><b>Double damage.</b><br><br>Movement speed halved until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.44616599e0de8655"
+}

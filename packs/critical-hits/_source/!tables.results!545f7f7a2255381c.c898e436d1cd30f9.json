@@ -1,0 +1,18 @@
+{
+  "_id": "c898e436d1cd30f9",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Vertigo</h2><b>Double damage.</b><br><br>-2 AC. If it willingly moves, it falls prone (after moving 5ft). Goes away at the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.c898e436d1cd30f9"
+}

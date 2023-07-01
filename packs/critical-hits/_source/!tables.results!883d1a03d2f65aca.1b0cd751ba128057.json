@@ -1,0 +1,18 @@
+{
+  "_id": "1b0cd751ba128057",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Life Leeched</h2><b>Double damage.</b><br><br>For the next minute, whenever a creature within 5 feet of it is healed, roll maximum for healing and the victim takes half that much necrotic damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.1b0cd751ba128057"
+}

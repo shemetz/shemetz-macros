@@ -1,0 +1,18 @@
+{
+  "_id": "1690fefd9cf50baa",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Compulsion</h2><u>In combat:</u> The creature must repeat the most recent possible action it has taken on a previous turn (including e.g. beating a dead body, but not drinking from an empty bottle)<br><br><u>Out of combat:</u> The creature has some compulsive tics that it repeats compulsively every now and then.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.1690fefd9cf50baa"
+}

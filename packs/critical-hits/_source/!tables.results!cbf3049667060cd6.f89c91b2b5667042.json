@@ -1,0 +1,18 @@
+{
+  "_id": "f89c91b2b5667042",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Pica</h2><u>In combat:</u> The creature uses its bonus action to attempt eating something within its reach, preferring something it has not eaten before. This can provoke an opportunity attack.<br><br><u>Out of combat:</u> The creature is prone to chew on things passively, occasionally consuming inedible objects. It may be constantly feeling hunger or restlessness.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.f89c91b2b5667042"
+}

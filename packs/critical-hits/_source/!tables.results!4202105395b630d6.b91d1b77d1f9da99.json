@@ -1,0 +1,18 @@
+{
+  "_id": "b91d1b77d1f9da99",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Bashed Off-Balance</h2><b>Double damage.</b><br><br>Falls prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.b91d1b77d1f9da99"
+}

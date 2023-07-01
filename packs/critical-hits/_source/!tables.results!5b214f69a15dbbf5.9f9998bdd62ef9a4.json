@@ -1,0 +1,18 @@
+{
+  "_id": "9f9998bdd62ef9a4",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Offensive Palsy</h2><b>Double damage.</b><br><br>Disadvantage on all attacks until end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.9f9998bdd62ef9a4"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "17dcbfd61e672e8d",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Blackout</h2><b>Normal damage.</b><br><br>Blinded until it takes damage or uses an action to clear its head.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.17dcbfd61e672e8d"
+}

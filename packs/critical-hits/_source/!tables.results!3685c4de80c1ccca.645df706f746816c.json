@@ -1,0 +1,18 @@
+{
+  "_id": "645df706f746816c",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Acute Mind Impairment</h2><b>Double damage.</b><br><br>Intelligence, Wisdom and Charisma scores each get -5 until the end of its next turn (minimum 1)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.645df706f746816c"
+}

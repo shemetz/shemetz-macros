@@ -1,0 +1,18 @@
+{
+  "_id": "30d0b4dadd7c0a54",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Tongue-Tied</h2><b>Double damage.</b><br><br>Requires DC 10 flat check whenever it tries to speak intelligibly, casts a vocal spell, etc. until a success. Trying to speak intelligibly is an action until they succeed.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.30d0b4dadd7c0a54"
+}

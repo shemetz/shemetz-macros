@@ -1,0 +1,18 @@
+{
+  "_id": "e42ab03e4f1fde4b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Shock-Jawed</h2><b>Double damage.</b><br><br>Cannot speak until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.e42ab03e4f1fde4b"
+}

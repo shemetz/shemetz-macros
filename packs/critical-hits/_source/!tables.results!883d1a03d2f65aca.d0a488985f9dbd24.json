@@ -1,0 +1,18 @@
+{
+  "_id": "d0a488985f9dbd24",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Muscular Atrophy</h2><b>Double damage.</b><br><br>-3 to STR and DEX scores (min 1) for a minute.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.d0a488985f9dbd24"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "3bd3d470d3da1fc7",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "name": "Fail/Fumble",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "11e1d7950cddd9ce",
+    "32645f157cf9c6b1",
+    "08ec543c9f90c95a",
+    "081c3cc9ed0248fc",
+    "f7ef149f8f5ffba5",
+    "2ebd322607ad5f76",
+    "231b82774520d7e9",
+    "9ad7fba506bfc510",
+    "886cb05af0f3e0d9",
+    "666a9feefadf23a7",
+    "2424278212f7c6f1",
+    "558fc36099d795a8",
+    "fe3ff3966844aa13",
+    "6e20da8ead31c813",
+    "b1452beff35b6106",
+    "e885424e2e3761ab",
+    "8b18792d665a7b0a",
+    "edd335d579c4c9c7",
+    "17356679d6dedb77",
+    "57067ce1ae6a0098"
+  ],
+  "sort": 0,
+  "_key": "!tables!3bd3d470d3da1fc7"
+}

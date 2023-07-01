@@ -1,0 +1,18 @@
+{
+  "_id": "f39e0ccb478aacf8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Thrill-Seeking</h2><u>In combat:</u> The creature ignores most risks and may put itself in the way of serious harm through its actions.<br><br><u>Out of combat:</u> The creature is more likely to engage in gambling, substance abuse, arguments or other impulsive behaviour.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.f39e0ccb478aacf8"
+}

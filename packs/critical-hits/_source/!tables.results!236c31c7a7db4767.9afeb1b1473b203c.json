@@ -1,0 +1,18 @@
+{
+  "_id": "9afeb1b1473b203c",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Subduing Slit</h2><b>Normal damage.</b><br><br>Disadvantage on its first attack on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.9afeb1b1473b203c"
+}

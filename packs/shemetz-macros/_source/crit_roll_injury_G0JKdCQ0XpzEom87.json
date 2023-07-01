@@ -1,0 +1,24 @@
+{
+  "name": "crit_roll_injury",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/iw4sH39.png",
+  "scope": "global",
+  "command": "ShemetzMacros.critRollInjury()",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.JtwpwScoC5bbeVzs"
+    }
+  },
+  "_id": "G0JKdCQ0XpzEom87",
+  "_key": "!macros!G0JKdCQ0XpzEom87"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "9bebe9ebcb1200a1",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    18,
+    18
+  ],
+  "rangeH": 18,
+  "rangeL": 18,
+  "resultId": null,
+  "text": "<h2>Concussion</h2><i>(Head injury)</i><br><br>Cannot use Movement and Action on same turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.9bebe9ebcb1200a1"
+}

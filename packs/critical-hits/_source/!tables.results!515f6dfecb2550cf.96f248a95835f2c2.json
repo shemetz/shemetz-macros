@@ -1,0 +1,18 @@
+{
+  "_id": "96f248a95835f2c2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Frozen Eyes</h2><b>Double damage.</b><br><br>Blind until it spends an action to warm up its eyes (i.e. by rubbing)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.96f248a95835f2c2"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "83056ec507e171ce",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "name": "Piercing Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "244813b2d10d0efd",
+    "965140f4e4847f64",
+    "cf9b295adfc75d85",
+    "373eb2865de9b5eb",
+    "ed2893fd55e76acf",
+    "5a0365328cbec113",
+    "5865fd55fd12b8e5",
+    "50f9a80785930b43",
+    "a5783a6c8ad74b42",
+    "c0621f2a903e1cae",
+    "94041702441c3365",
+    "914169ebe5c4a198",
+    "a21c72b42db9e2d4",
+    "7f68279c00520bdb",
+    "84f232644b85386f",
+    "a15a967e59412d93",
+    "50cbad49449c40d5",
+    "d25a6fe76631ce29",
+    "699c1f8b39c160a0",
+    "0c64b571bb9ec6eb"
+  ],
+  "sort": 0,
+  "_key": "!tables!83056ec507e171ce"
+}

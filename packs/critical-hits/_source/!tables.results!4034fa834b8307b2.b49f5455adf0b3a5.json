@@ -1,0 +1,18 @@
+{
+  "_id": "b49f5455adf0b3a5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Aphasia</h2><b>Double damage.</b><br><br>Deafened and cannot speak until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.b49f5455adf0b3a5"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "914169ebe5c4a198",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Pinning Jab</h2><b>Double damage.</b><br><br>It is restrained until it spends an action detaching itself from the floor/wall.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.914169ebe5c4a198"
+}

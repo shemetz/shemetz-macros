@@ -1,0 +1,18 @@
+{
+  "_id": "0f6c691999312823",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Ethereal Tug</h2><b>Normal damage.</b><br><br>It is pulled or pushed (attacker's choice) 10ft towards/away from the attacker.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.0f6c691999312823"
+}

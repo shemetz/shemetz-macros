@@ -1,0 +1,18 @@
+{
+  "_id": "caeed4a6e5df8a39",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    18,
+    18
+  ],
+  "rangeH": 18,
+  "rangeL": 18,
+  "resultId": null,
+  "text": "<h2>Rot 'n' Blot</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Until end of its next turn, poisoned and disadvantage on Constitution saves.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.caeed4a6e5df8a39"
+}

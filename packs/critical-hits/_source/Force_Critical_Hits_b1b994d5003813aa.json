@@ -1,0 +1,38 @@
+{
+  "_id": "b1b994d5003813aa",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "name": "Force Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "837c93aff48317f8",
+    "a74103cc18ba4591",
+    "0f6c691999312823",
+    "46906c39f6ee8a58",
+    "fcbe60d25e6d5f27",
+    "80ae4976955a21b0",
+    "fef3905a2e595e89",
+    "8ef567c80f2f27af",
+    "702ef7045dcaa1fa",
+    "1f95f7f5f7d74743",
+    "8687fb8e020a7b4e",
+    "f735b73c3a6b269e",
+    "178c3c802e05568d",
+    "a27aaddc0b16121b",
+    "b837a67f96d60e0f",
+    "301c29121b66e5a2",
+    "ff0d0f587090a273",
+    "76152242176b52ec",
+    "d8e4ca405866d7fd",
+    "4d1f1c84e344a312"
+  ],
+  "sort": 0,
+  "_key": "!tables!b1b994d5003813aa"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "a27aaddc0b16121b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Storm Vulnerability</h2><b>Double damage.</b><br><br>Until the end of its next turn, it's vulnerable to thunder, lightning, and radiant damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.a27aaddc0b16121b"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "63b29430977932b9",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Spotty Vision</h2><b>Normal damage.</b><br><br>Disadvantage on perception and on ranged attacks until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.63b29430977932b9"
+}

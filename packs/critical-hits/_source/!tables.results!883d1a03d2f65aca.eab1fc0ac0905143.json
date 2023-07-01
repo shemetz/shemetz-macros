@@ -1,0 +1,18 @@
+{
+  "_id": "eab1fc0ac0905143",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Neural Decay</h2><b>Double damage.</b><br><br>-3 to INT, WIS and CHA scores (min 1) for a minute.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.eab1fc0ac0905143"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "57067ce1ae6a0098",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Bad timing</h2>You are last on the initiative order on the next round.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.57067ce1ae6a0098"
+}

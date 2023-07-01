@@ -1,0 +1,18 @@
+{
+  "_id": "d7a412b3d18022e3",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Short of Breath</h2><i>(Lungs injury)</i><br><br>-5 to Athletics checks and -25 ft to Dash-action speed",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.d7a412b3d18022e3"
+}

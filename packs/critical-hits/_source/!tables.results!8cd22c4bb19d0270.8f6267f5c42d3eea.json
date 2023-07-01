@@ -1,0 +1,18 @@
+{
+  "_id": "8f6267f5c42d3eea",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Mental Trauma</h2><i>(Head injury)</i><br><br>Roll on the Mental Afflictions table!",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.8f6267f5c42d3eea"
+}

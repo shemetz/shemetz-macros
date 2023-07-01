@@ -1,0 +1,18 @@
+{
+  "_id": "72d73ef5f10ba56b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Chronic Mind Impairment</h2><b>Double damage.</b><br><br>Intelligence, Wisdom and Charisma scores each get -3 for a minute (minimum 1)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.72d73ef5f10ba56b"
+}

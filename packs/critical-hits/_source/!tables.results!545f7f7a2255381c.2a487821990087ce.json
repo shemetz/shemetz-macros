@@ -1,0 +1,18 @@
+{
+  "_id": "2a487821990087ce",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Poisoned</h2><b>Normal damage.</b><br><br>Poisoned until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.2a487821990087ce"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "5c75ee8045cd38d8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Spraying Slash</h2><b>Double damage.</b><br><br>It starts bleeding, but stops after the first instance of bleeding damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.5c75ee8045cd38d8"
+}

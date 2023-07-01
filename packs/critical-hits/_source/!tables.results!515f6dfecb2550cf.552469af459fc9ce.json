@@ -1,0 +1,18 @@
+{
+  "_id": "552469af459fc9ce",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Glacial Reflexes</h2><b>Double damage.</b><br><br>Loses its reaction until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.552469af459fc9ce"
+}

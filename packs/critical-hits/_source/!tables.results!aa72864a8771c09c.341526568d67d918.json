@@ -1,0 +1,18 @@
+{
+  "_id": "341526568d67d918",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Not the Eyes!</h2><b>Double damage.</b><br><br>Blinded until it spends an action cleaning the acid off its eyes.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.341526568d67d918"
+}

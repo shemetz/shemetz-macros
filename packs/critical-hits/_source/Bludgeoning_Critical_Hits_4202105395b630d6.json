@@ -1,0 +1,38 @@
+{
+  "_id": "4202105395b630d6",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "name": "Bludgeoning Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "232b075f27f9cf0a",
+    "16d941e2e548dc68",
+    "a0d94e1226a3389c",
+    "657935cd92bccd9f",
+    "0f470f0d6d342afa",
+    "ae3c70ede60c686d",
+    "d47b035f14d3fb97",
+    "091e36a3b152d313",
+    "826bcbe901b1b0ac",
+    "b91d1b77d1f9da99",
+    "93aa145f2dc7fcba",
+    "bc5960c745b6e368",
+    "883104fc4160f295",
+    "1220c8999369888b",
+    "5e28058985b34f5e",
+    "01a75be07853c12b",
+    "e3312a3114a8f43d",
+    "d19e67d8d8d5b4d0",
+    "f5dc27d3fca1ca7b",
+    "f04fd5c8cf74721b"
+  ],
+  "sort": 0,
+  "_key": "!tables!4202105395b630d6"
+}

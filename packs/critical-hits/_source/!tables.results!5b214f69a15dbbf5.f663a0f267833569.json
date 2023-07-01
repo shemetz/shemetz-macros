@@ -1,0 +1,18 @@
+{
+  "_id": "f663a0f267833569",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Kilo-Zapped</h2><b>Double damage.</b><br><br>Loses its reaction until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.f663a0f267833569"
+}

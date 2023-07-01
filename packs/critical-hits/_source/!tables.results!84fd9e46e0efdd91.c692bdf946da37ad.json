@@ -1,0 +1,18 @@
+{
+  "_id": "c692bdf946da37ad",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Overheated</h2><b>Normal damage.</b><br><br>Disarmed, or unable to use its limbs for attacks until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.c692bdf946da37ad"
+}

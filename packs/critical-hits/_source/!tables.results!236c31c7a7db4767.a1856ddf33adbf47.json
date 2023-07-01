@@ -1,0 +1,18 @@
+{
+  "_id": "a1856ddf33adbf47",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Gushing Slash</h2><b>Double damage.</b><br><br>It starts bleeding.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.a1856ddf33adbf47"
+}

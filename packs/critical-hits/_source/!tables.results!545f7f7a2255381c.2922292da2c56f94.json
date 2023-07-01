@@ -1,0 +1,18 @@
+{
+  "_id": "2922292da2c56f94",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Lethargic</h2><b>Double damage.</b><br><br>Gains two levels of exhaustion. Loses one of them at the end of each of its turns.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.2922292da2c56f94"
+}

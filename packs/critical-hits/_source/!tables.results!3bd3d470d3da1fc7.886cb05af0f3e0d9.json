@@ -1,0 +1,18 @@
+{
+  "_id": "886cb05af0f3e0d9",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Your own worst enemy</h2>You suffer a -1d4 penalty to your attack rolls and ability checks, until you succeed on one of those rolls.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.886cb05af0f3e0d9"
+}

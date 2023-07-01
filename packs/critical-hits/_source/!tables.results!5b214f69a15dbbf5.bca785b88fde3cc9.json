@@ -1,0 +1,18 @@
+{
+  "_id": "bca785b88fde3cc9",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Offensive Twitch</h2><b>Normal damage.</b><br><br>Disadvantage on its first attack on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.bca785b88fde3cc9"
+}

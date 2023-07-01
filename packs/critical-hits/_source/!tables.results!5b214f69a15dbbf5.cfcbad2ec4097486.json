@@ -1,0 +1,18 @@
+{
+  "_id": "cfcbad2ec4097486",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    19,
+    19
+  ],
+  "rangeH": 19,
+  "rangeL": 19,
+  "resultId": null,
+  "text": "<h2>Stunning Discharge</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Stunned until end of its next turn and falls prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.cfcbad2ec4097486"
+}

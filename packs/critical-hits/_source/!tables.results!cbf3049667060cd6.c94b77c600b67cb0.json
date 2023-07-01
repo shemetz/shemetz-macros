@@ -1,0 +1,18 @@
+{
+  "_id": "c94b77c600b67cb0",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Alien Limb</h2><u>In combat:</u> Choose a limb. The creature uses its bonus action to sabotage itself using that limb (e.g. disarming itself, tripping itself, throwing away a potion, making an unarmed strike).<br><br><u>Out of combat:</u> The creature is sometimes unaware of the actions of its alien limb, and might get into trouble because of this.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.c94b77c600b67cb0"
+}

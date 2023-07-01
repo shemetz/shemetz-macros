@@ -1,0 +1,18 @@
+{
+  "_id": "079b59bbcc0b836e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Corroded Weapon</h2><b>Normal damage.</b><br><br>Equipment Damage:  -1 damage per weapon die.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.079b59bbcc0b836e"
+}

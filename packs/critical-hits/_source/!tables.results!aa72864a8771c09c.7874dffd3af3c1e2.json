@@ -1,0 +1,18 @@
+{
+  "_id": "7874dffd3af3c1e2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Dissolved Strike</h2><b>Double damage.</b><br><br>Equipment Damage:  -1 to hit.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.7874dffd3af3c1e2"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "e3312a3114a8f43d",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Brutal Punt</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Knocked prone and shoved 15 feet.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.e3312a3114a8f43d"
+}

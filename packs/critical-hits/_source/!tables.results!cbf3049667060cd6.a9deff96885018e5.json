@@ -1,0 +1,18 @@
+{
+  "_id": "a9deff96885018e5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Hallucination</h2><u>In combat:</u> The creature sees a hallucination of the DM's choice that seems completely real.<br><br><u>Out of combat:</u> The creature occasionally sees things that aren't real, prompted by the DM.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.a9deff96885018e5"
+}

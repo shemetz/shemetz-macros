@@ -1,0 +1,18 @@
+{
+  "_id": "0f470f0d6d342afa",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Knocked Off-Balance</h2><b>Normal damage.</b><br><br>Falls prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.0f470f0d6d342afa"
+}

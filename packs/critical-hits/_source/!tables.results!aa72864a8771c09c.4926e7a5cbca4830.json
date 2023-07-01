@@ -1,0 +1,18 @@
+{
+  "_id": "4926e7a5cbca4830",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Acid in the Wounds</h2><b>Double damage.</b><br><br>Until end of its next turn, whenever it's dealt damage, it takes additional acid damage equal to the attacker's level/CR.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.4926e7a5cbca4830"
+}

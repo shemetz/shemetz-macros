@@ -1,0 +1,18 @@
+{
+  "_id": "c7008d65c2bd75a8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Dazzling Light</h2><b>Double damage.</b><br><br>Loses its reaction until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.c7008d65c2bd75a8"
+}

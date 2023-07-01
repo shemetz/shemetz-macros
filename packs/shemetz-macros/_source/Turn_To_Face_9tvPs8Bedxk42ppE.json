@@ -1,0 +1,24 @@
+{
+  "name": "Turn To Face",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/HWWHd2W.png",
+  "scope": "global",
+  "command": "const tokens = ShemetzMacros.selectedTokens()\nconst target = ShemetzMacros.targetedTokens()[0]\nShemetzMacros.turnTokensToFaceTarget(tokens, target)",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.shmXvItWoUacCzMO"
+    }
+  },
+  "_id": "9tvPs8Bedxk42ppE",
+  "_key": "!macros!9tvPs8Bedxk42ppE"
+}

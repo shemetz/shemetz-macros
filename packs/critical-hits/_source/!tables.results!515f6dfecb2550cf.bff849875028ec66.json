@@ -1,0 +1,18 @@
+{
+  "_id": "bff849875028ec66",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Glacial Movement</h2><b>Double damage.</b><br><br>Loses half its movement on its next turn. If flying and not hovering, drops 30ft and can't move upwards that turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.bff849875028ec66"
+}

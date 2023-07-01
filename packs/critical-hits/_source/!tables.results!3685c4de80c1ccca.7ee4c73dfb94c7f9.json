@@ -1,0 +1,18 @@
+{
+  "_id": "7ee4c73dfb94c7f9",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    18,
+    18
+  ],
+  "rangeH": 18,
+  "rangeL": 18,
+  "resultId": null,
+  "text": "<h2>Scare 'n' Stare</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_mental_affliction]{Mental Affliction}.</b><br><br>Frightened by the attacking creature for a minute, must move at least 15ft away from it if able each turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.7ee4c73dfb94c7f9"
+}

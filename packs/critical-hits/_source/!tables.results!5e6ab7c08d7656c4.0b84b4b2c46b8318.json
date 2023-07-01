@@ -1,0 +1,18 @@
+{
+  "_id": "0b84b4b2c46b8318",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Photosensitivity</h2><b>Double damage.</b><br><br>For the next minute, -2 to perception checks and attack rolls while in bright light, and against targets in bright light.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5e6ab7c08d7656c4.0b84b4b2c46b8318"
+}

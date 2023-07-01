@@ -1,0 +1,18 @@
+{
+  "_id": "826bcbe901b1b0ac",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Jawbreaker</h2><b>Double damage.</b><br><br>Cannot speak until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.826bcbe901b1b0ac"
+}

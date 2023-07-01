@@ -1,0 +1,18 @@
+{
+  "_id": "fb22fec6e211a03b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Paranoia</h2><u>In combat:</u> The creature isn't considered willing for any spell and it distrusts information from others.<br><br><u>Out of combat:</u> The creature is prone to distrust anyone, even its allies. It might be susceptible to conspiratorial views.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.fb22fec6e211a03b"
+}

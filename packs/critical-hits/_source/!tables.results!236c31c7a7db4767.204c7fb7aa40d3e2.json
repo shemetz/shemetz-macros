@@ -1,0 +1,18 @@
+{
+  "_id": "204c7fb7aa40d3e2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Spraying Slit</h2><b>Normal damage.</b><br><br>It starts bleeding, but stops after the first instance of bleeding damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.204c7fb7aa40d3e2"
+}

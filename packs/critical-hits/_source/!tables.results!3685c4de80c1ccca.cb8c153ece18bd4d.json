@@ -1,0 +1,18 @@
+{
+  "_id": "cb8c153ece18bd4d",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Catalepsy</h2><b>Double damage and @Compendium[shemetz-macros.shemetz-macros.crit_roll_mental_affliction]{Mental Affliction}.</b><br><br>Stunned until end of its next turn, auto-fails mental saves during that time, and drops what it's holding",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.cb8c153ece18bd4d"
+}

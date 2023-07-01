@@ -1,0 +1,18 @@
+{
+  "_id": "10a499b354bd652f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    14,
+    14
+  ],
+  "rangeH": 14,
+  "rangeL": 14,
+  "resultId": null,
+  "text": "<h2>Persistent Palsy</h2><b>Double damage.</b><br><br>Loses its bonus action until it uses an action to massage itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.10a499b354bd652f"
+}

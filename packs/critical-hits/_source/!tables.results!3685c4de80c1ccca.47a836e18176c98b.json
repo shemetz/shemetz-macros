@@ -1,0 +1,18 @@
+{
+  "_id": "47a836e18176c98b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Sudden Aggression</h2><b>Double damage.</b><br><br>Must spend its next turn attacking a random other reachable creature or otherwise dealing damage to it.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.47a836e18176c98b"
+}

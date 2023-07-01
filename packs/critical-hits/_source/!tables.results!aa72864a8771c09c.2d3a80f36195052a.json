@@ -1,0 +1,18 @@
+{
+  "_id": "2d3a80f36195052a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Caustic Residue</h2><b>Double damage.</b><br><br>At the end of its next turn, takes damage equal to the attacker's level/CR unless it spends an action to clean itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.2d3a80f36195052a"
+}

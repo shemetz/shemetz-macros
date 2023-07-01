@@ -1,0 +1,18 @@
+{
+  "_id": "b89d09645dd22fd5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Rash</h2><b>Normal damage.</b><br><br>Can't use bonus actions until it uses an action scratching itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!545f7f7a2255381c.b89d09645dd22fd5"
+}

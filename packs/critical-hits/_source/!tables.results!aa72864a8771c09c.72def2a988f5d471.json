@@ -1,0 +1,18 @@
+{
+  "_id": "72def2a988f5d471",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Drenched in Acid</h2><b>Double damage.</b><br><br>It becomes blinded and deafened until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.72def2a988f5d471"
+}

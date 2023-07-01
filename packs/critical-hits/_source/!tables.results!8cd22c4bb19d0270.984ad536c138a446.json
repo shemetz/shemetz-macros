@@ -1,0 +1,18 @@
+{
+  "_id": "984ad536c138a446",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Coma/Death</h2><i>(Head injury)</i><br><br>Unconscious for 2d12 hours.  If permanent or if monster, either permanent coma or instant death.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.984ad536c138a446"
+}

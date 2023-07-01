@@ -1,0 +1,18 @@
+{
+  "_id": "00f285adf9ca6f69",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Tendon Slasher</h2><b>Double damage.</b><br><br>Its speed is reduced to 0 until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.00f285adf9ca6f69"
+}

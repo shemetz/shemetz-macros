@@ -1,0 +1,24 @@
+{
+  "_id": "234b3CMoxl3PXuNh",
+  "name": "Flip",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://emojiguide.org/images/emoji/1/w8iuxo1l9in91.png",
+  "scope": "global",
+  "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.flipTokens(tokens, true)",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.xJnmcZO3ARux7dWU"
+    }
+  },
+  "_key": "!macros!234b3CMoxl3PXuNh"
+}

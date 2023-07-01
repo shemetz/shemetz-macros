@@ -1,0 +1,18 @@
+{
+  "_id": "af7a3f8ae24916dd",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Lingering Boom</h2><b>Normal damage.</b><br><br>Takes the same (not doubled) damage again if it willingly moves before the end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.af7a3f8ae24916dd"
+}

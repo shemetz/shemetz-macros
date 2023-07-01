@@ -1,0 +1,18 @@
+{
+  "_id": "244813b2d10d0efd",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Movement Piercer</h2><b>Normal damage.</b><br><br>Its speed is reduced by 10 feet until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.244813b2d10d0efd"
+}

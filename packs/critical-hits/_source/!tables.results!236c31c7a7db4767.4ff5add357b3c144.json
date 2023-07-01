@@ -1,0 +1,18 @@
+{
+  "_id": "4ff5add357b3c144",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Lower Bleeding</h2><b>Double damage.</b><br><br>Until it staunches the wound, it takes bleeding damage whenever it moves, stands up, makes an action that involves using its legs/wings, or is pushed/pulled.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.4ff5add357b3c144"
+}

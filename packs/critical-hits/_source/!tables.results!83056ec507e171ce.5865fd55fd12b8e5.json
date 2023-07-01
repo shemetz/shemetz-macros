@@ -1,0 +1,18 @@
+{
+  "_id": "5865fd55fd12b8e5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Offense Perforator</h2><b>Double damage.</b><br><br>It has disadvantage on its first attack roll before the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.5865fd55fd12b8e5"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "d47b035f14d3fb97",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Bruised Offensive</h2><b>Double damage.</b><br><br>Disadvantage on its first attack on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.d47b035f14d3fb97"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "ff17b44230b4a67f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
+  "range": [
+    17,
+    17
+  ],
+  "rangeH": 17,
+  "rangeL": 17,
+  "resultId": null,
+  "text": "<h2>Hurts Itself In Its Confusion</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_mental_affliction]{Mental Affliction}.</b><br><br>Treats itself as enemy. Uses its action to make attacks against itself or use damaging cantrips against itself (whichever deals more damage).",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3685c4de80c1ccca.ff17b44230b4a67f"
+}

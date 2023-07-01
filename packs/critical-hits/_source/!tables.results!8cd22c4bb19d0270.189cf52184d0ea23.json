@@ -1,0 +1,18 @@
+{
+  "_id": "189cf52184d0ea23",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Hearing Loss</h2><i>(Ear injury)</i><br><br>If first ear lost: -5 to relevant perception checks.  If last ear lost: deafened.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.189cf52184d0ea23"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "a95b23a2bab16e8b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Fear the Reaper</h2><b>Double damage.</b><br><br>Frightened of the attacking creature until end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.a95b23a2bab16e8b"
+}

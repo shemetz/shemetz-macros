@@ -1,0 +1,18 @@
+{
+  "_id": "70541809ba039acd",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Impaired</h2><i>(Arm/hand injury)</i><br><br>If player: -3 to attacks and checks that require using that arm/hand. It cannot hold a shield. If monster: -2 damage on attacks for every die in the damage formula.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.70541809ba039acd"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "28301d121e3cc4b8",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    3,
+    3
+  ],
+  "rangeH": 3,
+  "rangeL": 3,
+  "resultId": null,
+  "text": "<h2>Maimed</h2><i>(Arm/hand injury)</i><br><br>-3 to all attacks, -5 to ability checks that require hands. It cannot hold a shield.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.28301d121e3cc4b8"
+}

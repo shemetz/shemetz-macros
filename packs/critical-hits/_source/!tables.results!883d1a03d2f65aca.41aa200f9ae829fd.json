@@ -1,0 +1,18 @@
+{
+  "_id": "41aa200f9ae829fd",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Fragile Bones</h2><b>Double damage.</b><br><br>The next time it takes Bludgeoning or Thunder damage within the next minute, it is vulnerable to that damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.41aa200f9ae829fd"
+}

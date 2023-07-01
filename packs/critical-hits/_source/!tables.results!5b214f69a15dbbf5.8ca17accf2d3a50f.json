@@ -1,0 +1,18 @@
+{
+  "_id": "8ca17accf2d3a50f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Electric Arc</h2><b>Normal damage.</b><br><br>A creature of the attacker's choice within 15 feet of it also takes the same damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.8ca17accf2d3a50f"
+}

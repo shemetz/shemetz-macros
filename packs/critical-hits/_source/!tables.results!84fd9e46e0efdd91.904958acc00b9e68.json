@@ -1,0 +1,18 @@
+{
+  "_id": "904958acc00b9e68",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Fireburst</h2><b>Double damage.</b><br><br>Creatures and objects within 5 feet of it (not including it) take half the fire damage",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.904958acc00b9e68"
+}

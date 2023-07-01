@@ -1,0 +1,18 @@
+{
+  "_id": "28f1cce37f8c17f4",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Voltaic Arc</h2><b>Double damage.</b><br><br>A creature of your choice within 15 feet of it also takes same damage (not doubled)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.28f1cce37f8c17f4"
+}

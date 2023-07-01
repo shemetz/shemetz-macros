@@ -1,0 +1,24 @@
+{
+  "name": "View Token Art",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://emojiguide.com/wp-content/uploads/platform/windows/43259.png",
+  "scope": "global",
+  "command": "const tok = ShemetzMacros.hoveredTokens()[0]\n || ShemetzMacros.targetedTokens()[0]\n || ShemetzMacros.selectedTokens()[0]\nShemetzMacros.viewTokenArt(tok)",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.YfONSP4HHlYjMncW"
+    }
+  },
+  "_id": "NS4N7hLyu11dKRgh",
+  "_key": "!macros!NS4N7hLyu11dKRgh"
+}

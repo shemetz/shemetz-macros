@@ -1,0 +1,18 @@
+{
+  "_id": "6758d80819cdb3dc",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Raw Skin</h2><b>Double damage.</b><br><br>The next time it takes Fire or Poison damage within the next minute, it is vulnerable to that damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.6758d80819cdb3dc"
+}

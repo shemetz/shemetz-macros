@@ -1,0 +1,18 @@
+{
+  "_id": "fe3ff3966844aa13",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    13,
+    13
+  ],
+  "rangeH": 13,
+  "rangeL": 13,
+  "resultId": null,
+  "text": "<h2>Preoccupied</h2>Until the end of your next turn, you don't register what's happening to creatures other than you and your target, and can only react to your target.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.fe3ff3966844aa13"
+}

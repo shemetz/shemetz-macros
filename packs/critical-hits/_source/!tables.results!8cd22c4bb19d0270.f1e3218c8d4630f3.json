@@ -1,0 +1,18 @@
+{
+  "_id": "f1e3218c8d4630f3",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Visual Impairment</h2><i>(Eye injury)</i><br><br>If first eye lost: -5 to relevant perception checks.  If last eye lost: blinded",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.f1e3218c8d4630f3"
+}

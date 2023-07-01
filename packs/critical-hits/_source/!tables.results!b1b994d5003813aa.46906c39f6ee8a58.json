@@ -1,0 +1,18 @@
+{
+  "_id": "46906c39f6ee8a58",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Magic Flaw</h2><b>Normal damage.</b><br><br>Spell attack rolls have advantage against it until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.46906c39f6ee8a58"
+}

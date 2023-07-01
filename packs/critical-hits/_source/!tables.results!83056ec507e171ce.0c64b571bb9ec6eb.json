@@ -1,0 +1,18 @@
+{
+  "_id": "0c64b571bb9ec6eb",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Cruel Impalement</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>It is grappled and restrained.  The grappler is either you (if melee) or the damaging object (if ranged).  If it escapes, it starts bleeding.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.0c64b571bb9ec6eb"
+}

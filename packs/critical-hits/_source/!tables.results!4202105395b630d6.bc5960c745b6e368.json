@@ -1,0 +1,18 @@
+{
+  "_id": "bc5960c745b6e368",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Disarming Blow</h2><b>Double damage.</b><br><br>One item it's holding is dropped and flung 20 feet away. If it held nothing, it becomes unable to use one of its main attack limbs (e.g. one less attack in Multiattack) until it spends an action fixing itself.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.bc5960c745b6e368"
+}

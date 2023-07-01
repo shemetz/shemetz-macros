@@ -1,0 +1,38 @@
+{
+  "_id": "236c31c7a7db4767",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "name": "Slashing Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "204c7fb7aa40d3e2",
+    "9afeb1b1473b203c",
+    "e7661284b40ffb84",
+    "20e480aea979c6a8",
+    "0d5f30c524a52ece",
+    "5c75ee8045cd38d8",
+    "db45ca601d5b2725",
+    "44616599e0de8655",
+    "a1856ddf33adbf47",
+    "e0e4cdcabfc37710",
+    "4ff5add357b3c144",
+    "66f48337c62f41fb",
+    "00f285adf9ca6f69",
+    "790a3f70b56386d1",
+    "d4266402d58574c3",
+    "a9ce176bf5debd7f",
+    "f00e344e33b8577c",
+    "958bcf052b27d004",
+    "d69c57652d6d983e",
+    "c884326e6a93ac0a"
+  ],
+  "sort": 0,
+  "_key": "!tables!236c31c7a7db4767"
+}

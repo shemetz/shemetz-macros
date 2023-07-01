@@ -1,0 +1,18 @@
+{
+  "_id": "2cdc97a36653630f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Brain Damage</h2><i>(Head injury)</i><br><br>-5 to Intelligence score (minimum 1). If monster, DM plays it dumber",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!8cd22c4bb19d0270.2cdc97a36653630f"
+}

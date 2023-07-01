@@ -1,0 +1,18 @@
+{
+  "_id": "f04fd5c8cf74721b",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Brutal Beatdown</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Shoved 20 feet, knocked prone, and you may attempt to grapple it with advantage. ",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.f04fd5c8cf74721b"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "d0820d9a78a8c298",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Pelt 'n' Melt</h2><b>Normal damage.</b><br><br>All other creatures within 5 feet of it take half as much damage",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.d0820d9a78a8c298"
+}

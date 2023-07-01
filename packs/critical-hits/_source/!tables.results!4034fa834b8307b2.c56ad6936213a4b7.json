@@ -1,0 +1,18 @@
+{
+  "_id": "c56ad6936213a4b7",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Staggering Shockwave</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Incapacitated until end of its next turn, pushed 20 feet, fall prone",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.c56ad6936213a4b7"
+}

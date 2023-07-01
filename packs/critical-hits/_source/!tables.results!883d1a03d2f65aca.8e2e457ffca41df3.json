@@ -1,0 +1,18 @@
+{
+  "_id": "8e2e457ffca41df3",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Tainted Healing</h2><b>Double damage.</b><br><br>Until its next turn, if it would regain hit points, it takes that much necrotic damage instead, and it's considered a willing target for healing.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.8e2e457ffca41df3"
+}

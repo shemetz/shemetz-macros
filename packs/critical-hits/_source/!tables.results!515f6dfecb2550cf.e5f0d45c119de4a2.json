@@ -1,0 +1,18 @@
+{
+  "_id": "e5f0d45c119de4a2",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/glass-cube.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Chattering Teeth</h2><b>Normal damage.</b><br><br>Requires DC 5 flat check whenever you speak, cast a vocal spell, etc. for a minute.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!515f6dfecb2550cf.e5f0d45c119de4a2"
+}

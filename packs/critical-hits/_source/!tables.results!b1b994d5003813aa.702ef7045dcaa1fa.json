@@ -1,0 +1,18 @@
+{
+  "_id": "702ef7045dcaa1fa",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    9,
+    9
+  ],
+  "rangeH": 9,
+  "rangeL": 9,
+  "resultId": null,
+  "text": "<h2>Magic Exploit</h2><b>Double damage.</b><br><br>Spell attack rolls have advantage against it until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.702ef7045dcaa1fa"
+}

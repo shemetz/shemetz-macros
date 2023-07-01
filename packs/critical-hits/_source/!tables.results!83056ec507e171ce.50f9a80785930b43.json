@@ -1,0 +1,18 @@
+{
+  "_id": "50f9a80785930b43",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    8,
+    8
+  ],
+  "rangeH": 8,
+  "rangeL": 8,
+  "resultId": null,
+  "text": "<h2>Swiss Cheese</h2><b>Double damage.</b><br><br>It is vulnerable to the next attack that hits it before the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.50f9a80785930b43"
+}

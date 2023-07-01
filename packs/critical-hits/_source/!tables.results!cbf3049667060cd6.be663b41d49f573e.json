@@ -1,0 +1,18 @@
+{
+  "_id": "be663b41d49f573e",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    12,
+    12
+  ],
+  "rangeH": 12,
+  "rangeL": 12,
+  "resultId": null,
+  "text": "<h2>Muteness</h2><u>In combat:</u> The creature cannot speak or will not speak intelligibly.<br><br><u>Out of combat:</u> The creature might stutter or have trouble speaking up.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.be663b41d49f573e"
+}

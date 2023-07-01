@@ -1,0 +1,18 @@
+{
+  "_id": "94041702441c3365",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    11,
+    11
+  ],
+  "rangeH": 11,
+  "rangeL": 11,
+  "resultId": null,
+  "text": "<h2>Run Through</h2><b>Double damage.</b><br><br>The attacker can deal the same (normal) damage again to a creature within 5 feet of the target, or within 20 feet if ranged, and can freely move to make the angle of attack sensible.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.94041702441c3365"
+}

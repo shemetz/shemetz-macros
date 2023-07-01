@@ -1,0 +1,18 @@
+{
+  "_id": "0f269187cc984184",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    5,
+    5
+  ],
+  "rangeH": 5,
+  "rangeL": 5,
+  "resultId": null,
+  "text": "<h2>Cancerous Growth</h2><b>Normal damage.</b><br><br>Speed halved and has disadvantage on attacks and ability checks, until it takes damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.0f269187cc984184"
+}

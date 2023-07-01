@@ -1,0 +1,18 @@
+{
+  "_id": "93a1d0c111696bb5",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Offensive Spasm</h2><b>Double damage.</b><br><br>Disadvantage on its first attack on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!5b214f69a15dbbf5.93a1d0c111696bb5"
+}

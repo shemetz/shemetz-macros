@@ -1,0 +1,18 @@
+{
+  "_id": "42a550c57a0f2a35",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    20,
+    20
+  ],
+  "rangeH": 20,
+  "rangeL": 20,
+  "resultId": null,
+  "text": "<h2>Waste Away</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>-3 to ALL ability scores (min 1) for a minute. Does not decrease max HP.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.42a550c57a0f2a35"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "b",
+  "type": "script",
+  "author": "IlfuVOtIwzHO5ODq",
+  "img": "https://i.imgur.com/iw4sH39.png",
+  "scope": "global",
+  "command": "ShemetzMacros.chat(ShemetzMacros.bold(args))",
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
+  "flags": {
+    "advanced-macros": {
+      "runAsGM": false
+    },
+    "core": {
+      "sourceId": "Macro.JtwpwScoC5bbeVzs"
+    }
+  },
+  "_id": "n0u8MH7iSQcUsTuV",
+  "_key": "!macros!n0u8MH7iSQcUsTuV"
+}

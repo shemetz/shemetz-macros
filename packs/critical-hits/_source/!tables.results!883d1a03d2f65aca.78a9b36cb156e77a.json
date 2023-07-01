@@ -1,0 +1,18 @@
+{
+  "_id": "78a9b36cb156e77a",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Blood Clot</h2><b>Double damage.</b><br><br>The next time it takes Slashing or Piercing damage within the next minute, it is vulnerable to that damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!883d1a03d2f65aca.78a9b36cb156e77a"
+}

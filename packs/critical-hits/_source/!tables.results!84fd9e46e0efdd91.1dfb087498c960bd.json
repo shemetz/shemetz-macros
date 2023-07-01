@@ -1,0 +1,18 @@
+{
+  "_id": "1dfb087498c960bd",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Painful Burn</h2><b>Normal damage.</b><br><br>Disadvantage on its first attack on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.1dfb087498c960bd"
+}

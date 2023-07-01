@@ -1,0 +1,18 @@
+{
+  "_id": "5a0365328cbec113",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "range": [
+    6,
+    6
+  ],
+  "rangeH": 6,
+  "rangeL": 6,
+  "resultId": null,
+  "text": "<h2>Movement Perforator</h2><b>Double damage.</b><br><br>Its speed is reduced by 10 feet until the end of its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!83056ec507e171ce.5a0365328cbec113"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "fef3905a2e595e89",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    7,
+    7
+  ],
+  "rangeH": 7,
+  "rangeL": 7,
+  "resultId": null,
+  "text": "<h2>Mystic Magnet</h2><b>Double damage.</b><br><br>Until the end of its next turn, spells can target it as if they were affected by the Distant Spell metamagic (doubled range, minimum 30 ft range).",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.fef3905a2e595e89"
+}

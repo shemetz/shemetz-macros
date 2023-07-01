@@ -1,0 +1,18 @@
+{
+  "_id": "b5faa28401cd7750",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Suggestiveness</h2><u>In combat:</u> The creature trusts whatever it is told and follows any command given by anyone (as by Suggestion), though for no more than one command per round.<br><br><u>Out of combat:</u> The creature has trouble declining requests, falls in line easily, and trusts the intentions of others to be in its favor more than it should, even if it doesn't know them.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.b5faa28401cd7750"
+}

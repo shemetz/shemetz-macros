@@ -1,0 +1,18 @@
+{
+  "_id": "4079fbbea1aa2fb4",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/tools/instruments/bell-brass-brown.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Deafening Sonic Boom</h2><b>Double damage.</b><br><br>Fall prone and deafened until end of its next turn",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4034fa834b8307b2.4079fbbea1aa2fb4"
+}

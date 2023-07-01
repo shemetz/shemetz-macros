@@ -1,0 +1,18 @@
+{
+  "_id": "cca7aa9b3358b9a3",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Caustic Splash</h2><b>Double damage.</b><br><br>All other creatures within 5 feet of it take half as much damage (ignore the double)",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.cca7aa9b3358b9a3"
+}

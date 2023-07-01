@@ -1,0 +1,18 @@
+{
+  "_id": "11e1d7950cddd9ce",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "https://i.imgur.com/huPpJQf.png",
+  "range": [
+    1,
+    1
+  ],
+  "rangeH": 1,
+  "rangeL": 1,
+  "resultId": null,
+  "text": "<h2>Shattered</h2>Your weapon breaks, your spell backfires, or your fist hurts after punching.  Until you take a long rest, attacks using that weapon/spell/unarmed strike will only deal half damage.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!3bd3d470d3da1fc7.11e1d7950cddd9ce"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "b1661399b9f557a7",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Delusion</h2><u>In combat:</u> Choose one of the following effects. Each turn, the creature believes it's affected by that. Effects: Invisible, Ethereal, Immune to elemental damage, Can fly, Huge/Tiny size, Extreme Strength, Full Health, Minimum (\"1\") Health<br><br><u>Out of combat:</u> The specific delusion should prevent the creature from making some rational decisions or lead it into some irrational ones.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!cbf3049667060cd6.b1661399b9f557a7"
+}

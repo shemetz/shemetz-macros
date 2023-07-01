@@ -1,0 +1,18 @@
+{
+  "_id": "665296b9ce610d35",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/commodities/materials/liquid-green.webp",
+  "range": [
+    2,
+    2
+  ],
+  "rangeH": 2,
+  "rangeL": 2,
+  "resultId": null,
+  "text": "<h2>Corroded Strike</h2><b>Normal damage.</b><br><br>Equipment Damage:  -1 to hit.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!aa72864a8771c09c.665296b9ce610d35"
+}

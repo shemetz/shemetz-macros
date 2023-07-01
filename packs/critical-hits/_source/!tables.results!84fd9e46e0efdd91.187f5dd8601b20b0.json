@@ -1,0 +1,18 @@
+{
+  "_id": "187f5dd8601b20b0",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
+  "range": [
+    16,
+    16
+  ],
+  "rangeH": 16,
+  "rangeL": 16,
+  "resultId": null,
+  "text": "<h2>Torch 'n' Scorch</h2><b>Double damage.</b><br><br>Until it puts out the fire, it takes burning damage whenever it moves, stands up, makes an action that involves using its legs/wings, or is pushed/pulled, or whenever it makes an action that uses its arms/hands (attacking, spellcasting, etc.) Triggers max twice per turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!84fd9e46e0efdd91.187f5dd8601b20b0"
+}

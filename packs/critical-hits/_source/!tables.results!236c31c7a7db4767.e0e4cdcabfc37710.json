@@ -1,0 +1,18 @@
+{
+  "_id": "e0e4cdcabfc37710",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
+  "range": [
+    10,
+    10
+  ],
+  "rangeH": 10,
+  "rangeL": 10,
+  "resultId": null,
+  "text": "<h2>Trip and Tear</h2><b>Double damage.</b><br><br>Falls prone.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!236c31c7a7db4767.e0e4cdcabfc37710"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "5e6ab7c08d7656c4",
+  "description": " ",
+  "displayRoll": true,
+  "flags": {},
+  "folder": null,
+  "formula": "1d20",
+  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "name": "Radiant Critical Hits",
+  "permission": {
+    "default": 0
+  },
+  "replacement": true,
+  "results": [
+    "63b29430977932b9",
+    "3f0956ef45f4d73f",
+    "69218a85c76c1746",
+    "567cd43ce5d59ea1",
+    "fcd199237286552b",
+    "b0118a54b6c40073",
+    "392bf335913f263a",
+    "b95d2514a4a5d664",
+    "c7008d65c2bd75a8",
+    "54355041724594d8",
+    "ded3c52303c07c95",
+    "7ef1586f81f3ec45",
+    "28116f64508337f5",
+    "0b84b4b2c46b8318",
+    "84a309b7c264177b",
+    "31bbcb2fb0913a41",
+    "38d35d139770079f",
+    "ae686cc0e8d498c1",
+    "9bc2555de55d5a07",
+    "d9756cc43fde42f5"
+  ],
+  "sort": 0,
+  "_key": "!tables!5e6ab7c08d7656c4"
+}

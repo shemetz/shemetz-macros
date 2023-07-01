@@ -1,0 +1,18 @@
+{
+  "_id": "657935cd92bccd9f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/weapons/clubs/club-banded-brown.webp",
+  "range": [
+    4,
+    4
+  ],
+  "rangeH": 4,
+  "rangeL": 4,
+  "resultId": null,
+  "text": "<h2>Concussive Blow</h2><b>Normal damage.</b><br><br>Drops concentration.  DC 10 to cast any concentration spell on its next turn.",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!4202105395b630d6.657935cd92bccd9f"
+}

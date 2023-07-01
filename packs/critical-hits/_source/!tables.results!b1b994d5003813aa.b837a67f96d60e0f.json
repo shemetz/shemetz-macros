@@ -1,0 +1,18 @@
+{
+  "_id": "b837a67f96d60e0f",
+  "collection": null,
+  "drawn": false,
+  "flags": {},
+  "img": "icons/magic/light/explosion-star-orange-purple.webp",
+  "range": [
+    15,
+    15
+  ],
+  "rangeH": 15,
+  "rangeL": 15,
+  "resultId": null,
+  "text": "<h2>Adverse Arcane Reaction</h2><b>Double damage.</b><br><br>Takes extra damage equal to the attacker's CR/Level for each spell with a duration currently affecting it or sustained by it",
+  "type": 0,
+  "weight": 1,
+  "_key": "!tables.results!b1b994d5003813aa.b837a67f96d60e0f"
+}
