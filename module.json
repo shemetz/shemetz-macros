@@ -4,7 +4,7 @@
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
   "version": "10.11.13",
   "compatibility": {
-    "minimum": "10",
+    "minimum": "11",
     "verified": "11"
   },
   "esmodules": [
@@ -19,17 +19,27 @@
   "packs": [
     {
       "name": "shemetz-macros",
-      "label": "shemetz-macros",
+      "label": "Shemetz's Macros",
       "module": "shemetz-macros",
-      "path": "./packs/shemetz-macros.db",
+      "path": "./packs/shemetz-macros",
       "type": "Macro"
     },
     {
       "name": "critical-hits",
-      "label": "critical-hits",
+      "label": "Critical Hits Re-Revisited",
       "module": "shemetz-macros",
-      "path": "./packs/critical-hits.db",
+      "path": "./packs/critical-hits",
       "type": "RollTable"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Shemetz's Macros",
+      "sorting": "m",
+      "packs": [
+        "shemetz-macros",
+        "critical-hits"
+      ]
     }
   ],
   "relationships": {
