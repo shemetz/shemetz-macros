@@ -1,7 +1,7 @@
 /*
 
 source:
-https://github.com/itamarcu/shemetz-macros/blob/master/scripts/macros/turn-to-face.js
+https://github.com/shemetz/shemetz-macros/blob/master/scripts/macros/turn-to-face.js
 suggested icon:
 https://i.imgur.com/HWWHd2W.png
 */

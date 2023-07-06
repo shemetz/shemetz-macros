@@ -85,7 +85,7 @@ Show artwork of selected/hovered token to yourself, like a journal entry (GM can
 Post a chat message with the artwork of the selected token for all players to see.
 
 #### <img src=https://game-icons.net/icons/ffffff/000000/1x1/delapouite/look-at.svg height="24"> [Turn Selected Token Towards Cursor](scripts/tokens/turn-selected-token-towards-cursor.js)
-Causes all selected tokens to rotate towards the cursor.  Unnecessary if you have [Alternative Rotation](https://github.com/itamarcu/AlternativeRotation)
+Causes all selected tokens to rotate towards the cursor.  Unnecessary if you have [Alternative Rotation](https://github.com/shemetz/AlternativeRotation)
 
 #### <img src=https://i.imgur.com/HWWHd2W.png height="24"> [Turn to Face](scripts/tokens/turn-to-face.js)
 ![](https://user-images.githubusercontent.com/6516621/93661817-95ca7080-fa63-11ea-87cd-133eb5d576fc.gif)

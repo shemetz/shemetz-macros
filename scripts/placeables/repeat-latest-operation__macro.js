@@ -1,4 +1,4 @@
-// source: https://github.com/itamarcu/shemetz-macros/tree/master/scripts/placeables/repeat-latest-operation__macro.js
+// source: https://github.com/shemetz/shemetz-macros/tree/master/scripts/placeables/repeat-latest-operation__macro.js
 // noinspection JSAnnotator,ThisExpressionReferencesGlobalObjectJS, DuplicatedCode
 
 if (!self.RepeatLatestOperation) {

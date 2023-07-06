@@ -9,7 +9,7 @@ should be called by a macro per spell level, e.g.:
 
 
 source:
-https://github.com/itamarcu/foundry-macros/blob/master/scripts/custom-stuff/reckless-cast.js
+https://github.com/shemetz/foundry-macros/blob/master/scripts/custom-stuff/reckless-cast.js
 suggested icon:
 https://i.imgur.com/iw4sH39.png
 and for the reckless casts themselves, use the ones I created here:
