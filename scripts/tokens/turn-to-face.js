@@ -1,5 +1,7 @@
 /*
 
+TODO - update for v12
+
 source:
 https://github.com/shemetz/shemetz-macros/blob/master/scripts/macros/turn-to-face.js
 suggested icon:
@@ -90,6 +92,7 @@ export const turnTokensToFaceTarget = (turners, target) => {
         && (tok.id === target.id || tok.id === turner.id)
         && (updateData.x || updateData.y)
       )) return
+      ui.notifications.error(`TODO - shem, you should probably update this code to use animate rather than animateMovement!`)
       const duration = CanvasAnimation.animations[`Token.${tok.id}.animateMovement`]?.duration ?? 300
       turn(turner, target, duration)
     })

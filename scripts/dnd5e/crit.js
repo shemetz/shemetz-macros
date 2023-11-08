@@ -85,6 +85,8 @@ const MAX_LIMITED_INJURY_ROLL = 12
 export const critRollLimitedInjury = async () => {
   const table = await getDependency(game.tables, 'critical-hits', 'Injuries')
   let roll = await table.roll({ roll: Roll.create('1d12') })
+  // TODO - update for v12
+  ui.notifications.error(`TODO - shem, you should probably update this code to use roll.rolls[0] rather than roll.roll!`)
   while (roll.roll.total > MAX_LIMITED_INJURY_ROLL) {roll = await table.roll()}
   const rollPart = roll.roll
   const resultPart = roll.results[0]

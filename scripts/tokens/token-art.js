@@ -1,6 +1,6 @@
 export const postTokenArt = (tok) => {
   let target = tok.actor || tok
-  const imgSrc = target.document.texture.src
+  const imgSrc = target.img || target.document.texture.src
   const content = `
   <a href=${imgSrc} target="_blank">
     <img src=${imgSrc} style="width: 280px;" alt=${target.name}/>

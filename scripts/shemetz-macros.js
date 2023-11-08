@@ -27,10 +27,6 @@ import { clearAllConditions } from './tokens/clear-conditions.js'
 import { filterMacrosByAuthor } from './macros/filter-macros.js'
 import { organizeUnsortedMacros } from './macros/organize-macros.js'
 import { remoteAssignHotbarMacro } from './macros/remote-assign-hotbar-macro.js'
-import {
-  checkIfBetterRolls5eMessageIncludesNumber,
-  checkIfBetterRolls5eMessageIsCrit,
-} from './dnd5e/better-rolls-5e-utils.js'
 import { recklessCast } from './custom-stuff/reckless-cast.js'
 import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 import {
@@ -85,7 +81,6 @@ self.ShemetzMacros = {
   filterMacrosByAuthor,
   organizeUnsortedMacros,
   remoteAssignHotbarMacro,
-  checkIfBetterRolls5eMessageIsCrit, checkIfBetterRolls5eMessageIncludesNumber,
   recklessCast, castRandomWildSurge, toggleCombatMode,
   animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList, getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,

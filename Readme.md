@@ -186,9 +186,6 @@ Prints the name, image, and description of an item in the Items Directory to the
 
 
 ### Various other helper functions
-#### [checkIfBetterRolls5eMessageIsCrit](scripts/dnd5e/better-rolls-5e-utils.js)
-Checks if a BetterRolls5e chat message contains a crit.
-
 #### [showDialogWithOptions](scripts/utils/dialog-utils.js)
 Will open a dialog for the user to select an option, and call a callback when it's complete.
 
