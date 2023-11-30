@@ -55,6 +55,7 @@ import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-uti
 import { repeatLastAction } from './placeables/repeat-last-action.js'
 import { emitMessageToHighlightForCurrentPlayer } from './gui/end-turn-button-in-chat-bar.js'
 import { toggleCombatMode } from './custom-stuff/combat-mode.js'
+import { hideAllUi } from './gui/hide-all-ui.js'
 
 self.ShemetzMacros = {
   getDependency,
@@ -76,6 +77,7 @@ self.ShemetzMacros = {
   getTileWithId, getPlaceableWithId, selectedTokenOrTile,
   turnSelectedTokensTowardsCursor,
   turnTokensToFaceTarget,
+  hideAllUi,
   postItemDescription,
   clearAllConditions,
   filterMacrosByAuthor,
