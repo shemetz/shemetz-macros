@@ -2,7 +2,7 @@
   "id": "shemetz-macros",
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
-  "version": "11.11.16",
+  "version": "11.11.17",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
