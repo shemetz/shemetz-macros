@@ -10,6 +10,7 @@ import { hookRepeatLatestOperation, hookRepeatLatestOperationHotkey } from './pl
 import { hookReduceTokenAnimations } from './tokens/reduce-animations.js'
 import { hookStartupMacro } from './macros/startup-macro.js'
 import { hookEndTurnButtonInChatBar } from './gui/end-turn-button-in-chat-bar.js'
+import { hookFullRestForTheNight } from './pf2e/full-rest-for-the-night.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
@@ -25,14 +26,15 @@ Hooks.on('init', () => {
   hookEndTurnButtonInChatBar()
   hookReduceTokenAnimations()
   hookStartupMacro()
+  hookFullRestForTheNight()
 })
 
 // temporary - while developing for v10:
 Hooks.on('init', () => {
   CONFIG.compatibility.excludePatterns.push(
     // pf2e system, 4.x
-    new RegExp('Refused to apply style'),
-    new RegExp('You are accessing BasePackage#data which is now deprecated in favor'),
-    new RegExp('StatisticModifier#name has been split'),
+    //new RegExp('Refused to apply style'),
+    //new RegExp('You are accessing BasePackage#data which is now deprecated in favor'),
+    //new RegExp('StatisticModifier#name has been split'),
   )
 })
