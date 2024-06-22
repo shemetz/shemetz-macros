@@ -206,6 +206,6 @@ A macro created for my character, Shent, who casts random spells as a modified U
 Changes the name and image of an upcoming attack to be more anime, e.g. "Scorpion Assault!".  Powered by the one and
 only [Fantasy Names Generator](https://www.fantasynamegenerators.com/anime-attack-names.php).
 
-#### [Pushable blocks](scripts/custom-stuff/block-pushing.js)
+#### REMOVED - Pushable blocks
 ![](https://pipe.miroware.io/60781d17a333fb12a3acb21e/temporary/pushables1.webp)
-(can be enabled in settings)
+(I removed this because it required a bit too much effort to maintain and I only used it once for one puzzle)
