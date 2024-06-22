@@ -69,7 +69,7 @@ for GMs who want to show health bars only during combat, or quickly reveal many 
 #### <img src=https://emojiguide.org/images/emoji/1/w8iuxo1l9in91.png height="24"> [Flip](scripts/tokens/flip.js)
 Flips the selected token image along the X axis.
 
-#### <img src=https://static.thenounproject.com/png/232484-200.png height="24"> [Swap Positions](scripts/tokens/swap-token-positions.js)
+#### <img src=https://game-icons.net/1x1/lorc/back-forth.html height="24"> [Swap Positions](scripts/tokens/swap-token-positions.js)
 Swap two selected tokens' positions.
 
 #### <img src=https://i.imgur.com/qVDo73q.png height="24"> [Toggle Condition With Token Image](scripts/tokens/custom-condition.js)
@@ -78,10 +78,10 @@ Creates a condition (aka overlay, status effect) on the selected token, with the
 #### <img src=https://game-icons.net/icons/ffffff/000000/1x1/delapouite/broom.svg height="24"> [Clear Conditions](scripts/tokens/clear-conditions.js) 
 Clear all conditions from all selected tokens.  Will also clear PF2e conditions,
 
-#### <img src=https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/252/framed-picture_1f5bc.png height="24"> [View Token Art](scripts/tokens/token-art.js)
+#### <img src=https://emojiguide.com/wp-content/uploads/platform/windows/43259.png height="24"> [View Token Art](scripts/tokens/token-art.js)
 Show artwork of selected/hovered token to yourself, like a journal entry (GM can also show to all players).
 
-#### <img src=https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/252/framed-picture_1f5bc.png height="24"> [Post Token Art](scripts/tokens/token-art.js)
+#### <img src=https://emojiguide.com/wp-content/uploads/platform/windows/43259.png height="24"> [Post Token Art](scripts/tokens/token-art.js)
 Post a chat message with the artwork of the selected token for all players to see.
 
 #### <img src=https://game-icons.net/icons/ffffff/000000/1x1/delapouite/look-at.svg height="24"> [Turn Selected Token Towards Cursor](scripts/tokens/turn-selected-token-towards-cursor.js)

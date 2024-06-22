@@ -11,7 +11,7 @@ https://emojiguide.org/images/emoji/1/w8iuxo1l9in91.png
 
 export const flipTokens = async (tokens, horizontally = false, vertically = false) => {
   const updates = tokens.map(tok => {
-    if (Math.roundDecimals(tok.document.texture.scaleX, 1) === tok.document.texture.scaleX)
+    if (Math.round(tok.document.texture.scaleX * 10) / 10 === tok.document.texture.scaleX)
       return {
         _id: tok.id,
         'texture.scaleX': tok.document.texture.scaleX * (horizontally ? -1 : 1),

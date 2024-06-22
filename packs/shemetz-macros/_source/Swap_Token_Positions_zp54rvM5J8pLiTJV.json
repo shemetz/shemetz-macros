@@ -3,7 +3,7 @@
   "name": "Swap Token Positions",
   "type": "script",
   "author": "IlfuVOtIwzHO5ODq",
-  "img": "https://static.thenounproject.com/png/232484-200.png",
+  "img": "https://game-icons.net/1x1/lorc/back-forth.html",
   "scope": "global",
   "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.swapTokenPositions(tokens)",
   "folder": null,

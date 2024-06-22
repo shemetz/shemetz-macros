@@ -6,7 +6,7 @@ const extraSoundsMacroName = 'EXTRA_SOUND_COLLECTION'
 /*
 that file should look like this for example:
 
-{
+return {
   'sciFiSound': [
     [1, 'https://freesound.org/data/previews/323/323504_5554674-lq.mp3'],
   ],
@@ -20,7 +20,7 @@ const getSoundCollection = () => {
   const macro = game.macros.getName(extraSoundsMacroName)
   if (macro) {
     // evaluating the code of the macro, turning it into an object
-    const soundsInMacro = (new Function(`"use strict"; return ${macro.command}`)).call(this)
+    const soundsInMacro = (new Function(`"use strict"; ${macro.command}`)).call(this)
     Object.assign(soundCollection, soundsInMacro)
   }
   return soundCollection

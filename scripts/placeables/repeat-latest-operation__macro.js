@@ -40,7 +40,7 @@ function openDialogWindow (placeables, isRelative) {
   for (const [flatKey, value] of Object.entries(update)) {
     let oldValues = [], newValues = []
     for (const p of placeables) {
-      const oldValue = getProperty(p.document, flatKey)
+      const oldValue = foundry.utils.getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue && !oldValues.includes(oldValue)) {
         oldValues.push(oldValue)
@@ -84,7 +84,7 @@ function applyUpdateDiff (placeables, isRelative) {
   const updates = placeables.map(p => {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
-      const oldValue = getProperty(p.document, flatKey)
+      const oldValue = foundry.utils.getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof(value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
@@ -102,14 +102,14 @@ function applyUpdateDiff (placeables, isRelative) {
 }
 
 function recordUpdateDiff (document, update, options) {
-  let flattenedUpdate = flattenObject(update)
+  let flattenedUpdate = foundry.utils.flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document, flattenedUpdate)
-  const baseUpdate = deepClone(flattenedUpdate)
-  const relativeUpdate = deepClone(flattenedUpdate)
+  const baseUpdate = foundry.utils.deepClone(flattenedUpdate)
+  const relativeUpdate = foundry.utils.deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
-      const oldValue = getProperty(document, key)
+      const oldValue = foundry.utils.getProperty(document, key)
       relativeUpdate[key] = value - oldValue
     }
   }

@@ -56,7 +56,7 @@ const onDialogRelativeUpdateCheckboxClicked = (newIsRelativeValue, placeables) =
     const isRelativeNumberChange = newIsRelativeValue && typeof (value) === 'number'
     let oldValues = [], newValues = []
     for (const p of placeables) {
-      let oldValue = getProperty(p.document, flatKey)
+      let oldValue = foundry.utils.getProperty(p.document, flatKey)
       let newValue = isRelativeNumberChange ? oldValue + value : value
       const [oldValueStr, newValueStr] = formatNicelyIfNumbers(oldValue, newValue)
       if (oldValueStr !== newValue && !oldValues.includes(oldValueStr)) {
@@ -91,7 +91,7 @@ function applyUpdateDiff (placeables, isRelative) {
   const updates = placeables.map(p => {
     const appliedUpdate = {}
     for (const [flatKey, value] of Object.entries(update)) {
-      const oldValue = getProperty(p.document, flatKey)
+      const oldValue = foundry.utils.getProperty(p.document, flatKey)
       const newValue = (isRelative && typeof (value) === 'number') ? oldValue + value : value
       if (oldValue !== newValue) {
         appliedUpdate[flatKey] = newValue
@@ -109,14 +109,14 @@ function applyUpdateDiff (placeables, isRelative) {
 }
 
 function recordUpdateDiff (document, update, options) {
-  let flattenedUpdate = flattenObject(update)
+  let flattenedUpdate = foundry.utils.flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document, flattenedUpdate)
-  const baseUpdate = deepClone(flattenedUpdate)
-  const relativeUpdate = deepClone(flattenedUpdate)
+  const baseUpdate = foundry.utils.deepClone(flattenedUpdate)
+  const relativeUpdate = foundry.utils.deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
     if (typeof (value) === 'number') {
-      const oldValue = getProperty(document, key)
+      const oldValue = foundry.utils.getProperty(document, key)
       if (value !== oldValue) {
         relativeUpdate[key] = value - oldValue
       } else {
@@ -133,7 +133,7 @@ function recordUpdateDiff (document, update, options) {
 function improveUpdate (data, update) {
   for (const key in update) {
     const updateValue = update[key]
-    const oldValue = getProperty(data, key)
+    const oldValue = foundry.utils.getProperty(data, key)
     // -= in a key means it's removed from data
     if (key.includes('-=')) delete update[key]
     // if value is undefined/null/''/0 both before and after, we probably don't need to repeat it
