@@ -198,10 +198,14 @@ Also works if you type in chat `/crit fire`, `/crit cold`, `/crit major`, `/crit
 #### <img src=https://i.imgur.com/iw4sH39.png height="24"> [/reckless-cast](scripts/custom-stuff/reckless-cast.js)
 A macro created for my character, Shent, who casts random spells as a modified UA invention/chaos wizard.
 
-#### <img src=https://i.imgur.com/YptofqA.png height="24"> [Animefy Next Attack](scripts/custom-stuff/anime-attack.js)
-Changes the name and image of an upcoming attack to be more anime, e.g. "Scorpion Assault!".  Powered by the one and
-only [Fantasy Names Generator](https://www.fantasynamegenerators.com/anime-attack-names.php).
+### Removed (but used to be here)
 
-#### REMOVED - Pushable blocks
+##### Eyedropper / color picker
+Moved to my other module, [Precise Drawing Tools](https://github.com/shemetz/precise-drawing-tools).
+
+##### Animefy Next Attack
+(stopped working in v11 or v12, was only used for a character I played in one campaign)
+
+##### Pushable blocks
 ![](https://pipe.miroware.io/60781d17a333fb12a3acb21e/temporary/pushables1.webp)
 (I removed this because it required a bit too much effort to maintain and I only used it once for one puzzle)

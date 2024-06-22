@@ -27,7 +27,6 @@ import { filterMacrosByAuthor } from './macros/filter-macros.js'
 import { organizeUnsortedMacros } from './macros/organize-macros.js'
 import { remoteAssignHotbarMacro } from './macros/remote-assign-hotbar-macro.js'
 import { recklessCast } from './custom-stuff/reckless-cast.js'
-import { animefyNextAttack } from './custom-stuff/anime-attack.js'
 import {
   getImageListIndex,
   hasImageList,
@@ -83,7 +82,6 @@ self.ShemetzMacros = {
   organizeUnsortedMacros,
   remoteAssignHotbarMacro,
   recklessCast, castRandomWildSurge, toggleCombatMode,
-  animefyNextAttack,
   shiftSelectedPlaceableImageByKeyboard, shiftImageWithArgs, shiftImageToIndex, hasImageList, getImageListIndex, prepareShiftImageWithArgs, prepareShiftImageToIndex,
   highlightTransparentTokensOnMap,
   openTreasureChest, closeSelectedTreasureChests,
