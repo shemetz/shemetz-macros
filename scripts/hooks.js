@@ -1,6 +1,5 @@
 import { hookShemetzMacros } from './shemetz-macros.js'
 import { hookCloseWallGaps } from './walls/close-wall-gaps.js'
-import { hookEyedropperColorPicker } from './drawing/eyedropper-color-pick.js'
 import { hookHiddenHotkey } from './placeables/toggle-hide.js'
 import { hookImageShiftHotkey } from './placeables/image-shift.js'
 import { hookLayerSwitchHotkey } from './custom-stuff/layer-switch-hotkey.js'
@@ -15,7 +14,6 @@ import { hookFullRestForTheNight } from './pf2e/full-rest-for-the-night.js'
 Hooks.on('init', () => {
   hookShemetzMacros()
   hookCloseWallGaps()
-  hookEyedropperColorPicker()
   hookHiddenHotkey()
   hookImageShiftHotkey()
   hookLayerSwitchHotkey()

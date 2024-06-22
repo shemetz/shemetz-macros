@@ -6,11 +6,7 @@ some things here, though!  And if you ask me I could export some of the things h
 
 ## New keybindings
 
-#### [Eyedropper / Color Pick](scripts/drawing/eyedropper-color-pick.js)
-Press and release K while using the drawing tools to pick a color directly from the screen.
-A preview will be shown while you hold K.  You can also hold Shift to affect fill color instead of stroke color, and
-you can hold Alt to pick a color from the scene's background image instead of the screen (ignoring lighting, drawings, 
-grid, etc).
+#### Press H to toggle hidden on all selected tokens/tiles/drawings
 
 ## New UI controls
 #### [Close wall gaps](scripts/walls/close-wall-gaps.js)
