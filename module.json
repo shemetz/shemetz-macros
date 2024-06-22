@@ -25,14 +25,6 @@
       "type": "Macro"
     },
     {
-      "name": "actors",
-      "label": "TEMP actors",
-      "module": "shemetz-macros",
-      "path": "./packs/actors",
-      "system": "dnd5e",
-      "type": "Actor"
-    },
-    {
       "name": "critical-hits",
       "label": "Critical Hits Re-Revisited",
       "module": "shemetz-macros",
