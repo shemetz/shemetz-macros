@@ -4,6 +4,7 @@
 export const clearAllConditions = async (tokens) => {
   const updates = []
   for (const tok of tokens) {
+    updates.push({ _id: tok.id, effects: [] })
     // Status Icon Counters module:
     if (self.EffectCounter) promises.push(self.EffectCounter.clearEffects(tok.document))
     // Pathfinder 2e conditions:
@@ -12,8 +13,6 @@ export const clearAllConditions = async (tokens) => {
       ids.push(...tok.actor.itemTypes.effect.map(x => x.id))
       await tok.actor.deleteEmbeddedDocuments('Item', ids)
     }
-    const activeEffectIds = tok.actor?.itemTypes.effect.map(x => x.id)
-    await tok.actor?.deleteEmbeddedDocuments('Item', activeEffectIds)
   }
   return canvas.scene.updateEmbeddedDocuments('Token', updates)
 }
