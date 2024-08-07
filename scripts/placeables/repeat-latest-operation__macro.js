@@ -90,7 +90,7 @@ function applyUpdateDiff (placeables, isRelative) {
         appliedUpdate[flatKey] = newValue
       }
     }
-    const updateObj = expandObject(appliedUpdate)
+    const updateObj = foundry.utils.expandObject(appliedUpdate)
     return {
       ...updateObj,
       _id: p.id
