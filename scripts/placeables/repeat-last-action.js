@@ -108,6 +108,7 @@ function applyUpdateDiff (placeables, isRelative) {
   return canvas.scene.updateEmbeddedDocuments(embeddedName, updates, options)
 }
 
+// TODO fix in v12?  something broke
 function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = foundry.utils.flattenObject(update)
   delete flattenedUpdate['_id']

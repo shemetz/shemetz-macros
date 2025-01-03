@@ -27,12 +27,17 @@ Hooks.on('init', () => {
   hookFullRestForTheNight()
 })
 
-// temporary - while developing for v10:
 Hooks.on('init', () => {
+  // locally exclude some patterns of errors/warnings given to other rude module developers who aren't perfect
   CONFIG.compatibility.excludePatterns.push(
-    // pf2e system, 4.x
-    //new RegExp('Refused to apply style'),
-    //new RegExp('You are accessing BasePackage#data which is now deprecated in favor'),
-    //new RegExp('StatisticModifier#name has been split'),
+    //// tokenmagic 0.6.8
+    //new RegExp('Error: You are accessing globalThis.mergeObject[\\s\\S]*at get defaultOptions', 'm'),
+    //new RegExp('Error: You are accessing globalThis.mergeObject[\\s\\S]*at eU\.init', 'm'),
+    //new RegExp('Error: You are accessing globalThis.isNewerVersion[\\s\\S]*at Object.renderSidebarTab \[as fn]', 'm'),
+    //new RegExp('Error: You are accessing globalThis.duplicate[\\s\\S]*at h', 'm'),
+    //new RegExp('Error: You are accessing globalThis.randomID[\\s\\S]*at new e', 'm'),
+    //// Module Management+ 2.2.3
+    //new RegExp('Error: You are accessing globalThis.isNewerVersion[\\s\\S]*at g.getChangelogs', 'm'),
+    //new RegExp('Error: You are accessing globalThis.isNewerVersion[\\s\\S]*at Object.renderSidebarTab', 'm'),
   )
 })
