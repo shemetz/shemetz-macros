@@ -1,0 +1,1 @@
+I don't want to bother maintaining a changelog for my own personal module.  Look at the git commit log if you're curious.
