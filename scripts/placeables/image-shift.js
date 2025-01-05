@@ -90,16 +90,19 @@ export const prepareShiftImageToIndex = (placeable, targetImageIndex) => {
 
 const prepareShiftImage = (placeable, newIndex) => {
   const { images, scales } = getImageList(placeable)
+  const usesRing = placeable.document.ring?.enabled && placeable.document.ring.subject.texture
   const newImg = images[newIndex]
   const newScale = scales[newIndex]
   const signOfOldScaleX = placeable.document.texture.scaleX > 0 ? +1 : -1
   const signOfOldScaleY = placeable.document.texture.scaleY > 0 ? +1 : -1
   return {
     _id: placeable.id,
-    img: newImg,
+    ...(usesRing && { 'ring.subject.texture': newImg }),
+    ...(usesRing && { 'ring.subject.scale': newScale }),
+    ...(!usesRing && { 'texture.src': newImg }),
     'texture.scaleX': newScale ? newScale * signOfOldScaleX : undefined,
     'texture.scaleY': newScale ? newScale * signOfOldScaleY : undefined,
-    'flags.pf2e.autoscale': newScale ? false : undefined,
+    'flags.pf2e.autoscale': (!usesRing && newScale) ? false : undefined,
   }
 }
 
@@ -146,7 +149,8 @@ export const hasImageList = (placeable) => {
  */
 export const getImageListIndex = (placeable) => {
   const { images } = getImageList(placeable)
-  const currentImage = placeable.document.texture.src
+  const usesRing = placeable.document.ring?.enabled && placeable.document.ring.subject.texture
+  const currentImage = usesRing ? placeable.document.ring.subject.texture : placeable.document.texture.src
   let imgIndex = images.indexOf(currentImage)
   if (!(0 <= imgIndex && imgIndex < images.length)) imgIndex = 0
   return imgIndex
@@ -156,11 +160,14 @@ function openImageSetupDialog (placeable) {
   let existingImageList = getImagesListFlag(placeable) || ''
   if (existingImageList && !existingImageList.endsWith('\n'))
     existingImageList += '\n'
-  if (!existingImageList.includes(placeable.document.texture.src)) {
+  const usesRing = placeable.document.ring?.enabled && placeable.document.ring.subject.texture
+  const currentImage = usesRing ? placeable.document.ring.subject.texture : placeable.document.texture.src
+  const currentScale = usesRing ? placeable.document.ring.subject.scale : placeable.document.texture.scaleX
+  if (!existingImageList.includes(currentImage)) {
     // add current to list
-    existingImageList += placeable.document.texture.src
-      + '    ' + placeable.document.texture.scaleX.toString()
-      + '   # default/first\n'
+    existingImageList += currentImage
+      + '    ' + currentScale.toString()
+      + '    # default/first\n'
   }
   const dialog = new Dialog({
     title: `Image Shift - image list for ${placeable.name || placeable.id}`,
