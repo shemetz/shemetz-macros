@@ -113,30 +113,15 @@ const getPlaceableDocument = (placeable) => {
   return placeable.document.actor ? placeable.document.actor : placeable.document
 }
 
-const getImageListBackwardsCompatible = (placeable) => {
+const getImagesListFlag = (placeable) => {
   // for tokens, the data is stored in the actor
   const doc = getPlaceableDocument(placeable)
-  // TODO: remove all of this a few months from now when not needed anymore
-  let old = doc.getFlag('world', 'token-image-swap')
-  if (old) {
-    doc.setFlag(...OPTIONS_FLAG, old).then(() => {
-      doc.unsetFlag('world', 'token-image-swap')
-    })
-    return old
-  }
-  old = doc.getFlag('world', 'tile-image-shift')
-  if (old) {
-    doc.setFlag(...OPTIONS_FLAG, old).then(() => {
-      doc.unsetFlag('world', 'tile-image-shift')
-    })
-    return old
-  }
   // new version
   return doc.getFlag(...OPTIONS_FLAG)
 }
 
 const getImageList = (placeable) => {
-  const imagesText = getImageListBackwardsCompatible(placeable)
+  const imagesText = getImagesListFlag(placeable)
   if (imagesText === undefined)
     return { images: undefined, scales: undefined }
   const options = imagesText.split('\n').map(it => it.split('#')[0].trim())  // remove comments
@@ -153,7 +138,7 @@ const setImageList = (placeable, imageList) => {
 }
 
 export const hasImageList = (placeable) => {
-  return getImageListBackwardsCompatible(placeable) !== undefined
+  return getImagesListFlag(placeable) !== undefined
 }
 
 /**
@@ -168,7 +153,7 @@ export const getImageListIndex = (placeable) => {
 }
 
 function openImageSetupDialog (placeable) {
-  let existingImageList = getImageListBackwardsCompatible(placeable) || ''
+  let existingImageList = getImagesListFlag(placeable) || ''
   if (existingImageList && !existingImageList.endsWith('\n'))
     existingImageList += '\n'
   if (!existingImageList.includes(placeable.document.texture.src)) {
