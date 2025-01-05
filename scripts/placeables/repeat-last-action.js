@@ -1,7 +1,7 @@
 const macroName = 'Repeat Last Action'
 if (!self.RepeatLatestOperation) {
   self.RepeatLatestOperation = {
-    alreadyHooked: false
+    alreadyHooked: false,
   }
 }
 const RLO = self.RepeatLatestOperation
@@ -100,7 +100,7 @@ function applyUpdateDiff (placeables, isRelative) {
     const updateObj = foundry.utils.expandObject(appliedUpdate)
     return {
       ...updateObj,
-      _id: p.id
+      _id: p.id,
     }
   })
   const options = RLO.latestOptions
@@ -141,6 +141,9 @@ function improveUpdate (data, update) {
     if (!updateValue && !oldValue) delete update[key]
     // if value didn't actually change we probably don't want to repeat it
     if (updateValue === oldValue) delete update[key]
+    if (Array.isArray(updateValue) && updateValue?.length === 0 && oldValue?.length === 0) delete update[key]
+    if (updateValue?.startsWith?.('#') && oldValue?.css === updateValue) delete update[key] // colors
+    if (data.schema.fields?.[key]?.choices?.includes(updateValue) === false) delete update[key] // e.g. { disposition: null }
   }
   if (update.hasOwnProperty('x') && !update.hasOwnProperty('y')) update['y'] = data.y
   if (!update.hasOwnProperty('x') && update.hasOwnProperty('y')) update['x'] = data.x
@@ -181,7 +184,8 @@ export async function repeatLastAction (openDialog) {
       ui.notifications.warn(`${macroName} - You need to select a thing!`)
     }
   } else {
-    ui.notifications.warn(`${macroName} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${RLO.latestDocClassName}`)
+    ui.notifications.warn(
+      `${macroName} - latest operation was done on a different type of thing!  ${activeLayerThings[0]?.constructor?.name} !== ${RLO.latestDocClassName}`)
   }
 }
 
@@ -196,8 +200,8 @@ export function hookRepeatLatestOperationHotkey () {
     editable: [
       {
         key: 'KeyZ',
-        modifiers: [CONTROL, SHIFT]
-      }
+        modifiers: [CONTROL, SHIFT],
+      },
     ],
     reservedModifiers: [ALT],
     onDown: async () => {
