@@ -46,11 +46,12 @@ const onToggleHiddenPressed = async () => {
 
 export const hookHiddenHotkey = () => {
   game.keybindings.register('shemetz-macros', 'toggle-hidden', {
-    name: 'Toggle Hidden',
+    name: 'Toggle Hidden (GM only)',
     hint: 'Toggle the visibility state of each selected token, tile, or drawing (hiding or revealing it).',
     editable: [
       { key: 'KeyH' },
     ],
+    restricted: true,
     onDown: onToggleHiddenPressed,
   })
 }
