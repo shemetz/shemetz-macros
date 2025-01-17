@@ -40,12 +40,7 @@ export const shiftSelectedPlaceableImageByKeyboard = async (shouldAnimate = fals
   const currentIndex = getImageListIndex(placeable)
   const newIndex = (currentIndex + images.length + directionDelta) % images.length
   const update = prepareShiftImage(placeable, newIndex)
-  return placeable.document.update(update, { animate: shouldAnimate }).then(() => {
-    // core Foundry bug fix - need to refresh token borders after image update, otherwise they disappear!
-    setTimeout(() => {
-      placeable?.refreshHUD({ bars: false, border: true, effects: false, elevation: false, nameplate: false })
-    }, 100)
-  })
+  return placeable.document.update(update, { animate: shouldAnimate })
 }
 
 /**
