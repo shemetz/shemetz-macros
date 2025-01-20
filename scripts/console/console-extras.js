@@ -6,11 +6,11 @@ export const hookConsoleExtras = () => {
     return wrappedFunction(text)
   }, 'WRAPPER')
 
-  window.fu = (uuid) => {
+  window.fuuid = (uuid) => {
     // shortcut to get something soon after copying its full UUID (right-click "copy uuid" button in sheet header)
     return fromUuidSync(uuid ?? mostRecentCopiedText)
   }
-  window.afu = async (uuid) => {
+  window.afuuid = async (uuid) => {
     // as above, but async;  you must use this for embedded items (add .Item.xXxXxXxXxXx to create the uuid)
     return await fromUuid(uuid ?? mostRecentCopiedText)
   }
