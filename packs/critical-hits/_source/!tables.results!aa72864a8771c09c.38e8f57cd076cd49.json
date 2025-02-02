@@ -11,7 +11,7 @@
   "rangeH": 17,
   "rangeL": 17,
   "resultId": null,
-  "text": "<h2>Melted Strike</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Equipment Damage:  -2 to hit.",
+  "text": "<h2>Melted Strike</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Equipment Damage:  -2 to hit.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!aa72864a8771c09c.38e8f57cd076cd49"

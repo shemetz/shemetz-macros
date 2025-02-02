@@ -11,7 +11,7 @@
   "rangeH": 18,
   "rangeL": 18,
   "resultId": null,
-  "text": "<h2>Shock 'n' Knock</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Incapacitated until end of its next turn and drops what it's holding.",
+  "text": "<h2>Shock 'n' Knock</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Incapacitated until end of its next turn and drops what it's holding.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!5b214f69a15dbbf5.13764c9a015082b5"

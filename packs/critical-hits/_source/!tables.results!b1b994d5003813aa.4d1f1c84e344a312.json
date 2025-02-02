@@ -11,7 +11,7 @@
   "rangeH": 20,
   "rangeL": 20,
   "resultId": null,
-  "text": "<h2>Molecular Disintegration</h2><b><i>Triple</i> damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Triple damage. If the creature drops to 0 hit points, it is disintegrated (or takes a permanent injury if PC).",
+  "text": "<h2>Molecular Disintegration</h2><b><i>Triple</i> damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Triple damage. If the creature drops to 0 hit points, it is disintegrated (or takes a permanent injury if PC).",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!b1b994d5003813aa.4d1f1c84e344a312"

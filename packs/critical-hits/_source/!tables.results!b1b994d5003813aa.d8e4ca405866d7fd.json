@@ -11,7 +11,7 @@
   "rangeH": 19,
   "rangeL": 19,
   "resultId": null,
-  "text": "<h2>Total Arcane Vulnerability</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Until the end of its next turn, it's vulnerable to all damage from spells and magical weapons",
+  "text": "<h2>Total Arcane Vulnerability</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Until the end of its next turn, it's vulnerable to all damage from spells and magical weapons",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!b1b994d5003813aa.d8e4ca405866d7fd"

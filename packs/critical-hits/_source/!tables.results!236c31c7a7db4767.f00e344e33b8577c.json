@@ -11,7 +11,7 @@
   "rangeH": 17,
   "rangeL": 17,
   "resultId": null,
-  "text": "<h2>Tendon Ripper</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>It starts bleeding, and its speed is halved while it's bleeding.",
+  "text": "<h2>Tendon Ripper</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>It starts bleeding, and its speed is halved while it's bleeding.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!236c31c7a7db4767.f00e344e33b8577c"

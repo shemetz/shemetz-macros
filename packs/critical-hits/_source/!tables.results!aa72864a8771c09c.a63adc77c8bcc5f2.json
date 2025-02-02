@@ -11,7 +11,7 @@
   "rangeH": 19,
   "rangeL": 19,
   "resultId": null,
-  "text": "<h2>Melted Weapon</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Equipment Damage:  -2 damage per weapon die.",
+  "text": "<h2>Melted Weapon</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Equipment Damage:  -2 damage per weapon die.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!aa72864a8771c09c.a63adc77c8bcc5f2"

@@ -11,7 +11,7 @@
   "rangeH": 18,
   "rangeL": 18,
   "resultId": null,
-  "text": "<h2>Forced Outcome</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Until the end of its next turn, all damage the creature takes is converted into force damage (before applying I/V/R), and all spells that affect it have their duration extended by one round.",
+  "text": "<h2>Forced Outcome</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Until the end of its next turn, all damage the creature takes is converted into force damage (before applying I/V/R), and all spells that affect it have their duration extended by one round.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!b1b994d5003813aa.76152242176b52ec"

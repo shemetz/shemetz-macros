@@ -11,7 +11,7 @@
   "rangeH": 19,
   "rangeL": 19,
   "resultId": null,
-  "text": "<h2>Staggering Boom</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Incapacitated and deafened until end of its next turn, pushed 20 feet",
+  "text": "<h2>Staggering Boom</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Incapacitated and deafened until end of its next turn, pushed 20 feet",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!4034fa834b8307b2.75618893115444db"

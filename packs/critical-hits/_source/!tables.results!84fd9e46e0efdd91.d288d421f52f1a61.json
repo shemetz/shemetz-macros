@@ -11,7 +11,7 @@
   "rangeH": 17,
   "rangeL": 17,
   "resultId": null,
-  "text": "<h2>Pyrophobia</h2>Choose: <b>Double damage</b> or <b>@Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>Burning, and frightened of the attacker and of objects/creatures that are burning, as long as it's burning.",
+  "text": "<h2>Pyrophobia</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Burning, and frightened of the attacker and of objects/creatures that are burning, as long as it's burning.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!84fd9e46e0efdd91.d288d421f52f1a61"

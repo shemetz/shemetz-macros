@@ -11,7 +11,7 @@
   "rangeH": 20,
   "rangeL": 20,
   "resultId": null,
-  "text": "<h2>Faceripper</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_injury]{Injury}.</b><br><br>It starts bleeding, and it's blinded while bleeding.",
+  "text": "<h2>Faceripper</h2><b>Double damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>It starts bleeding, and it's blinded while bleeding.",
   "type": 0,
   "weight": 1,
   "_key": "!tables.results!236c31c7a7db4767.c884326e6a93ac0a"
