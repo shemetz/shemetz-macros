@@ -108,11 +108,11 @@ function applyUpdateDiff (placeables, isRelative) {
   return canvas.scene.updateEmbeddedDocuments(embeddedName, updates, options)
 }
 
-// TODO fix in v12?  something broke
 function recordUpdateDiff (document, update, options) {
   let flattenedUpdate = foundry.utils.flattenObject(update)
   delete flattenedUpdate['_id']
   improveUpdate(document, flattenedUpdate)
+  if (Object.keys(flattenedUpdate).length === 0) return // may happen if an update is meaningless e.g. when clicking old drawing
   const baseUpdate = foundry.utils.deepClone(flattenedUpdate)
   const relativeUpdate = foundry.utils.deepClone(flattenedUpdate)
   for (const [key, value] of Object.entries(flattenedUpdate)) {
@@ -141,12 +141,35 @@ function improveUpdate (data, update) {
     if (!updateValue && !oldValue) delete update[key]
     // if value didn't actually change we probably don't want to repeat it
     if (updateValue === oldValue) delete update[key]
-    if (Array.isArray(updateValue) && updateValue?.length === 0 && oldValue?.length === 0) delete update[key]
+    // Sometimes updates include empty arrays both before and after, ignore
+    if (Array.isArray(updateValue) && updateValue.length === 0 && oldValue?.length === 0) delete update[key]
+    // color comparison looks a bit different
     if (updateValue?.startsWith?.('#') && oldValue?.css === updateValue) delete update[key] // colors
+    // if value is not a valid choice from a list, we probably don't want to repeat it (not sure why foundry does this)
     if (data.schema.fields?.[key]?.choices?.includes(updateValue) === false) delete update[key] // e.g. { disposition: null }
+    // Something weird with detection modes in pf2e, should be ignored
+    if (key === 'detectionModes' && updateValue?.length === 0 && oldValue?.length >= 2) delete update[key]
   }
+  // If either X or Y changed, put the other one in the update as well
   if (update.hasOwnProperty('x') && !update.hasOwnProperty('y')) update['y'] = data.y
   if (!update.hasOwnProperty('x') && update.hasOwnProperty('y')) update['x'] = data.x
+  // If X and Y barely changed at all (<0.9), ignore their change;  Foundry does that for some weird reason
+  if (Object.keys(update).length >= 3 && Math.abs(update.x - data.x) < 0.9 && Math.abs(update.y - data.y) < 0.9) {
+    delete update.x
+    delete update.y
+  }
+  // pf2e actor has a Torch/Candle/etc which alters light, foundry uselessly includes old (actual) light data in
+  // the update even though the light is overridden by the TokenLight rule element, and then all that extra
+  // useless light data ends up here.
+  const countChangesToLight = Object.keys(update).filter(k => k.startsWith('light.')).length
+  if (
+    countChangesToLight > 5
+    && Object.keys(update).length > countChangesToLight
+    && data.actor?.rules.some(r => r.key === 'TokenLight')
+  )
+    for (const key in update)
+      if (key.startsWith('light.'))
+        delete update[key]
 }
 
 export function hookRepeatLatestOperation () {
@@ -154,6 +177,7 @@ export function hookRepeatLatestOperation () {
   Hooks.on('preUpdateTile', recordUpdateDiff)
   Hooks.on('preUpdateWall', recordUpdateDiff)
   Hooks.on('preUpdateDrawing', recordUpdateDiff)
+  Hooks.on('preUpdateNote', recordUpdateDiff)
   RLO.latestDocClassName = null
   RLO.alreadyHooked = true
   ui?.notifications?.info(`Hooks ready - ${macroName}`)
@@ -163,6 +187,7 @@ export function hookRepeatLatestOperation () {
     Hooks.off('preUpdateTile', recordUpdateDiff)
     Hooks.off('preUpdateWall', recordUpdateDiff)
     Hooks.off('preUpdateDrawing', recordUpdateDiff)
+    Hooks.off('preUpdateNote', recordUpdateDiff)
     ui?.notifications?.info(`Hooks off - ${macroName}`)
     RLO.alreadyHooked = false
   }
