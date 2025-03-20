@@ -55,19 +55,15 @@ const generateWallGapUpdates = (walls, maxDistSq) => {
     if (closestStartPoint[2] !== Infinity) {
       c1[0] = closestStartPoint[0]
       c1[1] = closestStartPoint[1]
-      getVisualEffectsGraphics()
-        .lineStyle(6, 0xFF0000, 0.7) // width, color, alpha
-        .drawCircle(origC1[0], origC1[1], 12)
-        .lineStyle(5, 0x00FF00, 0.7) // width, color, alpha
+      getVisualEffectsGraphics().lineStyle(6, 0xFF0000, 0.7) // width, color, alpha
+        .drawCircle(origC1[0], origC1[1], 12).lineStyle(5, 0x00FF00, 0.7) // width, color, alpha
         .drawCircle(c1[0], c1[1], 12)
     }
     if (closestEndPoint[2] !== Infinity) {
       c1[2] = closestEndPoint[0]
       c1[3] = closestEndPoint[1]
-      getVisualEffectsGraphics()
-        .lineStyle(6, 0xFF0000, 0.7) // width, color, alpha
-        .drawCircle(origC1[2], origC1[3], 12)
-        .lineStyle(5, 0x00FF00, 0.7) // width, color, alpha
+      getVisualEffectsGraphics().lineStyle(6, 0xFF0000, 0.7) // width, color, alpha
+        .drawCircle(origC1[2], origC1[3], 12).lineStyle(5, 0x00FF00, 0.7) // width, color, alpha
         .drawCircle(c1[2], c1[3], 12)
     }
     return { _id: w1.id, c: c1 }
@@ -93,13 +89,19 @@ export const closeWallGaps = async (onlyControlled = true, maximumGapDistance = 
 }
 
 const promptConfirmation = (walls, maxDistSq, updates) => {
-  new Dialog({
-    title: 'Close Wall Gaps?',
+  foundry.applications.api.DialogV2.wait({
+    id: 'close-wall-gaps',
+    window: {
+      title: 'Close Wall Gaps?',
+      icon: 'fas fa-tape',
+    },
     content: `<p>Close ${updates.length} gaps?</p>`,
-    buttons: {
-      ok: {
+    buttons: [
+      {
+        action: 'ok',
+        default: true,
         label: `Close ${updates.length} gaps`,
-        icon: `<i class="fas fa-check"></i>`,
+        icon: 'fas fa-check',
         callback: async () => {
           await canvas.scene.updateEmbeddedDocuments('Wall', updates)
           const moreUpdates = generateWallGapUpdates(walls, maxDistSq)
@@ -111,31 +113,30 @@ const promptConfirmation = (walls, maxDistSq, updates) => {
           }
         },
       },
-      cancel: {
+      {
+        action: 'cancel',
         label: 'Cancel',
-        icon: `<i class="fas fa-times"></i>`,
+        icon: 'fas fa-times',
         callback: () => {},
       },
-    },
-    default: 'ok',
+    ],
     close: () => {
       getVisualEffectsGraphics().clear()
     },
-  }).render(true)
+  })
 }
 
 export const hookCloseWallGaps = () => {
   Hooks.on('getSceneControlButtons', controls => {
     if (!game.user.isGM) return
-    const wallToolbar = controls.find(c => c.name === 'walls').tools
-    wallToolbar.splice(wallToolbar.length - 1, 0, {
-      name: 'CloseWallGaps',
+    controls.walls.tools.closeWallGaps = {
+      name: 'closeWallGaps',
       title: 'Close Wall Gaps',
       icon: 'fas fa-tape',
       button: true,
-      onClick: () => {
+      onChange: () => {
         return closeWallGaps(canvas.walls.controlled.length > 0, DEFAULT_MAXIMUM_GAP_DISTANCE)
       },
-    })
+    }
   })
 }
