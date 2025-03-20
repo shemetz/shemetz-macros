@@ -2,10 +2,10 @@
   "id": "shemetz-macros",
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
-  "version": "12.13.2",
+  "version": "13.13.3",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12"
+    "minimum": "13",
+    "verified": "13"
   },
   "esmodules": [
     "scripts/shemetz-macros.js",
