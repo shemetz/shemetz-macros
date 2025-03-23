@@ -146,7 +146,7 @@ function improveUpdate (data, update) {
     // color comparison looks a bit different
     if (updateValue?.startsWith?.('#') && oldValue?.css === updateValue) delete update[key] // colors
     // if value is not a valid choice from a list, we probably don't want to repeat it (not sure why foundry does this)
-    if (data.schema.fields?.[key]?.choices?.includes(updateValue) === false) delete update[key] // e.g. { disposition: null }
+    if (data.schema.fields?.[key]?.choices?.includes?.(updateValue) === false) delete update[key] // e.g. { disposition: null }
     // Something weird with detection modes in pf2e, should be ignored
     if (key === 'detectionModes' && updateValue?.length === 0 && oldValue?.length >= 2) delete update[key]
   }
