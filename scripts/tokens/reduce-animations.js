@@ -24,7 +24,7 @@ const Token_animate_Wrapper = async (wrappedFunction, updateData, options = {}, 
 }
 
 export const hookReduceTokenAnimations = () => {
-  libWrapper.register('shemetz-macros', 'Token.prototype.animate', Token_animate_Wrapper, 'WRAPPER')
+  libWrapper.register('shemetz-macros', 'foundry.canvas.placeables.Token.prototype.animate', Token_animate_Wrapper, 'WRAPPER')
 
   game.settings.register('shemetz-macros', 'faster-token-movement', {
     name: `Faster token movement`,

@@ -1,7 +1,7 @@
 let mostRecentCopiedText = ''
 
 export const hookConsoleExtras = () => {
-  libWrapper.register('shemetz-macros', 'ClipboardHelper.prototype.copyPlainText', (wrappedFunction, text) => {
+  libWrapper.register('shemetz-macros', 'foundry.helpers.interaction.ClipboardHelper.prototype.copyPlainText', (wrappedFunction, text) => {
     mostRecentCopiedText = text
     return wrappedFunction(text)
   }, 'WRAPPER')

@@ -18,7 +18,7 @@ const activeLayerThings = Array.from(canvas.activeLayer.documentCollection.value
 if (activeLayerThings.length > 0 && activeLayerThings[0].constructor.name === RLO.latestDocClassName) {
   const controlled = canvas.activeLayer.controlled
   if (controlled.length !== 0) {
-    if (!game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)) {
+    if (!game.keyboard.isModifierActive(foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS.SHIFT)) {
       openDialogWindow(controlled, false)
     } else {
       openDialogWindow(controlled, true)

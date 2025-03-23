@@ -215,7 +215,7 @@ export async function repeatLastAction (openDialog) {
 }
 
 export function hookRepeatLatestOperationHotkey () {
-  const { CONTROL, SHIFT, ALT } = KeyboardManager.MODIFIER_KEYS
+  const { CONTROL, SHIFT, ALT } = foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'repeat-last-action', {
     name: 'Repeat Last Action',
     hint: 'Will repeat the latest token/tile/wall/drawing update operation, but with selected things instead.' +
@@ -230,7 +230,7 @@ export function hookRepeatLatestOperationHotkey () {
     ],
     reservedModifiers: [ALT],
     onDown: async () => {
-      const openDialog = !game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT)
+      const openDialog = !game.keyboard.isModifierActive(foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS.ALT)
       return repeatLastAction(openDialog)
     },
   })

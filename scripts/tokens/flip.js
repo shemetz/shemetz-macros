@@ -28,7 +28,7 @@ export const flipTokens = async (tokens, horizontally = false, vertically = fals
 }
 
 export function hookFlipHotkey () {
-  const { SHIFT } = KeyboardManager.MODIFIER_KEYS
+  const { SHIFT } = foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'flip', {
     name: 'Flip token(s)',
     hint: 'Flips the selected token image along the X axis.' +
@@ -40,7 +40,7 @@ export function hookFlipHotkey () {
     ],
     reservedModifiers: [SHIFT],
     onDown: async () => {
-      const vertical = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT)
+      const vertical = game.keyboard.isModifierActive(foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS.SHIFT)
       return flipTokens(ShemetzMacros.selectedTokens(), !vertical, vertical)
     },
   })

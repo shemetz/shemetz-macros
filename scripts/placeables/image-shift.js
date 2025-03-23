@@ -4,7 +4,7 @@
  * Shifting will cycle through the images (going from last back to first).
  */
 export const shiftSelectedPlaceableImageByKeyboard = async (shouldAnimate = false) => {
-  const ctrlHeld = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.CONTROL)
+  const ctrlHeld = game.keyboard.isModifierActive(foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS.CONTROL)
   const directionDelta = game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.SHIFT) ? -1 : +1
   const tokens = [...canvas.tokens.controlled]
   const tiles = [...canvas.tiles.controlled]
@@ -201,7 +201,7 @@ function openImageSetupDialog (placeable) {
 }
 
 export const hookImageShiftHotkey = () => {
-  const { CONTROL, SHIFT } = KeyboardManager.MODIFIER_KEYS
+  const { CONTROL, SHIFT } = foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS
   game.keybindings.register('shemetz-macros', 'image-shift', {
     name: 'Image Shift',
     hint: 'Shift to next token/tile image (requires setup).' +
