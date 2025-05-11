@@ -77,13 +77,23 @@ const generateWallGapUpdates = (walls, maxDistSq) => {
 /**
  * NOTE:  Closing gaps will often create new gaps, when there's 3-4 walls that nearly touch each other.
  * You should rerun the macro 2-3 times until there are no more gaps.  And inspect the gaps visually, of course.
+ *
+ * NOTE:  This macro does not prioritize fixing by moving wall ends to round grid positions, but this would be a nice future improvement.
  */
 export const closeWallGaps = async (onlyControlled = true, maximumGapDistance = DEFAULT_MAXIMUM_GAP_DISTANCE) => {
   const maxDistSq = maximumGapDistance ** 2
   const walls = onlyControlled ? canvas.walls.controlled : canvas.walls.placeables
+  if (walls.length === 1 && onlyControlled) {
+    ui.notifications.warn('Please select at least 2 walls, or leave wall selection empty.')
+    return
+  }
   const updates = generateWallGapUpdates(walls, maxDistSq)
-  if (updates.length === 0)
-    ui.notifications.warn(`No gaps found.`)
+  if (updates.length === 0) {
+    if (onlyControlled)
+      ui.notifications.info(`No gaps found within ${walls.length} selected walls.`)
+    else
+      ui.notifications.info(`No gaps found.`)
+  }
   else
     promptConfirmation(walls, maxDistSq, updates)
 }
