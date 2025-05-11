@@ -49,10 +49,10 @@ CONFIG.compatibility.excludePatterns.push(
 
   // V13
 
-
   // PF2E system
   new RegExp('at new WorldClock.*pf2e.mjs', 'm'),
   new RegExp('at new LicenseViewer.*pf2e.mjs', 'm'),
+  new RegExp('at new SettingsMenuPF2e.*pf2e.mjs', 'm'),
   // LibWrapper -- sadly these exclusions are useless, as the libwrapper code is called before this code
   new RegExp('libWrapper-api.js:822:35', 'm'),
   new RegExp('libWrapper-api.js:826:33', 'm'),
