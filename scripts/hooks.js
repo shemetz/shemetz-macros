@@ -55,8 +55,11 @@ CONFIG.compatibility.excludePatterns.push(
   new RegExp('at new SettingsMenuPF2e.*pf2e.mjs', 'm'),
   new RegExp('at NPCPF2e.getUserLevel.*foundry.mjs', 'm'),
   // LibWrapper -- sadly these exclusions are useless, as the libwrapper code is called before this code
+  // and also for some reason those file names get changed in console render
   new RegExp('libWrapper-api.js:822:35', 'm'),
   new RegExp('libWrapper-api.js:826:33', 'm'),
+  new RegExp('lib-wrapper.js:1:61445', 'm'), // libWrapper-api.js:822:35
+  new RegExp('lib-wrapper.js:1:61544', 'm'), // libWrapper-api.js:826:33
   // TokenMagic
   new RegExp('PlaceableObjectProto.js', 'm'),
   new RegExp('tokenmagic.js', 'm'),
@@ -66,4 +69,10 @@ CONFIG.compatibility.excludePatterns.push(
   // PF2E Character Gallery
   new RegExp('gallery.mjs:190:7', 'm'),
   new RegExp('gallery.mjs:45:19', 'm'),
+  // TokenMagic FX -- for some reason the tokenmagicBundle address is converted to individual files (settings.js) in the console
+  new RegExp('tokenmagicBundle.js:3125:44521', 'm'), // accessing the global "loadTemplates"
+  new RegExp('tokenmagicBundle.js:3125:50920', 'm'), // accessing the global "MeasuredTemplate"
+  new RegExp('tokenmagicBundle.js:3125:51001', 'm'), // accessing the global "MeasuredTemplate"
+  new RegExp('tokenmagicBundle.js:3125:51305', 'm'), // accessing the global "MeasuredTemplate"
+  new RegExp('tokenmagicBundle.js:3125:51393', 'm'), // accessing the global "MeasuredTemplate"
 )
