@@ -60,19 +60,24 @@ CONFIG.compatibility.excludePatterns.push(
   new RegExp('libWrapper-api.js:826:33', 'm'),
   new RegExp('lib-wrapper.js:1:61445', 'm'), // libWrapper-api.js:822:35
   new RegExp('lib-wrapper.js:1:61544', 'm'), // libWrapper-api.js:826:33
-  // TokenMagic
-  new RegExp('PlaceableObjectProto.js', 'm'),
-  new RegExp('tokenmagic.js', 'm'),
   // Quick Insert
-  new RegExp('Object.fn.*quick-insert.js', 'm'),
+  new RegExp('Object.fn.*quick-insert.js', 'ms'),
   new RegExp('HTMLDocument.*quick-insert.js', 'm'),
   // PF2E Character Gallery
   new RegExp('gallery.mjs:190:7', 'm'),
   new RegExp('gallery.mjs:45:19', 'm'),
+  // PF2E Mercenary Marketplace
+  new RegExp('marketplace-vol1/popup.js:201:22', 'm'),
+  // Dynamic token Rings in v13
+  new RegExp('at getRingDataRing', 'm'),
+  // Performance Optim in v13, sadly this does nothing, maybe because of module load order
+  new RegExp('You are accessing the global "ControlIcon".*spritesheetSubstitution', 'ms'),
   // TokenMagic FX -- for some reason the tokenmagicBundle address is converted to individual files (settings.js) in the console
   new RegExp('tokenmagicBundle.js:3125:44521', 'm'), // accessing the global "loadTemplates"
   new RegExp('tokenmagicBundle.js:3125:50920', 'm'), // accessing the global "MeasuredTemplate"
   new RegExp('tokenmagicBundle.js:3125:51001', 'm'), // accessing the global "MeasuredTemplate"
   new RegExp('tokenmagicBundle.js:3125:51305', 'm'), // accessing the global "MeasuredTemplate"
   new RegExp('tokenmagicBundle.js:3125:51393', 'm'), // accessing the global "MeasuredTemplate"
+  new RegExp('PlaceableObjectProto.js', 'm'),
+  new RegExp('canvas.grid.getHighlightLayer.*tokenmagic', 'ms'),
 )
