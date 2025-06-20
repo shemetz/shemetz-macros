@@ -8,7 +8,6 @@ import { hookRepeatLatestOperation, hookRepeatLatestOperationHotkey } from './pl
 import { hookReduceTokenAnimations } from './tokens/reduce-animations.js'
 import { hookStartupMacro } from './macros/startup-macro.js'
 import { hookConsoleExtras } from './console/console-extras.js'
-import { hookEndTurnButtonInChatBar } from './gui/end-turn-button-in-chat-bar.js'
 import { hookFullRestForTheNight } from './pf2e/full-rest-for-the-night.js'
 
 Hooks.on('init', () => {
@@ -20,7 +19,6 @@ Hooks.on('init', () => {
   hookFlipHotkey()
   hookRepeatLatestOperation()
   hookRepeatLatestOperationHotkey()
-  hookEndTurnButtonInChatBar()
   hookReduceTokenAnimations()
   hookStartupMacro()
   hookConsoleExtras()

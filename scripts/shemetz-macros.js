@@ -51,7 +51,6 @@ import { markDeadWithHealthEstimate } from './custom-stuff/mark-defeated-x.js'
 import { printRenderTextureToConsole, printScreenToConsole } from './canvas/print-render-texture-to-console.js'
 import { getLocalMousePosition, getScreenMousePosition } from './utils/mouse-utils.js'
 import { repeatLastAction } from './placeables/repeat-last-action.js'
-import { emitMessageToHighlightForCurrentPlayer } from './gui/end-turn-button-in-chat-bar.js'
 import { toggleCombatMode } from './custom-stuff/combat-mode.js'
 import { hideAllUi } from './gui/hide-all-ui.js'
 
@@ -95,7 +94,6 @@ self.ShemetzMacros = {
   toggleConditionWithTokenImage, toggleCustomCondition,
   markDeadWithHealthEstimate,
   repeatLastAction, repeatLatestOperation: repeatLastAction,
-  emitMessageToHighlightForCurrentPlayer,
 }
 
 export const hookShemetzMacros = () => {
