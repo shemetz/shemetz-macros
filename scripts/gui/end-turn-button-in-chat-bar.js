@@ -7,10 +7,10 @@ export const hookEndTurnButtonInChatBar = () => {
     type: Boolean,
     default: true,
   })
-  Hooks.on('renderSidebarTab', onRenderSidebarTab)
-  Hooks.once('ready', () => {onUpdateCombat()})
-  Hooks.on('updateCombat', onUpdateCombat)
-  Hooks.on('deleteCombat', onUpdateCombat)
+  Hooks.on('renderChatLog', onRenderChatLog)
+  Hooks.once('ready', showOrHideTheButton)
+  Hooks.on('updateCombat', showOrHideTheButton)
+  Hooks.on('deleteCombat', showOrHideTheButton)
 }
 
 /**
@@ -24,17 +24,21 @@ export const onSocketMessageEndTurnButton = () => {
   }, 1000)
 }
 
-const onRenderSidebarTab = (app, html) => {
+const onRenderChatLog = (app, chatEl, context, options) => {
   // Exit early if necessary
   if (!game.settings.get('shemetz-macros', 'enable-end-turn-button-in-chat')) return
-  if (app.tabName !== 'chat') return // is render function for something else
 
-  const $chatForm = html.find('#chat-form')
-  let $content = $(END_TURN_TEMPLATE)
-  $chatForm.after($content)
+  const $chatMessageInputs = $('#chat-message')
+  for (let i = 0; i < $chatMessageInputs.length; i++) {
+    // add the new element after each chat input (using after)
+    const $chatInput = $($chatMessageInputs[i])
+    if ($chatInput.find('.shm-end-turn').length === 0) {
+      $chatInput.after(END_TURN_TEMPLATE)
+    }
+  }
   const endTurnButton = $('.shm-end-turn')
   endTurnButton.on('click', onPressButton)
-  onUpdateCombat()
+  showOrHideTheButton()
 }
 
 const onPressButton = async (event) => {
@@ -62,7 +66,7 @@ const shouldShowEndTurnButton = () => {
   return true
 }
 
-const onUpdateCombat = () => {
+const showOrHideTheButton = () => {
   if (shouldShowEndTurnButton())
     $('.shm-end-turn').show()
   else
@@ -72,7 +76,6 @@ const onUpdateCombat = () => {
   } else {
     $('.shm-end-turn').text(`End Turn?`)
   }
-  ui.chat.scrollBottom()
 }
 
 export const emitMessageToHighlightForCurrentPlayer = () => {
@@ -94,8 +97,9 @@ const highlightEndTurnButton = (show) => {
 const HIGHLIGHT_TEXT_SHADOW = '-2px -2px 3px #ff0000, 2px -2px 3px #ff0000, -2px 2px 3px #ff0000, 2px 2px 3px #ff0000'
 
 const END_TURN_STYLE = '' +
-  ' flex: none;' +
+  ' pointer-events: all;' +
   ' text-align: center;' +
+  ' align-self: center;' +
   ' font-size: var(--font-size-20);' +
   ' margin-bottom: 5px;'
 
