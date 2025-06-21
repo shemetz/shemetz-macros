@@ -1,4 +1,5 @@
 {
+  "_id": "BTaiDAYiUaN3Jk9S",
   "name": "Clear Conditions",
   "type": "script",
   "author": "IlfuVOtIwzHO5ODq",
@@ -7,18 +8,26 @@
   "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.clearAllConditions(tokens)",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "IlfuVOtIwzHO5ODq": 3
-  },
   "flags": {
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.EsH5cZZ3BAAwit9f"
-    }
+    "core": {}
   },
-  "_id": "BTaiDAYiUaN3Jk9S",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.EsH5cZZ3BAAwit9f",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
   "_key": "!macros!BTaiDAYiUaN3Jk9S"
 }

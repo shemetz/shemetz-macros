@@ -1,6 +1,5 @@
 {
   "_id": "b47904d01707780f",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
@@ -8,11 +7,20 @@
     11,
     11
   ],
-  "rangeH": 11,
-  "rangeL": 11,
-  "resultId": null,
-  "text": "<h2>Vocal Trauma</h2><i>(Mouth/throat injury)</i><br><br>Requires DC 6 flat check whenever it speaks, casts a vocal spell, etc.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Vocal Trauma</h2><i>(Mouth/throat injury)</i><br><br>Requires DC 6 flat check whenever it speaks, casts a vocal spell, etc.",
+  "name": "",
   "_key": "!tables.results!8cd22c4bb19d0270.b47904d01707780f"
 }

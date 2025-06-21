@@ -1,15 +1,12 @@
 {
   "_id": "515f6dfecb2550cf",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/commodities/materials/glass-cube.webp",
   "name": "Cold Critical Hits",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "1bb5b6dbabf1809b",
@@ -34,5 +31,19 @@
     "26be4b102aa84ba2"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!515f6dfecb2550cf"
 }

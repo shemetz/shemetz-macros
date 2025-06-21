@@ -1,6 +1,5 @@
 {
   "_id": "081c3cc9ed0248fc",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "https://i.imgur.com/huPpJQf.png",
@@ -8,11 +7,20 @@
     4,
     4
   ],
-  "rangeH": 4,
-  "rangeL": 4,
-  "resultId": null,
-  "text": "<h2>Devastating error</h2>Your target may immediately use a reaction to make an attack against you with advantage.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Devastating error</h2>Your target may immediately use a reaction to make an attack against you with advantage.",
+  "name": "",
   "_key": "!tables.results!3bd3d470d3da1fc7.081c3cc9ed0248fc"
 }

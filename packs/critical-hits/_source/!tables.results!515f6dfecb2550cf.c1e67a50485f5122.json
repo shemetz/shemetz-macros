@@ -1,6 +1,5 @@
 {
   "_id": "c1e67a50485f5122",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/materials/glass-cube.webp",
@@ -8,11 +7,20 @@
     3,
     3
   ],
-  "rangeH": 3,
-  "rangeL": 3,
-  "resultId": null,
-  "text": "<h2>Slip and Slide</h2><b>Normal damage.</b><br><br>Falls prone, slides 5ft (direction of its choice)",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Slip and Slide</h2><b>Normal damage.</b><br><br>Falls prone, slides 5ft (direction of its choice)",
+  "name": "",
   "_key": "!tables.results!515f6dfecb2550cf.c1e67a50485f5122"
 }

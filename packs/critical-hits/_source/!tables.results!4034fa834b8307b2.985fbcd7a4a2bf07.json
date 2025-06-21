@@ -1,6 +1,5 @@
 {
   "_id": "985fbcd7a4a2bf07",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/tools/instruments/bell-brass-brown.webp",
@@ -8,11 +7,20 @@
     8,
     8
   ],
-  "rangeH": 8,
-  "rangeL": 8,
-  "resultId": null,
-  "text": "<h2>Deafening</h2><b>Double damage.</b><br><br>Deafened until end of its next turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Deafening</h2><b>Double damage.</b><br><br>Deafened until end of its next turn.",
+  "name": "",
   "_key": "!tables.results!4034fa834b8307b2.985fbcd7a4a2bf07"
 }

@@ -1,6 +1,5 @@
 {
   "_id": "c898e436d1cd30f9",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
@@ -8,11 +7,20 @@
     10,
     10
   ],
-  "rangeH": 10,
-  "rangeL": 10,
-  "resultId": null,
-  "text": "<h2>Vertigo</h2><b>Double damage.</b><br><br>-2 AC. If it willingly moves, it falls prone (after moving 5ft). Goes away at the end of its next turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Vertigo</h2><b>Double damage.</b><br><br>-2 AC. If it willingly moves, it falls prone (after moving 5ft). Goes away at the end of its next turn.",
+  "name": "",
   "_key": "!tables.results!545f7f7a2255381c.c898e436d1cd30f9"
 }

@@ -1,6 +1,5 @@
 {
   "_id": "b20bea3837a56694",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
@@ -8,11 +7,20 @@
     18,
     18
   ],
-  "rangeH": 18,
-  "rangeL": 18,
-  "resultId": null,
-  "text": "<h2>Phobia</h2><u>In combat:</u> The creature is frightened of the latest type of creature that harmed it.<br><br><u>Out of combat:</u> The creature acts anxious, and overestimates the danger of situations it's in.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Phobia</h2><u>In combat:</u> The creature is frightened of the latest type of creature that harmed it.<br><br><u>Out of combat:</u> The creature acts anxious, and overestimates the danger of situations it's in.",
+  "name": "",
   "_key": "!tables.results!cbf3049667060cd6.b20bea3837a56694"
 }

@@ -1,6 +1,5 @@
 {
   "_id": "ef8f93b9bdab68cb",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
@@ -8,11 +7,20 @@
     6,
     6
   ],
-  "rangeH": 6,
-  "rangeL": 6,
-  "resultId": null,
-  "text": "<h2>Hyperfixation</h2><u>In combat:</u> The creature ignores all creatures except the enemy it perceives as the biggest overall threat.<br><br><u>Out of combat:</u> The creature has trouble focusing on things other than those it sees as its most important goals, and can get frustrated if unable to work towards them.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Hyperfixation</h2><u>In combat:</u> The creature ignores all creatures except the enemy it perceives as the biggest overall threat.<br><br><u>Out of combat:</u> The creature has trouble focusing on things other than those it sees as its most important goals, and can get frustrated if unable to work towards them.",
+  "name": "",
   "_key": "!tables.results!cbf3049667060cd6.ef8f93b9bdab68cb"
 }

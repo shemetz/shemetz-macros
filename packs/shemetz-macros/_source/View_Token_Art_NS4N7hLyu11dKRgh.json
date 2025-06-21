@@ -1,4 +1,5 @@
 {
+  "_id": "NS4N7hLyu11dKRgh",
   "name": "View Token Art",
   "type": "script",
   "author": "IlfuVOtIwzHO5ODq",
@@ -7,18 +8,26 @@
   "command": "const tok = ShemetzMacros.hoveredTokens()[0]\n || ShemetzMacros.targetedTokens()[0]\n || ShemetzMacros.selectedTokens()[0]\nShemetzMacros.viewTokenArt(tok)",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "IlfuVOtIwzHO5ODq": 3
-  },
   "flags": {
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.YfONSP4HHlYjMncW"
-    }
+    "core": {}
   },
-  "_id": "NS4N7hLyu11dKRgh",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.YfONSP4HHlYjMncW",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
   "_key": "!macros!NS4N7hLyu11dKRgh"
 }

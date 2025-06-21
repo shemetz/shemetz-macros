@@ -1,6 +1,5 @@
 {
   "_id": "cc21191892783617",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
@@ -8,11 +7,20 @@
     5,
     5
   ],
-  "rangeH": 5,
-  "rangeL": 5,
-  "resultId": null,
-  "text": "<h2>Lapse of Focus</h2><b>Normal damage.</b><br><br>Drops concentration and drops whatever it is holding.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Lapse of Focus</h2><b>Normal damage.</b><br><br>Drops concentration and drops whatever it is holding.",
+  "name": "",
   "_key": "!tables.results!3685c4de80c1ccca.cc21191892783617"
 }

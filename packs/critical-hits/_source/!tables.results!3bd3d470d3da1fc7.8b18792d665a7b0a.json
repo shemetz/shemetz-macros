@@ -1,6 +1,5 @@
 {
   "_id": "8b18792d665a7b0a",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "https://i.imgur.com/huPpJQf.png",
@@ -8,11 +7,20 @@
     17,
     17
   ],
-  "rangeH": 17,
-  "rangeL": 17,
-  "resultId": null,
-  "text": "<h2>Something in your eye</h2>All your attacks do half damage until the end of your next turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Something in your eye</h2>All your attacks do half damage until the end of your next turn.",
+  "name": "",
   "_key": "!tables.results!3bd3d470d3da1fc7.8b18792d665a7b0a"
 }

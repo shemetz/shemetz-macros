@@ -1,15 +1,12 @@
 {
   "_id": "cbf3049667060cd6",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/creatures/abilities/mouth-teeth-tongue-purple.webp",
   "name": "Mental Afflictions",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "fb22fec6e211a03b",
@@ -34,5 +31,19 @@
     "c94b77c600b67cb0"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!cbf3049667060cd6"
 }

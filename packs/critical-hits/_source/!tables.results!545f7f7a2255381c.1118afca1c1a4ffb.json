@@ -1,6 +1,5 @@
 {
   "_id": "1118afca1c1a4ffb",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
@@ -8,11 +7,20 @@
     19,
     19
   ],
-  "rangeH": 19,
-  "rangeL": 19,
-  "resultId": null,
-  "text": "<h2>Soil 'n' Spoil</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Poisoned until it succeeds on a DC 15 CON save at end of turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Soil 'n' Spoil</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Poisoned until it succeeds on a DC 15 CON save at end of turn.",
+  "name": "",
   "_key": "!tables.results!545f7f7a2255381c.1118afca1c1a4ffb"
 }

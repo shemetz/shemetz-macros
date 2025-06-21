@@ -1,6 +1,5 @@
 {
   "_id": "e37aa65292e120bf",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
@@ -8,11 +7,20 @@
     3,
     3
   ],
-  "rangeH": 3,
-  "rangeL": 3,
-  "resultId": null,
-  "text": "<h2>Fear</h2><b>Normal damage.</b><br><br>Frightened by the attacking creature until end of its next turn",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Fear</h2><b>Normal damage.</b><br><br>Frightened by the attacking creature until end of its next turn",
+  "name": "",
   "_key": "!tables.results!3685c4de80c1ccca.e37aa65292e120bf"
 }

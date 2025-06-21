@@ -1,15 +1,12 @@
 {
   "_id": "883d1a03d2f65aca",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/creatures/fish/fish-fangtooth-skeletal-pink.webp",
   "name": "Necrotic Critical Hits",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "9d6f3a8469092248",
@@ -34,5 +31,19 @@
     "42a550c57a0f2a35"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!883d1a03d2f65aca"
 }

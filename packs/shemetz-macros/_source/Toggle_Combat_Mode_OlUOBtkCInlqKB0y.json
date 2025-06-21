@@ -1,29 +1,30 @@
 {
+  "_id": "OlUOBtkCInlqKB0y",
   "name": "Toggle Combat Mode",
   "type": "script",
   "author": "dgs6RfeuhCXyqsJL",
   "img": "https://game-icons.net/icons/ffffff/000000/1x1/lorc/swords-emblem.svg",
   "scope": "global",
   "command": "ShemetzMacros.toggleCombatMode({})",
-  "ownership": {
-    "default": 0,
-    "dgs6RfeuhCXyqsJL": 3
-  },
+  "folder": null,
+  "sort": 0,
   "flags": {
-    "core": {
-      "sourceId": "Macro.uwfpKdFb92VmpCC2"
-    }
+    "core": {}
   },
   "_stats": {
     "systemId": "pf2e",
     "systemVersion": "4.0.6",
-    "coreVersion": "10.285",
+    "coreVersion": "13.342",
     "createdTime": 1663422931688,
     "modifiedTime": 1663425279225,
-    "lastModifiedBy": "dgs6RfeuhCXyqsJL"
+    "lastModifiedBy": "dgs6RfeuhCXyqsJL",
+    "compendiumSource": "Macro.uwfpKdFb92VmpCC2",
+    "duplicateSource": null,
+    "exportSource": null
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "OlUOBtkCInlqKB0y",
+  "ownership": {
+    "default": 0,
+    "dgs6RfeuhCXyqsJL": 3
+  },
   "_key": "!macros!OlUOBtkCInlqKB0y"
 }

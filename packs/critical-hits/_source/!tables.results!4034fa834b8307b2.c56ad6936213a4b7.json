@@ -1,6 +1,5 @@
 {
   "_id": "c56ad6936213a4b7",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/tools/instruments/bell-brass-brown.webp",
@@ -8,11 +7,20 @@
     20,
     20
   ],
-  "rangeH": 20,
-  "rangeL": 20,
-  "resultId": null,
-  "text": "<h2>Staggering Shockwave</h2><b>Double damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Incapacitated until end of its next turn, pushed 20 feet, fall prone",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Staggering Shockwave</h2><b>Double damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Incapacitated until end of its next turn, pushed 20 feet, fall prone",
+  "name": "",
   "_key": "!tables.results!4034fa834b8307b2.c56ad6936213a4b7"
 }

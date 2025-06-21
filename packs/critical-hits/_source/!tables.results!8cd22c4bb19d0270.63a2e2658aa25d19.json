@@ -1,6 +1,5 @@
 {
   "_id": "63a2e2658aa25d19",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
@@ -8,11 +7,20 @@
     6,
     6
   ],
-  "rangeH": 6,
-  "rangeL": 6,
-  "resultId": null,
-  "text": "<h2>Spinal Impact</h2><i>(Back injury)</i><br><br>Halved carrying capacity, -5 to grapple checks, requires 25 ft of movement to stand up (or requires action if normal speed is below 25)",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Spinal Impact</h2><i>(Back injury)</i><br><br>Halved carrying capacity, -5 to grapple checks, requires 25 ft of movement to stand up (or requires action if normal speed is below 25)",
+  "name": "",
   "_key": "!tables.results!8cd22c4bb19d0270.63a2e2658aa25d19"
 }

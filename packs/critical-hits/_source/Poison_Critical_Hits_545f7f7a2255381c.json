@@ -1,15 +1,12 @@
 {
   "_id": "545f7f7a2255381c",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/magic/acid/dissolve-bone-ribs-skull.webp",
   "name": "Poison Critical Hits",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "b1122a20aede5906",
@@ -34,5 +31,19 @@
     "e4f3d8d9a71a6ede"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!545f7f7a2255381c"
 }

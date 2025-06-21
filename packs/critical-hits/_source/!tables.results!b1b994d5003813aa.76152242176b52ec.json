@@ -1,6 +1,5 @@
 {
   "_id": "76152242176b52ec",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/light/explosion-star-orange-purple.webp",
@@ -8,11 +7,20 @@
     18,
     18
   ],
-  "rangeH": 18,
-  "rangeL": 18,
-  "resultId": null,
-  "text": "<h2>Forced Outcome</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Until the end of its next turn, all damage the creature takes is converted into force damage (before applying I/V/R), and all spells that affect it have their duration extended by one round.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Forced Outcome</h2>Choose: <b>Double damage</b> or <b>@UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Until the end of its next turn, all damage the creature takes is converted into force damage (before applying I/V/R), and all spells that affect it have their duration extended by one round.",
+  "name": "",
   "_key": "!tables.results!b1b994d5003813aa.76152242176b52ec"
 }

@@ -1,15 +1,12 @@
 {
   "_id": "4034fa834b8307b2",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/tools/instruments/bell-brass-brown.webp",
   "name": "Thunder Critical Hits",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "251a3cf2483f63db",
@@ -34,5 +31,19 @@
     "c56ad6936213a4b7"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!4034fa834b8307b2"
 }

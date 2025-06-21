@@ -1,6 +1,5 @@
 {
   "_id": "4d1f1c84e344a312",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/light/explosion-star-orange-purple.webp",
@@ -8,11 +7,20 @@
     20,
     20
   ],
-  "rangeH": 20,
-  "rangeL": 20,
-  "resultId": null,
-  "text": "<h2>Molecular Disintegration</h2><b><i>Triple</i> damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Triple damage. If the creature drops to 0 hit points, it is disintegrated (or takes a permanent injury if PC).",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Molecular Disintegration</h2><b><i>Triple</i> damage and apply @UUID[Compendium.shemetz-macros.critical-hits.RollTable.8cd22c4bb19d0270]{Injury}.</b><br><br>Triple damage. If the creature drops to 0 hit points, it is disintegrated (or takes a permanent injury if PC).",
+  "name": "",
   "_key": "!tables.results!b1b994d5003813aa.4d1f1c84e344a312"
 }

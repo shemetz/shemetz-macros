@@ -1,4 +1,5 @@
 {
+  "_id": "jDf7pRtTff7B7rmJ",
   "name": "Highlight Map Locations",
   "type": "script",
   "author": "IlfuVOtIwzHO5ODq",
@@ -7,18 +8,26 @@
   "command": "ShemetzMacros.highlightTransparentTokensOnMap()",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "IlfuVOtIwzHO5ODq": 3
-  },
   "flags": {
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.3AhiUjGw4BtYolta"
-    }
+    "core": {}
   },
-  "_id": "jDf7pRtTff7B7rmJ",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.3AhiUjGw4BtYolta",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
+  },
   "_key": "!macros!jDf7pRtTff7B7rmJ"
 }

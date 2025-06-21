@@ -8,17 +8,26 @@
   "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.setupLightAndVision(tokens)",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "IlfuVOtIwzHO5ODq": 3
-  },
   "flags": {
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.M6yMbWK4VlDUm1rv"
-    }
+    "core": {}
+  },
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.M6yMbWK4VlDUm1rv",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
   },
   "_key": "!macros!a7VF7MWGRQtTE6C0"
 }

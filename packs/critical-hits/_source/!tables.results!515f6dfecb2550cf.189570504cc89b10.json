@@ -1,6 +1,5 @@
 {
   "_id": "189570504cc89b10",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/materials/glass-cube.webp",
@@ -8,11 +7,20 @@
     5,
     5
   ],
-  "rangeH": 5,
-  "rangeL": 5,
-  "resultId": null,
-  "text": "<h2>Cool Down</h2><b>Normal damage.</b><br><br>It can make one less attack next turn (none at all, if it doesn't have extra attack or multiattack).  Other actions have a 50% chance of taking an extra round.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Cool Down</h2><b>Normal damage.</b><br><br>It can make one less attack next turn (none at all, if it doesn't have extra attack or multiattack).  Other actions have a 50% chance of taking an extra round.",
+  "name": "",
   "_key": "!tables.results!515f6dfecb2550cf.189570504cc89b10"
 }

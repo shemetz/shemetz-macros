@@ -1,6 +1,5 @@
 {
   "_id": "a15a967e59412d93",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
@@ -8,11 +7,20 @@
     16,
     16
   ],
-  "rangeH": 16,
-  "rangeL": 16,
-  "resultId": null,
-  "text": "<h2>Do Harm</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_limited_injury]{Injury (d12)}.</b><br><br>(+injury, but roll d12)",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Do Harm</h2><b>Double damage and apply @Compendium[shemetz-macros.shemetz-macros.crit_roll_limited_injury]{Injury (d12)}.</b><br><br>(+injury, but roll d12)",
+  "name": "",
   "_key": "!tables.results!83056ec507e171ce.a15a967e59412d93"
 }

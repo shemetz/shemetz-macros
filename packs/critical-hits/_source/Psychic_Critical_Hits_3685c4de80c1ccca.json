@@ -1,15 +1,12 @@
 {
   "_id": "3685c4de80c1ccca",
-  "description": " ",
+  "description": "",
   "displayRoll": true,
   "flags": {},
   "folder": null,
   "formula": "1d20",
   "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
   "name": "Psychic Critical Hits",
-  "permission": {
-    "default": 0
-  },
   "replacement": true,
   "results": [
     "951ab5daf5619d69",
@@ -34,5 +31,19 @@
     "cb8c153ece18bd4d"
   ],
   "sort": 0,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
   "_key": "!tables!3685c4de80c1ccca"
 }

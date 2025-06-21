@@ -1,6 +1,5 @@
 {
   "_id": "fa320a1cfb9d4496",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
@@ -8,11 +7,20 @@
     14,
     14
   ],
-  "rangeH": 14,
-  "rangeL": 14,
-  "resultId": null,
-  "text": "<h2>Overwhelming Pain</h2><b>Double damage.</b><br><br>Drops concentration. Falls prone. Drops what it's holding.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Overwhelming Pain</h2><b>Double damage.</b><br><br>Drops concentration. Falls prone. Drops what it's holding.",
+  "name": "",
   "_key": "!tables.results!3685c4de80c1ccca.fa320a1cfb9d4496"
 }

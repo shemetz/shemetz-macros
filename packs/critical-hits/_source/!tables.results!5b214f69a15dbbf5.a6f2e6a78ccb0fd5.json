@@ -1,6 +1,5 @@
 {
   "_id": "a6f2e6a78ccb0fd5",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/lightning/bolts-forked-large-orange.webp",
@@ -8,11 +7,20 @@
     12,
     12
   ],
-  "rangeH": 12,
-  "rangeL": 12,
-  "resultId": null,
-  "text": "<h2>Shocked Grasp</h2><b>Double damage.</b><br><br>Throws an item it's holding 5 feet in a random direction.  If it held nothing, instead it just becomes unable to use one of its main attack limbs.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Shocked Grasp</h2><b>Double damage.</b><br><br>Throws an item it's holding 5 feet in a random direction.  If it held nothing, instead it just becomes unable to use one of its main attack limbs.",
+  "name": "",
   "_key": "!tables.results!5b214f69a15dbbf5.a6f2e6a78ccb0fd5"
 }

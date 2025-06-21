@@ -1,6 +1,5 @@
 {
   "_id": "231b82774520d7e9",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "https://i.imgur.com/huPpJQf.png",
@@ -8,11 +7,20 @@
     7,
     7
   ],
-  "rangeH": 7,
-  "rangeL": 7,
-  "resultId": null,
-  "text": "<h2>Revealed intentions</h2>You have disadvantage on your next attack or an enemy has advantage on their next saving throw against your effect, until the end of your next turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Revealed intentions</h2>You have disadvantage on your next attack or an enemy has advantage on their next saving throw against your effect, until the end of your next turn.",
+  "name": "",
   "_key": "!tables.results!3bd3d470d3da1fc7.231b82774520d7e9"
 }

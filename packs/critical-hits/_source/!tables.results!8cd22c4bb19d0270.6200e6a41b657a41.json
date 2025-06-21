@@ -1,6 +1,5 @@
 {
   "_id": "6200e6a41b657a41",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
@@ -8,11 +7,20 @@
     2,
     2
   ],
-  "rangeH": 2,
-  "rangeL": 2,
-  "resultId": null,
-  "text": "<h2>Knees Unsteady</h2><i>(Knee injury)</i><br><br>-5 to Dexterity saves",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Knees Unsteady</h2><i>(Knee injury)</i><br><br>-5 to Dexterity saves",
+  "name": "",
   "_key": "!tables.results!8cd22c4bb19d0270.6200e6a41b657a41"
 }

@@ -1,6 +1,5 @@
 {
   "_id": "1f95f7f5f7d74743",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/light/explosion-star-orange-purple.webp",
@@ -8,11 +7,20 @@
     10,
     10
   ],
-  "rangeH": 10,
-  "rangeL": 10,
-  "resultId": null,
-  "text": "<h2>Arcane Exploit</h2><b>Double damage.</b><br><br>It has disadvantage on its next saving throw against a spell before the end of its next turn.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Arcane Exploit</h2><b>Double damage.</b><br><br>It has disadvantage on its next saving throw against a spell before the end of its next turn.",
+  "name": "",
   "_key": "!tables.results!b1b994d5003813aa.1f95f7f5f7d74743"
 }

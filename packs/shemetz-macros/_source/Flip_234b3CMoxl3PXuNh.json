@@ -8,17 +8,26 @@
   "command": "const tokens = ShemetzMacros.selectedTokens()\nShemetzMacros.flipTokens(tokens, true)",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "IlfuVOtIwzHO5ODq": 3
-  },
   "flags": {
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.xJnmcZO3ARux7dWU"
-    }
+    "core": {}
+  },
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.xJnmcZO3ARux7dWU",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "IlfuVOtIwzHO5ODq": 3
   },
   "_key": "!macros!234b3CMoxl3PXuNh"
 }

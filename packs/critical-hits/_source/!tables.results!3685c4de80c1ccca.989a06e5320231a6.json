@@ -1,6 +1,5 @@
 {
   "_id": "989a06e5320231a6",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/commodities/biological/organ-brain-pink-purple.webp",
@@ -8,11 +7,20 @@
     11,
     11
   ],
-  "rangeH": 11,
-  "rangeL": 11,
-  "resultId": null,
-  "text": "<h2>Stabbing Headache</h2><b>Double damage.</b><br><br>Until it uses an action to clear its head, creature takes psychic damage equal to the attacker's level/CR whenever it casts a spell or rolls a mental check or save.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Stabbing Headache</h2><b>Double damage.</b><br><br>Until it uses an action to clear its head, creature takes psychic damage equal to the attacker's level/CR whenever it casts a spell or rolls a mental check or save.",
+  "name": "",
   "_key": "!tables.results!3685c4de80c1ccca.989a06e5320231a6"
 }

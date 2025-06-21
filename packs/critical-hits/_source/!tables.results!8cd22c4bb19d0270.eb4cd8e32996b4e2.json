@@ -1,6 +1,5 @@
 {
   "_id": "eb4cd8e32996b4e2",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
@@ -8,11 +7,20 @@
     7,
     7
   ],
-  "rangeH": 7,
-  "rangeL": 7,
-  "resultId": null,
-  "text": "<h2>Exposed</h2><i>(Weak spot)</i><br><br>-2 to AC and can get crit more often (on an 19+ usually)",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Exposed</h2><i>(Weak spot)</i><br><br>-2 to AC and can get crit more often (on an 19+ usually)",
+  "name": "",
   "_key": "!tables.results!8cd22c4bb19d0270.eb4cd8e32996b4e2"
 }

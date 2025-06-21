@@ -1,4 +1,5 @@
 {
+  "_id": "YVXtrHVXF5j7U4gQ",
   "name": "Remote Assign Hotbar Macro",
   "type": "script",
   "author": "1juviUvXUOch1cLb",
@@ -7,10 +8,6 @@
   "command": "ShemetzMacros.remoteAssignHotbarMacro()",
   "folder": null,
   "sort": 0,
-  "permission": {
-    "default": 0,
-    "1juviUvXUOch1cLb": 3
-  },
   "flags": {
     "combat-utility-belt": {
       "macroTrigger": ""
@@ -18,10 +15,22 @@
     "advanced-macros": {
       "runAsGM": false
     },
-    "core": {
-      "sourceId": "Macro.mHq1hsMSPgZmsnd9"
-    }
+    "core": {}
   },
-  "_id": "YVXtrHVXF5j7U4gQ",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Macro.mHq1hsMSPgZmsnd9",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "1juviUvXUOch1cLb": 3
+  },
   "_key": "!macros!YVXtrHVXF5j7U4gQ"
 }

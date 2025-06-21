@@ -1,6 +1,5 @@
 {
   "_id": "d4266402d58574c3",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/weapons/axes/axe-broad-chipped-glow-yellow.webp",
@@ -8,11 +7,20 @@
     15,
     15
   ],
-  "rangeH": 15,
-  "rangeL": 15,
-  "resultId": null,
-  "text": "<h2>Flayed</h2><b>Double damage.</b><br><br>It starts bleeding, and it's vulnerable to acid and poison while bleeding.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Flayed</h2><b>Double damage.</b><br><br>It starts bleeding, and it's vulnerable to acid and poison while bleeding.",
+  "name": "",
   "_key": "!tables.results!236c31c7a7db4767.d4266402d58574c3"
 }

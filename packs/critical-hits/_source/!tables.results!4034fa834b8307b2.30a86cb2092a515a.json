@@ -1,6 +1,5 @@
 {
   "_id": "30a86cb2092a515a",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/tools/instruments/bell-brass-brown.webp",
@@ -8,11 +7,20 @@
     13,
     13
   ],
-  "rangeH": 13,
-  "rangeL": 13,
-  "resultId": null,
-  "text": "<h2>Echoing Boom</h2><b>Double damage.</b><br><br>All other creatures within 5 feet of it take half as much damage (not doubled).",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Echoing Boom</h2><b>Double damage.</b><br><br>All other creatures within 5 feet of it take half as much damage (not doubled).",
+  "name": "",
   "_key": "!tables.results!4034fa834b8307b2.30a86cb2092a515a"
 }

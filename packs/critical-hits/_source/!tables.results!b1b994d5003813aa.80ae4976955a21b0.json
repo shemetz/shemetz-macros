@@ -1,6 +1,5 @@
 {
   "_id": "80ae4976955a21b0",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/magic/light/explosion-star-orange-purple.webp",
@@ -8,11 +7,20 @@
     6,
     6
   ],
-  "rangeH": 6,
-  "rangeL": 6,
-  "resultId": null,
-  "text": "<h2>Force Disturbance</h2><b>Double damage.</b><br><br>Until the end of its next turn, when it casts a spell or uses a magical ability or activates a magical item, it takes damage equal to the attacker's CR/level.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Force Disturbance</h2><b>Double damage.</b><br><br>Until the end of its next turn, when it casts a spell or uses a magical ability or activates a magical item, it takes damage equal to the attacker's CR/level.",
+  "name": "",
   "_key": "!tables.results!b1b994d5003813aa.80ae4976955a21b0"
 }

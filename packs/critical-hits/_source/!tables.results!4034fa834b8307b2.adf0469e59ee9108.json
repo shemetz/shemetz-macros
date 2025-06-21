@@ -1,6 +1,5 @@
 {
   "_id": "adf0469e59ee9108",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/tools/instruments/bell-brass-brown.webp",
@@ -8,11 +7,20 @@
     16,
     16
   ],
-  "rangeH": 16,
-  "rangeL": 16,
-  "resultId": null,
-  "text": "<h2>Hearing Damage</h2><b>Double damage.</b><br><br>Deafened for 1 minute",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Hearing Damage</h2><b>Double damage.</b><br><br>Deafened for 1 minute",
+  "name": "",
   "_key": "!tables.results!4034fa834b8307b2.adf0469e59ee9108"
 }

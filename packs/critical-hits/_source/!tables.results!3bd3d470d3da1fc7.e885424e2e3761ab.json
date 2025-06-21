@@ -1,6 +1,5 @@
 {
   "_id": "e885424e2e3761ab",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "https://i.imgur.com/huPpJQf.png",
@@ -8,11 +7,20 @@
     16,
     16
   ],
-  "rangeH": 16,
-  "rangeL": 16,
-  "resultId": null,
-  "text": "<h2>Clash</h2>You weren't prepared for the force behind your attack, and hurt yourself slightly, taking damage equal to your level/CR.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Clash</h2>You weren't prepared for the force behind your attack, and hurt yourself slightly, taking damage equal to your level/CR.",
+  "name": "",
   "_key": "!tables.results!3bd3d470d3da1fc7.e885424e2e3761ab"
 }

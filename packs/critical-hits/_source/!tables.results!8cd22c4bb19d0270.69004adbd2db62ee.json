@@ -1,6 +1,5 @@
 {
   "_id": "69004adbd2db62ee",
-  "collection": null,
   "drawn": false,
   "flags": {},
   "img": "icons/skills/wounds/anatomy-organ-heart-red.webp",
@@ -8,11 +7,20 @@
     8,
     8
   ],
-  "rangeH": 8,
-  "rangeL": 8,
-  "resultId": null,
-  "text": "<h2>Internal Bleeding</h2><i>(Hard-hitting attack)</i><br><br>If player: Maximum health reduced by 5 times the player's level (can't go below 1). If monster, instantly apply damage equal to 4 * CR.",
-  "type": 0,
+  "type": "text",
   "weight": 1,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "<h2>Internal Bleeding</h2><i>(Hard-hitting attack)</i><br><br>If player: Maximum health reduced by 5 times the player's level (can't go below 1). If monster, instantly apply damage equal to 4 * CR.",
+  "name": "",
   "_key": "!tables.results!8cd22c4bb19d0270.69004adbd2db62ee"
 }
