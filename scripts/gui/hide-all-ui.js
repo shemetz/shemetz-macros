@@ -1,8 +1,18 @@
 let mode = 'visible'
+
+/**
+ * Hides everything but the canvas:
+ * - notifications
+ * - interface
+ * - hud
+ * - pause overlay
+ * - tooltips
+ * - opened application windows
+ */
 export const hideAllUi = () => {
-  const idstoHide = ['logo', 'navigation', 'controls', 'sidebar', 'players', 'hotbar']
   mode = (mode === 'hidden') ? 'visible' : 'hidden'
-  idstoHide.forEach((id) => {
-    document.getElementById(id).style.visibility = mode
-  })
+  for (const el of document.getElementsByTagName('body')[0].children) {
+    if (el.tagName === 'CANVAS') continue
+    el.style.visibility = mode
+  }
 }
