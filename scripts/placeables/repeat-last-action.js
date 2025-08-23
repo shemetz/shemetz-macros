@@ -134,21 +134,24 @@ function recordUpdateDiff (document, update, options) {
 function improveUpdate (data, update) {
   for (const key in update) {
     const updateValue = update[key]
-    const oldValue = foundry.utils.getProperty(data, key)
-    // -= in a key means it's removed from data
-    if (key.includes('-=')) delete update[key]
-    // if value is undefined/null/''/0 both before and after, we probably don't need to repeat it
-    if (!updateValue && !oldValue) delete update[key]
-    // if value didn't actually change we probably don't want to repeat it
-    if (updateValue === oldValue) delete update[key]
-    // Sometimes updates include empty arrays both before and after, ignore
-    if (Array.isArray(updateValue) && updateValue.length === 0 && oldValue?.length === 0) delete update[key]
-    // color comparison looks a bit different
-    if (updateValue?.startsWith?.('#') && oldValue?.css === updateValue) delete update[key] // colors
-    // if value is not a valid choice from a list, we probably don't want to repeat it (not sure why foundry does this)
-    if (data.schema.fields?.[key]?.choices?.includes?.(updateValue) === false) delete update[key] // e.g. { disposition: null }
-    // Something weird with detection modes in pf2e, should be ignored
-    if (key === 'detectionModes' && updateValue?.length === 0 && oldValue?.length >= 2) delete update[key]
+    const oldValue = foundry.utils.getProperty(data._source, key) // use data._source, otherwise previews ruin it
+    switch (true) {
+      // -= in a key means it's removed from data
+      case (key.includes('-=')):
+      // if value is undefined/null/''/0 both before and after, we probably don't need to repeat it
+      case (!updateValue && !oldValue):
+      // if value didn't actually change we probably don't want to repeat it
+      case (updateValue === oldValue):
+      // Sometimes updates include empty arrays both before and after, ignore
+      case (Array.isArray(updateValue) && updateValue.length === 0 && oldValue?.length === 0):
+      // color comparison looks a bit different
+      case (updateValue?.startsWith?.('#') && oldValue?.css === updateValue): // colors
+      // if value is not a valid choice from a list, we probably don't want to repeat it (not sure why foundry does this)
+      case (data.schema.fields?.[key]?.choices?.includes?.(updateValue) === false): // e.g. { disposition: null }
+      // Something weird with detection modes in pf2e, should be ignored
+      case (key === 'detectionModes' && updateValue?.length === 0 && oldValue?.length >= 2):
+        delete update[key]
+    }
   }
   // If either X or Y changed, put the other one in the update as well
   if (update.hasOwnProperty('x') && !update.hasOwnProperty('y')) update['y'] = data.y
