@@ -9,6 +9,7 @@ import { hookReduceTokenAnimations } from './tokens/reduce-animations.js'
 import { hookStartupMacro } from './macros/startup-macro.js'
 import { hookConsoleExtras } from './console/console-extras.js'
 import { hookFullRestForTheNight } from './pf2e/full-rest-for-the-night.js'
+import { hookWeirdWorld } from './pf2e/my-weird-worlds.js'
 
 Hooks.on('init', () => {
   hookShemetzMacros()
@@ -23,6 +24,7 @@ Hooks.on('init', () => {
   hookStartupMacro()
   hookConsoleExtras()
   hookFullRestForTheNight()
+  hookWeirdWorld()
 })
 
 // locally exclude some patterns of errors/warnings given to other rude module developers who aren't perfect
