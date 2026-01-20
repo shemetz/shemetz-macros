@@ -2,11 +2,11 @@ export const postTokenArt = (tok) => {
   let target = tok.actor || tok
   const imgSrc = target.img || target.document.texture.src
   const content = `
-  <a href=${imgSrc} target="_blank">
+  <a href="${imgSrc}" target="_blank">
     <img src=${imgSrc} style="width: 280px;" alt=${target.name}/>
   </a>
   `
-  ChatMessage.create({ content, flags: { core: { canPopout: true } },})
+  ChatMessage.create({ content, flags: { core: { canPopout: true } } })
 }
 
 // yes this is hacky but I don't know better
