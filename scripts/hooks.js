@@ -1,6 +1,7 @@
 import { hookShemetzMacros } from './shemetz-macros.js'
 import { hookCloseWallGaps } from './walls/close-wall-gaps.js'
 import { hookHiddenHotkey } from './placeables/toggle-hide.js'
+import { hookDifferentWeather } from './canvas/different-weather.js'
 import { hookImageShiftHotkey } from './placeables/image-shift.js'
 import { hookLayerSwitchHotkey } from './custom-stuff/layer-switch-hotkey.js'
 import { hookFlipHotkey } from './tokens/flip.js'
@@ -25,6 +26,7 @@ Hooks.on('init', () => {
   hookConsoleExtras()
   hookFullRestForTheNight()
   hookWeirdWorld()
+  hookDifferentWeather()
 })
 
 // locally exclude some patterns of errors/warnings given to other rude module developers who aren't perfect
@@ -54,6 +56,7 @@ CONFIG.compatibility.excludePatterns.push(
   new RegExp('at new LicenseViewer.*pf2e.mjs', 'm'),
   new RegExp('at new SettingsMenuPF2e.*pf2e.mjs', 'm'),
   new RegExp('at NPCPF2e.getUserLevel.*foundry.mjs', 'm'),
+  new RegExp('renderChatMessage hook is deprecated. Please use renderChatMessageHTML', 'm'),
   // LibWrapper -- sadly these exclusions are useless, as the libwrapper code is called before this code
   // and also for some reason those file names get changed in console render
   new RegExp('libWrapper-api.js:822:35', 'm'),
@@ -80,4 +83,8 @@ CONFIG.compatibility.excludePatterns.push(
   new RegExp('tokenmagicBundle.js:3125:51393', 'm'), // accessing the global "MeasuredTemplate"
   new RegExp('PlaceableObjectProto.js', 'm'),
   new RegExp('canvas.grid.getHighlightLayer.*tokenmagic', 'ms'),
+  new RegExp('You are accessing the global "SceneControls"', 'm'),
+
+  // V14
+  // foundry, unexplained core bugs?
 )
