@@ -2,9 +2,9 @@
   "id": "shemetz-macros",
   "title": "Shemetz's Macros",
   "description": "shem's big pile o' macros, plus some basic module code to tie them together nicely",
-  "version": "14.13.4",
+  "version": "14.13.5",
   "compatibility": {
-    "minimum": "13",
+    "minimum": "14",
     "verified": "14"
   },
   "esmodules": [
